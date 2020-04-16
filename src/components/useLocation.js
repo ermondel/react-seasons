@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 
 export default () => {
-  const [lat, setLat] = useState(null);
+  const [coords, setCoords] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
-      (position) => setLat(position.coords.latitude),
+      (position) => setCoords(position.coords),
       (err) => setErrorMessage(err.message)
     );
   }, []);
 
-  return [lat, errorMessage];
+  return [coords, errorMessage];
 };

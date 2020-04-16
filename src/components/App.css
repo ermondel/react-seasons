@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.app {
+  max-width: 270px;
+  margin: 5% auto;
+  padding: 0 15px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.info-table caption {
+  color: grey;
+  margin-bottom: 20px;
+}
+.info-table tr:hover {
+  background-color: lightgrey;
+}
+.info-table td {
+  padding: 5px 7px;
+}
+.value {
+  text-align: right;
+  color: blue;
+}
+.request {
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.error {
+  text-align: center;
+  background-color: white;
+  color: tomato;
+  border: 1px solid tomato;
+  padding: 10px;
+  border-radius: 5px;
+}
