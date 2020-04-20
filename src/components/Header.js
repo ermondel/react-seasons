@@ -1,29 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
-  <header className="header">
-    <nav className="main-nav">
-      <Link to="/" className="main-nav__item">
-        Home
-      </Link>{' '}
-      <Link to="/position" className="main-nav__item">
-        Position
-      </Link>{' '}
-      <Link to="/blog" className="main-nav__item">
-        Blog
-      </Link>{' '}
-      <Link to="/term" className="main-nav__item">
-        Term
-      </Link>{' '}
-      <Link to="/podcasts" className="main-nav__item">
-        Podcasts
-      </Link>{' '}
-      <Link to="/books" className="main-nav__item">
-        Books
-      </Link>
-    </nav>
-  </header>
-);
+const getLink = (value, to, current) => {
+  let className;
+
+  if (to === current) {
+    className = 'main-nav__item main-nav__item_active';
+  } else {
+    className = 'main-nav__item';
+  }
+
+  return (
+    <Link to={to} className={className}>
+      {value}
+    </Link>
+  );
+};
+
+const Header = (props) => {
+  return (
+    <header className="header">
+      <nav className="main-nav">
+        <ul className="main-nav__list">
+          <li>{getLink('Home', '/', props.path)}</li>
+          <li>{getLink('Position', '/position', props.path)}</li>
+          <li>{getLink('Blog', '/blog', props.path)}</li>
+          <li>{getLink('Term', '/term', props.path)}</li>
+          <li>{getLink('Podcasts', '/podcasts', props.path)}</li>
+          <li>{getLink('Books', '/books', props.path)}</li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

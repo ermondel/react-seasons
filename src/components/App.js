@@ -13,14 +13,31 @@ const App = () => (
   <div className="app">
     <Router history={history}>
       <div className="app-wrap">
-        <Header />
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/position" exact component={Position} />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/term" exact component={Term} />
-          <Route path="/podcasts" exact component={Podcasts} />
-          <Route path="/books" exact component={Books} />
+          <Route path="/" exact>
+            <Header path="/" />
+            <Home />
+          </Route>
+          <Route path="/position" exact>
+            <Header path="/position" />
+            <Position />
+          </Route>
+          <Route path="/blog" exact>
+            <Header path="/blog" />
+            <Blog />
+          </Route>
+          <Route path="/term" exact>
+            <Header path="/term" />
+            <Term />
+          </Route>
+          <Route path="/podcasts" exact>
+            <Header path="/podcasts" />
+            <Podcasts />
+          </Route>
+          <Route path="/books" exact>
+            <Header path="/books" />
+            <Books />
+          </Route>
         </Switch>
       </div>
     </Router>
