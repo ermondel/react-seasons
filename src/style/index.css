@@ -111,9 +111,18 @@ a {
 }
 
 /* * util * */
+
 .loading-bar {
   text-align: center;
   color: #f3e7c9;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
+
+.remote-error {
+  text-align: center;
+  color: black;
   text-transform: uppercase;
   font-size: 90%;
   margin-top: 20%;
