@@ -109,3 +109,12 @@ a {
 .content-wrap {
   margin: 20px 40px;
 }
+
+/* * util * */
+.loading-bar {
+  text-align: center;
+  color: #f3e7c9;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
