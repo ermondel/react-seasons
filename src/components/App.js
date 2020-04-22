@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
 import Header from './Header';
+import Footer from './Footer';
 import Home from './Home';
 import Position from './Position';
 import Blog from './Blog';
@@ -39,6 +40,7 @@ const App = () => (
             <Books />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   </div>
