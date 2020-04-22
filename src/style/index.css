@@ -228,6 +228,7 @@ h2::first-letter {
   padding: 0;
   font-weight: normal;
   margin-bottom: 25px;
+  height: 70px;
 }
 
 .podcasts-duration,
