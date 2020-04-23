@@ -5,8 +5,6 @@ import podcasts from '../../fixtures/podcasts';
 
 const PodcastList = (props) => (
   <div className="podcast-list">
-    <h2>Podcasts</h2>
-
     {podcasts.map((podcast) => (
       <div className="podcast-list__item" key={podcast.id}>
         <div className="podcast-list__content">

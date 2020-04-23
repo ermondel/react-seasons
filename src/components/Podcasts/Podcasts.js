@@ -1,5 +1,5 @@
 import React from 'react';
-import PodcastsSidebar from './PodcastsSidebar';
+import PodcastDetail from './PodcastDetail';
 import PodcastList from './PodcastList';
 import InfoTech from '../InfoTech';
 
@@ -7,12 +7,13 @@ const Podcasts = () => (
   <main className="main">
     <div className="sidebar">
       <div className="sidebar-wrap">
-        <PodcastsSidebar />
+        <PodcastDetail />
         <InfoTech list={['React', 'Redux']} />
       </div>
     </div>
     <div className="content">
       <div className="content-wrap">
+        <h2>Podcasts</h2>
         <PodcastList />
       </div>
     </div>
