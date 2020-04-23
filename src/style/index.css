@@ -348,12 +348,13 @@ h2::first-letter {
 }
 
 .blogpost {
-  width: 46%;
-  margin: 2%;
-  background-color: #967a65;
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  background-color: #967a65;
 }
 
 .blogpost__title {
@@ -362,17 +363,30 @@ h2::first-letter {
   font-weight: normal;
 }
 
+.blogpost__title::first-letter {
+  text-transform: uppercase;
+}
+
 .blogpost__body {
   margin: 5px;
   padding: 10px;
   border-radius: 6px;
-  background-color: #826550;
   flex-grow: 2;
+  background-color: #826550;
 }
 
-.blogpost__btns {
+.blogpost__body::first-letter {
+  text-transform: uppercase;
+}
+
+.blogpost__info {
   margin: 5px;
   padding: 10px;
+}
+
+.blogpost__author {
+  color: white;
+  font-size: small;
 }
 
 .blogpost__author_btn {
@@ -382,11 +396,12 @@ h2::first-letter {
   border-radius: 4px;
   background-color: transparent;
   color: black;
-  font-size: small;
   cursor: pointer;
+  font-size: small;
 }
 
-.blogpost__author_btn:hover {
+.blogpost__author_btn:hover,
+.blogpost__author_btn_active {
   color: orange;
 }
 
@@ -394,4 +409,72 @@ h2::first-letter {
   outline: none;
   border: none;
   color: orange;
+}
+
+/* * card for details * */
+
+.detail {
+  padding: 10px;
+  color: lightgrey;
+  background-color: black;
+  border-radius: 6px;
+  font-size: 90%;
+}
+
+.detail__title {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  margin-bottom: 25px;
+  height: 70px;
+}
+
+.detail__item {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 3px;
+  border-bottom: 1px dotted grey;
+  margin-bottom: 12px;
+}
+
+.detail__item:hover {
+  border-color: orange;
+}
+
+.detail__btns {
+  margin: 25px 0 0 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.detail__btn_main {
+  margin: 0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: lightgrey;
+  cursor: pointer;
+  float: left;
+  background-color: royalblue;
+}
+
+.detail__btn_main:hover {
+  background-color: #9acd32;
+  color: #f7f4f1;
+}
+
+.detail__btn_link {
+  display: block;
+  text-decoration: none;
+  padding: 10px 0px;
+  color: grey;
+  cursor: pointer;
+  float: right;
+}
+
+.detail__btn_link:hover {
+  text-decoration: underline;
 }

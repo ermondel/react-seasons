@@ -6,7 +6,25 @@ const UserDetails = ({ user }) => {
     return null;
   }
 
-  return <div>{user.name}</div>;
+  return (
+    <div className="detail">
+      <h3 className="detail__title">{user.name}</h3>
+      <p className="detail__item">
+        <span className="l">email</span> <span className="r">{user.email}</span>
+      </p>
+      <p className="detail__item">
+        <span className="l">phone</span> <span className="r">{user.phone}</span>
+      </p>
+      <p className="detail__item">
+        <span className="l">website</span>{' '}
+        <span className="r">{user.website}</span>
+      </p>
+      <p className="detail__item">
+        <span className="l">company</span>{' '}
+        <span className="r">{user.company.name}</span>
+      </p>
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({

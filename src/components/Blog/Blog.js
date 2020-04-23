@@ -11,6 +11,7 @@ const Blog = () => (
     </div>
     <div className="content">
       <div className="content-wrap">
+        <h2>Blog posts</h2>
         <PostList />
       </div>
     </div>
