@@ -1,7 +1,7 @@
 import React from 'react';
 import PodcastsSidebar from './PodcastsSidebar';
 import PodcastList from './PodcastList';
-import InfoTech from './InfoTech';
+import InfoTech from '../InfoTech';
 
 const Podcasts = () => (
   <main className="main">

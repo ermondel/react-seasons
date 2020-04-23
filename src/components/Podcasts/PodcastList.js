@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectPodcast } from '../actions/podcast';
-import podcasts from '../fixtures/podcasts';
+import { selectPodcast } from '../../actions/podcast';
+import podcasts from '../../fixtures/podcasts';
 
 const PodcastList = (props) => (
   <div className="podcast-list">

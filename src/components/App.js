@@ -3,12 +3,12 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
 import Header from './Header';
 import Footer from './Footer';
-import Home from './Home';
-import Position from './Position';
-import Blog from './Blog';
-import Term from './Term';
-import Podcasts from './Podcasts';
-import Books from './Books';
+import Home from './Home/Home';
+import Position from './Position/Position';
+import Blog from './Blog/Blog';
+import Term from './Term/Term';
+import Podcasts from './Podcasts/Podcasts';
+import Books from './Books/Books';
 
 const App = () => (
   <div className="app">
