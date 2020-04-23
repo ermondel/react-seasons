@@ -1,9 +1,8 @@
 import api from '../apis/jsonplaceholder';
-import fixture from '../fixtures/blog';
+// import fixture from '../fixtures/blog';
 
 export const fetchBlogPosts = () => async (dispatch) => {
   try {
-    /* **
     const posts = await api.get('/posts');
     const users = await api.get('/users');
 
@@ -11,9 +10,10 @@ export const fetchBlogPosts = () => async (dispatch) => {
       post.user = users.data.find((user) => user.id === post.userId);
       return post;
     });
-    ** */
 
-    dispatch({ type: 'FETCH_BLOG_POSTS', payload: fixture });
+    payload.sort(() => Math.random() - 0.5);
+
+    dispatch({ type: 'FETCH_BLOG_POSTS', payload });
   } catch (error) {
     console.log(error);
   }
