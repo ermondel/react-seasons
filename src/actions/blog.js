@@ -18,3 +18,8 @@ export const fetchBlogPosts = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const selectBlogUser = (user) => ({
+  type: 'BLOG_USER_SELECTED',
+  payload: user,
+});

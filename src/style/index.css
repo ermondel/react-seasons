@@ -339,3 +339,59 @@ h2::first-letter {
 .copyright a:hover {
   text-decoration: underline;
 }
+
+/* * post list * */
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blogpost {
+  width: 46%;
+  margin: 2%;
+  background-color: #967a65;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogpost__title {
+  margin: 5px;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.blogpost__body {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #826550;
+  flex-grow: 2;
+}
+
+.blogpost__btns {
+  margin: 5px;
+  padding: 10px;
+}
+
+.blogpost__author_btn {
+  margin: 0;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: black;
+  font-size: small;
+  cursor: pointer;
+}
+
+.blogpost__author_btn:hover {
+  color: orange;
+}
+
+.blogpost__author_btn:focus {
+  outline: none;
+  border: none;
+  color: orange;
+}
