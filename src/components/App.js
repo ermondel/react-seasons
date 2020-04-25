@@ -9,6 +9,7 @@ import Blog from './Blog/Blog';
 import Term from './Term/Term';
 import Podcasts from './Podcasts/Podcasts';
 import Books from './Books/Books';
+import Board from './Board/Board';
 
 const App = () => (
   <div className="app">
@@ -38,6 +39,10 @@ const App = () => (
           <Route path="/books" exact>
             <Header path="/books" />
             <Books />
+          </Route>
+          <Route path="/board" exact>
+            <Header path="/board" />
+            <Board />
           </Route>
         </Switch>
         <Footer />

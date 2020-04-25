@@ -28,6 +28,7 @@ const Header = (props) => {
           <li>{getLink('Term', '/term', props.path)}</li>
           <li>{getLink('Podcasts', '/podcasts', props.path)}</li>
           <li>{getLink('Books', '/books', props.path)}</li>
+          <li>{getLink('Board', '/board', props.path)}</li>
         </ul>
       </nav>
     </header>
