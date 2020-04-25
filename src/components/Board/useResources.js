@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../../apis/jsonplaceholder';
 
 const useResources = (resource) => {
-  const [resources, setResources] = useState([]);
+  const [resources, setResources] = useState(null);
 
   const fetchResource = async (resource) => {
     try {

@@ -478,3 +478,137 @@ h2::first-letter {
 .detail__btn_link:hover {
   text-decoration: underline;
 }
+
+/* * post list * */
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #967a65;
+}
+
+.post__title {
+  margin: 5px;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.post__body {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  flex-grow: 2;
+  background-color: #826550;
+}
+
+.post__title::first-letter,
+.post__body::first-letter {
+  text-transform: uppercase;
+}
+
+.post__info {
+  margin: 5px;
+  padding: 10px;
+}
+
+.post__author {
+  color: white;
+  font-size: small;
+}
+
+/* * todos * */
+
+.todos-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: relative;
+  background-color: #967a65;
+}
+
+.todo::before {
+  content: '';
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 36px;
+  height: 36px;
+  background-color: #967a65;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.todo::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  background-color: #826550;
+  z-index: 1;
+}
+
+.todo__title {
+  padding: 10px 50px 10px 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: black;
+}
+
+/* control */
+
+.control_btns {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.control__btn {
+  border: none;
+  margin: 0;
+  padding: 20px 0px;
+  width: 50%;
+  min-width: 100px;
+  text-transform: uppercase;
+  color: #f7f4f1;
+  background-color: black;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.control__btn:hover,
+.control__btn:focus {
+  background-color: #9acd32;
+  color: #f7f4f1;
+  outline: none;
+}
+
+.control__btn_ative,
+.control__btn_ative:hover {
+  background-color: grey;
+  color: #f7f4f1;
+  cursor: default;
+}
+
+/* user list */
+
+.user-list__item {
+  color: #f8f5f2;
+  margin-bottom: 4px;
+}
