@@ -9,10 +9,10 @@ class PostList extends Component {
   }
 
   renderButton(post) {
-    let className = 'blogpost__author_btn';
+    let className = 'post__author_btn';
 
     if (this.props.user && this.props.user.id === post.userId) {
-      className += ' blogpost__author_btn_active';
+      className += ' post__author_btn_active';
     }
 
     return (
@@ -21,7 +21,7 @@ class PostList extends Component {
         onClick={() => this.props.selectBlogUser(post.user)}
         title={`get info about ${post.user.name}`}
       >
-        ?
+        {post.user.name}
       </button>
     );
   }
@@ -34,12 +34,11 @@ class PostList extends Component {
     return (
       <div className='post-list'>
         {this.props.posts.map((post) => (
-          <div key={post.id} className='blogpost'>
-            <h3 className='blogpost__title'>{post.title}</h3>
-            <p className='blogpost__body'>{post.body}</p>
-            <p className='blogpost__info'>
-              <span className='blogpost__author'>{post.user.name}</span>
-              {this.renderButton(post)}
+          <div key={post.id} className='post'>
+            <h3 className='post__title'>{post.title}</h3>
+            <p className='post__body'>{post.body}</p>
+            <p className='post__info'>
+              <span className='post__author'>{this.renderButton(post)}</span>
             </p>
           </div>
         ))}
