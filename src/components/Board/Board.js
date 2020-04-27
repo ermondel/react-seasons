@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import UserList from './UserList';
-import InfoTech from '../InfoTech';
+import AppAboutTech from '../AppAboutTech';
 import ResourceList from './ResourceList';
 
 const renderBtn = (resource, resourceActive, onClick) => {
@@ -22,21 +22,21 @@ const Board = () => {
   const [resource, setResource] = useState('comments');
 
   return (
-    <main className="main">
-      <div className="sidebar">
-        <div className="sidebar-wrap">
-          <div className="control">
-            <div className="control_btns">
+    <main className='main'>
+      <div className='sidebar'>
+        <div className='sidebar-wrap'>
+          <div className='control'>
+            <div className='control_btns'>
               {renderBtn('comments', resource, () => setResource('comments'))}
               {renderBtn('todos', resource, () => setResource('todos'))}
             </div>
             <UserList />
           </div>
-          <InfoTech list={['React', 'React Hooks', 'JSONPlaceholder']} />
+          <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder']} />
         </div>
       </div>
-      <div className="content">
-        <div className="content-wrap">
+      <div className='content'>
+        <div className='content-wrap'>
           <h2>{resource}</h2>
           <ResourceList resource={resource} />
         </div>

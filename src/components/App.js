@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
-import Header from './Header';
-import Footer from './Footer';
+import AppHeader from './AppHeader';
+import AppFooter from './AppFooter';
 import Home from './Home/Home';
 import Position from './Position/Position';
 import Blog from './Blog/Blog';
@@ -12,40 +12,40 @@ import Books from './Books/Books';
 import Board from './Board/Board';
 
 const App = () => (
-  <div className="app">
+  <div className='app'>
     <Router history={history}>
-      <div className="app-wrap">
+      <div className='app-wrap'>
         <Switch>
-          <Route path="/" exact>
-            <Header path="/" />
+          <Route path='/' exact>
+            <AppHeader path='/' />
             <Home />
           </Route>
-          <Route path="/position" exact>
-            <Header path="/position" />
+          <Route path='/position' exact>
+            <AppHeader path='/position' />
             <Position />
           </Route>
-          <Route path="/blog" exact>
-            <Header path="/blog" />
+          <Route path='/blog' exact>
+            <AppHeader path='/blog' />
             <Blog />
           </Route>
-          <Route path="/term" exact>
-            <Header path="/term" />
+          <Route path='/term' exact>
+            <AppHeader path='/term' />
             <Term />
           </Route>
-          <Route path="/podcasts" exact>
-            <Header path="/podcasts" />
+          <Route path='/podcasts' exact>
+            <AppHeader path='/podcasts' />
             <Podcasts />
           </Route>
-          <Route path="/books" exact>
-            <Header path="/books" />
+          <Route path='/books' exact>
+            <AppHeader path='/books' />
             <Books />
           </Route>
-          <Route path="/board" exact>
-            <Header path="/board" />
+          <Route path='/board' exact>
+            <AppHeader path='/board' />
             <Board />
           </Route>
         </Switch>
-        <Footer />
+        <AppFooter />
       </div>
     </Router>
   </div>

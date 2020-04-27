@@ -17,11 +17,11 @@ const getLink = (value, to, current) => {
   );
 };
 
-const Header = (props) => {
+const AppHeader = (props) => {
   return (
-    <header className="header">
-      <nav className="main-nav">
-        <ul className="main-nav__list">
+    <header className='header'>
+      <nav className='main-nav'>
+        <ul className='main-nav__list'>
           <li>{getLink('Home', '/', props.path)}</li>
           <li>{getLink('Position', '/position', props.path)}</li>
           <li>{getLink('Blog', '/blog', props.path)}</li>
@@ -35,4 +35,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default AppHeader;

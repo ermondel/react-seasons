@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogPosts, selectBlogUser } from '../../actions/blog';
-import LoadingBar from '../LoadingBar';
+import LoadingBarMain from '../LoadingBarMain';
 
 class PostList extends Component {
   componentDidMount() {
@@ -28,17 +28,17 @@ class PostList extends Component {
 
   render() {
     if (!this.props.posts) {
-      return <LoadingBar />;
+      return <LoadingBarMain />;
     }
 
     return (
-      <div className="post-list">
+      <div className='post-list'>
         {this.props.posts.map((post) => (
-          <div key={post.id} className="blogpost">
-            <h3 className="blogpost__title">{post.title}</h3>
-            <p className="blogpost__body">{post.body}</p>
-            <p className="blogpost__info">
-              <span className="blogpost__author">{post.user.name}</span>
+          <div key={post.id} className='blogpost'>
+            <h3 className='blogpost__title'>{post.title}</h3>
+            <p className='blogpost__body'>{post.body}</p>
+            <p className='blogpost__info'>
+              <span className='blogpost__author'>{post.user.name}</span>
               {this.renderButton(post)}
             </p>
           </div>
