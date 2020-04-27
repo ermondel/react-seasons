@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import UserList from './UserList';
 import AppAboutTech from '../AppAboutTech';
-import ResourceList from './ResourceList';
+import BoardUserList from './BoardUserList';
+import BoardResourceList from './BoardResourceList';
 
 const renderBtn = (resource, resourceActive, onClick) => {
   const active = resource === resourceActive ? ' control__btn_ative' : '';
@@ -30,7 +30,7 @@ const Board = () => {
               {renderBtn('comments', resource, () => setResource('comments'))}
               {renderBtn('todos', resource, () => setResource('todos'))}
             </div>
-            <UserList />
+            <BoardUserList />
           </div>
           <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder']} />
         </div>
@@ -38,7 +38,7 @@ const Board = () => {
       <div className='content'>
         <div className='content-wrap'>
           <h2>{resource}</h2>
-          <ResourceList resource={resource} />
+          <BoardResourceList resource={resource} />
         </div>
       </div>
     </main>

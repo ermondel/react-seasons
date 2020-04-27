@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import api from '../../apis/jsonplaceholder';
 
 const useResources = (resource) => {
-  const [resources, setResources] = useState(null);
+  const [resources, setResources] = useState({ data: [], status: '1xx' });
 
   const fetchResource = async (resource) => {
     try {
       const response = await api.get(`/${resource}`);
-      setResources(response.data);
+
+      setResources({ data: response.data, status: '2xx' });
     } catch (error) {
-      console.log(error);
+      setResources({ data: error, status: '5xx' });
     }
   };
 
