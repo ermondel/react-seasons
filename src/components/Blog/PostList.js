@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogPosts, selectBlogUser } from '../../actions/blog';
 import LoadingBarMain from '../LoadingBarMain';
+import Error5xx from '../Error5xx';
 
 class PostList extends Component {
   componentDidMount() {
@@ -27,23 +28,31 @@ class PostList extends Component {
   }
 
   render() {
-    if (!this.props.posts) {
+    if (this.props.posts.status === '1xx') {
       return <LoadingBarMain />;
     }
 
-    return (
-      <div className='post-list'>
-        {this.props.posts.map((post) => (
-          <div key={post.id} className='post'>
-            <h3 className='post__title'>{post.title}</h3>
-            <p className='post__body'>{post.body}</p>
-            <p className='post__info'>
-              <span className='post__author'>{this.renderButton(post)}</span>
-            </p>
-          </div>
-        ))}
-      </div>
-    );
+    if (this.props.posts.status === '5xx') {
+      return <Error5xx />;
+    }
+
+    if (this.props.posts.status === '2xx') {
+      return (
+        <div className='post-list'>
+          {this.props.posts.data.map((post) => (
+            <div key={post.id} className='post'>
+              <h3 className='post__title'>{post.title}</h3>
+              <p className='post__body'>{post.body}</p>
+              <p className='post__info'>
+                <span className='post__author'>{this.renderButton(post)}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    return <div>empty state</div>;
   }
 }
 

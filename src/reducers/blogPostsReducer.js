@@ -1,7 +1,14 @@
-export default (state = null, action) => {
-  if (action.type === 'FETCH_BLOG_POSTS') {
-    return action.payload;
-  }
+const defaultState = { data: [], status: '1xx' };
 
-  return state;
+export default (state = defaultState, action) => {
+  switch (action.type) {
+    case 'FETCH_BLOG_POSTS':
+      return { data: action.payload, status: '2xx' };
+
+    case 'ERROR_FETCHING_BLOG_POSTS':
+      return { data: action.payload, status: '5xx' };
+
+    default:
+      return state;
+  }
 };

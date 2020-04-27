@@ -15,7 +15,7 @@ export const fetchBlogPosts = () => async (dispatch) => {
 
     dispatch({ type: 'FETCH_BLOG_POSTS', payload });
   } catch (error) {
-    console.log(error);
+    dispatch({ type: 'ERROR_FETCHING_BLOG_POSTS', payload: error });
   }
 };
 
