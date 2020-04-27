@@ -1,4 +1,9 @@
 import api from '../apis/jsonplaceholder';
+import {
+  FETCH_BLOG_POSTS,
+  ERROR_FETCHING_BLOG_POSTS,
+  BLOG_USER_SELECTED,
+} from './types';
 // import fixture from '../fixtures/blog';
 
 export const fetchBlogPosts = () => async (dispatch) => {
@@ -13,13 +18,13 @@ export const fetchBlogPosts = () => async (dispatch) => {
 
     payload.sort(() => Math.random() - 0.5);
 
-    dispatch({ type: 'FETCH_BLOG_POSTS', payload });
+    dispatch({ type: FETCH_BLOG_POSTS, payload });
   } catch (error) {
-    dispatch({ type: 'ERROR_FETCHING_BLOG_POSTS', payload: error });
+    dispatch({ type: ERROR_FETCHING_BLOG_POSTS, payload: error });
   }
 };
 
 export const selectBlogUser = (user) => ({
-  type: 'BLOG_USER_SELECTED',
+  type: BLOG_USER_SELECTED,
   payload: user,
 });
