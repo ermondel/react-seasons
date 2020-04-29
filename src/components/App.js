@@ -6,7 +6,7 @@ import AppFooter from './AppFooter';
 import Home from './Home/Home';
 import Position from './Position/Position';
 import Blog from './Blog/Blog';
-import Term from './Term/Term';
+import Postcard from './Postcard/Postcard';
 import Podcasts from './Podcasts/Podcasts';
 import Books from './Books/Books';
 import Board from './Board/Board';
@@ -28,9 +28,9 @@ const App = () => (
             <AppHeader path='/blog' />
             <Blog />
           </Route>
-          <Route path='/term' exact>
-            <AppHeader path='/term' />
-            <Term />
+          <Route path='/postcard' exact>
+            <AppHeader path='/postcard' />
+            <Postcard />
           </Route>
           <Route path='/podcasts' exact>
             <AppHeader path='/podcasts' />

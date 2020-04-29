@@ -563,9 +563,75 @@ h2::first-letter {
   cursor: default;
 }
 
-/* user list */
+/* * user list * */
 
 .user-list__item {
   color: #f8f5f2;
   margin-bottom: 4px;
+}
+
+/* * postcard * */
+
+.postcard__scene {
+  margin-top: 75px;
+  width: 600px;
+  display: flex;
+}
+
+.postcard__panel-left {
+  width: 300px;
+  height: 400px;
+  margin-right: -43px;
+  border: 1px solid white;
+  transform: perspective(600px) rotateY(35deg);
+}
+
+.postcard__panel-right {
+  width: 260px;
+  height: 360px;
+  margin-left: -43px;
+  padding: 20px;
+  border: 1px solid white;
+  transform: perspective(600px) rotateY(-35deg);
+}
+
+.postcard__text {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.bg_blue {
+  background-color: blue;
+}
+
+.bg_red {
+  background-color: red;
+}
+
+.bg_green {
+  background-color: green;
+}
+
+.bg_orange {
+  background-color: orange;
+}
+
+.bg_violet {
+  background-color: violet;
+}
+
+.bg_purple {
+  background-color: purple;
+}
+
+.bg_brown {
+  background-color: brown;
+}
+
+.bg_yellow {
+  background-color: yellow;
+  color: black;
 }
