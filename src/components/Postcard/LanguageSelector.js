@@ -1,58 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LanguageContext from '../../contexts/LanguageContext';
 import Button from '../Button';
+import languagesSource from './languagesSource';
 
-class LanguageSelector extends Component {
-  static contextType = LanguageContext;
-
-  render() {
-    return (
-      <div className='control_btns'>
-        <Button
-          value='english'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('english')}
-        />
-        <Button
-          value='dutch'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('dutch')}
-        />
-        <Button
-          value='spanish'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('spanish')}
-        />
-        <Button
-          value='french'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('french')}
-        />
-        <Button
-          value='ukrainian'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('ukrainian')}
-        />
-        <Button
-          value='russian'
-          classNameCommon='btn-common'
-          classNameActive='btn-common_active'
-          valueActive={this.context.language}
-          onClick={() => this.context.onLanguageChange('russian')}
-        />
-      </div>
-    );
-  }
-}
+const LanguageSelector = () => (
+  <div className='control_btns'>
+    <LanguageContext.Consumer>
+      {(context) =>
+        languagesSource.map((el) => (
+          <Button
+            value={el.language}
+            classNameCommon='btn-common'
+            classNameActive='btn-common_active'
+            valueActive={context.language}
+            onClick={() => context.onLanguageChange(el.language)}
+            key={el.id}
+          />
+        ))
+      }
+    </LanguageContext.Consumer>
+  </div>
+);
 
 export default LanguageSelector;
