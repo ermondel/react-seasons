@@ -4,6 +4,7 @@ import { ColorContext } from '../../contexts/ColorContext';
 import LanguageSelector from './LanguageSelector';
 import ColorSelector from './ColorSelector';
 import PostcardScene from './PostcardScene';
+import AppAboutTech from '../AppAboutTech';
 
 const Postcard = () => (
   <ColorContext>
@@ -15,6 +16,7 @@ const Postcard = () => (
               <LanguageSelector />
               <ColorSelector />
             </div>
+            <AppAboutTech list={['React', 'React Context']} />
           </div>
         </div>
         <div className='content'>

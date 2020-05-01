@@ -536,40 +536,6 @@ h2::first-letter {
   margin-bottom: 35px;
 }
 
-.control__btn {
-  border: none;
-  margin: 0;
-  padding: 20px 0px;
-  width: 50%;
-  min-width: 100px;
-  text-transform: uppercase;
-  color: #f7f4f1;
-  background-color: black;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.control__btn:hover,
-.control__btn:focus {
-  background-color: #9acd32;
-  color: #f7f4f1;
-  outline: none;
-}
-
-.control__btn_ative,
-.control__btn_ative:hover {
-  background-color: grey;
-  color: #f7f4f1;
-  cursor: default;
-}
-
-/* control */
-
-.control_btns {
-  width: 100%;
-  margin-bottom: 35px;
-}
-
 .btn-common,
 .btn-color,
 .btn-common_active,
