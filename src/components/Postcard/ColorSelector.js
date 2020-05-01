@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ColorContext from '../../contexts/ColorContext';
+import Button from '../Button';
 
 class ColorSelector extends Component {
   static contextType = ColorContext;
@@ -7,42 +8,48 @@ class ColorSelector extends Component {
   render() {
     return (
       <div className='control_btns'>
-        <button
-          className={'control__btn bg_blue'}
+        <Button
+          value='blue'
+          classNameCommon='btn-color bg_blue'
+          classNameActive='btn-color_active bg_blue'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('blue')}
-        >
-          Blue
-        </button>
-        <button
-          className={'control__btn bg_red'}
+        />
+        <Button
+          value='red'
+          classNameCommon='btn-color bg_red'
+          classNameActive='btn-color_active bg_red'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('red')}
-        >
-          Red
-        </button>
-        <button
-          className={'control__btn bg_green'}
+        />
+        <Button
+          value='green'
+          classNameCommon='btn-color bg_green'
+          classNameActive='btn-color_active bg_green'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('green')}
-        >
-          Green
-        </button>
-        <button
-          className={'control__btn bg_orange'}
+        />
+        <Button
+          value='orange'
+          classNameCommon='btn-color bg_orange'
+          classNameActive='btn-color_active bg_orange'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('orange')}
-        >
-          Orange
-        </button>
-        <button
-          className={'control__btn bg_violet'}
+        />
+        <Button
+          value='violet'
+          classNameCommon='btn-color bg_violet'
+          classNameActive='btn-color_active bg_violet'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('violet')}
-        >
-          Violet
-        </button>
-        <button
-          className={'control__btn bg_purple'}
+        />
+        <Button
+          value='purple'
+          classNameCommon='btn-color bg_purple'
+          classNameActive='btn-color_active bg_purple'
+          valueActive={this.context.color}
           onClick={() => this.context.onColorChange('purple')}
-        >
-          Purple
-        </button>
+        />
       </div>
     );
   }

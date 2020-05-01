@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LanguageContext from '../../contexts/LanguageContext';
+import Button from '../Button';
 
 class LanguageSelector extends Component {
   static contextType = LanguageContext;
@@ -7,42 +8,48 @@ class LanguageSelector extends Component {
   render() {
     return (
       <div className='control_btns'>
-        <button
-          className={'control__btn'}
+        <Button
+          value='english'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('english')}
-        >
-          English
-        </button>
-        <button
-          className={'control__btn'}
+        />
+        <Button
+          value='dutch'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('dutch')}
-        >
-          Dutch
-        </button>
-        <button
-          className={'control__btn'}
+        />
+        <Button
+          value='spanish'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('spanish')}
-        >
-          Spanish
-        </button>
-        <button
-          className={'control__btn'}
+        />
+        <Button
+          value='french'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('french')}
-        >
-          French
-        </button>
-        <button
-          className={'control__btn'}
+        />
+        <Button
+          value='ukrainian'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('ukrainian')}
-        >
-          Ukrainian
-        </button>
-        <button
-          className={'control__btn'}
+        />
+        <Button
+          value='russian'
+          classNameCommon='btn-common'
+          classNameActive='btn-common_active'
+          valueActive={this.context.language}
           onClick={() => this.context.onLanguageChange('russian')}
-        >
-          Russian
-        </button>
+        />
       </div>
     );
   }

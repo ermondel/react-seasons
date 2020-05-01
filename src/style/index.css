@@ -563,6 +563,70 @@ h2::first-letter {
   cursor: default;
 }
 
+/* control */
+
+.control_btns {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.btn-common,
+.btn-color,
+.btn-common_active,
+.btn-color_active {
+  border: none;
+  margin: 0;
+  padding: 20px 0px;
+  width: 50%;
+  min-width: 100px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+}
+
+.btn-common {
+  color: #f7f4f1;
+  background-color: black;
+}
+
+.btn-common:hover,
+.btn-common:focus {
+  color: #f7f4f1;
+  background-color: #9acd32;
+}
+
+.btn-common_active,
+.btn-common_active:hover {
+  color: #f7f4f1;
+  background-color: grey;
+  cursor: default;
+}
+
+.btn-color {
+  color: #f7f4f1;
+  border: 1px solid transparent;
+}
+
+.btn-color:hover,
+.btn-color:focus {
+  border-color: #f7f4f1;
+}
+
+.btn-color_active,
+.btn-color_active:hover {
+  border: 1px solid #f7f4f1;
+  color: #f7f4f1;
+  cursor: default;
+}
+
+.btn-common::-moz-focus-inner,
+.btn-common_active::-moz-focus-inner,
+.btn-color::-moz-focus-inner,
+.btn-color_active::-moz-focus-inner {
+  border: 0;
+}
+
 /* * user list * */
 
 .user-list__item {
