@@ -204,85 +204,19 @@ h2::first-letter {
 
 .podcast-list__select-btn {
   margin: 0;
-  padding: 0;
   border: none;
-}
-
-.podcast-list__select-btn {
   padding: 16px 24px;
-  background-color: black;
   color: white;
   border-radius: 4px;
+  font-size: 13px;
   cursor: pointer;
+  background-color: #967a65;
 }
 
-.podcast-list__select-btn:hover {
+.podcast-list__select-btn:hover,
+.podcast-list__select-btn:focus {
   background-color: #9acd32;
-}
-
-.podcasts-sidebar {
-  padding: 10px;
-  color: lightgrey;
-  background-color: black;
-  border-radius: 4px;
-  font-size: 90%;
-}
-
-.podcasts-sidebar__title {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  margin-bottom: 25px;
-  height: 70px;
-}
-
-.podcasts-duration,
-.podcasts-author {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  padding-bottom: 3px;
-  border-bottom: 1px dotted grey;
-  margin-bottom: 10px;
-}
-
-.podcasts-btns {
-  margin: 0;
-  padding: 0;
-  margin-top: 15px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.podcasts-btn__play {
-  margin: 0;
-  padding: 0;
-  border: none;
-  padding: 10px 20px;
-  float: left;
-  background-color: royalblue;
-  border-radius: 4px;
-  color: lightgrey;
-  cursor: pointer;
-}
-
-.podcasts-btn__play:hover {
-  background-color: #9acd32;
-  color: #f7f4f1;
-}
-
-.podcasts-btn__download {
-  display: block;
-  text-decoration: none;
-  padding: 10px 0px;
-  float: right;
-  color: grey;
-  cursor: pointer;
-}
-
-.podcasts-btn__download:hover {
-  text-decoration: underline;
+  outline: none;
 }
 
 /* * info * */
@@ -391,6 +325,7 @@ h2::first-letter {
   border-radius: 4px;
   color: lightgrey;
   cursor: pointer;
+  font-size: 13px;
   float: left;
   background-color: royalblue;
 }
@@ -683,4 +618,5 @@ h2::first-letter {
   background-color: black;
   margin-top: 50px;
   padding: 15px;
+  border-radius: 5px;
 }
