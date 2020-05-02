@@ -665,3 +665,22 @@ h2::first-letter {
   background-color: yellow;
   color: black;
 }
+
+/* * accept card * */
+
+.accept-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f3e7c9;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
+
+.accept-card_error {
+  color: white;
+  background-color: black;
+  margin-top: 50px;
+  padding: 15px;
+}
