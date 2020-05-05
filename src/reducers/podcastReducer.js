@@ -1,4 +1,4 @@
-import { PODCAST_SELECTED } from '../actions/types';
+import { PODCAST_SELECTED } from '../types';
 
 export default (state = null, action) => {
   if (action.type === PODCAST_SELECTED) {

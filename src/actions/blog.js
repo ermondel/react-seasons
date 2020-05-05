@@ -3,8 +3,7 @@ import {
   FETCH_BLOG_POSTS,
   ERROR_FETCHING_BLOG_POSTS,
   BLOG_USER_SELECTED,
-} from './types';
-// import fixture from '../fixtures/blog';
+} from '../types';
 
 export const fetchBlogPosts = () => async (dispatch) => {
   try {

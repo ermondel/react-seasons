@@ -1,4 +1,4 @@
-import { FETCH_BLOG_POSTS, ERROR_FETCHING_BLOG_POSTS } from '../actions/types';
+import { FETCH_BLOG_POSTS, ERROR_FETCHING_BLOG_POSTS } from '../types';
 
 const defaultState = { data: [], status: '1xx' };
 

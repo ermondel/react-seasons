@@ -1,4 +1,4 @@
-import { PODCAST_SELECTED } from './types';
+import { PODCAST_SELECTED } from '../types';
 
 export const selectPodcast = (podcast) => ({
   type: PODCAST_SELECTED,
