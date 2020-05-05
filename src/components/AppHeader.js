@@ -1,38 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const getLink = (value, to, current) => {
-  let className;
-
-  if (to === current) {
-    className = 'main-nav__item main-nav__item_active';
-  } else {
-    className = 'main-nav__item';
-  }
-
-  return (
-    <Link to={to} className={className}>
-      {value}
-    </Link>
-  );
+const getLinkClass = (to, props) => {
+  return props.path === to ? 'main-nav__item_active' : 'main-nav__item';
 };
 
-const AppHeader = (props) => {
-  return (
-    <header className='header'>
-      <nav className='main-nav'>
-        <ul className='main-nav__list'>
-          <li>{getLink('Home', '/', props.path)}</li>
-          <li>{getLink('Blog', '/blog', props.path)}</li>
-          <li>{getLink('Postcard', '/postcard', props.path)}</li>
-          <li>{getLink('Podcasts', '/podcasts', props.path)}</li>
-          <li>{getLink('Books', '/books', props.path)}</li>
-          <li>{getLink('Board', '/board', props.path)}</li>
-          <li>{getLink('Position', '/position', props.path)}</li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
+const AppHeader = (props) => (
+  <header className='header'>
+    <nav className='main-nav'>
+      <ul className='main-nav__list'>
+        <li>
+          <Link to={'/'} className={getLinkClass('/', props)}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to={'/blog'} className={getLinkClass('/blog', props)}>
+            Blog
+          </Link>
+        </li>
+        <li>
+          <Link to={'/postcard'} className={getLinkClass('/postcard', props)}>
+            Postcard
+          </Link>
+        </li>
+        <li>
+          <Link to={'/podcasts'} className={getLinkClass('/podcasts', props)}>
+            Podcasts
+          </Link>
+        </li>
+        <li>
+          <Link to={'/books'} className={getLinkClass('/books', props)}>
+            Books
+          </Link>
+        </li>
+        <li>
+          <Link to={'/board'} className={getLinkClass('/board', props)}>
+            Board
+          </Link>
+        </li>
+        <li>
+          <Link to={'/position'} className={getLinkClass('/position', props)}>
+            Position
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
 
 export default AppHeader;

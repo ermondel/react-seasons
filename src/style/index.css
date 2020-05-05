@@ -44,23 +44,28 @@ h2::first-letter {
 
 /* * main blocks * */
 
-.main-nav__item {
-  text-decoration: none;
-  color: grey;
+.main-nav__item,
+.main-nav__item_active {
   display: block;
   padding: 18px 12px;
+  text-decoration: none;
+  color: grey;
 }
 
-.main-nav__item:hover {
-  background-color: #9acd32;
+.main-nav__item:hover,
+.main-nav__item:focus {
   color: #f7f4f1;
+  background-color: #9acd32;
+  outline: none;
 }
 
 .main-nav__item_active,
-.main-nav__item_active:hover {
-  background-color: #292929;
+.main-nav__item_active:hover,
+.main-nav__item_active:focus {
   color: #f7f4f1;
+  background-color: #292929;
   cursor: default;
+  outline: none;
 }
 
 /* base */
