@@ -32,9 +32,13 @@ class PostcardScene extends Component {
 
   render() {
     return (
-      <ColorContext.Consumer>
-        {({ color }) => this.renderScene(color)}
-      </ColorContext.Consumer>
+      <div className='content'>
+        <div className='content-wrap'>
+          <ColorContext.Consumer>
+            {({ color }) => this.renderScene(color)}
+          </ColorContext.Consumer>
+        </div>
+      </div>
     );
   }
 }
