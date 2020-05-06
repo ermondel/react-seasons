@@ -8,23 +8,32 @@ import Error5xx from '../Error5xx';
 const BoardResourceList = ({ resource }) => {
   const resources = useResources(resource);
 
+  let content = null;
+
   if (resources.status === '1xx') {
-    return <LoadingBarMain />;
+    content = <LoadingBarMain />;
   }
 
   if (resources.status === '5xx') {
-    return <Error5xx />;
+    content = <Error5xx />;
   }
 
   if (resources.status === '2xx' && resource === 'comments') {
-    return <BoardCommentList list={resources.data} />;
+    content = <BoardCommentList list={resources.data} />;
   }
 
   if (resources.status === '2xx' && resource === 'todos') {
-    return <BoardTodosList list={resources.data} />;
+    content = <BoardTodosList list={resources.data} />;
   }
 
-  return null;
+  return (
+    <div className='content'>
+      <div className='content-wrap'>
+        <h2>{resource}</h2>
+        {content}
+      </div>
+    </div>
+  );
 };
 
 export default BoardResourceList;
