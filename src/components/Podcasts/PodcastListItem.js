@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PodcastsItem = ({ podcast, onClickHandler, isActive }) => (
+const PodcastListItem = ({ podcast, onClickHandler, isActive }) => (
   <div className='podcast-list__item'>
     <div className='podcast-list__content'>
       <h3 className='podcast-list__title'>{podcast.title}</h3>
@@ -21,4 +21,4 @@ const PodcastsItem = ({ podcast, onClickHandler, isActive }) => (
   </div>
 );
 
-export default PodcastsItem;
+export default PodcastListItem;
