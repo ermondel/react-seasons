@@ -393,14 +393,29 @@ h2::first-letter {
 }
 
 .post__author_btn:hover,
-.post__author_btn:focus,
-.post__author_btn_active {
+.post__author_btn:focus {
   color: orange;
   border-bottom: 1px dashed orange;
   outline: none;
 }
 
-.post__author_btn::-moz-focus-inner {
+.post__author_btn_active {
+  margin: 0;
+  padding: 2px 1px;
+  border: none;
+  cursor: default;
+  font-size: 12px;
+  color: black;
+  background-color: #967a65;
+  border-bottom: 1px dashed black;
+}
+
+.post__author_btn_active:focus {
+  outline: none;
+}
+
+.post__author_btn::-moz-focus-inner,
+.post__author_btn_active::-moz-focus-inner {
   border: 0;
 }
 
