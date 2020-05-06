@@ -1,23 +1,15 @@
 import React from 'react';
-import PositionDetail from './PositionDetail';
 import useLocation from './useLocation';
-import AcceptCard from './AcceptCard';
+import PositionDetail from './PositionDetail';
+import PositionAccept from './PositionAccept';
 
 const Position = () => {
   const [coords, errorMessage] = useLocation();
 
   return (
     <main className='main'>
-      <div className='sidebar'>
-        <div className='sidebar-wrap'>
-          <PositionDetail geo={coords} />
-        </div>
-      </div>
-      <div className='content'>
-        <div className='content-wrap'>
-          <AcceptCard wait={!errorMessage && !coords} error={errorMessage} />
-        </div>
-      </div>
+      <PositionDetail geo={coords} />
+      <PositionAccept wait={!errorMessage && !coords} error={errorMessage} />
     </main>
   );
 };
