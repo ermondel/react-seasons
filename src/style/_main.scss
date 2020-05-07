@@ -68,7 +68,9 @@
 }
 
 .sidebar-wrap {
-  margin: 20px;
+  position: sticky;
+  top: 0;
+  padding: 20px;
 }
 
 .content {
