@@ -1,6 +1,5 @@
 import React from 'react';
 import ColorContext from '../../contexts/ColorContext';
-import Button from '../Button';
 import colorsSource from './colorsSource';
 
 const ColorSelector = () => (
@@ -8,14 +7,18 @@ const ColorSelector = () => (
     <ColorContext.Consumer>
       {(context) =>
         colorsSource.map((el) => (
-          <Button
-            value={el.color}
-            classNameCommon={`btn-color bg_${el.color}`}
-            classNameActive={`btn-color_active bg_${el.color}`}
-            valueActive={context.color}
+          <button
+            className={
+              el.color === context.color
+                ? `btn-color_active bg_${el.color}`
+                : `btn-color bg_${el.color}`
+            }
             onClick={() => context.onColorChange(el.color)}
+            disabled={el.color === context.color}
             key={el.id}
-          />
+          >
+            {el.color}
+          </button>
         ))
       }
     </ColorContext.Consumer>
