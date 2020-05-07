@@ -1,6 +1,6 @@
 import React from 'react';
 import useLocation from './useLocation';
-import PositionDetail from './PositionDetail';
+import PositionDetails from './PositionDetails';
 import PositionAccept from './PositionAccept';
 
 const Position = () => {
@@ -8,7 +8,7 @@ const Position = () => {
 
   return (
     <main className='main'>
-      <PositionDetail geo={coords} />
+      <PositionDetails geo={coords} />
       <PositionAccept wait={!errorMessage && !coords} error={errorMessage} />
     </main>
   );

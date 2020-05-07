@@ -1,10 +1,10 @@
 import React from 'react';
-import PodcastDetail from './PodcastDetail';
+import PodcastDetails from './PodcastDetails';
 import PodcastList from './PodcastList';
 
 const Podcasts = () => (
   <main className='main'>
-    <PodcastDetail />
+    <PodcastDetails />
     <PodcastList />
   </main>
 );

@@ -1,18 +1,19 @@
 import React from 'react';
+import AppAboutTech from '../AppAboutTech';
 
-const PositionDetail = ({ geo }) => {
+const PositionDetails = ({ geo }) => {
   const content = geo ? (
-    <div className='detail'>
-      <h3 className='detail__title'>Your coordinates</h3>
-      <p className='detail__item'>
+    <div className='details'>
+      <h3 className='details__title'>Your coordinates</h3>
+      <p className='details__item'>
         <span className='l'>Latitude</span>{' '}
         <span className='r'>{geo.latitude.toFixed(6)}</span>
       </p>
-      <p className='detail__item'>
+      <p className='details__item'>
         <span className='l'>Longitude</span>{' '}
         <span className='r'>{geo.longitude.toFixed(6)}</span>
       </p>
-      <p className='detail__item'>
+      <p className='details__item'>
         <span className='l'>Accuracy</span>{' '}
         <span className='r'>{geo.accuracy}</span>
       </p>
@@ -21,9 +22,12 @@ const PositionDetail = ({ geo }) => {
 
   return (
     <div className='sidebar'>
-      <div className='sidebar-wrap'>{content}</div>
+      <div className='sidebar-wrap'>
+        {content}
+        <AppAboutTech list={['React', 'React Hooks', 'Geolocation API']} />
+      </div>
     </div>
   );
 };
 
-export default PositionDetail;
+export default PositionDetails;

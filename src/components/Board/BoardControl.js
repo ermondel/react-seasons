@@ -25,7 +25,7 @@ const BoardControl = ({ res, onButtonClick }) => (
         </div>
         <BoardUserList />
       </div>
-      <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder']} />
+      <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder API']} />
     </div>
   </div>
 );
