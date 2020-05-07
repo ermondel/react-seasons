@@ -1,0 +1,70 @@
+.loading-bar-main {
+  text-align: center;
+  color: $color-util;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
+
+.loading-bar-sidebar {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.remote-error {
+  text-align: center;
+  color: $color-base;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: $color-base;
+}
+
+.l {
+  float: left;
+}
+
+.r {
+  float: right;
+}
+
+.bg_blue {
+  background-color: blue;
+}
+
+.bg_red {
+  background-color: red;
+}
+
+.bg_green {
+  background-color: green;
+}
+
+.bg_orange {
+  background-color: orange;
+}
+
+.bg_violet {
+  background-color: violet;
+}
+
+.bg_purple {
+  background-color: purple;
+}
+
+.bg_brown {
+  background-color: brown;
+}
+
+.bg_yellow {
+  background-color: yellow;
+  color: $color-base;
+}
+
+.blank {
+  height: 2000px;
+}

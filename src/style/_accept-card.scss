@@ -1,0 +1,17 @@
+.accept-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-util;
+  text-transform: uppercase;
+  font-size: 90%;
+  margin-top: 20%;
+}
+
+.accept-card_error {
+  color: $color-common;
+  background-color: $color-base;
+  margin-top: 50px;
+  padding: 15px;
+  border-radius: 5px;
+}

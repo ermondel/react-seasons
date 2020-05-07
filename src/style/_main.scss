@@ -1,0 +1,80 @@
+.main-nav__item,
+.main-nav__item_active {
+  display: block;
+  padding: 18px 12px;
+  text-decoration: none;
+  color: $color-minor;
+}
+
+.main-nav__item:hover,
+.main-nav__item:focus {
+  color: $color-extra;
+  background-color: $color-hover-common;
+  outline: none;
+}
+
+.main-nav__item_active,
+.main-nav__item_active:hover,
+.main-nav__item_active:focus {
+  color: $color-extra;
+  background-color: $color-sidebar-bg;
+  cursor: default;
+  outline: none;
+}
+
+.app-wrap {
+  display: flex;
+}
+
+.header {
+  min-height: 100vh;
+  background-color: $color-base;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 30%;
+  min-height: 100vh;
+  background-color: $color-sidebar-bg;
+  position: relative;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  z-index: 2;
+  background-color: $color-sidebar-bg;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-wrap {
+  margin: 20px;
+}
+
+.content {
+  width: 100%;
+}
+
+.content-wrap {
+  margin: 20px 40px;
+}

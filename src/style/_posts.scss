@@ -1,0 +1,81 @@
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-main;
+}
+
+.post__title {
+  margin: 5px;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.post__body {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  flex-grow: 2;
+  background-color: $color-common-bg;
+}
+
+.post__title::first-letter,
+.post__body::first-letter {
+  text-transform: uppercase;
+}
+
+.post__info {
+  margin: 5px;
+  padding: 10px;
+}
+
+.post__author {
+  color: $color-common;
+  font-size: small;
+}
+
+.post__author_btn {
+  margin: 0;
+  padding: 2px 1px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: inherit;
+  background-color: $color-main;
+  border-bottom: 1px dashed transparent;
+}
+
+.post__author_btn:hover,
+.post__author_btn:focus {
+  color: $color-hover-extra;
+  border-bottom: 1px dashed $color-hover-extra;
+  outline: none;
+}
+
+.post__author_btn_active {
+  margin: 0;
+  padding: 2px 1px;
+  border: none;
+  cursor: default;
+  font-size: 12px;
+  color: $color-base;
+  background-color: $color-main;
+  border-bottom: 1px dashed $color-base;
+}
+
+.post__author_btn_active:focus {
+  outline: none;
+}
+
+.post__author_btn::-moz-focus-inner,
+.post__author_btn_active::-moz-focus-inner {
+  border: 0;
+}

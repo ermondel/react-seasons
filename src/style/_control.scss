@@ -1,0 +1,61 @@
+.control_btns {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.btn-common,
+.btn-color,
+.btn-common_active,
+.btn-color_active {
+  border: none;
+  margin: 0;
+  padding: 20px 0px;
+  width: 50%;
+  min-width: 100px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+}
+
+.btn-common {
+  color: $color-extra;
+  background-color: $color-base;
+}
+
+.btn-common:hover,
+.btn-common:focus {
+  color: $color-extra;
+  background-color: $color-hover-common;
+}
+
+.btn-common_active,
+.btn-common_active:hover {
+  color: $color-extra;
+  background-color: $color-minor;
+  cursor: default;
+}
+
+.btn-color {
+  color: $color-extra;
+  border: 1px solid transparent;
+}
+
+.btn-color:hover,
+.btn-color:focus {
+  border-color: $color-extra;
+}
+
+.btn-color_active,
+.btn-color_active:hover {
+  border: 1px solid $color-extra;
+  color: $color-extra;
+  cursor: default;
+}
+
+.btn-common::-moz-focus-inner,
+.btn-common_active::-moz-focus-inner,
+.btn-color::-moz-focus-inner,
+.btn-color_active::-moz-focus-inner {
+  border: 0;
+}

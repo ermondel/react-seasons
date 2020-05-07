@@ -1,0 +1,30 @@
+.postcard__scene {
+  margin-top: 75px;
+  width: 600px;
+  display: flex;
+}
+
+.postcard__panel-left {
+  width: 300px;
+  height: 400px;
+  margin-right: -43px;
+  border: 1px solid $color-common;
+  transform: perspective(600px) rotateY(35deg);
+}
+
+.postcard__panel-right {
+  width: 260px;
+  height: 360px;
+  margin-left: -43px;
+  padding: 20px;
+  border: 1px solid $color-common;
+  transform: perspective(600px) rotateY(-35deg);
+}
+
+.postcard__text {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}

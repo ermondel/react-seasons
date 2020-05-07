@@ -1,0 +1,54 @@
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.copyright {
+  margin: 0;
+  padding: 5px 20px;
+  font-size: 70%;
+  text-align: right;
+  color: $color-copy;
+}
+
+.copyright a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+.info-tech {
+  position: fixed;
+  bottom: 0;
+  left: 110px;
+  font-size: small;
+  color: #696969;
+  margin-bottom: 50px;
+}
+
+.info-tech a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-tech a:hover {
+  text-decoration: underline;
+}
+
+.info-tech__title {
+  color: $color-base;
+  font-weight: normal;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $color-base;
+  margin-bottom: 25px;
+}
+
+.info-tech__item {
+  margin-bottom: 3px;
+}
