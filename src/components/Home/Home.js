@@ -8,6 +8,16 @@ const Home = () => (
     <div className='content'>
       <div className='content-wrap'>
         <h2>Platform</h2>
+        <div className='main-info'>under construction...</div>
+        <div className='sources'>
+          <p className='sources__item'>
+            Photo of the island by Ahmed Sharyaan on Unsplash.
+          </p>
+          <p className='sources__item'>
+            Image of the compass by Bunzellisa on Pixabay.
+          </p>
+          <p className='sources__item'>Loading GIF from loading.io.</p>
+        </div>
       </div>
     </div>
   </main>
