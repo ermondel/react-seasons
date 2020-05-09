@@ -3,7 +3,31 @@ import { connect } from 'react-redux';
 import AppAboutTech from '../AppAboutTech';
 
 const BooksDetails = ({ book }) => {
-  let content = book ? <div>{book.title}</div> : null;
+  let content = book ? (
+    <div className='details'>
+      <h3 className='details__title'>{book.title}</h3>
+      <p className='details__item'>
+        <span className='l'>Author</span>
+        <span className='r'>{book.author}</span>
+      </p>
+      <p className='details__item'>
+        <span className='l'>Year</span>
+        <span className='r'>{book.year}</span>
+      </p>
+      <p className='details__item'>
+        <span className='l'>Genre</span>
+        <span className='r'>{book.genre}</span>
+      </p>
+      <p className='details__item'>
+        <span className='l'>Publisher</span>
+        <span className='r'>{book.publisher}</span>
+      </p>
+      <p className='details__item'>
+        <span className='l'>Pages</span>
+        <span className='r'>{book.pages}</span>
+      </p>
+    </div>
+  ) : null;
 
   return (
     <div className='sidebar'>
