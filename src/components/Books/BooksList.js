@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { selectBook } from '../../actions/books';
 import books from './booksSource';
+import BooksListItem from './BooksListItem';
 
 const BooksList = (props) => (
   <div className='content'>
@@ -10,16 +11,12 @@ const BooksList = (props) => (
 
       <div className='book-list'>
         {books.map((book) => (
-          <div
+          <BooksListItem
             key={book.id}
-            onClick={() => props.selectBook(book)}
-            style={{
-              color: props.activeID === book.id ? 'green' : 'white',
-              cursor: 'pointer',
-            }}
-          >
-            {book.title}
-          </div>
+            book={book}
+            isActive={props.activeID === book.id}
+            onClickHandler={() => props.selectBook(book)}
+          />
         ))}
       </div>
     </div>
