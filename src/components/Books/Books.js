@@ -1,13 +1,11 @@
 import React from 'react';
+import BooksDetails from './BooksDetails';
+import BooksList from './BooksList';
 
 const Books = () => (
-  <main className="main">
-    <div className="sidebar">
-      <div className="sidebar-wrap">Books sidebar</div>
-    </div>
-    <div className="content">
-      <div className="content-wrap">Books content</div>
-    </div>
+  <main className='main'>
+    <BooksDetails />
+    <BooksList />
   </main>
 );
 
