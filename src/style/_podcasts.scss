@@ -48,3 +48,36 @@
 .podcast-list__btn {
   width: 100px;
 }
+
+.btn-select {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  padding: 16px 0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: $color-common;
+  background-color: $color-main;
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover-common;
+    outline: none;
+  }
+}
+
+.btn-select_active {
+  margin: 0;
+  border: none;
+  cursor: default;
+  padding: 16px 0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: $color-common;
+  background-color: $color-base;
+}
+
+.btn-select::-moz-focus-inner,
+.btn-select_active::-moz-focus-inner {
+  border: 0;
+}

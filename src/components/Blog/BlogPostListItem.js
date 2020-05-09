@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BlogPostListItem = ({ post, user, onItemClick }) => (
-  <div key={post.id} className='post'>
+  <article key={post.id} className='post'>
     <h3 className='post__title'>{post.title}</h3>
     <p className='post__body'>{post.body}</p>
     <p className='post__info'>
@@ -23,7 +23,7 @@ const BlogPostListItem = ({ post, user, onItemClick }) => (
         </button>
       </span>
     </p>
-  </div>
+  </article>
 );
 
 export default BlogPostListItem;

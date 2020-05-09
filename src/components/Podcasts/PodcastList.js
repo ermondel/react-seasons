@@ -14,7 +14,7 @@ const PodcastList = (props) => (
           <PodcastListItem
             key={podcast.id}
             podcast={podcast}
-            isActive={props.isActive === podcast.id}
+            isActive={props.activeID === podcast.id}
             onClickHandler={() => props.selectPodcast(podcast)}
           />
         ))}
@@ -24,7 +24,7 @@ const PodcastList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-  isActive: state.podcast ? state.podcast.id : null,
+  activeID: state.podcast ? state.podcast.id : null,
 });
 
 export default connect(mapStateToProps, { selectPodcast })(PodcastList);

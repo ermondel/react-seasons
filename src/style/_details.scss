@@ -22,10 +22,10 @@
   padding-bottom: 3px;
   border-bottom: 1px dotted $color-minor;
   margin-bottom: 12px;
-}
 
-.details__item:hover {
-  border-color: $color-hover-extra;
+  &:hover {
+    border-color: $color-hover-extra;
+  }
 }
 
 .details__btns {
@@ -45,11 +45,11 @@
   font-size: 13px;
   float: left;
   background-color: $color-detail-btn-main;
-}
 
-.details__btn_main:hover {
-  background-color: $color-hover-common;
-  color: $color-extra;
+  &:hover {
+    background-color: $color-hover-common;
+    color: $color-extra;
+  }
 }
 
 .details__btn_link {
@@ -59,8 +59,8 @@
   color: $color-minor;
   cursor: pointer;
   float: right;
-}
 
-.details__btn_link:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

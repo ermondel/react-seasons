@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PodcastListItem = ({ podcast, onClickHandler, isActive }) => (
-  <div className='podcast-list__item'>
+  <article className='podcast-list__item'>
     <div className='podcast-list__content'>
       <h3 className='podcast-list__title'>{podcast.title}</h3>
       <p className='podcast-list__duration'>{podcast.duration}</p>
@@ -18,7 +18,7 @@ const PodcastListItem = ({ podcast, onClickHandler, isActive }) => (
         {isActive ? 'Selected' : 'Select'}
       </button>
     </div>
-  </div>
+  </article>
 );
 
 export default PodcastListItem;
