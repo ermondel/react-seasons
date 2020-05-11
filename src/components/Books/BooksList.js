@@ -2,20 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { selectBook } from '../../actions/books';
 import books from './booksSource';
-import BooksListItem from './BooksListItem';
+// import BooksListItem from './BooksListItem';
+import CoversItem from './CoversItem';
 
 const BooksList = (props) => (
   <div className='content'>
     <div className='content-wrap'>
       <h2>Books</h2>
 
-      <div className='book-list'>
+      <div className='covers'>
         {books.map((book) => (
-          <BooksListItem
+          <CoversItem
             key={book.id}
             book={book}
             isActive={props.activeID === book.id}
-            onClickHandler={() => props.selectBook(book)}
+            onSelect={() => props.selectBook(book)}
           />
         ))}
       </div>

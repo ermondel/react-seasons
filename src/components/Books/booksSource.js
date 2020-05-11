@@ -7,6 +7,7 @@ export default [
     genre: 'Modernist novel',
     publisher: 'Sylvia Beach',
     pages: 730,
+    cover: 'Ulysses.jpg',
   },
   {
     id: '6f7587e5-7449-484f-98b0-1d28dfca2ef9',
@@ -16,6 +17,7 @@ export default [
     genre: 'Tragedy',
     publisher: "Charles Scribner's Sons",
     pages: 218,
+    cover: 'TheGreatGatsby.jpg',
   },
   {
     id: 'c8a1abf3-60e3-44d9-a630-81c717c5814c',
@@ -25,6 +27,7 @@ export default [
     genre: 'Modernism',
     publisher: 'B. W. Huebsch',
     pages: 299,
+    cover: 'APortraitOfTheArtistAsAYoungMan.jpg',
   },
   {
     id: 'a2ce04ef-2c62-4996-b3d8-b13a8441770d',
@@ -34,6 +37,7 @@ export default [
     genre: 'Novel',
     publisher: 'Olympia Press',
     pages: 336,
+    cover: 'Lolita.jpg',
   },
   {
     id: 'bd20e6ce-292c-48a2-88f4-b19e7d588b92',
@@ -43,6 +47,7 @@ export default [
     genre: 'Dystopian fiction',
     publisher: 'Chatto & Windus',
     pages: 311,
+    cover: 'BraveNewWorld.jpg',
   },
   {
     id: 'b39f923c-a111-4f5c-9ae6-17a29a27c236',
@@ -52,6 +57,7 @@ export default [
     genre: 'Modernist novel',
     publisher: 'J. Cape and H. Smith',
     pages: 326,
+    cover: 'TheSoundAndTheFury.jpg',
   },
   {
     id: 'cef99171-4d4a-48a4-bf70-ab4e26e4ba86',
@@ -61,6 +67,7 @@ export default [
     genre: 'Satire',
     publisher: 'Simon & Schuster',
     pages: 453,
+    cover: 'Catch-22.jpg',
   },
   {
     id: '3578f03d-02f7-40df-af90-6df83a2f2ba9',
@@ -70,6 +77,7 @@ export default [
     genre: 'Novel',
     publisher: 'Macmillan',
     pages: 254,
+    cover: 'DarknessAtNoon.jpg',
   },
   {
     id: '5c9ecd8f-5460-41dd-9195-b4256738bfbe',
@@ -79,6 +87,7 @@ export default [
     genre: 'Autobiographical novel',
     publisher: 'G. Duckworth and Co. Ltd',
     pages: 423,
+    cover: 'SonsAndLovers.jpg',
   },
   {
     id: 'a93fb518-02f2-4b66-9cd2-6ba436d38dfc',
@@ -88,5 +97,6 @@ export default [
     genre: 'Novel',
     publisher: 'The Viking Press-J. Lloyd',
     pages: 464,
+    cover: 'TheGrapesOfWrath.jpg',
   },
 ];

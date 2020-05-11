@@ -17,6 +17,7 @@ const Home = () => (
             Image of the compass by Bunzellisa on Pixabay.
           </p>
           <p className='sources__item'>Loading GIF from loading.io.</p>
+          <p className='sources__item'>Book covers from Wikipedia.</p>
         </div>
       </div>
     </div>
