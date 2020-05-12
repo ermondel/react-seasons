@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AppAboutTech from '../AppAboutTech';
 
 const BooksDetails = ({ book }) => {
-  let content = book ? (
+  return book ? (
     <div className='details'>
       <h3 className='details__title'>{book.title}</h3>
       <p className='details__item'>
@@ -28,15 +27,6 @@ const BooksDetails = ({ book }) => {
       </p>
     </div>
   ) : null;
-
-  return (
-    <div className='sidebar'>
-      <div className='sidebar-wrap'>
-        {content}
-        <AppAboutTech list={['React', 'Redux']} />
-      </div>
-    </div>
-  );
 };
 
 const mapStateToProps = (state) => ({

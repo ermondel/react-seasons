@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BooksListItem = ({ book, onClickHandler, isActive }) => (
+const ListItem = ({ book, onClickHandler, isActive }) => (
   <article className={isActive ? 'book-list__item_active' : 'book-list__item'}>
     <h3 className='book-list__title'>{book.title}</h3>
     <p className='book-list__author'>{book.author}</p>
@@ -19,4 +19,4 @@ const BooksListItem = ({ book, onClickHandler, isActive }) => (
   </article>
 );
 
-export default BooksListItem;
+export default ListItem;

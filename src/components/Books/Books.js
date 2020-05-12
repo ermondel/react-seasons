@@ -1,10 +1,10 @@
 import React from 'react';
-import BooksDetails from './BooksDetails';
+import BooksSidebar from './BooksSidebar';
 import BooksList from './BooksList';
 
 const Books = () => (
   <main className='main'>
-    <BooksDetails />
+    <BooksSidebar />
     <BooksList />
   </main>
 );
