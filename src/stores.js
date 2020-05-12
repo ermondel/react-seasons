@@ -4,6 +4,7 @@ import blogPostsReducer from './reducers/blogPostsReducer';
 import blogUserReducer from './reducers/blogUserReducer';
 import bookActiveReducer from './reducers/bookActiveReducer';
 import booksViewReducer from './reducers/booksViewReducer';
+import bookSearchReducer from './reducers/bookSearchReducer';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   bloguser: blogUserReducer,
   bookActive: bookActiveReducer,
   booksView: booksViewReducer,
+  bookSearch: bookSearchReducer,
 });
