@@ -1,11 +1,11 @@
-import { BOOK_SELECTED, BOOKS_VIEW_CHANGED } from '../types';
+import { SET_ACTIVE_BOOK, SET_BOOKS_VIEW } from '../types';
 
 export const selectBook = (book) => ({
-  type: BOOK_SELECTED,
+  type: SET_ACTIVE_BOOK,
   payload: book,
 });
 
 export const changeBooksView = (view = 'list') => ({
-  type: BOOKS_VIEW_CHANGED,
+  type: SET_BOOKS_VIEW,
   view,
 });

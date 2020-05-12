@@ -30,7 +30,7 @@ const BooksDetails = ({ book }) => {
 };
 
 const mapStateToProps = (state) => ({
-  book: state.book,
+  book: state.bookActive,
 });
 
 export default connect(mapStateToProps)(BooksDetails);

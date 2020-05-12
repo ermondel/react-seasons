@@ -26,7 +26,7 @@ const BooksControl = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-  view: state.books_view,
+  view: state.booksView,
 });
 
 export default connect(mapStateToProps, { changeBooksView })(BooksControl);

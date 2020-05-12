@@ -49,8 +49,8 @@ const BooksList = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  activeID: state.book ? state.book.id : null,
-  view: state.books_view,
+  activeID: state.bookActive && state.bookActive.id,
+  view: state.booksView,
 });
 
 export default connect(mapStateToProps, { selectBook })(BooksList);
