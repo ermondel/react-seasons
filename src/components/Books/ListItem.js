@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem = ({ book, onClickHandler, isActive }) => (
+const ListItem = ({ book, isActive, onItemSelect }) => (
   <article className={isActive ? 'book-list__item_active' : 'book-list__item'}>
     <h3 className='book-list__title'>{book.title}</h3>
     <p className='book-list__author'>{book.author}</p>
@@ -10,7 +10,7 @@ const ListItem = ({ book, onClickHandler, isActive }) => (
         className={`book-list__btn ${
           isActive ? ' btn-about_active' : 'btn-about'
         }`}
-        onClick={onClickHandler}
+        onClick={onItemSelect}
         disabled={isActive}
       >
         about

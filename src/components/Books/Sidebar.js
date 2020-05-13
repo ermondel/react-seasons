@@ -1,16 +1,16 @@
 import React from 'react';
-import BooksControl from './BooksControl';
-import BooksDetails from './BooksDetails';
+import Control from './Control';
+import Details from './Details';
 import AppAboutTech from '../AppAboutTech';
 
-const BooksSidebar = () => (
+const Sidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
-      <BooksControl />
-      <BooksDetails />
+      <Control />
+      <Details />
       <AppAboutTech list={['React', 'Redux']} />
     </div>
   </div>
 );
 
-export default BooksSidebar;
+export default Sidebar;

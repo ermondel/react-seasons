@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CoversItem = ({ book, onSelect, isActive }) => (
+const CoversItem = ({ book, isActive, onItemSelect }) => (
   <div className='covers-item'>
     <img
       src={`${process.env.PUBLIC_URL}/images/covers/${book.cover}`}
@@ -13,12 +13,12 @@ const CoversItem = ({ book, onSelect, isActive }) => (
       }
       onKeyPress={(event) => {
         if (event.key === 'Enter') {
-          onSelect();
+          onItemSelect();
         }
       }}
       disabled={isActive}
     >
-      <span onClick={onSelect}>about</span>
+      <span onClick={onItemSelect}>about</span>
     </button>
   </div>
 );

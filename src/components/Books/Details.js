@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const BooksDetails = ({ book }) => {
+const Details = ({ book }) => {
   return book ? (
     <div className='details'>
       <h3 className='details__title'>{book.title}</h3>
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => ({
   book: state.bookActive,
 });
 
-export default connect(mapStateToProps)(BooksDetails);
+export default connect(mapStateToProps)(Details);
