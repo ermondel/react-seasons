@@ -26,6 +26,10 @@
   &:hover {
     border-color: $color-hover-extra;
   }
+
+  & .l::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .details__btns {

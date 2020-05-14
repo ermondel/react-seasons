@@ -1,37 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import DetailsBlock from '../DetailsBlock';
 
 const UserDetails = ({ user }) => {
   return user ? (
-    <div className='details'>
-      <h3 className='details__title'>{user.name}</h3>
-      <p className='details__item'>
-        <span className='l'>email</span> <span className='r'>{user.email}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>username</span>{' '}
-        <span className='r'>{user.username}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>phone</span> <span className='r'>{user.phone}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>website</span>{' '}
-        <span className='r'>{user.website}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>company</span>{' '}
-        <span className='r'>{user.company.name}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>city</span>{' '}
-        <span className='r'>{user.address.city}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>zipcode</span>{' '}
-        <span className='r'>{user.address.zipcode}</span>
-      </p>
-    </div>
+    <DetailsBlock
+      title={user.name}
+      email={user.email}
+      username={user.username}
+      phone={user.phone}
+      website={user.website}
+      company={user.company.name}
+      city={user.address.city}
+      zipcode={user.address.zipcode}
+    />
   ) : null;
 };
 

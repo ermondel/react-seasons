@@ -1,39 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SidebarInfo from '../SidebarInfo';
+import DetailsBlock from '../DetailsBlock';
 
-const PodcastDetails = ({ podcast }) => {
-  let content = podcast ? (
-    <div className='details'>
-      <h3 className='details__title'>{podcast.title}</h3>
-      <p className='details__item'>
-        <span className='l'>Duration</span>{' '}
-        <span className='r'>{podcast.duration}</span>
-      </p>
-      <p className='details__item'>
-        <span className='l'>Author</span>{' '}
-        <span className='r'>{podcast.author}</span>
-      </p>
-      <p className='details__btns'>
-        <button className='details__btn_main' title='disabled!'>
-          Play
-        </button>
-        <a href='/podcasts' className='details__btn_link' title='disabled!'>
-          download
-        </a>
-      </p>
+const PodcastDetails = ({ podcast }) => (
+  <div className='sidebar'>
+    <div className='sidebar-wrap'>
+      {podcast ? (
+        <DetailsBlock
+          title={podcast.title}
+          duration={podcast.duration}
+          author={podcast.author}
+          btns={true}
+        />
+      ) : null}
+      <SidebarInfo list='React, Redux' />
     </div>
-  ) : null;
-
-  return (
-    <div className='sidebar'>
-      <div className='sidebar-wrap'>
-        {content}
-        <SidebarInfo list='React, Redux' />
-      </div>
-    </div>
-  );
-};
+  </div>
+);
 
 const mapStateToProps = (state) => ({
   podcast: state.podcast,
