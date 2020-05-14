@@ -1,13 +1,13 @@
 import React from 'react';
 import useResources from './useResources';
-import LoadingBarSidebar from '../LoadingBarSidebar';
+import Loading from '../Loading';
 import Error5xx from '../Error5xx';
 
 const UserList = () => {
   const users = useResources('users');
 
   if (users.status === '1xx') {
-    return <LoadingBarSidebar />;
+    return <Loading type='sidebar' />;
   }
 
   if (users.status === '5xx') {

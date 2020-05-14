@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PostItem from './PostItem';
-import LoadingBarMain from '../LoadingBarMain';
+import Loading from '../Loading';
 import Error5xx from '../Error5xx';
 import { fetchBlogPosts, selectBlogUser } from '../../actions/blog';
 
@@ -12,7 +12,7 @@ class PostList extends Component {
 
   renderContent() {
     if (this.props.posts.status === '1xx') {
-      return <LoadingBarMain />;
+      return <Loading type='main' />;
     }
 
     if (this.props.posts.status === '5xx') {

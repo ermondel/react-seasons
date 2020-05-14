@@ -2,7 +2,7 @@ import React from 'react';
 import useResources from './useResources';
 import PostList from './PostList';
 import TodoList from './TodoList';
-import LoadingBarMain from '../LoadingBarMain';
+import Loading from '../Loading';
 import Error5xx from '../Error5xx';
 
 const ResourceList = ({ resource }) => {
@@ -11,7 +11,7 @@ const ResourceList = ({ resource }) => {
   let content = null;
 
   if (resources.status === '1xx') {
-    content = <LoadingBarMain />;
+    content = <Loading type='main' />;
   }
 
   if (resources.status === '5xx') {
