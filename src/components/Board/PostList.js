@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BoardCommentList = ({ list }) => (
+const PostList = ({ list }) => (
   <div className='post-list'>
     {list.map((post) => (
       <article key={post.id} className='post'>
@@ -14,4 +14,4 @@ const BoardCommentList = ({ list }) => (
   </div>
 );
 
-export default BoardCommentList;
+export default PostList;

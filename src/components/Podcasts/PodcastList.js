@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { selectPodcast } from '../../actions/podcast';
-import PodcastListItem from './PodcastListItem';
+import PodcastItem from './PodcastItem';
 import podcasts from './podcastsSource';
 
 const PodcastList = (props) => (
@@ -11,7 +11,7 @@ const PodcastList = (props) => (
 
       <div className='podcast-list'>
         {podcasts.map((podcast) => (
-          <PodcastListItem
+          <PodcastItem
             key={podcast.id}
             podcast={podcast}
             isActive={props.activeID === podcast.id}

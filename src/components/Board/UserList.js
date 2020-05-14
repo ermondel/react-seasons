@@ -3,7 +3,7 @@ import useResources from './useResources';
 import LoadingBarSidebar from '../LoadingBarSidebar';
 import Error5xx from '../Error5xx';
 
-const BoardUserList = () => {
+const UserList = () => {
   const users = useResources('users');
 
   if (users.status === '1xx') {
@@ -29,4 +29,4 @@ const BoardUserList = () => {
   return null;
 };
 
-export default BoardUserList;
+export default UserList;

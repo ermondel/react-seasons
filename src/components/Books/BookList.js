@@ -19,7 +19,7 @@ const filterBooksByQuery = (query) => {
   });
 };
 
-const Content = (props) => (
+const BookList = (props) => (
   <div className='content'>
     <div className='content-wrap'>
       <h2>Books</h2>
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => ({
   query: state.bookSearch,
 });
 
-export default connect(mapStateToProps, { selectBook, bookSearch })(Content);
+export default connect(mapStateToProps, { selectBook, bookSearch })(BookList);

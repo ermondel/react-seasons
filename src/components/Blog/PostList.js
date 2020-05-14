@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BlogPostListItem from './BlogPostListItem';
+import PostItem from './PostItem';
 import LoadingBarMain from '../LoadingBarMain';
 import Error5xx from '../Error5xx';
 import { fetchBlogPosts, selectBlogUser } from '../../actions/blog';
 
-class BlogPostList extends Component {
+class PostList extends Component {
   componentDidMount() {
     this.props.fetchBlogPosts();
   }
@@ -23,7 +23,7 @@ class BlogPostList extends Component {
       return (
         <div className='post-list'>
           {this.props.posts.data.map((post) => (
-            <BlogPostListItem
+            <PostItem
               post={post}
               user={this.props.user}
               onItemClick={() => this.props.selectBlogUser(post.user)}
@@ -42,6 +42,7 @@ class BlogPostList extends Component {
       <div className='content'>
         <div className='content-wrap'>
           <h2>Blog posts</h2>
+
           {this.renderContent()}
         </div>
       </div>
@@ -50,11 +51,11 @@ class BlogPostList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  posts: state.blogposts,
-  user: state.bloguser,
+  posts: state.blogPosts,
+  user: state.blogUser,
 });
 
 export default connect(mapStateToProps, {
   fetchBlogPosts,
   selectBlogUser,
-})(BlogPostList);
+})(PostList);

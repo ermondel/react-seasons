@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { changeBooksView } from '../../actions/books';
 
-const Control = (props) => (
+const ViewMode = (props) => (
   <div className='control'>
     <div className='control_btns'>
       <button
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => ({
   view: state.booksView,
 });
 
-export default connect(mapStateToProps, { changeBooksView })(Control);
+export default connect(mapStateToProps, { changeBooksView })(ViewMode);

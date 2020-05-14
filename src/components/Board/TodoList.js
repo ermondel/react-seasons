@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BoardTodosList = ({ list }) => (
+const TodoList = ({ list }) => (
   <div className='todos-list'>
     {list.map((el) => (
       <article
@@ -13,4 +13,4 @@ const BoardTodosList = ({ list }) => (
   </div>
 );
 
-export default BoardTodosList;
+export default TodoList;

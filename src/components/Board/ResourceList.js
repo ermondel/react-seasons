@@ -1,11 +1,11 @@
 import React from 'react';
 import useResources from './useResources';
-import BoardCommentList from './BoardCommentList';
-import BoardTodosList from './BoardTodosList';
+import PostList from './PostList';
+import TodoList from './TodoList';
 import LoadingBarMain from '../LoadingBarMain';
 import Error5xx from '../Error5xx';
 
-const BoardResourceList = ({ resource }) => {
+const ResourceList = ({ resource }) => {
   const resources = useResources(resource);
 
   let content = null;
@@ -19,21 +19,22 @@ const BoardResourceList = ({ resource }) => {
   }
 
   if (resources.status === '2xx' && resource === 'comments') {
-    content = <BoardCommentList list={resources.data} />;
+    content = <PostList list={resources.data} />;
   }
 
   if (resources.status === '2xx' && resource === 'todos') {
-    content = <BoardTodosList list={resources.data} />;
+    content = <TodoList list={resources.data} />;
   }
 
   return (
     <div className='content'>
       <div className='content-wrap'>
         <h2>{resource}</h2>
+
         {content}
       </div>
     </div>
   );
 };
 
-export default BoardResourceList;
+export default ResourceList;

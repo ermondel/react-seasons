@@ -8,8 +8,8 @@ import bookSearchReducer from './reducers/bookSearchReducer';
 
 export default combineReducers({
   podcast: podcastReducer,
-  blogposts: blogPostsReducer,
-  bloguser: blogUserReducer,
+  blogPosts: blogPostsReducer,
+  blogUser: blogUserReducer,
   bookActive: bookActiveReducer,
   booksView: booksViewReducer,
   bookSearch: bookSearchReducer,

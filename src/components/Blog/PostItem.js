@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BlogPostListItem = ({ post, user, onItemClick }) => (
+const PostItem = ({ post, user, onItemClick }) => (
   <article key={post.id} className='post'>
     <h3 className='post__title'>{post.title}</h3>
     <p className='post__body'>{post.body}</p>
@@ -26,4 +26,4 @@ const BlogPostListItem = ({ post, user, onItemClick }) => (
   </article>
 );
 
-export default BlogPostListItem;
+export default PostItem;

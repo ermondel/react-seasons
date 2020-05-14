@@ -1,11 +1,11 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import Content from './Content';
+import BooksSidebar from './BooksSidebar';
+import BookList from './BookList';
 
 const Books = () => (
   <main className='main'>
-    <Sidebar />
-    <Content />
+    <BooksSidebar />
+    <BookList />
   </main>
 );
 

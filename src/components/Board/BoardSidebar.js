@@ -1,8 +1,8 @@
 import React from 'react';
-import BoardUserList from './BoardUserList';
+import UserList from './UserList';
 import AppAboutTech from '../AppAboutTech';
 
-const BoardControl = ({ res, onButtonClick }) => (
+const BoardSidebar = ({ res, onButtonClick }) => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <div className='control'>
@@ -23,11 +23,11 @@ const BoardControl = ({ res, onButtonClick }) => (
             todos
           </button>
         </div>
-        <BoardUserList />
+        <UserList />
       </div>
       <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder API']} />
     </div>
   </div>
 );
 
-export default BoardControl;
+export default BoardSidebar;
