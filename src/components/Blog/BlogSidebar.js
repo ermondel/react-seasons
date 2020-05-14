@@ -1,14 +1,12 @@
 import React from 'react';
 import UserDetails from './UserDetails';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const BlogSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <UserDetails />
-      <AppAboutTech
-        list={['React', 'Redux', 'Redux Thunk', 'JSONPlaceholder API']}
-      />
+      <SidebarInfo list='React, Redux, Redux Thunk, JSONPlaceholder API' />
     </div>
   </div>
 );

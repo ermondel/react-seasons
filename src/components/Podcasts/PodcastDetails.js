@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const PodcastDetails = ({ podcast }) => {
   let content = podcast ? (
@@ -29,7 +29,7 @@ const PodcastDetails = ({ podcast }) => {
     <div className='sidebar'>
       <div className='sidebar-wrap'>
         {content}
-        <AppAboutTech list={['React', 'Redux']} />
+        <SidebarInfo list='React, Redux' />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import LanguageSelector from './LanguageSelector';
 import ColorSelector from './ColorSelector';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const PostcardDetails = () => (
   <div className='sidebar'>
@@ -10,7 +10,7 @@ const PostcardDetails = () => (
         <LanguageSelector />
         <ColorSelector />
       </div>
-      <AppAboutTech list={['React', 'React Context']} />
+      <SidebarInfo list='React, React Context' />
     </div>
   </div>
 );

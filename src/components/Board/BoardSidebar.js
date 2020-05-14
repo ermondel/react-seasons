@@ -1,6 +1,6 @@
 import React from 'react';
 import UserList from './UserList';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const BoardSidebar = ({ res, onButtonClick }) => (
   <div className='sidebar'>
@@ -25,7 +25,7 @@ const BoardSidebar = ({ res, onButtonClick }) => (
         </div>
         <UserList />
       </div>
-      <AppAboutTech list={['React', 'React Hooks', 'JSONPlaceholder API']} />
+      <SidebarInfo list='React, React Hooks, JSONPlaceholder API' />
     </div>
   </div>
 );

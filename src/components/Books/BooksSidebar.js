@@ -1,14 +1,14 @@
 import React from 'react';
 import ViewMode from './ViewMode';
 import BookDetails from './BookDetails';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const BooksSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <ViewMode />
       <BookDetails />
-      <AppAboutTech list={['React', 'Redux']} />
+      <SidebarInfo list='React, Redux' />
     </div>
   </div>
 );

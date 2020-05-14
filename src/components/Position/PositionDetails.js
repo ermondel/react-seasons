@@ -1,5 +1,5 @@
 import React from 'react';
-import AppAboutTech from '../AppAboutTech';
+import SidebarInfo from '../SidebarInfo';
 
 const PositionDetails = ({ geo }) => {
   const content = geo ? (
@@ -24,7 +24,7 @@ const PositionDetails = ({ geo }) => {
     <div className='sidebar'>
       <div className='sidebar-wrap'>
         {content}
-        <AppAboutTech list={['React', 'React Hooks', 'Geolocation API']} />
+        <SidebarInfo list='React, React Hooks, Geolocation API' />
       </div>
     </div>
   );
