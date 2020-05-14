@@ -1,7 +1,7 @@
 import React from 'react';
 import useResources from './useResources';
 import Loading from '../Loading';
-import Error5xx from '../Error5xx';
+import ErrorMessage from '../ErrorMessage';
 
 const UserList = () => {
   const users = useResources('users');
@@ -11,7 +11,7 @@ const UserList = () => {
   }
 
   if (users.status === '5xx') {
-    return <Error5xx imgOnly={true} />;
+    return <ErrorMessage type='remote' />;
   }
 
   if (users.status === '2xx') {

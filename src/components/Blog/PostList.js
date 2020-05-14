@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PostItem from './PostItem';
 import Loading from '../Loading';
-import Error5xx from '../Error5xx';
+import ErrorMessage from '../ErrorMessage';
 import { fetchBlogPosts, selectBlogUser } from '../../actions/blog';
 
 class PostList extends Component {
@@ -16,7 +16,7 @@ class PostList extends Component {
     }
 
     if (this.props.posts.status === '5xx') {
-      return <Error5xx />;
+      return <ErrorMessage type='remote' tip={true} />;
     }
 
     if (this.props.posts.status === '2xx') {

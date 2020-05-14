@@ -3,7 +3,7 @@ import useResources from './useResources';
 import PostList from './PostList';
 import TodoList from './TodoList';
 import Loading from '../Loading';
-import Error5xx from '../Error5xx';
+import ErrorMessage from '../ErrorMessage';
 
 const ResourceList = ({ resource }) => {
   const resources = useResources(resource);
@@ -15,7 +15,7 @@ const ResourceList = ({ resource }) => {
   }
 
   if (resources.status === '5xx') {
-    content = <Error5xx />;
+    content = <ErrorMessage type='remote' tip={true} />;
   }
 
   if (resources.status === '2xx' && resource === 'comments') {
