@@ -4,12 +4,14 @@
 
 .header {
   min-height: 100vh;
+  width: 90px;
   background-color: $color-base;
 }
 
 .main {
   width: 100%;
   display: flex;
+  background-color: $color-common-bg;
 }
 
 .sidebar {
@@ -84,6 +86,10 @@
 }
 
 /* main-nav */
+
+.main-nav {
+  position: fixed;
+}
 
 .main-nav__item,
 .main-nav__item_active {
