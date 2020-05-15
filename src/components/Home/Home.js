@@ -1,9 +1,15 @@
 import React from 'react';
+import SidebarInfo from '../SidebarInfo/SidebarInfo';
 
 const Home = () => (
   <main className='main'>
     <div className='sidebar'>
-      <div className='sidebar-wrap'>{null}</div>
+      <div className='sidebar-wrap'>
+        <SidebarInfo
+          top={true}
+          list='React, Redux, Redux Thunk, React Hooks, React Context, JSONPlaceholder API, Geolocation API'
+        />
+      </div>
     </div>
     <div className='content'>
       <div className='content-wrap'>

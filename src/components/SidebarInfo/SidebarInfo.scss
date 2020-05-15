@@ -1,10 +1,17 @@
 .sidebar-info {
   position: fixed;
-  bottom: 0;
   left: 110px;
   font-size: small;
   color: #696969;
   margin-bottom: 50px;
+}
+
+.sidebar-info--top {
+  top: 0;
+}
+
+.sidebar-info--bottom {
+  bottom: 0;
 }
 
 .sidebar-info a {
