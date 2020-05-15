@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
+import isChrome from './isChrome';
 
 export default () => {
   const [coords, setCoords] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => setCoords(position.coords),
-      (err) => setErrorMessage(err.message)
-    );
+    if (isChrome) {
+      window.navigator.geolocation.getCurrentPosition(
+        (position) => setCoords(position.coords),
+        (err) => setErrorMessage(err.message)
+      );
+    } else {
+      setErrorMessage('disabled');
+    }
   }, []);
 
   return [coords, errorMessage];
