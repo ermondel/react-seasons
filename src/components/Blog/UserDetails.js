@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DetailsBlock from '../DetailsBlock';
+import DetailsBlock from '../DetailsBlock/DetailsBlock';
 
 const UserDetails = ({ user }) => {
   return user ? (

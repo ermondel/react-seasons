@@ -1,6 +1,6 @@
 import React from 'react';
-import SidebarInfo from '../SidebarInfo';
-import DetailsBlock from '../DetailsBlock';
+import SidebarInfo from '../SidebarInfo/SidebarInfo';
+import DetailsBlock from '../DetailsBlock/DetailsBlock';
 
 const PositionDetails = ({ geo }) => (
   <div className='sidebar'>

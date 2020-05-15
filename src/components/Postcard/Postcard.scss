@@ -28,3 +28,38 @@
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
 }
+
+/* palette  */
+
+.bg_blue {
+  background-color: blue;
+}
+
+.bg_red {
+  background-color: red;
+}
+
+.bg_green {
+  background-color: green;
+}
+
+.bg_orange {
+  background-color: orange;
+}
+
+.bg_violet {
+  background-color: violet;
+}
+
+.bg_purple {
+  background-color: purple;
+}
+
+.bg_brown {
+  background-color: brown;
+}
+
+.bg_yellow {
+  background-color: yellow;
+  color: $color-base;
+}

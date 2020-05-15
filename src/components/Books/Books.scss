@@ -1,0 +1,192 @@
+/* book-list */
+
+.book-list {
+  max-width: 1000px;
+}
+
+.book-list__item {
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+  margin-bottom: 2px;
+
+  &:hover {
+    background-color: $color-copy;
+    border-radius: 3px;
+  }
+}
+
+.book-list__item_active {
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+  margin-bottom: 2px;
+
+  background-color: $color-copy;
+  border-radius: 3px;
+}
+
+.book-list__title {
+  margin: 0;
+  padding: 0 2% 0 1%;
+  width: 45%;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+.book-list__author {
+  margin: 0;
+  padding: 0 2%;
+  width: 30%;
+}
+
+.book-list__year {
+  margin: 0;
+  padding: 0 2%;
+  width: 7%;
+  text-align: center;
+  font-size: smaller;
+}
+
+.book-list__btns {
+  margin: 0;
+  padding: 0 1%;
+  width: 10%;
+  text-align: right;
+}
+
+.btn-about {
+  margin: 0;
+  border: none;
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: pointer;
+  color: $color-common;
+  background-color: $color-main;
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover-common;
+    outline: none;
+  }
+}
+
+.btn-about_active {
+  margin: 0;
+  border: none;
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: default;
+  color: $color-common;
+  background-color: $color-base;
+}
+
+.btn-about::-moz-focus-inner,
+.btn-about_active::-moz-focus-inner {
+  border: 0;
+}
+
+/* covers */
+
+.covers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.covers-item {
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 1% 3% 1%;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.covers-item_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.covers-item_btn-about,
+.covers-item_btn-about_active {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  opacity: 0;
+}
+
+.covers-item_btn-about:hover,
+.covers-item_btn-about:focus,
+.covers-item_btn-about_active {
+  background-color: $color-base;
+  opacity: 0.6;
+  outline: none;
+}
+
+.covers-item_btn-about span {
+  padding: 15px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $color-common;
+  border: 1px solid $color-common;
+  background-color: transparent;
+}
+
+.covers-item_btn-about span:hover {
+  background-color: $color-common;
+  color: $color-base;
+}
+
+.covers-item_btn-about_active span {
+  padding: 15px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: default;
+  color: $color-common-bg;
+  border: 1px solid $color-common-bg;
+}
+
+.covers-item_btn-about::-moz-focus-inner,
+.covers-item_btn-about_active::-moz-focus-inner {
+  border: 0;
+}
+
+/* search form */
+
+.search-form_input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 35%;
+  padding: 9px 12px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  background-color: $color-main;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  color: $color-sidebar-bg;
+}
+
+.search-form_input::placeholder {
+  color: $color-copy;
+}
+
+.search-form_input:focus {
+  outline: none;
+  background-color: $color-extra;
+}

@@ -1,3 +1,12 @@
+/* user-list */
+
+.user-list__item {
+  color: $color-extra;
+  margin-bottom: 4px;
+}
+
+/* post-list */
+
 .post-list {
   display: flex;
   flex-wrap: wrap;
@@ -78,4 +87,51 @@
 .post__author_btn::-moz-focus-inner,
 .post__author_btn_active::-moz-focus-inner {
   border: 0;
+}
+
+/* todos-list */
+
+.todos-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: relative;
+  background-color: $color-main;
+}
+
+.todo::before {
+  content: '';
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 36px;
+  height: 36px;
+  background-color: $color-main;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.todo::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  background-color: $color-common-bg;
+  z-index: 1;
+}
+
+.todo__title {
+  padding: 10px 50px 10px 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: $color-base;
 }

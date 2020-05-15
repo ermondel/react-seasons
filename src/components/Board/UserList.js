@@ -1,7 +1,7 @@
 import React from 'react';
 import useResources from './useResources';
-import Loading from '../Loading';
-import ErrorMessage from '../ErrorMessage';
+import Loading from '../Loading/Loading';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const UserList = () => {
   const users = useResources('users');

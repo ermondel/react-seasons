@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LanguageContext from '../../contexts/LanguageContext';
 import ColorContext from '../../contexts/ColorContext';
-import postcardImg from '../../style/img/postcard-img.jpg';
+import postcardImg from './img/postcard-img.jpg';
 
 class PostcardScene extends Component {
   i18n_Hello = {

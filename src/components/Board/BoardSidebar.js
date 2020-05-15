@@ -1,6 +1,6 @@
 import React from 'react';
 import UserList from './UserList';
-import SidebarInfo from '../SidebarInfo';
+import SidebarInfo from '../SidebarInfo/SidebarInfo';
 
 const BoardSidebar = ({ res, onButtonClick }) => (
   <div className='sidebar'>

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import history from '../history';
+import history from '../../history';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
-import Home from './Home/Home';
-import Position from './Position/Position';
-import Blog from './Blog/Blog';
-import Postcard from './Postcard/Postcard';
-import Podcasts from './Podcasts/Podcasts';
-import Books from './Books/Books';
-import Board from './Board/Board';
+import Home from '../Home/Home';
+import Position from '../Position/Position';
+import Blog from '../Blog/Blog';
+import Postcard from '../Postcard/Postcard';
+import Podcasts from '../Podcasts/Podcasts';
+import Books from '../Books/Books';
+import Board from '../Board/Board';
 
 const App = () => (
   <div className='app'>

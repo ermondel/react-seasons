@@ -1,6 +1,6 @@
 import React from 'react';
-import imgCompass from '../../style/img/compass.png';
-import imgGearMain from '../../style/img/Gear-0.2s-101px.gif';
+import Loading from '../Loading/Loading';
+import imgCompass from './img/compass.png';
 
 const PositionAccept = ({ wait, error }) => {
   let content = null;
@@ -8,7 +8,7 @@ const PositionAccept = ({ wait, error }) => {
   if (wait && !error) {
     content = (
       <div className='accept-card'>
-        <img src={imgGearMain} alt='loading bar' />
+        <Loading type='main-img' />
         <p>Please accept location request</p>
       </div>
     );

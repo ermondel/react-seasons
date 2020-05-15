@@ -1,5 +1,5 @@
 import React from 'react';
-import imgRemoteError from '../style/img/remote-error.png';
+import imgRemoteError from './img/remote-error.png';
 
 const ErrorMessage = ({ type, tip }) => {
   switch (type) {
