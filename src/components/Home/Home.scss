@@ -1,13 +1,41 @@
-.main-info {
-  margin-bottom: 50px;
+.info-section {
+  margin-bottom: 10%;
 }
 
-.sources {
+.info-section__title {
+  font-size: 30px;
+  font-weight: normal;
   color: $color-main;
 }
 
-.sources__item {
+.info-article {
+  display: flex;
+  color: $color-list;
+}
+
+.info-article__title {
   margin: 0;
-  padding: 0;
-  margin-bottom: 7px;
+  padding: 20px 14px;
+  width: 15%;
+  font-weight: normal;
+  text-align: right;
+  border-right: 1px solid $color-main;
+}
+
+.info-article__body {
+  margin: 0;
+  padding: 20px 14px;
+  width: 85%;
+}
+
+.additional-section__title {
+  font-size: 16px;
+  font-weight: normal;
+  color: $color-extra;
+}
+
+.additional-section__list li {
+  margin-bottom: 5px;
+  margin-left: 15px;
+  color: $color-main;
 }
