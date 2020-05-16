@@ -1,14 +1,16 @@
 import React from 'react';
-import SidebarInfo from '../SidebarInfo/SidebarInfo';
 
 const Home = () => (
   <main className='main'>
-    <div className='sidebar'>
-      <div className='sidebar-wrap'>
-        <SidebarInfo
-          top={true}
-          list='React, Redux, Redux Thunk, React Hooks, React Context, JSONPlaceholder API, Geolocation API'
-        />
+    <div className='sidebar sidebar--home'>
+      <div className='foreign'>
+        <div className='foreign__title'>Additional info</div>
+        <ul className='foreign__list'>
+          <li>Photo of the island by Ahmed Sharyaan on Unsplash</li>
+          <li>Image of the compass by Bunzellisa on Pixabay</li>
+          <li>Loading GIF from loading.io</li>
+          <li>Book covers from Wikipedia</li>
+        </ul>
       </div>
     </div>
     <div className='content'>
@@ -70,16 +72,6 @@ const Home = () => (
               Geolocation. Locate and display a user's position.
             </p>
           </article>
-        </section>
-
-        <section className='additional-section'>
-          <h3 className='additional-section__title'>Additional info</h3>
-          <ul className='additional-section__list'>
-            <li>Photo of the island by Ahmed Sharyaan on Unsplash</li>
-            <li>Image of the compass by Bunzellisa on Pixabay</li>
-            <li>Loading GIF from loading.io</li>
-            <li>Book covers from Wikipedia</li>
-          </ul>
         </section>
       </div>
     </div>
