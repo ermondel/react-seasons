@@ -4,18 +4,26 @@ import api from '../../apis/jsonplaceholder';
 const useResources = (resource) => {
   const [resources, setResources] = useState({ data: [], status: '1xx' });
 
-  const fetchResource = async (resource) => {
-    try {
-      const response = await api.get(`/${resource}`);
-
-      setResources({ data: response.data, status: '2xx' });
-    } catch (error) {
-      setResources({ data: error, status: '5xx' });
-    }
-  };
-
   useEffect(() => {
+    let resourceMounted = true;
+
+    const fetchResource = async (resource) => {
+      try {
+        const response = await api.get(`/${resource}`);
+
+        if (resourceMounted) {
+          setResources({ data: response.data, status: '2xx' });
+        }
+      } catch (error) {
+        if (resourceMounted) {
+          setResources({ data: error, status: '5xx' });
+        }
+      }
+    };
+
     fetchResource(resource);
+
+    return () => (resourceMounted = false);
   }, [resource]);
 
   return resources;
