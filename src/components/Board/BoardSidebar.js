@@ -25,7 +25,7 @@ const BoardSidebar = ({ res, onButtonClick }) => (
         </div>
         <UserList />
       </div>
-      <SidebarInfo list='React, React Hooks, JSONPlaceholder API' />
+      <SidebarInfo list='React, React Hooks, Axios, JSONPlaceholder API' />
     </div>
   </div>
 );

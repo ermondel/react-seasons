@@ -6,7 +6,7 @@ const BlogSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <UserDetails />
-      <SidebarInfo list='React, Redux, Redux Thunk, JSONPlaceholder API' />
+      <SidebarInfo list='React, Redux, Redux Thunk, Axios, JSONPlaceholder API' />
     </div>
   </div>
 );

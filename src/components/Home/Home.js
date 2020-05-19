@@ -20,8 +20,8 @@ const Home = () => (
         <section className='info-section'>
           <h3 className='info-section__title'>About</h3>
           <p>
-            This website is my personal idea of a platform for completed tasks
-            of the Udemy ReactJS course.
+            My personal idea of a platform for completed Udemy ReactJS course
+            tasks.
           </p>
 
           <article className='info-article'>
