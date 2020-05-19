@@ -1,6 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-import history from '../../history';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import Home from '../Home/Home';
@@ -13,7 +12,7 @@ import Board from '../Board/Board';
 
 const App = () => (
   <div className='app'>
-    <Router history={history}>
+    <HashRouter>
       <div className='app-wrap'>
         <Switch>
           <Route path='/' exact>
@@ -47,7 +46,7 @@ const App = () => (
         </Switch>
         <AppFooter />
       </div>
-    </Router>
+    </HashRouter>
   </div>
 );
 
