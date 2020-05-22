@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import AppHeader from './AppHeader';
-import AppFooter from './AppFooter';
+import Header from './Header';
+import Footer from './Footer';
 import Home from '../Home/Home';
 import Position from '../Position/Position';
 import Blog from '../Blog/Blog';
@@ -9,6 +9,7 @@ import Postcard from '../Postcard/Postcard';
 import Podcasts from '../Podcasts/Podcasts';
 import Books from '../Books/Books';
 import Board from '../Board/Board';
+import Weather from '../Weather/Weather';
 
 const App = () => (
   <div className='app'>
@@ -16,35 +17,47 @@ const App = () => (
       <div className='app-wrap'>
         <Switch>
           <Route path='/' exact>
-            <AppHeader path='/' />
+            <Header path='/' />
             <Home />
           </Route>
+
           <Route path='/position' exact>
-            <AppHeader path='/position' />
+            <Header path='/position' />
             <Position />
           </Route>
+
           <Route path='/blog' exact>
-            <AppHeader path='/blog' />
+            <Header path='/blog' />
             <Blog />
           </Route>
+
           <Route path='/postcard' exact>
-            <AppHeader path='/postcard' />
+            <Header path='/postcard' />
             <Postcard />
           </Route>
+
           <Route path='/podcasts' exact>
-            <AppHeader path='/podcasts' />
+            <Header path='/podcasts' />
             <Podcasts />
           </Route>
+
           <Route path='/books' exact>
-            <AppHeader path='/books' />
+            <Header path='/books' />
             <Books />
           </Route>
+
           <Route path='/board' exact>
-            <AppHeader path='/board' />
+            <Header path='/board' />
             <Board />
           </Route>
+
+          <Route path='/weather' exact>
+            <Header path='/weather' />
+            <Weather />
+          </Route>
         </Switch>
-        <AppFooter />
+
+        <Footer />
       </div>
     </HashRouter>
   </div>

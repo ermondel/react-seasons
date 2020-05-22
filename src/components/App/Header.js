@@ -5,7 +5,7 @@ const getLinkClass = (to, props) => {
   return props.path === to ? 'main-nav__item_active' : 'main-nav__item';
 };
 
-const AppHeader = (props) => (
+const Header = (props) => (
   <header className='header'>
     <nav className='main-nav'>
       <ul className='main-nav__list'>
@@ -44,9 +44,14 @@ const AppHeader = (props) => (
             Position
           </Link>
         </li>
+        <li>
+          <Link to={'/weather'} className={getLinkClass('/weather', props)}>
+            Weather
+          </Link>
+        </li>
       </ul>
     </nav>
   </header>
 );
 
-export default AppHeader;
+export default Header;
