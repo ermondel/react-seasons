@@ -1,0 +1,10 @@
+.weather-item {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: $color-copy;
+}
+
+.weather-item div {
+  width: 20%;
+}

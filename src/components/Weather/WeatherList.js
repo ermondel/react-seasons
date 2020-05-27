@@ -8,22 +8,15 @@ const WeatherList = ({ spinner, error, list }) => (
     {error && <p>Error: {error}</p>}
     {!spinner && !error && <p>enter the name of the city</p>}
     {list.map((forecast) => (
-      <WeatherItem forecast={forecast} key={forecast.id} />
+      <WeatherItem forecast={forecast} key={forecast.city.id} />
     ))}
-    {}
   </div>
 );
-
-const reverseForecastList = (list) => {
-  const newList = [];
-  for (let i = list.length - 1; i >= 0; i--) newList.push(list[i]);
-  return newList;
-};
 
 const mapStateToProps = (state) => ({
   spinner: state.forecastSpinner,
   error: state.forecastError,
-  list: reverseForecastList(state.forecastList),
+  list: state.forecastList,
 });
 
 export default connect(mapStateToProps)(WeatherList);
