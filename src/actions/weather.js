@@ -6,24 +6,36 @@ export const forecastsFetch = (city) => async (dispatch) => {
 
   try {
     const forecasts = await api.get('/request/openweathermap', {
-      params: {
-        q: city,
-      },
+      params: { q: city },
     });
 
     dispatch({
       type: 'WEATHER_FORECASTS_FETCH_SUCCESS',
       payload: forecasts.data,
+      query: city,
     });
   } catch (error) {
-    dispatch({
-      type: 'WEATHER_FORECASTS_FETCH_FAILURE',
-      status: 500,
-    });
+    if (error.response.status === 404) {
+      dispatch({
+        type: 'WEATHER_FORECASTS_FETCH_FAILURE',
+        status: 404,
+        query: city,
+      });
+    } else {
+      dispatch({
+        type: 'WEATHER_FORECASTS_FETCH_FAILURE',
+        status: 500,
+        query: city,
+      });
+    }
   }
 };
 
 export const forecastsDelete = (id) => ({
   type: 'WEATHER_FORECASTS_DELETE',
   id,
+});
+
+export const forecastsErrorHide = () => ({
+  type: 'WEATHER_FORECASTS_ERROR_HIDE',
 });
