@@ -1,10 +1,27 @@
 .weather-item {
   display: flex;
+  align-items: center;
   padding: 5px;
-  margin-bottom: 10px;
-  background-color: $color-copy;
+  margin-bottom: 15px;
 }
 
-.weather-item div {
+.city-name {
   width: 20%;
+}
+
+.temperature-list {
+  width: 25%;
+}
+
+.pressure-list {
+  width: 25%;
+}
+
+.humidity-list {
+  width: 25%;
+}
+
+.weather-btn {
+  width: 5%;
+  text-align: center;
 }

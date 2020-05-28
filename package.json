@@ -1,6 +1,6 @@
 {
   "name": "react-platform",
-  "version": "1.7.2",
+  "version": "1.8.2",
   "private": true,
   "homepage": "https://ermondel.github.io/react-platform",
   "dependencies": {
@@ -12,6 +12,7 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-sparklines": "^1.7.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
