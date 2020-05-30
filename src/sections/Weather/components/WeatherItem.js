@@ -15,25 +15,43 @@ const WeatherItem = ({ forecast, forecastsDelete }) => {
   });
 
   return (
-    <div className='weather-item'>
-      <div className='city-name'>{forecast.city.name}</div>
-      <div className='temperature-list'>
-        <Sparklines data={temperatureList}>
-          <SparklinesLine color='#ffffff' />
-        </Sparklines>
+    <div className='forecast'>
+      <div className='forecast__header'>
+        <h3 className='forecast__title'>{forecast.city.name}</h3>
+        <div className='forecast__btns'>
+          <button
+            className='forecast__btn-delete'
+            onClick={() => forecastsDelete(forecast.city.id)}
+          >
+            Delete
+          </button>
+        </div>
       </div>
-      <div className='pressure-list'>
-        <Sparklines data={pressureList}>
-          <SparklinesLine color='#ffffff' />
-        </Sparklines>
-      </div>
-      <div className='humidity-list'>
-        <Sparklines data={humidityList}>
-          <SparklinesLine color='#ffffff' />
-        </Sparklines>
-      </div>
-      <div className='weather-btn'>
-        <button onClick={() => forecastsDelete(forecast.city.id)}>del</button>
+      <div className='forecast__body'>
+        <div className='forecast__temperature-chart'>
+          <Sparklines data={temperatureList}>
+            <SparklinesLine color='#F5F5F5' />
+          </Sparklines>
+          <p className='forecast__legend' style={{ color: '#F5F5F5' }}>
+            temperature
+          </p>
+        </div>
+        <div className='forecast__pressure-chart'>
+          <Sparklines data={pressureList}>
+            <SparklinesLine color='#F5DEB3' />
+          </Sparklines>
+          <p className='forecast__legend' style={{ color: '#F5DEB3' }}>
+            pressure
+          </p>
+        </div>
+        <div className='forecast__humidity-chart'>
+          <Sparklines data={humidityList}>
+            <SparklinesLine color='#FFDAB9' />
+          </Sparklines>
+          <p className='forecast__legend' style={{ color: '#FFDAB9' }}>
+            humidity
+          </p>
+        </div>
       </div>
     </div>
   );

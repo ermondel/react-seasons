@@ -1,3 +1,5 @@
+// import fixtures from '../fixtures/weather';
+
 // existing forecast will be overwritten
 // a new or changed forecast is always at the top of the list
 const appending = (newForecast, list) => {

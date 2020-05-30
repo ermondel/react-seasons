@@ -1,5 +1,4 @@
-import api from '../../../jsonplaceholder';
-// import fixtures from '../fixtures/weather';
+import api from '../../../nodeapiserver';
 
 export const forecastsFetch = (city) => async (dispatch) => {
   dispatch({ type: 'WEATHER_FORECASTS_FETCH_REQUEST' });

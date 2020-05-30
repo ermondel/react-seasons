@@ -1,27 +1,125 @@
-.weather-item {
+/* form */
+
+.forecast_search-form {
+  margin-bottom: 50px;
+}
+
+.forecast__query-input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 35%;
+  padding: 9px 12px;
+  font-size: 14px;
+  background-color: $color-main;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid transparent;
+  color: $color-sidebar-bg;
+}
+
+.forecast__query-input::placeholder {
+  color: $color-copy;
+}
+
+.forecast__query-input:focus {
+  outline: none;
+  background-color: $color-extra;
+}
+
+.forecast__btn-submit {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  padding: 9px 12px;
+  background-color: $color-main;
+  border: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
+  color: $color-extra;
+}
+
+.forecast__btn-submit:hover,
+.forecast__btn-submit:focus {
+  background-color: $color-hover-common;
+  color: $color-common;
+  outline: none;
+}
+
+.forecast__btn-submit::-moz-focus-inner {
+  border: 0;
+}
+
+/* list */
+
+.forecast {
+  margin-bottom: 45px;
+}
+
+.forecast__header {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.forecast__title {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 24px;
+  color: $color-common;
+}
+
+.forecast__btns {
+  margin-left: auto;
+}
+
+.forecast__btn-delete {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: $color-base;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.forecast__btn-delete:hover,
+.forecast__btn-delete:focus {
+  background-color: $color-base;
+  color: $color-common;
+  outline: none;
+}
+
+.forecast__btn-delete::-moz-focus-inner {
+  border: 0;
+}
+
+.forecast__body {
   display: flex;
   align-items: center;
-  padding: 5px;
-  margin-bottom: 15px;
+  justify-content: space-between;
 }
 
-.city-name {
-  width: 20%;
+.forecast__temperature-chart {
+  width: 32%;
 }
 
-.temperature-list {
-  width: 25%;
+.forecast__pressure-chart {
+  width: 32%;
 }
 
-.pressure-list {
-  width: 25%;
+.forecast__humidity-chart {
+  width: 32%;
 }
 
-.humidity-list {
-  width: 25%;
-}
-
-.weather-btn {
-  width: 5%;
+.forecast__legend {
+  margin: 0;
+  padding: 0;
+  font-size: small;
   text-align: center;
+  color: $color-list;
 }
