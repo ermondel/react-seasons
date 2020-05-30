@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
-import podcastReducer from './reducers/podcastReducer';
-import blogPostsReducer from './reducers/blogPostsReducer';
-import blogUserReducer from './reducers/blogUserReducer';
-import bookActiveReducer from './reducers/bookActiveReducer';
-import booksViewReducer from './reducers/booksViewReducer';
-import bookSearchReducer from './reducers/bookSearchReducer';
-import forecastListReducer from './reducers/forecastListReducer';
-import forecastSpinnerReducer from './reducers/forecastSpinnerReducer';
-import forecastErrorReducer from './reducers/forecastErrorReducer';
+import podcastReducer from './sections/Podcasts/reducers/podcastReducer';
+import blogPostsReducer from './sections/Blog/reducers/blogPostsReducer';
+import blogUserReducer from './sections/Blog/reducers/blogUserReducer';
+import bookActiveReducer from './sections/Books/reducers/bookActiveReducer';
+import booksViewReducer from './sections/Books/reducers/booksViewReducer';
+import bookSearchReducer from './sections/Books/reducers/bookSearchReducer';
+import forecastListReducer from './sections/Weather/reducers/forecastListReducer';
+import forecastSpinnerReducer from './sections/Weather/reducers/forecastSpinnerReducer';
+import forecastErrorReducer from './sections/Weather/reducers/forecastErrorReducer';
 
 export default combineReducers({
   podcast: podcastReducer,
