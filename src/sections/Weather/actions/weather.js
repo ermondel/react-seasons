@@ -1,7 +1,10 @@
 import api from '../../../nodeapiserver';
 
 export const forecastsFetch = (city) => async (dispatch) => {
-  dispatch({ type: 'WEATHER_FORECASTS_FETCH_REQUEST' });
+  dispatch({
+    type: 'WEATHER_FORECASTS_FETCH_REQUEST',
+    query: city,
+  });
 
   try {
     const forecasts = await api.get('/request/openweathermap', {

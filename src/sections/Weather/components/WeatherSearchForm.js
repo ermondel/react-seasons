@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { forecastsFetch } from '../actions/weather';
 
-const WeatherSearchForm = ({ forecastsFetch }) => (
+const WeatherSearchForm = ({ spinner, forecastsFetch }) => (
   <div className='forecast_search-form'>
     <form
       onSubmit={(event) => {
@@ -20,11 +20,19 @@ const WeatherSearchForm = ({ forecastsFetch }) => (
         className='forecast__query-input'
         placeholder='city ​​name'
       />
-      <button name='s_forecast' className='forecast__btn-submit'>
-        Submit
+      <button
+        name='s_forecast'
+        className='forecast__btn-submit'
+        disabled={spinner ? true : false}
+      >
+        {spinner ? 'wait ....' : 'Submit'}
       </button>
     </form>
   </div>
 );
 
-export default connect(undefined, { forecastsFetch })(WeatherSearchForm);
+const mapStateToProps = (state) => ({
+  spinner: state.forecastSpinner,
+});
+
+export default connect(mapStateToProps, { forecastsFetch })(WeatherSearchForm);
