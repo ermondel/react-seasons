@@ -72,6 +72,13 @@ const Home = () => (
               Geolocation. Locate and display a user's position.
             </p>
           </article>
+
+          <article className='info-article'>
+            <h4 className='info-article__title'>Weather</h4>
+            <p className='info-article__body'>
+              5-day weather charts for the city.
+            </p>
+          </article>
         </section>
       </div>
     </div>
