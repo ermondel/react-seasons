@@ -41,3 +41,8 @@ export const forecastsDelete = (id) => ({
 export const forecastsErrorHide = () => ({
   type: 'WEATHER_FORECASTS_ERROR_HIDE',
 });
+
+export const forecastsViewMode = (view = 'line') => ({
+  type: 'WEATHER_FORECASTS_VIEW_CHANGED',
+  view,
+});

@@ -1,9 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines';
 import { forecastsDelete } from '../actions/weather';
 
-const WeatherItem = ({ forecast, forecastsDelete }) => {
+const WeatherItem = ({ forecast, view, forecastsDelete }) => {
+  const colors = {
+    temp: { line: '#ADD8E6', bar: '#ADD8E6' },
+    pres: { line: '#BDB76B', bar: '#BDB76B' },
+    humd: { line: '#FFDAB9', bar: '#FFDAB9' },
+  };
+
   const temperatureList = [];
   const pressureList = [];
   const humidityList = [];
@@ -30,27 +36,35 @@ const WeatherItem = ({ forecast, forecastsDelete }) => {
       <div className='forecast__body'>
         <div className='forecast__temperature-chart'>
           <Sparklines data={temperatureList}>
-            <SparklinesLine color='#F5F5F5' />
+            {view === 'bars' ? (
+              <SparklinesBars style={{ fill: colors.temp.bar }} />
+            ) : (
+              <SparklinesLine color={colors.temp.line} />
+            )}
           </Sparklines>
-          <p className='forecast__legend' style={{ color: '#F5F5F5' }}>
-            temperature
-          </p>
+          <p className='forecast__legend'>temperature</p>
         </div>
+
         <div className='forecast__pressure-chart'>
           <Sparklines data={pressureList}>
-            <SparklinesLine color='#F5DEB3' />
+            {view === 'bars' ? (
+              <SparklinesBars style={{ fill: colors.pres.bar }} />
+            ) : (
+              <SparklinesLine color={colors.pres.line} />
+            )}
           </Sparklines>
-          <p className='forecast__legend' style={{ color: '#F5DEB3' }}>
-            pressure
-          </p>
+          <p className='forecast__legend'>pressure</p>
         </div>
+
         <div className='forecast__humidity-chart'>
           <Sparklines data={humidityList}>
-            <SparklinesLine color='#FFDAB9' />
+            {view === 'bars' ? (
+              <SparklinesBars style={{ fill: colors.humd.bar }} />
+            ) : (
+              <SparklinesLine color={colors.humd.line} />
+            )}
           </Sparklines>
-          <p className='forecast__legend' style={{ color: '#FFDAB9' }}>
-            humidity
-          </p>
+          <p className='forecast__legend'>humidity</p>
         </div>
       </div>
     </div>
