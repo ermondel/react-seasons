@@ -1,13 +1,13 @@
-import { FETCH_BLOG_POSTS, ERROR_FETCHING_BLOG_POSTS } from '../../../types';
+import { BLOG_POSTS_FETCH, BLOG_POSTS_FETCH_FAILURE } from '../../../types';
 
 const defaultState = { data: [], status: '1xx' };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case FETCH_BLOG_POSTS:
+    case BLOG_POSTS_FETCH:
       return { data: action.payload, status: '2xx' };
 
-    case ERROR_FETCHING_BLOG_POSTS:
+    case BLOG_POSTS_FETCH_FAILURE:
       return { data: action.payload, status: '5xx' };
 
     default:

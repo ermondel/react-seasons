@@ -1,7 +1,7 @@
-import { PODCAST_SELECTED } from '../../../types';
+import { PODCASTS_ITEM_SELECTED } from '../../../types';
 
 export default (state = null, action) => {
-  if (action.type === PODCAST_SELECTED) {
+  if (action.type === PODCASTS_ITEM_SELECTED) {
     return action.payload;
   }
 

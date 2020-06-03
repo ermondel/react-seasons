@@ -1,7 +1,7 @@
-import { SET_ACTIVE_BOOK } from '../../../types';
+import { BOOKS_ITEM_SELECTED } from '../../../types';
 
 export default (state = null, action) => {
-  if (action.type === SET_ACTIVE_BOOK) {
+  if (action.type === BOOKS_ITEM_SELECTED) {
     return action.payload;
   }
 

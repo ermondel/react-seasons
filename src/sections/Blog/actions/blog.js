@@ -1,7 +1,7 @@
 import api from '../../../jsonplaceholder';
 import {
-  FETCH_BLOG_POSTS,
-  ERROR_FETCHING_BLOG_POSTS,
+  BLOG_POSTS_FETCH,
+  BLOG_POSTS_FETCH_FAILURE,
   BLOG_USER_SELECTED,
 } from '../../../types';
 
@@ -17,9 +17,9 @@ export const fetchBlogPosts = () => async (dispatch) => {
 
     payload.sort(() => Math.random() - 0.5);
 
-    dispatch({ type: FETCH_BLOG_POSTS, payload });
+    dispatch({ type: BLOG_POSTS_FETCH, payload });
   } catch (error) {
-    dispatch({ type: ERROR_FETCHING_BLOG_POSTS, payload: error });
+    dispatch({ type: BLOG_POSTS_FETCH_FAILURE, payload: error });
   }
 };
 

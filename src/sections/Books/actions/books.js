@@ -1,16 +1,20 @@
-import { SET_ACTIVE_BOOK, SET_BOOKS_VIEW, BOOK_SEARCH } from '../../../types';
+import {
+  BOOKS_ITEM_SELECTED,
+  BOOKS_VIEW_CHANGED,
+  BOOKS_SEARCH_REQUEST,
+} from '../../../types';
 
 export const selectBook = (book) => ({
-  type: SET_ACTIVE_BOOK,
+  type: BOOKS_ITEM_SELECTED,
   payload: book,
 });
 
 export const changeBooksView = (view = 'list') => ({
-  type: SET_BOOKS_VIEW,
+  type: BOOKS_VIEW_CHANGED,
   view,
 });
 
 export const bookSearch = (query) => ({
-  type: BOOK_SEARCH,
+  type: BOOKS_SEARCH_REQUEST,
   query,
 });
