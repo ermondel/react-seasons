@@ -1,53 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-const getLinkClass = (to, props) => {
-  return props.path === to ? 'main-nav__item_active' : 'main-nav__item';
-};
+import NavItem from '../../NavItem/components/NavItem';
 
 const Header = (props) => (
   <header className='header'>
     <nav className='main-nav'>
       <ul className='main-nav__list'>
         <li>
-          <Link to={'/'} className={getLinkClass('/', props)}>
-            Home
-          </Link>
+          <NavItem val={'Home'} from={props.path} to={'/'} />
         </li>
         <li>
-          <Link to={'/blog'} className={getLinkClass('/blog', props)}>
-            Blog
-          </Link>
+          <NavItem val={'Blog'} from={props.path} to={'/blog'} />
         </li>
         <li>
-          <Link to={'/postcard'} className={getLinkClass('/postcard', props)}>
-            Postcard
-          </Link>
+          <NavItem val={'Postcard'} from={props.path} to={'/postcard'} />
         </li>
         <li>
-          <Link to={'/podcasts'} className={getLinkClass('/podcasts', props)}>
-            Podcasts
-          </Link>
+          <NavItem val={'Podcasts'} from={props.path} to={'/podcasts'} />
         </li>
         <li>
-          <Link to={'/books'} className={getLinkClass('/books', props)}>
-            Books
-          </Link>
+          <NavItem val={'Books'} from={props.path} to={'/books'} />
         </li>
         <li>
-          <Link to={'/board'} className={getLinkClass('/board', props)}>
-            Board
-          </Link>
+          <NavItem val={'Board'} from={props.path} to={'/board'} />
         </li>
         <li>
-          <Link to={'/position'} className={getLinkClass('/position', props)}>
-            Position
-          </Link>
+          <NavItem val={'Position'} from={props.path} to={'/position'} />
         </li>
         <li>
-          <Link to={'/weather'} className={getLinkClass('/weather', props)}>
-            Weather
-          </Link>
+          <NavItem val={'Weather'} from={props.path} to={'/weather'} />
         </li>
       </ul>
     </nav>
