@@ -2,6 +2,7 @@ import React from 'react';
 import WeatherSearchForm from './WeatherSearchForm';
 import WeatherInfobar from './WeatherInfobar';
 import WeatherList from './WeatherList';
+import CityLocation from './CityLocation';
 
 const WeatherForecast = () => (
   <div className='content'>
@@ -11,6 +12,7 @@ const WeatherForecast = () => (
       <WeatherSearchForm />
       <WeatherInfobar />
       <WeatherList />
+      <CityLocation />
     </div>
   </div>
 );

@@ -54,3 +54,8 @@ export const forecastsViewMode = (view = 'line') => ({
   type: WEATHER_FORECASTS_VIEW_CHANGED,
   view,
 });
+
+export const citySelected = (city) => ({
+  type: 'WEATHER_CITY_SELECTED',
+  city,
+});

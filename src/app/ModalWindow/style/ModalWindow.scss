@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.modal__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: $color-base;
+  opacity: 0.8;
+}
+
+.modal__container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  color: black;
+  background-color: white;
+  opacity: 1;
+}
+
+.modal__btns {
+  padding: 5px;
+  text-align: right;
+}
+
+.modal__body {
+  margin: 0 12px 12px 12px;
+}
+
+.modal--hide {
+  visibility: hidden;
+}

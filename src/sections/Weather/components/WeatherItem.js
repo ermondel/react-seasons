@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines';
-import { forecastsDelete } from '../actions/weather';
+import { forecastsDelete, citySelected } from '../actions/weather';
 
-const WeatherItem = ({ forecast, view, forecastsDelete }) => {
+const WeatherItem = ({ forecast, view, forecastsDelete, citySelected }) => {
   const colors = {
     temp: { line: '#ADD8E6', bar: '#ADD8E6' },
     pres: { line: '#BDB76B', bar: '#BDB76B' },
@@ -25,6 +25,9 @@ const WeatherItem = ({ forecast, view, forecastsDelete }) => {
       <div className='forecast__header'>
         <h3 className='forecast__title'>{forecast.city.name}</h3>
         <div className='forecast__btns'>
+          <button onClick={() => citySelected(forecast.city)}>
+            Show on the map
+          </button>
           <button
             className='forecast__btn-delete'
             onClick={() => forecastsDelete(forecast.city.id)}
@@ -71,4 +74,4 @@ const WeatherItem = ({ forecast, view, forecastsDelete }) => {
   );
 };
 
-export default connect(undefined, { forecastsDelete })(WeatherItem);
+export default connect(undefined, { forecastsDelete, citySelected })(WeatherItem);
