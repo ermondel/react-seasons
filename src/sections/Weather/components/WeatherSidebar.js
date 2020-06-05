@@ -6,7 +6,7 @@ const WeatherSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <ForecastViewMode />
-      <SidebarInfo list='React, Redux, React Hooks, Redux Thunk, Axios' />
+      <SidebarInfo list='React, Redux, React Hooks, Redux Thunk, Axios, OpenWeatherMap API, Google Maps API' />
     </div>
   </div>
 );

@@ -8,7 +8,6 @@ const CityLocation = ({ visible, city, modalClose }) => {
   const mapElStyle = { width: '600px', height: '600px' };
 
   if (visible) {
-    console.log('---', 'Common generate');
     new window.google.maps.Map(mapEl.current, {
       zoom: 12,
       center: {
