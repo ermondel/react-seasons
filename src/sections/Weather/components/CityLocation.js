@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import ModalWindow from '../../../app/ModalWindow/components/ModalWindow';
 import { modalClose } from '../../../app/ModalWindow/actions/ModalWindow';
 
 const CityLocation = ({ visible, city, modalClose }) => {
-  const body = (
-    <div style={{ width: '200px', height: '200px', backgroundColor: 'brown' }}>
-      Lorem ipsum
-    </div>
-  );
+  const mapEl = useRef(null);
+  const mapElStyle = { width: '600px', height: '600px' };
+
+  if (visible) {
+    console.log('---', 'Common generate');
+    new window.google.maps.Map(mapEl.current, {
+      zoom: 12,
+      center: {
+        lat: city.coord.lat,
+        lng: city.coord.lon,
+      },
+    });
+  }
 
   return (
-    <ModalWindow visible={visible} body={body} onWindowClose={() => modalClose()} />
+    <ModalWindow visible={visible} onWindowClose={() => modalClose()}>
+      <div style={mapElStyle} ref={mapEl} />
+    </ModalWindow>
   );
 };
 

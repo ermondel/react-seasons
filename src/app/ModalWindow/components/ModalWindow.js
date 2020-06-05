@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ModalWindow = ({ visible, body, onWindowClose }) => {
+const ModalWindow = ({ visible, onWindowClose, children }) => {
   let content = (
     <div className={`modal ${!visible ? 'modal--hide' : ''}`}>
       <div className='modal__background'></div>
@@ -15,7 +15,7 @@ const ModalWindow = ({ visible, body, onWindowClose }) => {
           <div className='modal__btns'>
             <button onClick={onWindowClose}>Close window</button>
           </div>
-          <div className='modal__body'>{body}</div>
+          <div className='modal__body'>{children}</div>
         </div>
       </div>
     </div>
