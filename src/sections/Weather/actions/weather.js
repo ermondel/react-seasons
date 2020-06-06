@@ -16,7 +16,7 @@ export const forecastsFetch = (city) => async (dispatch) => {
 
   try {
     const forecasts = await api.get('/request/openweathermap', {
-      params: { q: city },
+      params: { q: city, units: 'metric' },
     });
 
     dispatch({
