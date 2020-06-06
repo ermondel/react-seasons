@@ -13,7 +13,15 @@ const ModalWindow = ({ visible, onWindowClose, children }) => {
           }}
         >
           <div className='modal__btns'>
-            <button onClick={onWindowClose}>Close window</button>
+            <div className='modal__close'>
+              <button
+                className='modal__btn-close'
+                onClick={onWindowClose}
+                title='Close window'
+              >
+                <span>Close window</span>
+              </button>
+            </div>
           </div>
           <div className='modal__body'>{children}</div>
         </div>

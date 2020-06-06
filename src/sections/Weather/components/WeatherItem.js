@@ -25,14 +25,17 @@ const WeatherItem = ({ forecast, view, forecastsDelete, citySelected }) => {
       <div className='forecast__header'>
         <h3 className='forecast__title'>{forecast.city.name}</h3>
         <div className='forecast__btns'>
-          <button onClick={() => citySelected(forecast.city)}>
+          <button
+            className='forecast__btn-map'
+            onClick={() => citySelected(forecast.city)}
+          >
             Show on the map
           </button>
           <button
             className='forecast__btn-delete'
             onClick={() => forecastsDelete(forecast.city.id)}
           >
-            Delete
+            Remove from list
           </button>
         </div>
       </div>

@@ -1,0 +1,27 @@
+.main-nav {
+  position: fixed;
+}
+
+.main-nav__item,
+.main-nav__item_active {
+  display: block;
+  padding: 18px 12px;
+  text-decoration: none;
+  color: $color-minor;
+}
+
+.main-nav__item:hover,
+.main-nav__item:focus {
+  color: $color-extra;
+  background-color: $color-hover-common;
+  outline: none;
+}
+
+.main-nav__item_active,
+.main-nav__item_active:hover,
+.main-nav__item_active:focus {
+  color: $color-extra;
+  background-color: $color-sidebar-bg;
+  cursor: default;
+  outline: none;
+}

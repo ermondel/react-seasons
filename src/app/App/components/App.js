@@ -10,6 +10,7 @@ import Podcasts from '../../../sections/Podcasts/components/Podcasts';
 import Books from '../../../sections/Books/components/Books';
 import Board from '../../../sections/Board/components/Board';
 import Weather from '../../../sections/Weather/components/Weather';
+import NoMatch from '../../../sections/NoMatch/components/NoMatch';
 
 const App = () => (
   <div className='app'>
@@ -54,6 +55,11 @@ const App = () => (
           <Route path='/weather' exact>
             <Header path='/weather' />
             <Weather />
+          </Route>
+
+          <Route path='*'>
+            <Header />
+            <NoMatch />
           </Route>
         </Switch>
 

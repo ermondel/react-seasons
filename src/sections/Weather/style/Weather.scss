@@ -82,27 +82,35 @@
   margin-left: auto;
 }
 
+.forecast__btn-map,
 .forecast__btn-delete {
   margin: 0;
   padding: 0;
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: $color-base;
-  font-size: 14px;
+  color: $color-list;
+  font-size: 13px;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-top: 1px solid $color-main;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
 
-.forecast__btn-delete:hover,
-.forecast__btn-delete:focus {
-  background-color: $color-base;
+.forecast__btn-map:hover,
+.forecast__btn-map:focus {
+  background-color: $color-hover-common;
   color: $color-common;
   outline: none;
 }
 
-.forecast__btn-delete::-moz-focus-inner {
-  border: 0;
+.forecast__btn-delete:hover,
+.forecast__btn-delete:focus {
+  background-color: tomato;
+  color: $color-common;
+  outline: none;
 }
 
 .forecast__body {
