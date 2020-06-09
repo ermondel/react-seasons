@@ -59,3 +59,19 @@ export const citySelected = (city) => ({
   type: 'WEATHER_CITY_SELECTED',
   city,
 });
+
+export const mountMap = () => async (dispatch) => {
+  const el = document.createElement('script');
+
+  try {
+    const response = await api.get('/opt/axqf9i');
+    el.src = `https://maps.googleapis.com/maps/api/js?key=${response.data.opt}`;
+    el.async = true;
+    el.onload = () => {
+      dispatch({ type: 'WEATHER_MOUNT_MAP_SUCCESS' });
+    };
+    document.body.appendChild(el);
+  } catch (error) {
+    dispatch({ type: 'WEATHER_MOUNT_MAP_FAILURE' });
+  }
+};

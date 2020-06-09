@@ -11,7 +11,6 @@ import Books from '../../../sections/Books/components/Books';
 import Board from '../../../sections/Board/components/Board';
 import Weather from '../../../sections/Weather/components/Weather';
 import NoMatch from '../../../sections/NoMatch/components/NoMatch';
-import MountScript from '../../MountScript/components/MountScript';
 
 const App = () => (
   <div className='app'>
@@ -67,7 +66,6 @@ const App = () => (
         <Footer />
       </div>
     </HashRouter>
-    <MountScript />
   </div>
 );
 

@@ -7,7 +7,7 @@ const CityLocation = ({ visible, city, modalClose }) => {
   const mapEl = useRef(null);
   const mapElStyle = { width: '600px', height: '600px' };
 
-  if (visible) {
+  if (visible && window.google && window.google.maps) {
     new window.google.maps.Map(mapEl.current, {
       zoom: 12,
       center: {

@@ -10,6 +10,7 @@ import forecastSpinnerReducer from './sections/Weather/reducers/forecastSpinnerR
 import forecastErrorReducer from './sections/Weather/reducers/forecastErrorReducer';
 import forecastViewReducer from './sections/Weather/reducers/forecastViewReducer';
 import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer';
+import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
 import ModalWindowReducer from './app/ModalWindow/reducers/ModalWindowReducer';
 
 export default combineReducers({
@@ -24,5 +25,6 @@ export default combineReducers({
   forecastError: forecastErrorReducer,
   forecastView: forecastViewReducer,
   forecastCity: forecastCityReducer,
+  forecastMountMap: forecastMountMapReducer,
   modalWindow: ModalWindowReducer,
 });

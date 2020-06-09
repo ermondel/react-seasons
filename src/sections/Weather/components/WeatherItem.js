@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { forecastsDelete, citySelected } from '../actions/weather';
 import Sparkline from './Sparkline';
 
-const WeatherItem = ({ forecast, view, forecastsDelete, citySelected }) => {
+const WeatherItem = ({ forecast, view, btnMap, forecastsDelete, citySelected }) => {
   const colors = {
     temp: { line: '#ADD8E6', bar: '#ADD8E6' },
     pres: { line: '#BDB76B', bar: '#BDB76B' },
@@ -31,14 +31,14 @@ const WeatherItem = ({ forecast, view, forecastsDelete, citySelected }) => {
   const pressureAverage = Math.round(pressureSum / pressureList.length);
   const humidityAverage = Math.round(humiditySum / humidityList.length);
 
-  const buttonMap = (
+  const buttonMap = btnMap ? (
     <button
       className='forecast__btn-map'
       onClick={() => citySelected(forecast.city)}
     >
       Show on the map
     </button>
-  );
+  ) : null;
 
   const buttonDelete = (
     <button
