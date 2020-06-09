@@ -1,11 +1,14 @@
 import api from '../../../jsonplaceholder';
 import {
-  BLOG_POSTS_FETCH,
+  BLOG_POSTS_FETCH_REQUEST,
+  BLOG_POSTS_FETCH_SUCCESS,
   BLOG_POSTS_FETCH_FAILURE,
   BLOG_USER_SELECTED,
 } from '../../../types';
 
 export const fetchBlogPosts = () => async (dispatch) => {
+  dispatch({ type: BLOG_POSTS_FETCH_REQUEST });
+
   try {
     const posts = await api.get('/posts');
     const users = await api.get('/users');
@@ -17,13 +20,13 @@ export const fetchBlogPosts = () => async (dispatch) => {
 
     payload.sort(() => Math.random() - 0.5);
 
-    dispatch({ type: BLOG_POSTS_FETCH, payload });
+    dispatch({ type: BLOG_POSTS_FETCH_SUCCESS, payload });
   } catch (error) {
-    dispatch({ type: BLOG_POSTS_FETCH_FAILURE, payload: error });
+    dispatch({ type: BLOG_POSTS_FETCH_FAILURE, status: 500 });
   }
 };
 
 export const selectBlogUser = (user) => ({
   type: BLOG_USER_SELECTED,
-  payload: user,
+  user,
 });

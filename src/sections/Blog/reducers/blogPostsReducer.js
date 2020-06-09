@@ -1,16 +1,9 @@
-import { BLOG_POSTS_FETCH, BLOG_POSTS_FETCH_FAILURE } from '../../../types';
+import { BLOG_POSTS_FETCH_SUCCESS } from '../../../types';
 
-const defaultState = { data: [], status: '1xx' };
-
-export default (state = defaultState, action) => {
-  switch (action.type) {
-    case BLOG_POSTS_FETCH:
-      return { data: action.payload, status: '2xx' };
-
-    case BLOG_POSTS_FETCH_FAILURE:
-      return { data: action.payload, status: '5xx' };
-
-    default:
-      return state;
+export default (state = [], action) => {
+  if (action.type === BLOG_POSTS_FETCH_SUCCESS) {
+    return action.payload;
   }
+
+  return state;
 };

@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 import podcastReducer from './sections/Podcasts/reducers/podcastReducer';
 import blogPostsReducer from './sections/Blog/reducers/blogPostsReducer';
 import blogUserReducer from './sections/Blog/reducers/blogUserReducer';
+import blogErrorReducer from './sections/Blog/reducers/blogErrorReducer';
+import blogSpinnerReducer from './sections/Blog/reducers/blogSpinnerReducer';
 import bookActiveReducer from './sections/Books/reducers/bookActiveReducer';
 import booksViewReducer from './sections/Books/reducers/booksViewReducer';
 import bookSearchReducer from './sections/Books/reducers/bookSearchReducer';
@@ -17,6 +19,8 @@ export default combineReducers({
   podcast: podcastReducer,
   blogPosts: blogPostsReducer,
   blogUser: blogUserReducer,
+  blogError: blogErrorReducer,
+  blogSpinner: blogSpinnerReducer,
   bookActive: bookActiveReducer,
   booksView: booksViewReducer,
   bookSearch: bookSearchReducer,

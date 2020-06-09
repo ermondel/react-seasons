@@ -1,11 +1,11 @@
 import React from 'react';
 import BlogSidebar from './BlogSidebar';
-import PostList from './PostList';
+import BlogContent from './BlogContent';
 
 const Blog = () => (
   <main className='main'>
     <BlogSidebar />
-    <PostList />
+    <BlogContent />
   </main>
 );
 
