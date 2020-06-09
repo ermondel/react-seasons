@@ -12,4 +12,4 @@ My personal idea of a platform for completed Udemy ReactJS course tasks.
 
 ### Technologies
 
-React, Redux, Redux Thunk, React Hooks, React Context, Axios, JSONPlaceholder API, Geolocation API
+React, Redux, Redux Thunk, React Hooks, React Context, React Portals, React Sparklines, Axios, OpenWeatherMap API, Google Maps API, JSONPlaceholder API, Geolocation API
