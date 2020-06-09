@@ -1,5 +1,5 @@
 import React from 'react';
-import NavItem from '../../NavItem/components/NavItem';
+import NavItem from '../../NavItem/comp/NavItem';
 
 const Header = (props) => (
   <header className='header'>

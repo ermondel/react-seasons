@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { forecastsErrorHide } from '../actions/weather';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
 
 const WeatherInfobar = ({ spinner, error, forecastsErrorHide }) => {
   // unmount actions

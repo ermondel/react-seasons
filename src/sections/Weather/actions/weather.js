@@ -6,6 +6,9 @@ import {
   WEATHER_FORECASTS_DELETE,
   WEATHER_FORECASTS_ERROR_HIDE,
   WEATHER_FORECASTS_VIEW_CHANGED,
+  WEATHER_CITY_SELECTED,
+  WEATHER_MOUNT_MAP_SUCCESS,
+  WEATHER_MOUNT_MAP_FAILURE,
 } from '../../../types';
 
 export const forecastsFetch = (city) => async (dispatch) => {
@@ -56,7 +59,7 @@ export const forecastsViewMode = (view = 'line') => ({
 });
 
 export const citySelected = (city) => ({
-  type: 'WEATHER_CITY_SELECTED',
+  type: WEATHER_CITY_SELECTED,
   city,
 });
 
@@ -68,10 +71,10 @@ export const mountMap = () => async (dispatch) => {
     el.src = `https://maps.googleapis.com/maps/api/js?key=${response.data.opt}`;
     el.async = true;
     el.onload = () => {
-      dispatch({ type: 'WEATHER_MOUNT_MAP_SUCCESS' });
+      dispatch({ type: WEATHER_MOUNT_MAP_SUCCESS });
     };
     document.body.appendChild(el);
   } catch (error) {
-    dispatch({ type: 'WEATHER_MOUNT_MAP_FAILURE' });
+    dispatch({ type: WEATHER_MOUNT_MAP_FAILURE });
   }
 };

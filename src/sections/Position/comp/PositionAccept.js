@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
 import imgCompass from '../assets/compass.png';
 import isChrome from '../resources/isChrome';
 
@@ -25,8 +25,7 @@ const renderCompass = () => (
 const renderWarning = () => (
   <div className='accept-card'>
     <p>
-      The positioning function is disabled. Please open this page in Google
-      Chrome
+      The positioning function is disabled. Please open this page in Google Chrome
     </p>
   </div>
 );

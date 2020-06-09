@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SidebarInfo from '../../../app/SidebarInfo/components/SidebarInfo';
-import DetailsBlock from '../../../app/DetailsBlock/components/DetailsBlock';
+import SidebarInfo from '../../../app/SidebarInfo/comp/SidebarInfo';
+import DetailsBlock from '../../../app/DetailsBlock/comp/DetailsBlock';
 
 const PodcastDetails = ({ podcast }) => (
   <div className='sidebar'>

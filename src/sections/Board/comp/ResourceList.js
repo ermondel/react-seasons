@@ -2,8 +2,8 @@ import React from 'react';
 import useResources from '../resources/useResources';
 import PostList from './PostList';
 import TodoList from './TodoList';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/components/ErrorMessage';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
 
 const ResourceList = ({ resource }) => {
   const resources = useResources(resource);

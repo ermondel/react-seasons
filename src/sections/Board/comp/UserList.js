@@ -1,7 +1,7 @@
 import React from 'react';
 import useResources from '../resources/useResources';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/components/ErrorMessage';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
 
 const UserList = () => {
   const users = useResources('users');

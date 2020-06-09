@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PostItem from './PostItem';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/components/ErrorMessage';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
 import { fetchBlogPosts, selectBlogUser } from '../actions/blog';
 
 class PostList extends Component {

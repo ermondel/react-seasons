@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { mountMap } from '../actions/weather';
-import LoadingBar from '../../../app/LoadingBar/components/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/components/ErrorMessage';
+import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
 
 const MountMap = ({ mapStatus, mountMap }) => {
   useEffect(() => {

@@ -2,15 +2,15 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import Home from '../../../sections/Home/components/Home';
-import Position from '../../../sections/Position/components/Position';
-import Blog from '../../../sections/Blog/components/Blog';
-import Postcard from '../../../sections/Postcard/components/Postcard';
-import Podcasts from '../../../sections/Podcasts/components/Podcasts';
-import Books from '../../../sections/Books/components/Books';
-import Board from '../../../sections/Board/components/Board';
-import Weather from '../../../sections/Weather/components/Weather';
-import NoMatch from '../../../sections/NoMatch/components/NoMatch';
+import Home from '../../../sections/Home/comp/Home';
+import Position from '../../../sections/Position/comp/Position';
+import Blog from '../../../sections/Blog/comp/Blog';
+import Postcard from '../../../sections/Postcard/comp/Postcard';
+import Podcasts from '../../../sections/Podcasts/comp/Podcasts';
+import Books from '../../../sections/Books/comp/Books';
+import Board from '../../../sections/Board/comp/Board';
+import Weather from '../../../sections/Weather/comp/Weather';
+import NoMatch from '../../../sections/NoMatch/comp/NoMatch';
 
 const App = () => (
   <div className='app'>
