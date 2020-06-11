@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BoardSidebar from './BoardSidebar';
-import ResourceList from './ResourceList';
+import BoardContent from './BoardContent';
 
-const Board = () => {
-  const [resource, setResource] = useState('comments');
-
-  return (
-    <main className='main'>
-      <BoardSidebar res={resource} onButtonClick={setResource} />
-      <ResourceList resource={resource} />
-    </main>
-  );
-};
+const Board = () => (
+  <main className='main'>
+    <BoardSidebar />
+    <BoardContent />
+  </main>
+);
 
 export default Board;

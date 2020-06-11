@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostList = ({ list }) => (
+const CommentList = ({ list }) => (
   <div className='post-list'>
     {list.map((post) => (
       <article key={post.id} className='post'>
@@ -14,4 +14,4 @@ const PostList = ({ list }) => (
   </div>
 );
 
-export default PostList;
+export default CommentList;

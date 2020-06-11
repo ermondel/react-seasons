@@ -1,6 +1,6 @@
 {
   "name": "react-platform",
-  "version": "1.11.2",
+  "version": "1.12.2",
   "private": true,
   "homepage": "https://ermondel.github.io/react-platform",
   "dependencies": {

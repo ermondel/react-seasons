@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../../../jsonplaceholder';
 
 const useResources = (resource) => {
-  const [resources, setResources] = useState({ data: [], status: '1xx' });
+  const [state, setState] = useState({ data: [], spinner: true, error: false });
 
   useEffect(() => {
     let resourceMounted = true;
@@ -12,21 +12,29 @@ const useResources = (resource) => {
         const response = await api.get(`/${resource}`);
 
         if (resourceMounted) {
-          setResources({ data: response.data, status: '2xx' });
+          setTimeout(() => {
+            setState({ data: response.data, spinner: false, error: false });
+          }, 5000);
         }
       } catch (error) {
         if (resourceMounted) {
-          setResources({ data: error, status: '5xx' });
+          setTimeout(() => {
+            setState({ data: [], spinner: false, error: true });
+          }, 5000);
         }
       }
     };
 
     fetchResource(resource);
 
-    return () => (resourceMounted = false);
+    return () => {
+      resourceMounted = false;
+
+      setState({ data: [], spinner: true, error: false });
+    };
   }, [resource]);
 
-  return resources;
+  return state;
 };
 
 export default useResources;

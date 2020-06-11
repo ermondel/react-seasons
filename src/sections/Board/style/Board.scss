@@ -1,0 +1,112 @@
+/* user list */
+
+.user-list__title {
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  color: $color-base;
+  border-bottom: 1px solid $color-base;
+}
+
+.user-list__item {
+  color: $color-grey;
+  margin-bottom: 4px;
+}
+
+/* resource buttons */
+
+.resources-btns {
+  border-bottom: 1px solid $color-main;
+  padding: 0 15px;
+  margin-bottom: 35px;
+}
+
+.resources-btn,
+.resources-btn_active {
+  margin: 0;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: $color-common;
+  font-size: 14px;
+}
+
+.resources-btn:first-child,
+.resources-btn_active:first-child {
+  border-top-left-radius: 8px;
+}
+
+.resources-btn:last-child,
+.resources-btn_active:last-child {
+  border-top-right-radius: 8px;
+}
+
+.resources-btn_active {
+  cursor: default;
+  border-top: 1px solid $color-main;
+  border-right: 1px solid $color-main;
+  border-left: 1px solid $color-main;
+  background-color: $color-common-bg;
+  position: relative;
+  bottom: -1px;
+  color: $color-list;
+}
+
+.resources-btn:hover,
+.resources-btn:focus {
+  background-color: $color-hover-common;
+  outline: none;
+}
+
+.resources-btn::-moz-focus-inner,
+.resources-btn_active::-moz-focus-inner {
+  border: 0;
+}
+
+/* todos-list */
+
+.todos-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo {
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: relative;
+  background-color: $color-main;
+}
+
+.todo::before {
+  content: '';
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 30px;
+  height: 30px;
+  background-color: $color-main;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.todo::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: $color-common-bg;
+  z-index: 1;
+}
+
+.todo__title {
+  padding: 10px 50px 10px 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: $color-base;
+}
