@@ -4,49 +4,42 @@ import { forecastsErrorHide } from '../actions/weather';
 import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
 
 const WeatherInfobar = ({ spinner, error, forecastsErrorHide }) => {
-  // unmount actions
   useEffect(() => {
     return () => {
       forecastsErrorHide();
     };
   }, [forecastsErrorHide]);
 
-  // info message (loading or error)
-  let title, content;
+  let componentTitle = null;
+  let componentContent = null;
 
-  switch (spinner ? 100 : error ? error.status : undefined) {
-    case 404:
-      title = error.query;
-      content = <p>Not found. Perhaps the wrong city name was entered.</p>;
-      break;
+  if (spinner) {
+    componentTitle = spinner.query;
+    componentContent = (
+      <div className='forecast-error__spinner'>
+        <LoadingBar type='main-img' />
+      </div>
+    );
+  }
 
-    case 500:
-      title = error.query;
-      content = (
+  if (error) {
+    if (error.status === 404) {
+      componentTitle = error.query;
+      componentContent = <p>Not found. Perhaps the wrong city name was entered.</p>;
+    }
+
+    if (error.status === 500) {
+      componentTitle = error.query;
+      componentContent = (
         <p>
           The remote server is not responding. Perhaps it is overloaded with
           requests.
         </p>
       );
-      break;
-
-    case 100:
-      title = spinner.query;
-      content = (
-        <div className='forecast-error__spinner'>
-          <LoadingBar type='main-img' />
-        </div>
-      );
-      break;
-
-    default:
-      title = null;
-      content = null;
-      break;
+    }
   }
 
-  // button (close error message)
-  const closeButton = error ? (
+  const buttonClose = error ? (
     <button
       className='forecast-error__btn-close'
       onClick={() => forecastsErrorHide()}
@@ -55,14 +48,13 @@ const WeatherInfobar = ({ spinner, error, forecastsErrorHide }) => {
     </button>
   ) : null;
 
-  // render
-  return content ? (
+  return componentContent ? (
     <div className='forecast-error'>
       <div className='forecast-error__header'>
-        <h3 className='forecast-error__title'>{title}</h3>
-        <div className='forecast-error__btns'>{closeButton}</div>
+        <h3 className='forecast-error__title'>{componentTitle}</h3>
+        <div className='forecast-error__btns'>{buttonClose}</div>
       </div>
-      <div className='forecast-error__body'>{content}</div>
+      <div className='forecast-error__body'>{componentContent}</div>
     </div>
   ) : null;
 };

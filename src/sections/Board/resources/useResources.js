@@ -12,15 +12,11 @@ const useResources = (resource) => {
         const response = await api.get(`/${resource}`);
 
         if (resourceMounted) {
-          setTimeout(() => {
-            setState({ data: response.data, spinner: false, error: false });
-          }, 5000);
+          setState({ data: response.data, spinner: false, error: false });
         }
       } catch (error) {
         if (resourceMounted) {
-          setTimeout(() => {
-            setState({ data: [], spinner: false, error: true });
-          }, 5000);
+          setState({ data: [], spinner: false, error: true });
         }
       }
     };

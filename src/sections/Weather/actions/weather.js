@@ -36,7 +36,7 @@ export const forecastsFetch = (city) => async (dispatch) => {
       });
     } else {
       dispatch({
-        type: WEATHER_FORECASTS_DELETE,
+        type: WEATHER_FORECASTS_FETCH_FAILURE,
         status: 500,
         query: city,
       });
