@@ -1,9 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 
 const BlogError = ({ error }) => {
-  return error ? <ErrorMessage type='remote' tip={true} /> : null;
+  return error ? (
+    <div className='blog-error'>
+      <ErrorRemoteImg />
+      <div>
+        <p>The remote server is not responding</p>
+        <p>Perhaps it is overloaded with requests</p>
+        <p>Please come back later</p>
+      </div>
+    </div>
+  ) : null;
 };
 
 const mapStateToProps = (state) => ({

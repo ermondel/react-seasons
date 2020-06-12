@@ -1,11 +1,11 @@
 import React from 'react';
-import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
 import imgCompass from '../assets/compass.png';
 import isChrome from '../resources/isChrome';
 
 const renderRequest = () => (
   <div className='accept-card'>
-    <LoadingBar type='main-img' />
+    <SpinnerBig />
     <p>Please accept location request</p>
   </div>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import WeatherSearchForm from './WeatherSearchForm';
-import WeatherInfobar from './WeatherInfobar';
+import ForecastError from './ForecastError';
 import WeatherList from './WeatherList';
 import CityLocation from './CityLocation';
 
@@ -10,7 +10,7 @@ const WeatherForecast = () => (
       <h2>Weather</h2>
 
       <WeatherSearchForm />
-      <WeatherInfobar />
+      <ForecastError />
       <WeatherList />
       <CityLocation />
     </div>

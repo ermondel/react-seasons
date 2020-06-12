@@ -1,38 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mountMap } from '../actions/weather';
-import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
+import SpinnerSmall from '../../../app/SpinnerImg/comp/SpinnerSmall';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 
-const MountMap = ({ mapStatus, mountMap }) => {
-  useEffect(() => {
-    if (!mapStatus.ready) {
-      mountMap();
+class MountMap extends Component {
+  componentDidMount() {
+    if (!this.props.mapStatus.ready) this.props.mountMap();
+  }
+
+  render() {
+    if (this.props.mapStatus.loading) {
+      return (
+        <div className='mount-map-spinner'>
+          <SpinnerSmall />
+          <p>loading maps</p>
+        </div>
+      );
     }
-  }, [mapStatus, mountMap]);
 
-  if (mapStatus.loading) {
-    return (
-      <div className='mount-map'>
-        <LoadingBar type='sidebar' />
-        <p>loading maps</p>
-      </div>
-    );
-  }
+    if (this.props.mapStatus.error) {
+      return (
+        <div className='mount-map-error'>
+          <ErrorRemoteImg />
+          <p>the remote server is unavailable</p>
+        </div>
+      );
+    }
 
-  if (mapStatus.error) {
-    return (
-      <div className='mount-map'>
-        <ErrorMessage type='remote' />
-        <p>the remote server is unavailable</p>
-      </div>
-    );
+    if (this.props.mapStatus.ready) {
+      return null;
+    }
   }
-
-  if (mapStatus.ready) {
-    return null;
-  }
-};
+}
 
 const mapStateToProps = (state) => ({
   mapStatus: state.forecastMountMap,

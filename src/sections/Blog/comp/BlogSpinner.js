@@ -1,9 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
 
 const BlogSpinner = ({ active }) => {
-  return active ? <LoadingBar type='main' /> : null;
+  return active ? (
+    <div className='blog-spinner'>
+      <SpinnerBig />
+      <div>
+        <p>Request data from a remote server</p>
+        <p>This may take some time</p>
+        <p>Please wait</p>
+      </div>
+    </div>
+  ) : null;
 };
 
 const mapStateToProps = (state) => ({

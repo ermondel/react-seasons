@@ -199,7 +199,8 @@
 
 /* map */
 
-.mount-map {
+.mount-map-spinner,
+.mount-map-error {
   text-align: center;
   color: $color-grey;
   text-transform: uppercase;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import CommentList from './CommentList';
 import TodoList from './TodoList';
 import useResources from '../resources/useResources';
-import LoadingBar from '../../../app/LoadingBar/comp/LoadingBar';
-import ErrorMessage from '../../../app/ErrorMessage/comp/ErrorMessage';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 
 const BoardContent = () => {
   const [resource, setResource] = useState('comments');
@@ -34,6 +34,28 @@ const BoardContent = () => {
     </button>
   );
 
+  const blockSpinner = (
+    <div className='board-spinner-main'>
+      <SpinnerBig />
+      <div>
+        <p>Request data from a remote server</p>
+        <p>This may take some time</p>
+        <p>Please wait</p>
+      </div>
+    </div>
+  );
+
+  const blockError = (
+    <div className='board-error-main'>
+      <ErrorRemoteImg />
+      <div>
+        <p>The remote server is not responding</p>
+        <p>Perhaps it is overloaded with requests</p>
+        <p>Please come back later</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className='content'>
       <div className='content-wrap'>
@@ -44,8 +66,8 @@ const BoardContent = () => {
           {buttonTodos}
         </div>
 
-        {showSpinner && <LoadingBar type='main' />}
-        {showError && <ErrorMessage type='remote' tip={true} />}
+        {showSpinner && blockSpinner}
+        {showError && blockError}
         {showComments && <CommentList list={state.data} />}
         {showTodos && <TodoList list={state.data} />}
       </div>
