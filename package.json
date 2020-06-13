@@ -3,6 +3,9 @@
   "version": "1.14.4",
   "private": true,
   "homepage": "https://ermondel.github.io/react-platform",
+  "description": "Platform for completed tasks",
+  "author": "ermondel",
+  "license": "CC BY-NC 4.0",
   "dependencies": {
     "axios": "^0.19.2",
     "gh-pages": "^2.2.0",
