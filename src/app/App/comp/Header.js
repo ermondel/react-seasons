@@ -29,6 +29,9 @@ const Header = (props) => (
         <li>
           <NavItem val={'Weather'} from={props.path} to={'/weather'} />
         </li>
+        <li>
+          <NavItem val={'Posts'} from={props.path} to={'/posts'} />
+        </li>
       </ul>
     </nav>
   </header>

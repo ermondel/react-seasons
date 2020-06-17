@@ -10,9 +10,13 @@ import Podcasts from '../../../sections/Podcasts/comp/Podcasts';
 import Books from '../../../sections/Books/comp/Books';
 import Board from '../../../sections/Board/comp/Board';
 import Weather from '../../../sections/Weather/comp/Weather';
+import Posts from '../../../sections/Posts/comp/Posts';
+import ReadPost from '../../../sections/Posts/comp/ReadPost';
+import AddPost from '../../../sections/Posts/comp/AddPost';
+import DeletePost from '../../../sections/Posts/comp/DeletePost';
 import NoMatch from '../../../sections/NoMatch/comp/NoMatch';
 
-const App = () => (
+const App = (props) => (
   <div className='app'>
     <HashRouter>
       <div className='app-wrap'>
@@ -55,6 +59,26 @@ const App = () => (
           <Route path='/weather' exact>
             <Header path='/weather' />
             <Weather />
+          </Route>
+
+          <Route path='/posts' exact>
+            <Header path='/posts' />
+            <Posts />
+          </Route>
+
+          <Route path='/posts/add' exact>
+            <Header path='/posts' />
+            <AddPost />
+          </Route>
+
+          <Route path='/posts/:id' exact>
+            <Header path='/posts' />
+            <ReadPost />
+          </Route>
+
+          <Route path='/posts/delete/:id' exact>
+            <Header path='/posts' />
+            <DeletePost />
           </Route>
 
           <Route path='*'>
