@@ -4,6 +4,7 @@ import Header from '../../../app/App/comp/Header';
 const NoMatch = () => (
   <div className='app-main'>
     <Header />
+
     <main className='main'>
       <div className='sidebar'>
         <div className='sidebar-wrap'>{null}</div>

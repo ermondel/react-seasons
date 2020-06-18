@@ -3,9 +3,10 @@ import Header from '../../../app/App/comp/Header';
 import BooksSidebar from './BooksSidebar';
 import BookList from './BookList';
 
-const Books = () => (
+const Books = (props) => (
   <div className='app-main'>
-    <Header path='/books' />
+    <Header path={props.location.pathname} />
+
     <main className='main'>
       <BooksSidebar />
       <BookList />

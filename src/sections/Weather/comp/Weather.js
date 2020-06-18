@@ -3,9 +3,10 @@ import Header from '../../../app/App/comp/Header';
 import WeatherSidebar from './WeatherSidebar';
 import WeatherForecast from './WeatherForecast';
 
-const Weather = () => (
+const Weather = (props) => (
   <div className='app-main'>
-    <Header path='/weather' />
+    <Header path={props.location.pathname} />
+
     <main className='main'>
       <WeatherSidebar />
       <WeatherForecast />

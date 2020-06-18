@@ -6,9 +6,9 @@ import Add from './add/Add';
 import Read from './read/Read';
 import Delete from './delete/Delete';
 
-const Posts = () => (
+const Posts = (props) => (
   <div className='app-main'>
-    <Header path='/posts' />
+    <Header path={props.location.pathname} />
 
     <Switch>
       <Route path='/posts' exact component={List} />

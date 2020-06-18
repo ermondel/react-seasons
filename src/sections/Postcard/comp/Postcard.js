@@ -5,9 +5,10 @@ import { ColorContext } from '../contexts/ColorContext';
 import PostcardDetails from './PostcardDetails';
 import PostcardScene from './PostcardScene';
 
-const Postcard = () => (
+const Postcard = (props) => (
   <div className='app-main'>
-    <Header path='/postcard' />
+    <Header path={props.location.pathname} />
+
     <main className='main'>
       <ColorContext>
         <LanguageContext>
