@@ -11,9 +11,6 @@ import {
   Board,
   Weather,
   Posts,
-  AddPost,
-  ReadPost,
-  DeletePost,
   NoMatch,
 } from '../../../sections';
 
@@ -28,10 +25,7 @@ const Routers = () => (
       <Route path='/books' exact component={Books} />
       <Route path='/board' exact component={Board} />
       <Route path='/weather' exact component={Weather} />
-      <Route path='/posts' exact component={Posts} />
-      <Route path='/posts/add' exact component={AddPost} />
-      <Route path='/posts/:id' exact component={ReadPost} />
-      <Route path='/posts/delete/:id' exact component={DeletePost} />
+      <Route path='/posts' component={Posts} />
       <Route path='*' component={NoMatch} />
     </Switch>
     <Footer />
