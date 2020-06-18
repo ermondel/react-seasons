@@ -1,0 +1,27 @@
+import HomeSection from './sections/Home/comp/Home';
+import PositionSection from './sections/Position/comp/Position';
+import BlogSection from './sections/Blog/comp/Blog';
+import PostcardSection from './sections/Postcard/comp/Postcard';
+import PodcastsSection from './sections/Podcasts/comp/Podcasts';
+import BooksSection from './sections/Books/comp/Books';
+import BoardSection from './sections/Board/comp/Board';
+import WeatherSection from './sections/Weather/comp/Weather';
+import PostsSection from './sections/Posts/comp/Posts';
+import ReadPostSection from './sections/Posts/comp/ReadPost';
+import AddPostSection from './sections/Posts/comp/AddPost';
+import DeletePostSection from './sections/Posts/comp/DeletePost';
+import NoMatchSection from './sections/NoMatch/comp/NoMatch';
+
+export const Home = HomeSection;
+export const Position = PositionSection;
+export const Blog = BlogSection;
+export const Postcard = PostcardSection;
+export const Podcasts = PodcastsSection;
+export const Books = BooksSection;
+export const Board = BoardSection;
+export const Weather = WeatherSection;
+export const Posts = PostsSection;
+export const ReadPost = ReadPostSection;
+export const AddPost = AddPostSection;
+export const DeletePost = DeletePostSection;
+export const NoMatch = NoMatchSection;
