@@ -14,6 +14,9 @@ import forecastViewReducer from './sections/Weather/reducers/forecastViewReducer
 import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer';
 import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
 import ModalWindowReducer from './app/ModalWindow/reducers/ModalWindowReducer';
+import postsListReducer from './sections/Posts/reducers/postsListReducer';
+import postsSpinnerReducer from './sections/Posts/reducers/postsSpinnerReducer';
+import postsErrorReducer from './sections/Posts/reducers/postsErrorReducer';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -31,4 +34,7 @@ export default combineReducers({
   forecastCity: forecastCityReducer,
   forecastMountMap: forecastMountMapReducer,
   modalWindow: ModalWindowReducer,
+  postsList: postsListReducer,
+  postsSpinner: postsSpinnerReducer,
+  postsError: postsErrorReducer,
 });
