@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import api from '../../../jsonplaceholder';
+import { jsonplaceholder } from '../../../api';
 
 const useResources = (resource) => {
   const [state, setState] = useState({ data: [], spinner: true, error: false });
@@ -9,7 +9,7 @@ const useResources = (resource) => {
 
     const fetchResource = async (resource) => {
       try {
-        const response = await api.get(`/${resource}`);
+        const response = await jsonplaceholder.get(`/${resource}`);
 
         if (resourceMounted) {
           setState({ data: response.data, spinner: false, error: false });

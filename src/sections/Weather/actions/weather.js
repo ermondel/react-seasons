@@ -1,4 +1,4 @@
-import api from '../../../nodeapiserver';
+import { nodeapiserver } from '../../../api';
 import {
   WEATHER_FORECASTS_FETCH_REQUEST,
   WEATHER_FORECASTS_FETCH_SUCCESS,
@@ -18,7 +18,7 @@ export const forecastsFetch = (city) => async (dispatch) => {
   });
 
   try {
-    const forecasts = await api.get('/request/openweathermap', {
+    const forecasts = await nodeapiserver.get('/request/openweathermap', {
       params: { q: city, units: 'metric' },
     });
 
@@ -67,7 +67,7 @@ export const mountMap = () => async (dispatch) => {
   const el = document.createElement('script');
 
   try {
-    const response = await api.get('/opt/axqf9i');
+    const response = await nodeapiserver.get('/opt/axqf9i');
     el.src = `https://maps.googleapis.com/maps/api/js?key=${response.data.opt}`;
     el.async = true;
     el.onload = () => {

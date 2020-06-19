@@ -1,4 +1,4 @@
-import api from '../../../reduxblog';
+import { reduxblog } from '../../../api';
 import {
   POSTS_FETCH_REQUEST,
   POSTS_FETCH_SUCCESS,
@@ -9,7 +9,7 @@ export const fetchPosts = () => async (dispatch) => {
   dispatch({ type: POSTS_FETCH_REQUEST });
 
   try {
-    const response = await api.get('/posts', {
+    const response = await reduxblog.get('/posts', {
       params: { key: '' },
     });
 

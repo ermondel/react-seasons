@@ -1,4 +1,4 @@
-import api from '../../../jsonplaceholder';
+import { jsonplaceholder } from '../../../api';
 import {
   BLOG_POSTS_FETCH_REQUEST,
   BLOG_POSTS_FETCH_SUCCESS,
@@ -10,8 +10,8 @@ export const fetchBlogPosts = () => async (dispatch) => {
   dispatch({ type: BLOG_POSTS_FETCH_REQUEST });
 
   try {
-    const posts = await api.get('/posts');
-    const users = await api.get('/users');
+    const posts = await jsonplaceholder.get('/posts');
+    const users = await jsonplaceholder.get('/users');
 
     const payload = posts.data.map((post) => {
       post.user = users.data.find((user) => user.id === post.userId);
