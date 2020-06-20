@@ -63,6 +63,14 @@ const HomeContent = () => (
           <h4 className='info-article__title'>Weather</h4>
           <p className='info-article__body'>5-day weather charts for the city.</p>
         </article>
+
+        <article className='info-article'>
+          <h4 className='info-article__title'>Posts</h4>
+          <p className='info-article__body'>
+            Manage the list of posts. Add, read and delete posts. Restful backend
+            service - Redux Blog Post API.
+          </p>
+        </article>
       </section>
     </div>
   </div>

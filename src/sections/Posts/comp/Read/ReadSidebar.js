@@ -1,12 +1,12 @@
 import React from 'react';
 import SidebarInfo from '../../../../app/SidebarInfo/comp/SidebarInfo';
 
-const DeleteSidebar = () => (
+const ReadSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
-      <SidebarInfo list='React' />
+      <SidebarInfo list='React, Redux, Redux Blog Post API' />
     </div>
   </div>
 );
 
-export default DeleteSidebar;
+export default ReadSidebar;

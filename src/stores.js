@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import podcastReducer from './sections/Podcasts/reducers/podcastReducer';
 import blogPostsReducer from './sections/Blog/reducers/blogPostsReducer';
 import blogUserReducer from './sections/Blog/reducers/blogUserReducer';
@@ -37,4 +38,5 @@ export default combineReducers({
   postsList: postsListReducer,
   postsSpinner: postsSpinnerReducer,
   postsError: postsErrorReducer,
+  form: formReducer,
 });

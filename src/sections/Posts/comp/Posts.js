@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../../../app/App/comp/Header';
-import List from './list/List';
-import Add from './add/Add';
-import Read from './read/Read';
-import Delete from './delete/Delete';
+import List from './List/List';
+import Add from './Add/Add';
+import Read from './Read/Read';
+import Delete from './Delete/Delete';
 
 const Posts = (props) => (
   <div className='app-main'>

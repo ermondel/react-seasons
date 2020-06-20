@@ -4,7 +4,7 @@ import SidebarInfo from '../../../../app/SidebarInfo/comp/SidebarInfo';
 const AddSidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
-      <SidebarInfo list='React' />
+      <SidebarInfo list='React, Redux, Redux Blog Post API' />
     </div>
   </div>
 );
