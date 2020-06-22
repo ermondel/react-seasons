@@ -89,9 +89,9 @@ class PostsAddForm extends Component {
     );
   };
 
-  onSubmit(formValues) {
-    console.log(formValues);
-  }
+  onSubmit = (formValues) => {
+    this.props.onSubmit(formValues);
+  };
 
   render() {
     const { handleSubmit, valid } = this.props;

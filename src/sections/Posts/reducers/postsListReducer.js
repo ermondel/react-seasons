@@ -1,9 +1,14 @@
-import { POSTS_FETCH_SUCCESS } from '../../../types';
+import { POSTS_FETCH_SUCCESS, POSTS_CREATE_SUCCESS } from '../../../types';
 
 export default (state = [], action) => {
-  if (action.type === POSTS_FETCH_SUCCESS) {
-    return action.payload;
-  }
+  switch (action.type) {
+    case POSTS_FETCH_SUCCESS:
+      return action.payload;
 
-  return state;
+    case POSTS_CREATE_SUCCESS:
+      return [action.payload, ...state];
+
+    default:
+      return state;
+  }
 };

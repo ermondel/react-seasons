@@ -18,6 +18,7 @@ import ModalWindowReducer from './app/ModalWindow/reducers/ModalWindowReducer';
 import postsListReducer from './sections/Posts/reducers/postsListReducer';
 import postsSpinnerReducer from './sections/Posts/reducers/postsSpinnerReducer';
 import postsErrorReducer from './sections/Posts/reducers/postsErrorReducer';
+import postsAddReducer from './sections/Posts/reducers/postsAddReducer';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -38,5 +39,6 @@ export default combineReducers({
   postsList: postsListReducer,
   postsSpinner: postsSpinnerReducer,
   postsError: postsErrorReducer,
+  postsAdd: postsAddReducer,
   form: formReducer,
 });
