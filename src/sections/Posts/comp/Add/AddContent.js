@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPost } from '../../actions/posts';
+import { Redirect } from 'react-router-dom';
+import { createPost, setAddingDefaultState } from '../../actions/posts';
 import PostsAddForm from './PostsAddForm';
 import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
 
 class AddContent extends Component {
+  componentWillUnmount() {
+    if (this.props.mode !== 'default') {
+      this.props.setAddingDefaultState();
+    }
+  }
+
   renderSpinner() {
     return (
       <div className='posts-spinner'>
@@ -32,22 +39,30 @@ class AddContent extends Component {
     );
   }
 
-  renderSuccessfulMessage() {
-    return <p>The new post was saved successfully.</p>;
+  renderContent() {
+    switch (this.props.mode) {
+      case 'loading':
+        return this.renderSpinner();
+
+      case 'failure':
+        return this.renderError();
+
+      case 'success':
+        return <Redirect to='/posts' />;
+
+      case 'default':
+      default:
+        return <PostsAddForm onSubmit={this.props.createPost} />;
+    }
   }
 
   render() {
-    const { saved, spinner, error, createPost } = this.props;
-
     return (
       <div className='content'>
         <div className='content-wrap'>
           <h2>New post</h2>
 
-          {spinner && this.renderSpinner()}
-          {error && this.renderError()}
-          {!spinner && !error && !saved && <PostsAddForm onSubmit={createPost} />}
-          {saved && this.renderSuccessfulMessage()}
+          {this.renderContent()}
         </div>
       </div>
     );
@@ -55,9 +70,10 @@ class AddContent extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  saved: state.postsAdd,
-  spinner: state.postsSpinner,
-  error: state.postsError,
+  mode: state.postsAddingMode,
 });
 
-export default connect(mapStateToProps, { createPost })(AddContent);
+export default connect(mapStateToProps, {
+  createPost,
+  setAddingDefaultState,
+})(AddContent);

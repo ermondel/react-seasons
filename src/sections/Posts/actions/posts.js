@@ -1,33 +1,47 @@
+import { v4 as uuidv4 } from 'uuid';
 import { reduxblog } from '../../../api';
-import {
-  POSTS_FETCH_REQUEST,
-  POSTS_FETCH_SUCCESS,
-  POSTS_FETCH_FAILURE,
-  POSTS_CREATE_REQUEST,
-  POSTS_CREATE_SUCCESS,
-  POSTS_CREATE_FAILURE,
-} from '../../../types';
 
 export const fetchPosts = () => async (dispatch) => {
-  dispatch({ type: POSTS_FETCH_REQUEST });
+  dispatch({ type: 'POSTS_LIST_REQUEST' });
 
   try {
     const response = await reduxblog.get('/posts', {
       params: { key: '' },
     });
 
-    dispatch({ type: POSTS_FETCH_SUCCESS, payload: response.data });
+    dispatch({ type: 'POSTS_LIST_SUCCESS', payload: response.data });
   } catch (error) {
-    dispatch({ type: POSTS_FETCH_FAILURE, status: 500 });
+    dispatch({ type: 'POSTS_LIST_FAILURE', status: 500 });
   }
 };
 
 export const createPost = (values) => async (dispatch) => {
-  dispatch({ type: POSTS_CREATE_REQUEST });
+  dispatch({ type: 'POSTS_ADDING_REQUEST' });
 
   try {
-    dispatch({ type: POSTS_CREATE_SUCCESS, payload: null });
+    const response = await reduxblog.post(
+      '/posts',
+      {
+        id: uuidv4(),
+        title: values.title,
+        categories: values.categories,
+        content: values.content,
+      },
+      {
+        params: { key: '' },
+      }
+    );
+
+    dispatch({ type: 'POSTS_ADDING_SUCCESS', payload: response.data });
   } catch (error) {
-    dispatch({ type: POSTS_CREATE_FAILURE, status: 500 });
+    dispatch({ type: 'POSTS_ADDING_FAILURE', status: 500 });
   }
 };
+
+export const setAddingDefaultState = () => ({
+  type: 'POSTS_ADDING_DEFAULT',
+});
+
+export const hideLog = () => ({
+  type: 'POSTS_LOG_HIDE',
+});
