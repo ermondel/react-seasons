@@ -19,6 +19,7 @@ import postsListReducer from './sections/Posts/reducers/postsListReducer';
 import postsAddingModeReducer from './sections/Posts/reducers/postsAddingModeReducer';
 import postsLogReducer from './sections/Posts/reducers/postsLogReducer';
 import postsListModeReducer from './sections/Posts/reducers/postsListModeReducer';
+import postsRemoving from './sections/Posts/reducers/postsRemoving';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -40,5 +41,6 @@ export default combineReducers({
   postsAddingMode: postsAddingModeReducer,
   postsLog: postsLogReducer,
   postsListMode: postsListModeReducer,
+  postsRemoving: postsRemoving,
   form: formReducer,
 });

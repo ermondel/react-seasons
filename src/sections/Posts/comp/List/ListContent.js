@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts, hideLog } from '../../actions/posts';
+import { fetchPosts, hideLog, removePostAsk } from '../../actions/posts';
 import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { modalOpen } from '../../../../app/ModalWindow/actions/ModalWindow';
+import ListItem from './ListItem';
 
 class ListContent extends Component {
   componentDidMount() {
@@ -45,13 +47,14 @@ class ListContent extends Component {
 
   renderList() {
     return this.props.list.map((post) => (
-      <p key={post.id}>
-        {post.title}
-        <br />
-        {post.categories}
-        <br />
-        {post.content}
-      </p>
+      <ListItem
+        key={post.id}
+        post={post}
+        onRemoveClick={() => {
+          this.props.removePostAsk(post.id, post.title);
+          this.props.modalOpen();
+        }}
+      />
     ));
   }
 
@@ -108,4 +111,6 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   fetchPosts,
   hideLog,
+  removePostAsk,
+  modalOpen,
 })(ListContent);
