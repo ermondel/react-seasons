@@ -8,7 +8,7 @@ import ListItem from './ListItem';
 
 class ListContent extends Component {
   componentDidMount() {
-    if (!this.props.list.length) {
+    if (!this.props.posts.list.length) {
       this.props.fetchPosts();
     }
   }
@@ -46,16 +46,22 @@ class ListContent extends Component {
   }
 
   renderList() {
-    return this.props.list.map((post) => (
-      <ListItem
-        key={post.id}
-        post={post}
-        onRemoveClick={() => {
-          this.props.removePostAsk(post.id, post.title);
-          this.props.modalOpen();
-        }}
-      />
-    ));
+    const { posts, removePostAsk, modalOpen } = this.props;
+
+    return posts.list.length ? (
+      posts.list.map((post) => (
+        <ListItem
+          key={post.id}
+          post={post}
+          onRemoveClick={() => {
+            removePostAsk(post.id, post.title);
+            modalOpen();
+          }}
+        />
+      ))
+    ) : (
+      <p>No posts found</p>
+    );
   }
 
   renderMessage() {
@@ -74,7 +80,7 @@ class ListContent extends Component {
   }
 
   renderContent() {
-    switch (this.props.mode) {
+    switch (this.props.posts.mode) {
       case 'loading':
         return this.renderSpinner();
 
@@ -103,8 +109,7 @@ class ListContent extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  mode: state.postsListMode,
-  list: state.postsList,
+  posts: state.postsList,
   log: state.postsLog,
 });
 
