@@ -15,10 +15,10 @@ import forecastViewReducer from './sections/Weather/reducers/forecastViewReducer
 import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer';
 import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
 import ModalWindowReducer from './app/ModalWindow/reducers/ModalWindowReducer';
-import postsLogReducer from './sections/Posts/reducers/postsLogReducer';
 import postsRemoving from './sections/Posts/reducers/postsRemoving';
 import postsList from './sections/Posts/reducers/postsList';
 import postsAdding from './sections/Posts/reducers/postsAdding';
+import postsMessage from './sections/Posts/reducers/postsMessage';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -36,9 +36,9 @@ export default combineReducers({
   forecastCity: forecastCityReducer,
   forecastMountMap: forecastMountMapReducer,
   modalWindow: ModalWindowReducer,
-  postsLog: postsLogReducer,
   postsRemoving: postsRemoving,
   postsList: postsList,
   postsAdding: postsAdding,
+  postsMessage: postsMessage,
   form: formReducer,
 });

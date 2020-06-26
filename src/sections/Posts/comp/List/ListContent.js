@@ -1,121 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchPosts, hideLog, removePostAsk } from '../../actions/posts';
-import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
-import { modalOpen } from '../../../../app/ModalWindow/actions/ModalWindow';
-import ListItem from './ListItem';
+import React from 'react';
+import PostsMessage from './PostsMessage';
+import PostList from './PostList';
 
-class ListContent extends Component {
-  componentDidMount() {
-    if (!this.props.posts.list.length) {
-      this.props.fetchPosts();
-    }
-  }
+const ListContent = () => (
+  <div className='content'>
+    <div className='content-wrap'>
+      <h2>Post list</h2>
 
-  componentWillUnmount() {
-    if (this.props.log.display) {
-      this.props.hideLog();
-    }
-  }
+      <PostsMessage />
+      <PostList />
+    </div>
+  </div>
+);
 
-  renderSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p>Request data from a remote server</p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>The remote server is not responding</p>
-          <p>Perhaps it is overloaded with requests</p>
-          <p>Please come back later</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderList() {
-    const { posts, removePostAsk, modalOpen } = this.props;
-
-    return posts.list.length ? (
-      posts.list.map((post) => (
-        <ListItem
-          key={post.id}
-          post={post}
-          onRemoveClick={() => {
-            removePostAsk(post.id, post.title);
-            modalOpen();
-          }}
-        />
-      ))
-    ) : (
-      <p>No posts found</p>
-    );
-  }
-
-  renderMessage() {
-    const { log, hideLog } = this.props;
-
-    if (log.display && log.list.length) {
-      return (
-        <div>
-          {log.list[log.list.length - 1].message}
-          <button onClick={hideLog}>Close</button>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-
-  renderContent() {
-    switch (this.props.posts.mode) {
-      case 'loading':
-        return this.renderSpinner();
-
-      case 'failure':
-        return this.renderError();
-
-      case 'success':
-      case 'default':
-      default:
-        return this.renderList();
-    }
-  }
-
-  render() {
-    return (
-      <div className='content'>
-        <div className='content-wrap'>
-          <h2>Post list</h2>
-
-          {this.renderMessage()}
-          {this.renderContent()}
-        </div>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state) => ({
-  posts: state.postsList,
-  log: state.postsLog,
-});
-
-export default connect(mapStateToProps, {
-  fetchPosts,
-  hideLog,
-  removePostAsk,
-  modalOpen,
-})(ListContent);
+export default ListContent;

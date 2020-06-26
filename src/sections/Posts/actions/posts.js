@@ -44,6 +44,11 @@ export const createPost = (values) => async (dispatch) => {
       title: response.data.title,
       payload: response.data,
     });
+
+    dispatch({
+      type: 'POSTS_MESSAGE_ADD',
+      message: 'The post has been added.',
+    });
   } catch (error) {
     dispatch({
       type: 'POSTS_ADDING_FAILURE',
@@ -78,14 +83,19 @@ export const removePostAsk = (id, title) => ({
   title,
 });
 
-export const hideLog = () => ({
-  type: 'POSTS_LOG_HIDE',
-});
-
 export const removePostReset = () => ({
   type: 'POSTS_REMOVING_RESET',
 });
 
 export const addingPostReset = () => ({
   type: 'POSTS_ADDING_RESET',
+});
+
+export const addMessage = (message) => ({
+  type: 'POSTS_MESSAGE_ADD',
+  message,
+});
+
+export const removeMessage = () => ({
+  type: 'POSTS_MESSAGE_REMOVE',
 });
