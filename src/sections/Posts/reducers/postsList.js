@@ -1,3 +1,11 @@
+import {
+  POSTS_LIST_REQUEST,
+  POSTS_LIST_SUCCESS,
+  POSTS_LIST_FAILURE,
+  POSTS_ADDING_SUCCESS,
+  POSTS_REMOVING_SUCCESS,
+} from '../../../types';
+
 const defaultState = {
   mode: 'default',
   list: [],
@@ -5,32 +13,32 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case 'POSTS_LIST_REQUEST':
+    case POSTS_LIST_REQUEST:
       return {
         mode: 'loading',
         list: [],
       };
 
-    case 'POSTS_LIST_SUCCESS':
+    case POSTS_LIST_SUCCESS:
       return {
         mode: 'success',
         list: action.payload,
       };
 
-    case 'POSTS_LIST_FAILURE':
+    case POSTS_LIST_FAILURE:
       return {
         mode: 'failure',
         list: [],
         status: action.status,
       };
 
-    case 'POSTS_ADDING_SUCCESS':
+    case POSTS_ADDING_SUCCESS:
       return {
         mode: 'default',
         list: [action.payload, ...state.list],
       };
 
-    case 'POSTS_REMOVING_SUCCESS': {
+    case POSTS_REMOVING_SUCCESS: {
       return {
         mode: 'default',
         list: state.list.filter((post) => post.id !== action.id),

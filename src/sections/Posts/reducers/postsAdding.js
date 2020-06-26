@@ -1,3 +1,10 @@
+import {
+  POSTS_ADDING_REQUEST,
+  POSTS_ADDING_SUCCESS,
+  POSTS_ADDING_FAILURE,
+  POSTS_ADDING_RESET,
+} from '../../../types';
+
 const defaultState = {
   mode: 'default',
   id: null,
@@ -6,14 +13,14 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case 'POSTS_ADDING_REQUEST':
+    case POSTS_ADDING_REQUEST:
       return {
         mode: 'loading',
         id: action.id,
         title: action.title,
       };
 
-    case 'POSTS_ADDING_SUCCESS':
+    case POSTS_ADDING_SUCCESS:
       return {
         mode: 'success',
         id: action.id,
@@ -21,7 +28,7 @@ export default (state = defaultState, action) => {
         payload: action.payload,
       };
 
-    case 'POSTS_ADDING_FAILURE':
+    case POSTS_ADDING_FAILURE:
       return {
         mode: 'failure',
         id: action.id,
@@ -29,7 +36,7 @@ export default (state = defaultState, action) => {
         status: action.status,
       };
 
-    case 'POSTS_ADDING_RESET':
+    case POSTS_ADDING_RESET:
       return defaultState;
 
     default:

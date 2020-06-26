@@ -1,3 +1,11 @@
+import {
+  POSTS_REMOVING_REQUEST,
+  POSTS_REMOVING_FAILURE,
+  POSTS_REMOVING_ASK,
+  POSTS_REMOVING_RESET,
+  POSTS_REMOVING_SUCCESS,
+} from '../../../types';
+
 const defaultState = {
   mode: 'default',
   id: null,
@@ -6,35 +14,35 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case 'POSTS_REMOVING_ASK':
+    case POSTS_REMOVING_ASK:
       return {
         mode: 'ask',
         id: action.id,
         title: action.title,
       };
 
-    case 'POSTS_REMOVING_REQUEST':
+    case POSTS_REMOVING_REQUEST:
       return {
         mode: 'loading',
         id: action.id,
         title: action.title,
       };
 
-    case 'POSTS_REMOVING_SUCCESS':
+    case POSTS_REMOVING_SUCCESS:
       return {
         mode: 'success',
         id: action.id,
         title: action.title,
       };
 
-    case 'POSTS_REMOVING_FAILURE':
+    case POSTS_REMOVING_FAILURE:
       return {
         mode: 'failure',
         id: action.id,
         title: action.title,
       };
 
-    case 'POSTS_REMOVING_RESET':
+    case POSTS_REMOVING_RESET:
       return defaultState;
 
     default:
