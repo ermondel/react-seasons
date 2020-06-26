@@ -59,32 +59,29 @@ class PostsAddForm extends Component {
   };
 
   renderField = ({ input, meta, placeholder, type }) => {
-    let el, counter, error;
+    let field;
 
     switch (type) {
       case 'text':
-        el = <input {...input} autoComplete='off' placeholder={placeholder} />;
+        field = <input {...input} autoComplete='off' placeholder={placeholder} />;
         break;
 
       case 'textarea':
-        el = <textarea {...input} placeholder={placeholder}></textarea>;
+        field = <textarea {...input} placeholder={placeholder}></textarea>;
         break;
 
       default:
-        el = null;
+        field = null;
         break;
     }
-
-    counter = this.renderCounter(input);
-    error = this.renderError(meta);
 
     return (
       <div>
         <div>
-          <label>{el}</label>
-          {counter}
+          <label>{field}</label>
+          {this.renderCounter(input)}
         </div>
-        {error}
+        {this.renderError(meta)}
       </div>
     );
   };

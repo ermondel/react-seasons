@@ -16,13 +16,19 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export const createPost = (values) => async (dispatch) => {
-  dispatch({ type: 'POSTS_ADDING_REQUEST' });
+  const newID = uuidv4();
+
+  dispatch({
+    type: 'POSTS_ADDING_REQUEST',
+    id: newID,
+    title: values.title,
+  });
 
   try {
     const response = await reduxblog.post(
       '/posts',
       {
-        id: uuidv4(),
+        id: newID,
         title: values.title,
         categories: values.categories,
         content: values.content,
@@ -32,9 +38,19 @@ export const createPost = (values) => async (dispatch) => {
       }
     );
 
-    dispatch({ type: 'POSTS_ADDING_SUCCESS', payload: response.data });
+    dispatch({
+      type: 'POSTS_ADDING_SUCCESS',
+      id: response.data.id,
+      title: response.data.title,
+      payload: response.data,
+    });
   } catch (error) {
-    dispatch({ type: 'POSTS_ADDING_FAILURE', status: 500 });
+    dispatch({
+      type: 'POSTS_ADDING_FAILURE',
+      id: newID,
+      title: values.title,
+      status: 500,
+    });
   }
 };
 
@@ -62,14 +78,14 @@ export const removePostAsk = (id, title) => ({
   title,
 });
 
-export const setAddingDefaultState = () => ({
-  type: 'POSTS_ADDING_DEFAULT',
-});
-
 export const hideLog = () => ({
   type: 'POSTS_LOG_HIDE',
 });
 
 export const removePostReset = () => ({
   type: 'POSTS_REMOVING_RESET',
+});
+
+export const addingPostReset = () => ({
+  type: 'POSTS_ADDING_RESET',
 });
