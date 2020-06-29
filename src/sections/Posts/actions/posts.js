@@ -15,6 +15,7 @@ import {
   POSTS_ADDING_RESET,
   POSTS_MESSAGE_REMOVE,
   POSTS_REMOVING_SUCCESS,
+  POSTS_READING_RESET,
 } from '../../../types';
 
 export const fetchPosts = () => async (dispatch) => {
@@ -114,4 +115,8 @@ export const addMessage = (message) => ({
 
 export const removeMessage = () => ({
   type: POSTS_MESSAGE_REMOVE,
+});
+
+export const readPostReset = () => ({
+  type: POSTS_READING_RESET,
 });

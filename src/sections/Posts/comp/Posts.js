@@ -5,6 +5,7 @@ import List from './List/List';
 import Add from './Add/Add';
 import Read from './Read/Read';
 import Delete from './Delete/Delete';
+import RemovePostWindow from './Remove/RemovePostWindow';
 
 const Posts = (props) => (
   <div className='app-main'>
@@ -16,6 +17,8 @@ const Posts = (props) => (
       <Route path='/posts/:id' exact component={Read} />
       <Route path='/posts/delete/:id' exact component={Delete} />
     </Switch>
+
+    <RemovePostWindow />
   </div>
 );
 
