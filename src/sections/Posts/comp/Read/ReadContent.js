@@ -14,8 +14,6 @@ class ReadContent extends Component {
   componentDidMount() {
     const { list, id } = this.props;
 
-    console.log('--- componentDidMount');
-
     if (list.length) {
       const post = list.find((el) => String(el.id) === id);
       if (post) {

@@ -20,6 +20,7 @@ import postsList from './sections/Posts/reducers/postsList';
 import postsAdding from './sections/Posts/reducers/postsAdding';
 import postsMessage from './sections/Posts/reducers/postsMessage';
 import postsReading from './sections/Posts/reducers/postsReading';
+import postsSearch from './sections/Posts/reducers/postsSearch';
 
 export default combineReducers({
   podcast: podcastReducer,
@@ -42,5 +43,6 @@ export default combineReducers({
   postsAdding: postsAdding,
   postsMessage: postsMessage,
   postsReading: postsReading,
+  postsSearch: postsSearch,
   form: formReducer,
 });

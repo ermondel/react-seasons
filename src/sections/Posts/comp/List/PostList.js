@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchPosts, removePostAsk } from '../../actions/posts';
 import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
@@ -8,7 +9,7 @@ import PostItem from './PostItem';
 
 class PostList extends Component {
   componentDidMount() {
-    if (!this.props.posts.list.length) {
+    if (!this.props.postsObj.list.length) {
       this.props.fetchPosts();
     }
   }
@@ -39,11 +40,23 @@ class PostList extends Component {
     );
   }
 
-  renderList() {
-    const { posts, removePostAsk, modalOpen } = this.props;
+  filterList(posts) {
+    const searchValue = this.props.searchQuery.toLowerCase();
 
-    return posts.list.length ? (
-      posts.list.map((post) => (
+    return posts.length
+      ? posts.filter((post) => {
+          const str = `${post.title} ${post.categories}`.toLowerCase();
+          return str.indexOf(searchValue) >= 0;
+        })
+      : null;
+  }
+
+  renderList() {
+    const { postsObj, removePostAsk, modalOpen } = this.props;
+    const posts = this.filterList(postsObj.list);
+
+    return posts ? (
+      posts.map((post) => (
         <PostItem
           key={post.id}
           post={post}
@@ -58,8 +71,19 @@ class PostList extends Component {
     );
   }
 
+  renderContent() {
+    return (
+      <div>
+        <div>
+          <Link to='/posts/add'>Add new</Link>
+        </div>
+        {this.renderList()}
+      </div>
+    );
+  }
+
   render() {
-    switch (this.props.posts.mode) {
+    switch (this.props.postsObj.mode) {
       case 'loading':
         return this.renderSpinner();
 
@@ -69,13 +93,14 @@ class PostList extends Component {
       case 'success':
       case 'default':
       default:
-        return this.renderList();
+        return this.renderContent();
     }
   }
 }
 
 const mapStateToProps = (state) => ({
-  posts: state.postsList,
+  postsObj: state.postsList,
+  searchQuery: state.postsSearch,
 });
 
 export default connect(mapStateToProps, {

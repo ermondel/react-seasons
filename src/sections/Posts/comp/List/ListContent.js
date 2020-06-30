@@ -1,5 +1,6 @@
 import React from 'react';
 import PostsMessage from './PostsMessage';
+import SearchForm from './SearchForm';
 import PostList from './PostList';
 
 const ListContent = () => (
@@ -7,6 +8,7 @@ const ListContent = () => (
     <div className='content-wrap'>
       <h2>Post list</h2>
 
+      <SearchForm />
       <PostsMessage />
       <PostList />
     </div>
