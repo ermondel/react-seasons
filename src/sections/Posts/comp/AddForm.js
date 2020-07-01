@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-class PostsAddForm extends Component {
+class AddForm extends Component {
   static maxLength = {
     title: 80,
     categories: 80,
@@ -15,24 +15,24 @@ class PostsAddForm extends Component {
     if (!title) {
       errors.title = 'You must enter a title.';
     }
-    if (title && title.length > PostsAddForm.maxLength.title) {
-      errors.title = `Must be ${PostsAddForm.maxLength.title} characters or less`;
+    if (title && title.length > AddForm.maxLength.title) {
+      errors.title = `Must be ${AddForm.maxLength.title} characters or less`;
     }
 
     // categories
     if (!categories) {
       errors.categories = 'You must enter categories.';
     }
-    if (categories && categories.length > PostsAddForm.maxLength.categories) {
-      errors.categories = `Must be ${PostsAddForm.maxLength.categories} characters or less`;
+    if (categories && categories.length > AddForm.maxLength.categories) {
+      errors.categories = `Must be ${AddForm.maxLength.categories} characters or less`;
     }
 
     // content
     if (!content) {
       errors.content = 'You must enter content.';
     }
-    if (content && content.length > PostsAddForm.maxLength.content) {
-      errors.content = `Must be ${PostsAddForm.maxLength.content} characters or less`;
+    if (content && content.length > AddForm.maxLength.content) {
+      errors.content = `Must be ${AddForm.maxLength.content} characters or less`;
     }
 
     return errors;
@@ -50,7 +50,7 @@ class PostsAddForm extends Component {
     if (value) {
       return (
         <span>
-          {value.length}/{PostsAddForm.maxLength[name]}
+          {value.length}/{AddForm.maxLength[name]}
         </span>
       );
     } else {
@@ -120,6 +120,6 @@ class PostsAddForm extends Component {
 }
 
 export default reduxForm({
-  form: 'PostsAddForm',
-  validate: PostsAddForm.validate,
-})(PostsAddForm);
+  form: 'AddForm',
+  validate: AddForm.validate,
+})(AddForm);

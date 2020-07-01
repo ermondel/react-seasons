@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPosts, removePostAsk } from '../../actions/posts';
-import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
-import { modalOpen } from '../../../../app/ModalWindow/actions/ModalWindow';
+import { fetchPosts, removePostAsk } from '../actions/posts';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
 import PostItem from './PostItem';
 
 class PostList extends Component {

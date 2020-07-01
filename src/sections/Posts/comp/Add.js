@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createPost, addingPostReset } from '../../actions/posts';
-import PostsAddForm from './PostsAddForm';
-import SpinnerBig from '../../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { createPost, addingPostReset } from '../actions/posts';
+import AddForm from './AddForm';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 
 class AddContent extends Component {
   componentWillUnmount() {
@@ -14,13 +14,11 @@ class AddContent extends Component {
   }
 
   renderSpinner() {
-    const { post } = this.props;
-
     return (
       <div className='posts-spinner'>
         <SpinnerBig />
         <div>
-          <p>{post.title}</p>
+          <p>{this.props.post.title}</p>
           <p>Saving data to the remote server</p>
           <p>Please wait</p>
         </div>
@@ -29,13 +27,11 @@ class AddContent extends Component {
   }
 
   renderError() {
-    const { post } = this.props;
-
     return (
       <div className='posts-error'>
         <ErrorRemoteImg />
         <div>
-          <p>{post.title}</p>
+          <p>{this.props.post.title}</p>
           <p>Error saving</p>
           <p>The remote server is not responding</p>
           <p>Perhaps it is overloaded with requests</p>
@@ -60,18 +56,16 @@ class AddContent extends Component {
 
       case 'default':
       default:
-        return <PostsAddForm onSubmit={createPost} />;
+        return <AddForm onSubmit={createPost} />;
     }
   }
 
   render() {
     return (
-      <div className='content'>
-        <div className='content-wrap'>
-          <h2>New post</h2>
+      <div className='content-wrap'>
+        <h2>New post</h2>
 
-          {this.renderContent()}
-        </div>
+        {this.renderContent()}
       </div>
     );
   }

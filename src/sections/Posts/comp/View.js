@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { removePostAsk, readPostReset } from '../../actions/posts';
-import { modalOpen } from '../../../../app/ModalWindow/actions/ModalWindow';
+import { removePostAsk, readPostReset } from '../actions/posts';
+import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
 
-class ReadContent extends Component {
+class View extends Component {
   state = { post: null };
 
   componentWillUnmount() {
@@ -12,10 +12,10 @@ class ReadContent extends Component {
   }
 
   componentDidMount() {
-    const { list, id } = this.props;
+    const { list, match } = this.props;
 
     if (list.length) {
-      const post = list.find((el) => String(el.id) === id);
+      const post = list.find((el) => String(el.id) === match.params.id);
       if (post) {
         this.setState({ post });
       }
@@ -72,4 +72,4 @@ export default connect(mapStateToProps, {
   removePostAsk,
   modalOpen,
   readPostReset,
-})(ReadContent);
+})(View);

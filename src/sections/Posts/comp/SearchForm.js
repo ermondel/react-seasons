@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { searchPosts } from '../../actions/posts';
+import { searchPosts } from '../actions/posts';
 
 const SearchForm = ({ query, searchPosts }) => (
   <div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import SidebarInfo from '../../../../app/SidebarInfo/comp/SidebarInfo';
+import SidebarInfo from '../../../app/SidebarInfo/comp/SidebarInfo';
 
-const AddSidebar = () => (
+const Sidebar = () => (
   <div className='sidebar'>
     <div className='sidebar-wrap'>
       <SidebarInfo list='React, Redux, Redux Blog Post API' />
@@ -9,4 +9,4 @@ const AddSidebar = () => (
   </div>
 );
 
-export default AddSidebar;
+export default Sidebar;
