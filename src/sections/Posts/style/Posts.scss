@@ -17,3 +17,163 @@
   font-size: 90%;
   margin-top: 20%;
 }
+
+/* list */
+
+.pst-list {
+  width: 80%;
+}
+
+.pst-list__item {
+  display: flex;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid $color-main;
+}
+
+.pst-list__item:last-child {
+  border: none;
+}
+
+.pst-list__content {
+  margin-right: 15px;
+}
+
+.pst-list__btns {
+  margin-left: auto;
+}
+
+.pst-list__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 17px;
+  font-weight: normal;
+}
+
+.pst-list__title a {
+  text-decoration: none;
+  color: $color-common;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+}
+
+.pst-list__categories {
+  margin: 0;
+  padding: 0;
+  font-size: 85%;
+  color: $color-list;
+}
+
+.pst-list__btn-remove {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: $color-base;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $color-common;
+    background-color: black;
+    outline: none;
+  }
+}
+
+/* list ctrl */
+
+.list-ctrl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* search form */
+
+.list-ctrl__search {
+  box-sizing: border-box;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  padding-right: 15px;
+  width: 40%;
+  min-width: 250px;
+  border-right: 1px solid $color-main;
+}
+
+.list-ctrl__search-input {
+  margin: 0;
+  padding: 9px 12px;
+  background-color: $color-main;
+  border-radius: 3px;
+  color: $color-sidebar-bg;
+  border: 1px solid transparent;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.list-ctrl__search-input::placeholder {
+  color: $color-copy;
+}
+
+.list-ctrl__search-input:focus {
+  outline: none;
+  background-color: $color-extra;
+}
+
+/* add new post */
+
+.list-ctrl__add {
+  display: block;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  color: white;
+  background-color: $color-main;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover-common;
+    outline: none;
+  }
+}
+
+/* message */
+
+.list-ctrl__message {
+  margin: 0 0 20px 15px;
+  padding: 9px 0 9px 15px;
+  border-left: 1px solid $color-main;
+}
+
+.list-ctrl__message-text {
+  margin-right: 7px;
+  color: $color-hover-common;
+}
+
+.list-ctrl__message-close {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px dotted white;
+  font-size: 13px;
+
+  &:hover,
+  &:focus {
+    color: black;
+    border-color: black;
+    outline: none;
+  }
+}

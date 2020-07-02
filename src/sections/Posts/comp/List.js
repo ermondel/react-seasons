@@ -1,14 +1,12 @@
 import React from 'react';
-import Message from './Message';
-import SearchForm from './SearchForm';
 import PostList from './PostList';
+import ListControl from './ListControl';
 
 const List = () => (
   <div className='content-wrap'>
-    <h2>Post List</h2>
+    <h2>Post list</h2>
 
-    <SearchForm />
-    <Message />
+    <ListControl />
     <PostList />
   </div>
 );

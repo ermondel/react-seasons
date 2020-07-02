@@ -11,9 +11,14 @@ class Message extends Component {
 
   render() {
     return this.props.message ? (
-      <div>
-        {this.props.message}
-        <button onClick={this.props.removeMessage}>Close</button>
+      <div className='list-ctrl__message'>
+        <span className='list-ctrl__message-text'>{this.props.message}</span>
+        <button
+          className='list-ctrl__message-close'
+          onClick={this.props.removeMessage}
+        >
+          Close
+        </button>
       </div>
     ) : null;
   }

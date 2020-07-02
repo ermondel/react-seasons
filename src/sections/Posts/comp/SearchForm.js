@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { searchPosts } from '../actions/posts';
 
 const SearchForm = ({ query, searchPosts }) => (
-  <div>
+  <div className='list-ctrl__search'>
     <input
       type='text'
       value={query}
       onChange={(event) => searchPosts(event.target.value)}
       placeholder='Find a post by title or category...'
+      className='list-ctrl__search-input'
     />
   </div>
 );

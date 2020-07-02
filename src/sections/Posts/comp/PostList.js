@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchPosts, removePostAsk } from '../actions/posts';
 import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
@@ -72,14 +71,7 @@ class PostList extends Component {
   }
 
   renderContent() {
-    return (
-      <div>
-        <div>
-          <Link to='/posts/add'>Add new</Link>
-        </div>
-        {this.renderList()}
-      </div>
-    );
+    return <div className='pst-list'>{this.renderList()}</div>;
   }
 
   render() {
