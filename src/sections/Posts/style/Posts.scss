@@ -202,6 +202,7 @@
 
   &::placeholder {
     color: $color-extra;
+    opacity: 1;
   }
 
   &:focus {
@@ -226,6 +227,7 @@
 
   &::placeholder {
     color: $color-extra;
+    opacity: 1;
   }
 
   &:focus {
