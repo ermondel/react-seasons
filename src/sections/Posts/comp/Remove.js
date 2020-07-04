@@ -11,29 +11,32 @@ class RemovePostWindow extends Component {
     const { removePost, removing } = this.props;
 
     return (
-      <div>
-        <p>Are you sure you want to delete the post?</p>
-        <p>
-          <i>{this.props.removing.title}</i>
+      <div className='remove-post'>
+        <p className='remove-post__title'>{this.props.removing.title}</p>
+        <p className='remove-post__question'>
+          Are you sure you want to remove the post?
         </p>
-        <p>
+        <div className='remove-post__actions'>
           <button
+            className='remove-post__btn-remove'
             onClick={() => {
               removePost(removing.id, removing.title);
             }}
           >
             Remove
           </button>
-        </p>
+        </div>
       </div>
     );
   }
 
   renderSpinner() {
     return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
+      <div className='remove-post'>
+        <div className='remove-post__spinner-img'>
+          <SpinnerBig />
+        </div>
+        <div className='remove-post__spinner-text'>
           <p>Request to a remote server</p>
           <p>This may take some time</p>
           <p>Please wait</p>
@@ -44,12 +47,14 @@ class RemovePostWindow extends Component {
 
   renderError() {
     return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>The remote server is not responding</p>
-          <p>Perhaps it is overloaded with requests</p>
-          <p>Please come back later</p>
+      <div className='remove-post'>
+        <div className='remove-post__error-img'>
+          <ErrorRemoteImg />
+        </div>
+        <div className='remove-post__error-text'>
+          <p>The remote server is not responding.</p>
+          <p>Perhaps it is overloaded with requests.</p>
+          <p>Please come back later.</p>
         </div>
       </div>
     );
@@ -57,11 +62,9 @@ class RemovePostWindow extends Component {
 
   renderSuccessful() {
     return (
-      <div>
-        <p>Post successfully deleted.</p>
-        <p>
-          <i>{this.props.removing.title}</i>
-        </p>
+      <div className='remove-post'>
+        <p className='remove-post__title'>{this.props.removing.title}</p>
+        <p className='remove-post__success'>Post successfully deleted.</p>
       </div>
     );
   }
@@ -97,7 +100,11 @@ class RemovePostWindow extends Component {
     }
 
     return (
-      <ModalWindow visible={this.props.visible} onWindowClose={this.onClose}>
+      <ModalWindow
+        visible={this.props.visible}
+        onWindowClose={this.onClose}
+        styleType='common'
+      >
         {content}
       </ModalWindow>
     );
