@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ModalWindow = ({ visible, onWindowClose, children }) => {
+const ModalWindow = ({ visible, onWindowClose, children, styleType }) => {
   const stopPropagation = (event) => event.stopPropagation();
 
   const button = (
@@ -14,8 +14,12 @@ const ModalWindow = ({ visible, onWindowClose, children }) => {
     </button>
   );
 
+  let modalClassName = 'modal';
+  if (styleType) modalClassName += ` modal--${styleType}`;
+  if (!visible) modalClassName += ` modal--hide`;
+
   const content = (
-    <div className={`modal ${!visible ? 'modal--hide' : ''}`}>
+    <div className={modalClassName}>
       <div className='modal__background'></div>
       <div className='modal__container' onClick={onWindowClose}>
         <div className='modal__content' onClick={stopPropagation}>

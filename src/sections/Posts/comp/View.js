@@ -29,7 +29,7 @@ class View extends Component {
 
   renderPost() {
     return (
-      <div className='view-post'>
+      <article className='view-post'>
         <h3 className='view-post__title'>{this.state.post.title}</h3>
         <p className='view-post__categories'>{this.state.post.categories}</p>
         <p className='view-post__content'>{this.state.post.content}</p>
@@ -41,7 +41,7 @@ class View extends Component {
             Remove
           </button>
         </div>
-      </div>
+      </article>
     );
   }
 
