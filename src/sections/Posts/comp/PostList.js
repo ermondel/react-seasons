@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts, removePostAsk } from '../actions/posts';
+import { fetchPosts, removePostAsk, initAuth } from '../actions/posts';
 import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
@@ -8,17 +8,31 @@ import PostItem from './PostItem';
 
 class PostList extends Component {
   componentDidMount() {
-    if (!this.props.postsObj.list.length) {
-      this.props.fetchPosts();
+    const { auth, initAuth, postsObj, fetchPosts } = this.props;
+
+    if (auth.publicKey && !postsObj.list.length) {
+      fetchPosts(auth.publicKey);
+    } else if (!auth.publicKey) {
+      initAuth();
     }
   }
 
-  renderSpinner() {
+  componentDidUpdate() {
+    const { auth, postsObj, fetchPosts } = this.props;
+
+    if (postsObj.mode === 'allow' && !postsObj.list.length) {
+      fetchPosts(auth.publicKey);
+    }
+  }
+
+  renderLoadingSpinner() {
     return (
       <div className='posts-spinner'>
         <SpinnerBig />
         <div>
-          <p>Request data from a remote server</p>
+          <p className='posts-spinner__loading-message'>
+            Request data from a remote server
+          </p>
           <p>This may take some time</p>
           <p>Please wait</p>
         </div>
@@ -26,7 +40,20 @@ class PostList extends Component {
     );
   }
 
-  renderError() {
+  renderAuthSpinner() {
+    return (
+      <div className='posts-spinner'>
+        <SpinnerBig />
+        <div>
+          <p className='posts-spinner__auth-message'>Authorization in progress</p>
+          <p>This may take some time</p>
+          <p>Please wait</p>
+        </div>
+      </div>
+    );
+  }
+
+  renderLoadingError() {
     return (
       <div className='posts-error'>
         <ErrorRemoteImg />
@@ -37,6 +64,22 @@ class PostList extends Component {
         </div>
       </div>
     );
+  }
+
+  renderAuthError() {
+    return (
+      <div className='posts-error'>
+        <ErrorRemoteImg />
+        <div>
+          <p>Access is denied</p>
+          <p>Please contact the administrator</p>
+        </div>
+      </div>
+    );
+  }
+
+  authSuccess() {
+    return <p>Authorization successful</p>;
   }
 
   filterList(posts) {
@@ -77,10 +120,19 @@ class PostList extends Component {
   render() {
     switch (this.props.postsObj.mode) {
       case 'loading':
-        return this.renderSpinner();
+        return this.renderLoadingSpinner();
+
+      case 'auth':
+        return this.renderAuthSpinner();
 
       case 'failure':
-        return this.renderError();
+        return this.renderLoadingError();
+
+      case 'deny':
+        return this.renderAuthError();
+
+      case 'allow':
+        return this.authSuccess();
 
       case 'success':
       case 'default':
@@ -93,10 +145,12 @@ class PostList extends Component {
 const mapStateToProps = (state) => ({
   postsObj: state.postsList,
   searchQuery: state.postsSearch,
+  auth: state.postsAuth,
 });
 
 export default connect(mapStateToProps, {
   fetchPosts,
   removePostAsk,
   modalOpen,
+  initAuth,
 })(PostList);

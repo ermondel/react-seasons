@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { reduxblog } from '../../../api';
+import { reduxblog, nodeapiserver } from '../../../api';
 import {
   POSTS_LIST_REQUEST,
   POSTS_LIST_SUCCESS,
@@ -17,14 +17,17 @@ import {
   POSTS_REMOVING_SUCCESS,
   POSTS_READING_RESET,
   POSTS_SEARCH_REQUEST,
+  POSTS_AUTH_REQUEST,
+  POSTS_AUTH_SUCCESS,
+  POSTS_AUTH_FAILURE,
 } from '../../../types';
 
-export const fetchPosts = () => async (dispatch) => {
+export const fetchPosts = (publicKey) => async (dispatch) => {
   dispatch({ type: POSTS_LIST_REQUEST });
 
   try {
     const response = await reduxblog.get('/posts', {
-      params: { key: '' },
+      params: { key: publicKey },
     });
 
     dispatch({ type: POSTS_LIST_SUCCESS, payload: response.data });
@@ -92,6 +95,18 @@ export const removePost = (id, title) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: POSTS_REMOVING_FAILURE, id, title });
+  }
+};
+
+export const initAuth = () => async (dispatch) => {
+  dispatch({ type: POSTS_AUTH_REQUEST });
+
+  try {
+    const response = await nodeapiserver.get('/opt/fsn78d');
+
+    dispatch({ type: POSTS_AUTH_SUCCESS, payload: response.data.opt });
+  } catch (error) {
+    dispatch({ type: POSTS_AUTH_FAILURE });
   }
 };
 

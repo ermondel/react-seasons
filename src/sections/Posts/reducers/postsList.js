@@ -4,6 +4,9 @@ import {
   POSTS_LIST_FAILURE,
   POSTS_ADDING_SUCCESS,
   POSTS_REMOVING_SUCCESS,
+  POSTS_AUTH_REQUEST,
+  POSTS_AUTH_SUCCESS,
+  POSTS_AUTH_FAILURE,
 } from '../../../types';
 
 const defaultState = {
@@ -42,6 +45,27 @@ export default (state = defaultState, action) => {
       return {
         mode: 'default',
         list: state.list.filter((post) => post.id !== action.id),
+      };
+    }
+
+    case POSTS_AUTH_REQUEST: {
+      return {
+        mode: 'auth',
+        list: [],
+      };
+    }
+
+    case POSTS_AUTH_SUCCESS: {
+      return {
+        mode: 'allow',
+        list: [],
+      };
+    }
+
+    case POSTS_AUTH_FAILURE: {
+      return {
+        mode: 'deny',
+        list: [],
       };
     }
 

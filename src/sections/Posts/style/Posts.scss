@@ -135,7 +135,7 @@
   color: $color-base;
   text-transform: uppercase;
   font-size: 90%;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 /* spinner */
@@ -145,7 +145,15 @@
   color: $color-util;
   text-transform: uppercase;
   font-size: 90%;
-  margin-top: 20%;
+  margin-top: 10%;
+}
+
+.posts-spinner__loading-message {
+  color: $color-hover-common;
+}
+
+.posts-spinner__auth-message {
+  color: $color-hover-extra;
 }
 
 /* message */
