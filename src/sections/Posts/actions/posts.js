@@ -36,7 +36,7 @@ export const fetchPosts = (publicKey) => async (dispatch) => {
   }
 };
 
-export const createPost = (values) => async (dispatch) => {
+export const createPost = (publicKey, values) => async (dispatch) => {
   const newID = uuidv4();
 
   dispatch({
@@ -55,7 +55,7 @@ export const createPost = (values) => async (dispatch) => {
         content: values.content,
       },
       {
-        params: { key: '' },
+        params: { key: publicKey },
       }
     );
 

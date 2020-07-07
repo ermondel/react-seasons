@@ -9,37 +9,21 @@ import {
   POSTS_AUTH_FAILURE,
 } from '../../../types';
 
-const defaultState = {
-  mode: 'default',
-  list: [],
-};
+const defaultState = { mode: 'default', list: [] };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
     case POSTS_LIST_REQUEST:
-      return {
-        mode: 'loading',
-        list: [],
-      };
+      return { mode: 'loading', list: [] };
 
     case POSTS_LIST_SUCCESS:
-      return {
-        mode: 'success',
-        list: action.payload,
-      };
+      return { mode: 'success', list: action.payload };
 
     case POSTS_LIST_FAILURE:
-      return {
-        mode: 'failure',
-        list: [],
-        status: action.status,
-      };
+      return { mode: 'failure', list: [], status: action.status };
 
     case POSTS_ADDING_SUCCESS:
-      return {
-        mode: 'default',
-        list: [action.payload, ...state.list],
-      };
+      return { mode: 'default', list: [action.payload, ...state.list] };
 
     case POSTS_REMOVING_SUCCESS: {
       return {
@@ -49,24 +33,15 @@ export default (state = defaultState, action) => {
     }
 
     case POSTS_AUTH_REQUEST: {
-      return {
-        mode: 'auth',
-        list: [],
-      };
+      return { mode: 'auth', list: [] };
     }
 
     case POSTS_AUTH_SUCCESS: {
-      return {
-        mode: 'allow',
-        list: [],
-      };
+      return { mode: 'allow', list: [] };
     }
 
     case POSTS_AUTH_FAILURE: {
-      return {
-        mode: 'deny',
-        list: [],
-      };
+      return { mode: 'deny', list: [] };
     }
 
     default:

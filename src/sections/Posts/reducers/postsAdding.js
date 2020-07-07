@@ -3,19 +3,18 @@ import {
   POSTS_ADDING_SUCCESS,
   POSTS_ADDING_FAILURE,
   POSTS_ADDING_RESET,
+  POSTS_AUTH_REQUEST,
+  POSTS_AUTH_SUCCESS,
+  POSTS_AUTH_FAILURE,
 } from '../../../types';
 
-const defaultState = {
-  mode: 'default',
-  id: null,
-  title: null,
-};
+const defaultState = { mode: 'default' };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
     case POSTS_ADDING_REQUEST:
       return {
-        mode: 'loading',
+        mode: 'saving',
         id: action.id,
         title: action.title,
       };
@@ -37,7 +36,16 @@ export default (state = defaultState, action) => {
       };
 
     case POSTS_ADDING_RESET:
-      return defaultState;
+      return { mode: 'default' };
+
+    case POSTS_AUTH_REQUEST:
+      return { mode: 'auth' };
+
+    case POSTS_AUTH_SUCCESS:
+      return { mode: 'allow' };
+
+    case POSTS_AUTH_FAILURE:
+      return { mode: 'deny' };
 
     default:
       return state;
