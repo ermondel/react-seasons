@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts, removePostAsk, initAuth } from '../actions/posts';
+import {
+  fetchPosts,
+  authAndFetchPosts,
+  removePostAsk,
+  initAuth,
+} from '../actions/posts';
 import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
 import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
@@ -8,20 +13,12 @@ import PostItem from './PostItem';
 
 class PostList extends Component {
   componentDidMount() {
-    const { auth, initAuth, postsObj, fetchPosts } = this.props;
-
-    if (auth.publicKey && !postsObj.list.length) {
-      fetchPosts(auth.publicKey);
-    } else if (!auth.publicKey) {
-      initAuth();
-    }
-  }
-
-  componentDidUpdate() {
-    const { auth, postsObj, fetchPosts } = this.props;
-
-    if (postsObj.mode === 'allow' && !postsObj.list.length) {
-      fetchPosts(auth.publicKey);
+    if (!this.props.posts.list.length) {
+      if (this.props.auth.publicKey) {
+        this.props.fetchPosts(this.props.auth.publicKey);
+      } else {
+        this.props.authAndFetchPosts();
+      }
     }
   }
 
@@ -82,52 +79,47 @@ class PostList extends Component {
     return <p>Authorization successful</p>;
   }
 
-  filterList(posts) {
-    const searchValue = this.props.searchQuery.toLowerCase();
-
-    if (!posts.length) return [];
-
+  filterList(posts, search) {
+    search = search.toLowerCase();
     return posts.filter((post) => {
       const str = `${post.title} ${post.categories}`.toLowerCase();
-      return str.indexOf(searchValue) >= 0;
+      return str.indexOf(search) >= 0;
     });
   }
 
   renderList() {
-    const { postsObj, removePostAsk, modalOpen, auth } = this.props;
-    const posts = this.filterList(postsObj.list);
+    const { posts, removePostAsk, modalOpen, auth, search } = this.props;
+    const postList = search ? this.filterList(posts.list, search) : posts.list;
 
-    if (!posts.length) return <p>No posts found</p>;
-
-    return posts.map((post) => {
-      return (
-        <PostItem
-          key={post.id}
-          post={post}
-          showRemoveBtn={auth.publicKey ? true : false}
-          onRemoveClick={() => {
-            removePostAsk(post.id, post.title);
-            modalOpen();
-          }}
-        />
-      );
-    });
-  }
-
-  renderContent() {
-    return <div className='pst-list'>{this.renderList()}</div>;
+    return postList.length ? (
+      <div className='pst-list'>
+        {postList.map((post) => (
+          <PostItem
+            key={post.id}
+            post={post}
+            showRemoveBtn={auth.publicKey ? true : false}
+            onRemoveClick={() => {
+              removePostAsk(post.id, post.title);
+              modalOpen();
+            }}
+          />
+        ))}
+      </div>
+    ) : (
+      <p>No posts found</p>
+    );
   }
 
   render() {
-    switch (this.props.postsObj.mode) {
+    switch (this.props.posts.mode) {
       case 'loading':
         return this.renderLoadingSpinner();
 
-      case 'auth':
-        return this.renderAuthSpinner();
-
       case 'failure':
         return this.renderLoadingError();
+
+      case 'auth':
+        return this.renderAuthSpinner();
 
       case 'deny':
         return this.renderAuthError();
@@ -138,19 +130,20 @@ class PostList extends Component {
       case 'success':
       case 'default':
       default:
-        return this.renderContent();
+        return this.renderList();
     }
   }
 }
 
 const mapStateToProps = (state) => ({
-  postsObj: state.postsList,
-  searchQuery: state.postsSearch,
+  posts: state.postsList,
+  search: state.postsSearch,
   auth: state.postsAuth,
 });
 
 export default connect(mapStateToProps, {
   fetchPosts,
+  authAndFetchPosts,
   removePostAsk,
   modalOpen,
   initAuth,
