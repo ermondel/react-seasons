@@ -114,12 +114,12 @@ class AddForm extends Component {
   renderActions = () => {
     return (
       <div className='add-form__actions'>
-        <button disabled={!this.props.valid} className='add-form__submit'>
-          Save
-        </button>
         <Link to='/posts' className='add-form__cancel'>
           Cancel and return to the list
         </Link>
+        <button disabled={!this.props.valid} className='add-form__submit'>
+          Save
+        </button>
       </div>
     );
   };

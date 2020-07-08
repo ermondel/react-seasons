@@ -366,12 +366,15 @@
   color: $color-base;
   text-decoration: none;
   font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background-color: transparent;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
+    background-color: $color-hover-extra;
+    color: $color-common;
     outline: none;
-    color: $color-hover-common;
   }
 }
 
