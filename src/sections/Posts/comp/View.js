@@ -1,43 +1,107 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { removePostAsk, readPostReset } from '../actions/posts';
+import {
+  removePostAsk,
+  readPostReset,
+  fetchPosts,
+  authAndFetchPosts,
+} from '../actions/posts';
 import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
+import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 
 class View extends Component {
-  state = { post: null };
-
   componentWillUnmount() {
-    this.props.readPostReset();
+    if (this.props.read.mode !== 'default') {
+      this.props.readPostReset();
+    }
   }
 
   componentDidMount() {
-    const { list, match } = this.props;
-
-    if (list.length) {
-      const post = list.find((el) => String(el.id) === match.params.id);
-      if (post) {
-        this.setState({ post });
+    if (!this.props.list.length) {
+      if (this.props.auth.publicKey) {
+        this.props.fetchPosts(this.props.auth.publicKey);
+      } else {
+        this.props.authAndFetchPosts();
       }
     }
   }
 
-  onRemoveClick = () => {
-    this.props.removePostAsk(this.state.post.id, this.state.post.title);
-    this.props.modalOpen();
-  };
+  renderAuthSpinner() {
+    return (
+      <div className='posts-spinner'>
+        <SpinnerBig />
+        <div>
+          <p className='posts-spinner__auth-message'>Authorization in progress</p>
+          <p>This may take some time</p>
+          <p>Please wait</p>
+        </div>
+      </div>
+    );
+  }
 
-  renderPost() {
+  renderLoadingSpinner() {
+    return (
+      <div className='posts-spinner'>
+        <SpinnerBig />
+        <div>
+          <p className='posts-spinner__loading-message'>
+            Request data from a remote server
+          </p>
+          <p>This may take some time</p>
+          <p>Please wait</p>
+        </div>
+      </div>
+    );
+  }
+
+  authSuccess() {
+    return <p>Authorization successful</p>;
+  }
+
+  renderAuthError() {
+    return (
+      <div className='posts-error'>
+        <ErrorRemoteImg />
+        <div>
+          <p>Access is denied</p>
+          <p>Please contact the administrator</p>
+        </div>
+      </div>
+    );
+  }
+
+  renderLoadingError() {
+    return (
+      <div className='posts-error'>
+        <ErrorRemoteImg />
+        <div>
+          <p>The remote server is not responding</p>
+          <p>Perhaps it is overloaded with requests</p>
+          <p>Please come back later</p>
+        </div>
+      </div>
+    );
+  }
+
+  renderViewPost(post) {
     return (
       <article className='view-post'>
-        <h3 className='view-post__title'>{this.state.post.title}</h3>
-        <p className='view-post__categories'>{this.state.post.categories}</p>
-        <p className='view-post__content'>{this.state.post.content}</p>
+        <h3 className='view-post__title'>{post.title}</h3>
+        <p className='view-post__categories'>{post.categories}</p>
+        <p className='view-post__content'>{post.content}</p>
         <div className='view-post__actions'>
           <Link to={'/posts'} className='view-post__link-back'>
             Go back to the list
           </Link>
-          <button onClick={this.onRemoveClick} className='view-post__btn-remove'>
+          <button
+            onClick={() => {
+              this.props.removePostAsk(post.id, post.title);
+              this.props.modalOpen();
+            }}
+            className='view-post__btn-remove'
+          >
             Remove
           </button>
         </div>
@@ -45,39 +109,69 @@ class View extends Component {
     );
   }
 
-  renderNotFound() {
-    return <h2>Post not found</h2>;
-  }
+  renderPost() {
+    let post;
 
-  renderContent() {
-    return (
-      <div className='content'>
-        <div className='content-wrap'>
-          {this.state.post ? this.renderPost() : this.renderNotFound()}
-        </div>
-      </div>
-    );
+    if (this.props.list.length) {
+      post = this.props.list.find((el) => {
+        return String(el.id) === this.props.match.params.id;
+      });
+    }
+
+    return post ? this.renderViewPost(post) : <h2>Post not found</h2>;
   }
 
   render() {
+    let content;
+
     switch (this.props.read.mode) {
+      case 'auth':
+        content = this.renderAuthSpinner();
+        break;
+
+      case 'allow':
+        content = this.authSuccess();
+        break;
+
+      case 'deny':
+        content = this.renderAuthError();
+        break;
+
+      case 'loading':
+        content = this.renderLoadingSpinner();
+        break;
+
+      case 'failure':
+        content = this.renderLoadingError();
+        break;
+
       case 'deleted':
         return <Redirect to='/posts' />;
 
+      case 'success':
       case 'default':
       default:
-        return this.renderContent();
+        content = this.renderPost();
     }
+
+    return (
+      <div className='content'>
+        <div className='content-wrap'>{content}</div>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
   list: state.postsList.list,
   read: state.postsReading,
+  auth: state.postsAuth,
 });
 
 export default connect(mapStateToProps, {
   removePostAsk,
   modalOpen,
   readPostReset,
+  fetchPosts,
+  authAndFetchPosts,
 })(View);

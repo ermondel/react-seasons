@@ -22,6 +22,35 @@ import {
   POSTS_AUTH_FAILURE,
 } from '../../../types';
 
+export const authAndFetchPosts = () => async (dispatch) => {
+  try {
+    dispatch({ type: POSTS_AUTH_REQUEST });
+
+    const authResponse = await nodeapiserver.get('/opt/fsn78d', {
+      apiName: 'nodeapiserver',
+    });
+
+    dispatch({ type: POSTS_AUTH_SUCCESS, payload: authResponse.data.opt });
+
+    dispatch({ type: POSTS_LIST_REQUEST });
+
+    const postsResponse = await reduxblog.get('/posts', {
+      apiName: 'reduxblog',
+      params: { key: authResponse.data.opt },
+    });
+
+    dispatch({ type: POSTS_LIST_SUCCESS, payload: postsResponse.data });
+  } catch (error) {
+    if (error.config.apiName === 'nodeapiserver') {
+      dispatch({ type: POSTS_AUTH_FAILURE, status: 500 });
+    }
+
+    if (error.config.apiName === 'reduxblog') {
+      dispatch({ type: POSTS_LIST_FAILURE, status: 500 });
+    }
+  }
+};
+
 export const fetchPosts = (publicKey) => async (dispatch) => {
   dispatch({ type: POSTS_LIST_REQUEST });
 
