@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ListItem = ({ post, onRemoveClick }) => (
+const ListItem = ({ post, showRemoveBtn, onRemoveClick }) => (
   <article className='pst-list__item'>
     <div className='pst-list__content'>
       <h3 className='pst-list__title'>
@@ -10,9 +10,11 @@ const ListItem = ({ post, onRemoveClick }) => (
       <p className='pst-list__categories'>{post.categories}</p>
     </div>
     <div className='pst-list__btns'>
-      <button className='pst-list__btn-remove' onClick={onRemoveClick}>
-        Remove
-      </button>
+      {showRemoveBtn ? (
+        <button className='pst-list__btn-remove' onClick={onRemoveClick}>
+          Remove
+        </button>
+      ) : null}
     </div>
   </article>
 );

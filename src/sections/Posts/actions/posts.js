@@ -80,12 +80,12 @@ export const createPost = (publicKey, values) => async (dispatch) => {
   }
 };
 
-export const removePost = (id, title) => async (dispatch) => {
+export const removePost = (publicKey, id, title) => async (dispatch) => {
   dispatch({ type: POSTS_REMOVING_REQUEST, id, title });
 
   try {
     const response = await reduxblog.delete(`/posts/${id}`, {
-      params: { key: '' },
+      params: { key: publicKey },
     });
 
     dispatch({

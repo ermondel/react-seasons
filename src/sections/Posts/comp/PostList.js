@@ -85,32 +85,33 @@ class PostList extends Component {
   filterList(posts) {
     const searchValue = this.props.searchQuery.toLowerCase();
 
-    return posts.length
-      ? posts.filter((post) => {
-          const str = `${post.title} ${post.categories}`.toLowerCase();
-          return str.indexOf(searchValue) >= 0;
-        })
-      : null;
+    if (!posts.length) return [];
+
+    return posts.filter((post) => {
+      const str = `${post.title} ${post.categories}`.toLowerCase();
+      return str.indexOf(searchValue) >= 0;
+    });
   }
 
   renderList() {
-    const { postsObj, removePostAsk, modalOpen } = this.props;
+    const { postsObj, removePostAsk, modalOpen, auth } = this.props;
     const posts = this.filterList(postsObj.list);
 
-    return posts ? (
-      posts.map((post) => (
+    if (!posts.length) return <p>No posts found</p>;
+
+    return posts.map((post) => {
+      return (
         <PostItem
           key={post.id}
           post={post}
+          showRemoveBtn={auth.publicKey ? true : false}
           onRemoveClick={() => {
             removePostAsk(post.id, post.title);
             modalOpen();
           }}
         />
-      ))
-    ) : (
-      <p>No posts found</p>
-    );
+      );
+    });
   }
 
   renderContent() {
