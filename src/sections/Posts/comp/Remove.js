@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ModalWindow from '../../../app/ModalWindow/comp/ModalWindow';
 import { modalClose } from '../../../app/ModalWindow/actions/ModalWindow';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 import { removePost, removePostReset } from '../actions/posts';
+import { ErrorRemote, SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
 
 class RemovePostWindow extends Component {
   renderConfirmation() {
@@ -49,7 +48,7 @@ class RemovePostWindow extends Component {
     return (
       <div className='remove-post'>
         <div className='remove-post__error-img'>
-          <ErrorRemoteImg />
+          <ErrorRemote />
         </div>
         <div className='remove-post__error-text'>
           <p>The remote server is not responding.</p>

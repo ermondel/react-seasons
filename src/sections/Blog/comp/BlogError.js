@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { ErrorRemote } from '../../../util/UtilImg/comp/UtilImg';
 
 const BlogError = ({ error }) => {
   return error ? (
     <div className='blog-error'>
-      <ErrorRemoteImg />
+      <ErrorRemote />
       <div>
         <p>The remote server is not responding</p>
         <p>Perhaps it is overloaded with requests</p>

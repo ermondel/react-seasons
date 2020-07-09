@@ -1,9 +1,9 @@
 import React from 'react';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { ErrorRemote } from '../../../util/UtilImg/comp/UtilImg';
 
 const SavingError = () => (
   <div className='posts-error'>
-    <ErrorRemoteImg />
+    <ErrorRemote />
     <div>
       <p>Error saving</p>
       <p>The remote server is not responding</p>

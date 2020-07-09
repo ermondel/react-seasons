@@ -1,5 +1,5 @@
 import React from 'react';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import { SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
 
 const SavingSpinner = () => (
   <div className='posts-spinner'>

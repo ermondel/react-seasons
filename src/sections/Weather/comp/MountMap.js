@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mountMap } from '../actions/weather';
-import SpinnerSmall from '../../../app/SpinnerImg/comp/SpinnerSmall';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { ErrorRemote, SpinnerSmall } from '../../../util/UtilImg/comp/UtilImg';
 
 class MountMap extends Component {
   componentDidMount() {
@@ -22,7 +21,7 @@ class MountMap extends Component {
     if (this.props.mapStatus.error) {
       return (
         <div className='mount-map-error'>
-          <ErrorRemoteImg />
+          <ErrorRemote />
           <p>the remote server is unavailable</p>
         </div>
       );

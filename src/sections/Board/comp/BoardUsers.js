@@ -1,8 +1,7 @@
 import React from 'react';
 import useResources from '../resources/useResources';
 import UserList from './UserList';
-import SpinnerSmall from '../../../app/SpinnerImg/comp/SpinnerSmall';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { ErrorRemote, SpinnerSmall } from '../../../util/UtilImg/comp/UtilImg';
 
 const BoardUsers = () => {
   const state = useResources('users');
@@ -15,7 +14,7 @@ const BoardUsers = () => {
 
   const blockError = (
     <div className='board-error-sidebar'>
-      <ErrorRemoteImg />
+      <ErrorRemote />
     </div>
   );
 

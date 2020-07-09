@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import CommentList from './CommentList';
 import TodoList from './TodoList';
 import useResources from '../resources/useResources';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import { ErrorRemote, SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
 
 const BoardContent = () => {
   const [resource, setResource] = useState('comments');
@@ -47,7 +46,7 @@ const BoardContent = () => {
 
   const blockError = (
     <div className='board-error-main'>
-      <ErrorRemoteImg />
+      <ErrorRemote />
       <div>
         <p>The remote server is not responding</p>
         <p>Perhaps it is overloaded with requests</p>

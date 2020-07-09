@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { forecastsErrorHide } from '../actions/weather';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
+import { SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
 
 class ForecastError extends Component {
   componentWillUnmount() {
