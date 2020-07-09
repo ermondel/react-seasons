@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarInfo from '../../../app/SidebarInfo/comp/SidebarInfo';
+import SidebarInfo from '../../../util/SidebarInfo/comp/SidebarInfo';
 
 const Sidebar = () => (
   <div className='sidebar'>

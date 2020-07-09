@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DetailsBlock from '../../../app/DetailsBlock/comp/DetailsBlock';
+import DetailsBlock from '../../../util/DetailsBlock/comp/DetailsBlock';
 
 const BookDetails = ({ book }) => {
   return book ? (

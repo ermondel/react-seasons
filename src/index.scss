@@ -15,9 +15,9 @@ $color-list: #b89881;
 $color-grey: #696969;
 
 @import './app/App/style/App.scss';
-@import './app/NavItem/style/NavItem.scss';
-@import './app/SidebarInfo/style/SidebarInfo.scss';
-@import './app/DetailsBlock/style/DetailsBlock.scss';
+@import './util//NavItem/style/NavItem.scss';
+@import './util/SidebarInfo/style/SidebarInfo.scss';
+@import './util/DetailsBlock/style/DetailsBlock.scss';
 @import './util/ModalWindow/style/ModalWindow.scss';
 @import './sections/Home/style/Home.scss';
 @import './sections/Podcasts/style/Podcasts.scss';

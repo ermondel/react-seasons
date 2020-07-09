@@ -1,7 +1,7 @@
 import React from 'react';
 import ViewMode from './ViewMode';
 import BookDetails from './BookDetails';
-import SidebarInfo from '../../../app/SidebarInfo/comp/SidebarInfo';
+import SidebarInfo from '../../../util/SidebarInfo/comp/SidebarInfo';
 
 const BooksSidebar = () => (
   <div className='sidebar'>

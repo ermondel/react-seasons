@@ -1,7 +1,7 @@
 import React from 'react';
 import MountMap from './MountMap';
 import ForecastViewMode from './ForecastViewMode';
-import SidebarInfo from '../../../app/SidebarInfo/comp/SidebarInfo';
+import SidebarInfo from '../../../util/SidebarInfo/comp/SidebarInfo';
 
 const WeatherSidebar = () => (
   <div className='sidebar'>
