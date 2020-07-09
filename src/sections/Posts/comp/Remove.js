@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ModalWindow from '../../../app/ModalWindow/comp/ModalWindow';
-import { modalClose } from '../../../app/ModalWindow/actions/ModalWindow';
 import { removePost, removePostReset } from '../actions/posts';
 import { ErrorRemote, SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
+import { ModalWindow, modalClose } from '../../../util/ModalWindow/comp/ModalWindow';
 
 class RemovePostWindow extends Component {
   renderConfirmation() {

@@ -7,7 +7,7 @@ import {
   fetchPosts,
   authAndFetchPosts,
 } from '../actions/posts';
-import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
+import { modalOpen } from '../../../util/ModalWindow/comp/ModalWindow';
 import LoadingSpinner from './LoadingSpinner';
 import AuthSpinner from './AuthSpinner';
 import LoadingError from './LoadingError';

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import modalWindow from './util/ModalWindow/reducers/modalWindow';
 import podcastReducer from './sections/Podcasts/reducers/podcastReducer';
 import blogPostsReducer from './sections/Blog/reducers/blogPostsReducer';
 import blogUserReducer from './sections/Blog/reducers/blogUserReducer';
@@ -14,7 +15,6 @@ import forecastErrorReducer from './sections/Weather/reducers/forecastErrorReduc
 import forecastViewReducer from './sections/Weather/reducers/forecastViewReducer';
 import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer';
 import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
-import ModalWindowReducer from './app/ModalWindow/reducers/ModalWindowReducer';
 import postsRemoving from './sections/Posts/reducers/postsRemoving';
 import postsList from './sections/Posts/reducers/postsList';
 import postsAdding from './sections/Posts/reducers/postsAdding';
@@ -24,6 +24,7 @@ import postsSearch from './sections/Posts/reducers/postsSearch';
 import postsAuth from './sections/Posts/reducers/postsAuth';
 
 export default combineReducers({
+  modalWindow: modalWindow,
   podcast: podcastReducer,
   blogPosts: blogPostsReducer,
   blogUser: blogUserReducer,
@@ -38,7 +39,6 @@ export default combineReducers({
   forecastView: forecastViewReducer,
   forecastCity: forecastCityReducer,
   forecastMountMap: forecastMountMapReducer,
-  modalWindow: ModalWindowReducer,
   postsRemoving: postsRemoving,
   postsList: postsList,
   postsAdding: postsAdding,

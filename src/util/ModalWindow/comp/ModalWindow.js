@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MODAL_CLOSE, MODAL_OPEN } from '../../../types';
 
-const ModalWindow = ({ visible, onWindowClose, children, styleType }) => {
+export const modalOpen = () => ({ type: MODAL_OPEN });
+
+export const modalClose = () => ({ type: MODAL_CLOSE });
+
+export const ModalWindow = ({ visible, onWindowClose, children, styleType }) => {
   const stopPropagation = (event) => event.stopPropagation();
 
   const button = (
@@ -34,5 +39,3 @@ const ModalWindow = ({ visible, onWindowClose, children, styleType }) => {
 
   return ReactDOM.createPortal(content, document.getElementById('modal'));
 };
-
-export default ModalWindow;
