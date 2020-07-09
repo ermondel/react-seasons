@@ -6,10 +6,13 @@ import {
   removePostAsk,
   initAuth,
 } from '../actions/posts';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
 import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
-import PostItem from './PostItem';
+import ListItem from './ListItem';
+import LoadingSpinner from './LoadingSpinner';
+import AuthSpinner from './AuthSpinner';
+import LoadingError from './LoadingError';
+import AuthError from './AuthError';
+import AuthSuccess from './AuthSuccess';
 
 class PostList extends Component {
   componentDidMount() {
@@ -20,63 +23,6 @@ class PostList extends Component {
         this.props.authAndFetchPosts();
       }
     }
-  }
-
-  renderLoadingSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p className='posts-spinner__loading-message'>
-            Request data from a remote server
-          </p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderAuthSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p className='posts-spinner__auth-message'>Authorization in progress</p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderLoadingError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>The remote server is not responding</p>
-          <p>Perhaps it is overloaded with requests</p>
-          <p>Please come back later</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderAuthError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>Access is denied</p>
-          <p>Please contact the administrator</p>
-        </div>
-      </div>
-    );
-  }
-
-  authSuccess() {
-    return <p>Authorization successful</p>;
   }
 
   filterList(posts, search) {
@@ -94,7 +40,7 @@ class PostList extends Component {
     return postList.length ? (
       <div className='pst-list'>
         {postList.map((post) => (
-          <PostItem
+          <ListItem
             key={post.id}
             post={post}
             showRemoveBtn={auth.publicKey ? true : false}
@@ -113,19 +59,19 @@ class PostList extends Component {
   render() {
     switch (this.props.posts.mode) {
       case 'loading':
-        return this.renderLoadingSpinner();
+        return <LoadingSpinner />;
 
       case 'failure':
-        return this.renderLoadingError();
+        return <LoadingError />;
 
       case 'auth':
-        return this.renderAuthSpinner();
+        return <AuthSpinner />;
 
       case 'deny':
-        return this.renderAuthError();
+        return <AuthError />;
 
       case 'allow':
-        return this.authSuccess();
+        return <AuthSuccess />;
 
       case 'success':
       case 'default':

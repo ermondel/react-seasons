@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import {
   removePostAsk,
   readPostReset,
@@ -8,8 +8,12 @@ import {
   authAndFetchPosts,
 } from '../actions/posts';
 import { modalOpen } from '../../../app/ModalWindow/actions/ModalWindow';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import LoadingSpinner from './LoadingSpinner';
+import AuthSpinner from './AuthSpinner';
+import LoadingError from './LoadingError';
+import AuthError from './AuthError';
+import AuthSuccess from './AuthSuccess';
+import PostItem from './PostItem';
 
 class View extends Component {
   componentWillUnmount() {
@@ -28,87 +32,6 @@ class View extends Component {
     }
   }
 
-  renderAuthSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p className='posts-spinner__auth-message'>Authorization in progress</p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderLoadingSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p className='posts-spinner__loading-message'>
-            Request data from a remote server
-          </p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  authSuccess() {
-    return <p>Authorization successful</p>;
-  }
-
-  renderAuthError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>Access is denied</p>
-          <p>Please contact the administrator</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderLoadingError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>The remote server is not responding</p>
-          <p>Perhaps it is overloaded with requests</p>
-          <p>Please come back later</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderViewPost(post) {
-    return (
-      <article className='view-post'>
-        <h3 className='view-post__title'>{post.title}</h3>
-        <p className='view-post__categories'>{post.categories}</p>
-        <p className='view-post__content'>{post.content}</p>
-        <div className='view-post__actions'>
-          <Link to={'/posts'} className='view-post__link-back'>
-            Go back to the list
-          </Link>
-          <button
-            onClick={() => {
-              this.props.removePostAsk(post.id, post.title);
-              this.props.modalOpen();
-            }}
-            className='view-post__btn-remove'
-          >
-            Remove
-          </button>
-        </div>
-      </article>
-    );
-  }
-
   renderPost() {
     let post;
 
@@ -118,7 +41,17 @@ class View extends Component {
       });
     }
 
-    return post ? this.renderViewPost(post) : <h2>Post not found</h2>;
+    return post ? (
+      <PostItem
+        post={post}
+        onRemoveClick={() => {
+          this.props.removePostAsk(post.id, post.title);
+          this.props.modalOpen();
+        }}
+      />
+    ) : (
+      <h2>Post not found</h2>
+    );
   }
 
   render() {
@@ -126,23 +59,23 @@ class View extends Component {
 
     switch (this.props.read.mode) {
       case 'auth':
-        content = this.renderAuthSpinner();
+        content = <AuthSpinner />;
         break;
 
       case 'allow':
-        content = this.authSuccess();
+        content = <AuthSuccess />;
         break;
 
       case 'deny':
-        content = this.renderAuthError();
+        content = <AuthError />;
         break;
 
       case 'loading':
-        content = this.renderLoadingSpinner();
+        content = <LoadingSpinner />;
         break;
 
       case 'failure':
-        content = this.renderLoadingError();
+        content = <LoadingError />;
         break;
 
       case 'deleted':

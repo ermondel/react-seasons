@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { createPost, addingPostReset, initAuth } from '../actions/posts';
 import AddForm from './AddForm';
-import SpinnerBig from '../../../app/SpinnerImg/comp/SpinnerBig';
-import ErrorRemoteImg from '../../../app/ErrorImg/comp/ErrorRemoteImg';
+import AuthError from './AuthError';
+import AuthSpinner from './AuthSpinner';
+import SavingSpinner from './SavingSpinner';
+import SavingError from './SavingError';
 
 class Add extends Component {
   componentDidMount() {
@@ -15,61 +17,6 @@ class Add extends Component {
     if (this.props.post.mode !== 'default') this.props.addingPostReset();
   }
 
-  renderSavingSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p>{this.props.post.title}</p>
-          <p className='posts-spinner__loading-message'>
-            Saving data to the remote server
-          </p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderAuthSpinner() {
-    return (
-      <div className='posts-spinner'>
-        <SpinnerBig />
-        <div>
-          <p className='posts-spinner__auth-message'>Authorization in progress</p>
-          <p>This may take some time</p>
-          <p>Please wait</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderSavingError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>{this.props.post.title}</p>
-          <p>Error saving</p>
-          <p>The remote server is not responding</p>
-          <p>Perhaps it is overloaded with requests</p>
-          <p>Please come back later</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderAuthError() {
-    return (
-      <div className='posts-error'>
-        <ErrorRemoteImg />
-        <div>
-          <p>Access is denied</p>
-          <p>Please contact the administrator</p>
-        </div>
-      </div>
-    );
-  }
-
   addPost = (newValues) => {
     this.props.createPost(this.props.auth.publicKey, newValues);
   };
@@ -77,19 +24,19 @@ class Add extends Component {
   renderContent() {
     switch (this.props.post.mode) {
       case 'saving':
-        return this.renderSavingSpinner();
+        return <SavingSpinner />;
 
       case 'failure':
-        return this.renderSavingError();
+        return <SavingError />;
 
       case 'success':
         return <Redirect to='/posts' />;
 
       case 'auth':
-        return this.renderAuthSpinner();
+        return <AuthSpinner />;
 
       case 'deny':
-        return this.renderAuthError();
+        return <AuthError />;
 
       case 'allow':
       case 'default':
