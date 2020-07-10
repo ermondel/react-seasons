@@ -22,6 +22,7 @@ import postsMessage from './sections/Posts/reducers/postsMessage';
 import postsReading from './sections/Posts/reducers/postsReading';
 import postsSearch from './sections/Posts/reducers/postsSearch';
 import postsAuth from './sections/Posts/reducers/postsAuth';
+import postsSort from './sections/Posts/reducers/postsSort';
 
 export default combineReducers({
   modalWindow: modalWindow,
@@ -46,5 +47,6 @@ export default combineReducers({
   postsReading: postsReading,
   postsSearch: postsSearch,
   postsAuth: postsAuth,
+  postsSort: postsSort,
   form: formReducer,
 });

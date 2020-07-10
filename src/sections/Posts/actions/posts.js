@@ -20,6 +20,7 @@ import {
   POSTS_AUTH_REQUEST,
   POSTS_AUTH_SUCCESS,
   POSTS_AUTH_FAILURE,
+  POSTS_SORT_BY_DATE,
 } from '../../../types';
 
 export const authAndFetchPosts = () => async (dispatch) => {
@@ -169,4 +170,9 @@ export const readPostReset = () => ({
 export const searchPosts = (query) => ({
   type: POSTS_SEARCH_REQUEST,
   query,
+});
+
+export const sortByDate = (sortType) => ({
+  type: POSTS_SORT_BY_DATE,
+  sortType,
 });

@@ -34,8 +34,12 @@ class PostList extends Component {
   }
 
   renderList() {
-    const { posts, removePostAsk, modalOpen, auth, search } = this.props;
-    const postList = search ? this.filterList(posts.list, search) : posts.list;
+    const { posts, removePostAsk, modalOpen, auth, search, sortType } = this.props;
+    let postList = search ? this.filterList(posts.list, search) : posts.list;
+
+    if (sortType === 'old') {
+      postList = postList.map((val, i, arr) => arr[arr.length - i - 1]);
+    }
 
     return postList.length ? (
       <div className='pst-list'>
@@ -85,6 +89,7 @@ const mapStateToProps = (state) => ({
   posts: state.postsList,
   search: state.postsSearch,
   auth: state.postsAuth,
+  sortType: state.postsSort,
 });
 
 export default connect(mapStateToProps, {
