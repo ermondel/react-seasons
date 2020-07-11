@@ -23,6 +23,48 @@ import {
   POSTS_SORT_BY_DATE,
 } from '../../../types';
 
+export const authAndFetchPostsNew = (aim) => async (dispatch) => {
+  try {
+    dispatch({ type: `POSTS_${aim}_AUTH_REQUEST` });
+
+    const authResponse = await nodeapiserver.get('/opt/fsn78d', {
+      apiName: 'nodeapiserver',
+    });
+
+    dispatch({ type: `POSTS_${aim}_AUTH_SUCCESS`, payload: authResponse.data.opt });
+    dispatch({ type: `POSTS_${aim}_DATA_REQUEST` });
+
+    const postsResponse = await reduxblog.get('/posts', {
+      apiName: 'reduxblog',
+      params: { key: authResponse.data.opt },
+    });
+
+    dispatch({ type: `POSTS_${aim}_DATA_SUCCESS`, payload: postsResponse.data });
+  } catch (error) {
+    if (error.config.apiName === 'nodeapiserver') {
+      dispatch({ type: `POSTS_${aim}_AUTH_FAILURE` });
+    }
+
+    if (error.config.apiName === 'reduxblog') {
+      dispatch({ type: `POSTS_${aim}_DATA_FAILURE` });
+    }
+  }
+};
+
+export const fetchPostsNew = (publicKey, aim) => async (dispatch) => {
+  try {
+    dispatch({ type: `POSTS_${aim}_DATA_REQUEST` });
+
+    const postsResponse = await reduxblog.get('/posts', {
+      params: { key: publicKey },
+    });
+
+    dispatch({ type: `POSTS_${aim}_DATA_SUCCESS`, payload: postsResponse.data });
+  } catch (error) {
+    dispatch({ type: `POSTS_${aim}_DATA_FAILURE` });
+  }
+};
+
 export const authAndFetchPosts = () => async (dispatch) => {
   try {
     dispatch({ type: POSTS_AUTH_REQUEST });

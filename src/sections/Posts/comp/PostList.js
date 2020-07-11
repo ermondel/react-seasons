@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  fetchPosts,
-  authAndFetchPosts,
+  fetchPostsNew,
+  authAndFetchPostsNew,
   removePostAsk,
   initAuth,
 } from '../actions/posts';
@@ -16,38 +16,42 @@ import AuthSuccess from './AuthSuccess';
 
 class PostList extends Component {
   componentDidMount() {
-    if (!this.props.posts.list.length) {
-      if (this.props.auth.publicKey) {
-        this.props.fetchPosts(this.props.auth.publicKey);
+    const { postList, authData, fetchPostsNew, authAndFetchPostsNew } = this.props;
+
+    if (!postList.length) {
+      if (authData.publicKey) {
+        fetchPostsNew(authData.publicKey, 'LIST');
       } else {
-        this.props.authAndFetchPosts();
+        authAndFetchPostsNew('LIST');
       }
     }
   }
 
-  filterList(posts, search) {
-    search = search.toLowerCase();
+  filterList(posts, searchQuery) {
+    searchQuery = searchQuery.toLowerCase();
     return posts.filter((post) => {
       const str = `${post.title} ${post.categories}`.toLowerCase();
-      return str.indexOf(search) >= 0;
+      return str.indexOf(searchQuery) >= 0;
     });
   }
 
   renderList() {
-    const { posts, removePostAsk, modalOpen, auth, search, sortType } = this.props;
-    let postList = search ? this.filterList(posts.list, search) : posts.list;
+    const { removePostAsk, modalOpen } = this.props;
+    const { postList, authData, searchQuery, sortType } = this.props;
+
+    let posts = searchQuery ? this.filterList(postList, searchQuery) : postList;
 
     if (sortType === 'old') {
-      postList = postList.map((val, i, arr) => arr[arr.length - i - 1]);
+      posts = posts.map((val, i, arr) => arr[arr.length - i - 1]);
     }
 
-    return postList.length ? (
+    return posts.length ? (
       <div className='pst-list'>
-        {postList.map((post) => (
+        {posts.map((post) => (
           <ListItem
             key={post.id}
             post={post}
-            showRemoveBtn={auth.publicKey ? true : false}
+            showRemoveBtn={authData.publicKey ? true : false}
             onRemoveClick={() => {
               removePostAsk(post.id, post.title);
               modalOpen();
@@ -61,21 +65,21 @@ class PostList extends Component {
   }
 
   render() {
-    switch (this.props.posts.mode) {
+    switch (this.props.listState) {
+      case 'auth':
+        return <AuthSpinner />;
+
+      case 'allow':
+        return <AuthSuccess />;
+
+      case 'deny':
+        return <AuthError />;
+
       case 'loading':
         return <LoadingSpinner />;
 
       case 'failure':
         return <LoadingError />;
-
-      case 'auth':
-        return <AuthSpinner />;
-
-      case 'deny':
-        return <AuthError />;
-
-      case 'allow':
-        return <AuthSuccess />;
 
       case 'success':
       case 'default':
@@ -86,15 +90,16 @@ class PostList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  posts: state.postsList,
-  search: state.postsSearch,
-  auth: state.postsAuth,
+  postList: state.postsListNew,
+  listState: state.postsListStateNew,
+  searchQuery: state.postsSearch,
+  authData: state.postsAuthNew,
   sortType: state.postsSort,
 });
 
 export default connect(mapStateToProps, {
-  fetchPosts,
-  authAndFetchPosts,
+  fetchPostsNew,
+  authAndFetchPostsNew,
   removePostAsk,
   modalOpen,
   initAuth,

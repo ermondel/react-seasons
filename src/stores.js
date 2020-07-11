@@ -23,6 +23,9 @@ import postsReading from './sections/Posts/reducers/postsReading';
 import postsSearch from './sections/Posts/reducers/postsSearch';
 import postsAuth from './sections/Posts/reducers/postsAuth';
 import postsSort from './sections/Posts/reducers/postsSort';
+import postsListNew from './sections/Posts/reducers/postsListNew';
+import postsListStateNew from './sections/Posts/reducers/postsListStateNew';
+import postsAuthNew from './sections/Posts/reducers/postsAuthNew';
 
 export default combineReducers({
   modalWindow: modalWindow,
@@ -48,5 +51,8 @@ export default combineReducers({
   postsSearch: postsSearch,
   postsAuth: postsAuth,
   postsSort: postsSort,
+  postsListNew: postsListNew,
+  postsListStateNew: postsListStateNew,
+  postsAuthNew: postsAuthNew,
   form: formReducer,
 });
