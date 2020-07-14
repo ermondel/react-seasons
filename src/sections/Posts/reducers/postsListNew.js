@@ -4,6 +4,9 @@ export default (state = [], action) => {
     case 'POSTS_VIEW_DATA_SUCCESS':
       return action.payload;
 
+    case 'POSTS_ADD_SAVING_SUCCESS':
+      return [action.payload, ...state];
+
     default:
       return state;
   }

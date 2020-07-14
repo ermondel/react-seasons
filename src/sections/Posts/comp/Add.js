@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { createPost, addingPostReset, initAuth } from '../actions/posts';
+import { initAuthNew, createPost, addStateReset } from '../actions/posts';
 import AddForm from './AddForm';
 import AuthError from './AuthError';
 import AuthSpinner from './AuthSpinner';
@@ -10,33 +10,33 @@ import SavingError from './SavingError';
 
 class Add extends Component {
   componentDidMount() {
-    if (!this.props.auth.publicKey) this.props.initAuth();
+    if (!this.props.authData.publicKey) this.props.initAuthNew('ADD');
   }
 
   componentWillUnmount() {
-    if (this.props.post.mode !== 'default') this.props.addingPostReset();
+    if (this.props.addState !== 'default') this.props.addStateReset();
   }
 
   addPost = (newValues) => {
-    this.props.createPost(this.props.auth.publicKey, newValues);
+    this.props.createPost(this.props.authData.publicKey, newValues);
   };
 
   renderContent() {
-    switch (this.props.post.mode) {
-      case 'saving':
-        return <SavingSpinner />;
-
-      case 'failure':
-        return <SavingError />;
-
-      case 'success':
-        return <Redirect to='/posts' />;
-
+    switch (this.props.addState) {
       case 'auth':
         return <AuthSpinner />;
 
       case 'deny':
         return <AuthError />;
+
+      case 'saving':
+        return <SavingSpinner />;
+
+      case 'success':
+        return <Redirect to='/posts' />;
+
+      case 'failure':
+        return <SavingError />;
 
       case 'allow':
       case 'default':
@@ -57,12 +57,12 @@ class Add extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  post: state.postsAdding,
-  auth: state.postsAuth,
+  addState: state.postsAddStateNew,
+  authData: state.postsAuthNew,
 });
 
 export default connect(mapStateToProps, {
+  initAuthNew,
   createPost,
-  addingPostReset,
-  initAuth,
+  addStateReset,
 })(Add);

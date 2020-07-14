@@ -17,9 +17,7 @@ import PostItem from './PostItem';
 
 class View extends Component {
   componentWillUnmount() {
-    if (this.props.viewState !== 'default') {
-      this.props.viewStateReset();
-    }
+    if (this.props.viewState !== 'default') this.props.viewStateReset();
   }
 
   componentDidMount() {

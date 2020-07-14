@@ -27,6 +27,7 @@ import postsListNew from './sections/Posts/reducers/postsListNew';
 import postsListStateNew from './sections/Posts/reducers/postsListStateNew';
 import postsAuthNew from './sections/Posts/reducers/postsAuthNew';
 import postsViewStateNew from './sections/Posts/reducers/postsViewStateNew';
+import postsAddStateNew from './sections/Posts/reducers/postsAddStateNew';
 
 export default combineReducers({
   modalWindow: modalWindow,
@@ -56,5 +57,6 @@ export default combineReducers({
   postsListStateNew: postsListStateNew,
   postsAuthNew: postsAuthNew,
   postsViewStateNew: postsViewStateNew,
+  postsAddStateNew: postsAddStateNew,
   form: formReducer,
 });

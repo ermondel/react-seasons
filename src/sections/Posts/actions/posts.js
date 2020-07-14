@@ -4,10 +4,7 @@ import {
   POSTS_LIST_REQUEST,
   POSTS_LIST_SUCCESS,
   POSTS_LIST_FAILURE,
-  POSTS_ADDING_REQUEST,
-  POSTS_ADDING_SUCCESS,
   POSTS_MESSAGE_ADD,
-  POSTS_ADDING_FAILURE,
   POSTS_REMOVING_REQUEST,
   POSTS_REMOVING_FAILURE,
   POSTS_REMOVING_ASK,
@@ -66,6 +63,39 @@ export const fetchPostsNew = (publicKey, aim) => async (dispatch) => {
   }
 };
 
+export const initAuthNew = (aim) => async (dispatch) => {
+  dispatch({ type: `POSTS_${aim}_AUTH_REQUEST` });
+
+  try {
+    const authResponse = await nodeapiserver.get('/opt/fsn78d');
+
+    dispatch({ type: `POSTS_${aim}_AUTH_SUCCESS`, payload: authResponse.data.opt });
+  } catch (error) {
+    dispatch({ type: `POSTS_${aim}_AUTH_FAILURE` });
+  }
+};
+
+export const createPost = (publicKey, newValues) => async (dispatch) => {
+  const newID = uuidv4();
+  dispatch({ type: 'POSTS_ADD_SAVING_REQUEST' });
+  try {
+    const { title, categories, content } = newValues;
+
+    const response = await reduxblog.post(
+      '/posts',
+      { id: newID, title, categories, content },
+      {
+        params: { key: publicKey },
+      }
+    );
+
+    dispatch({ type: 'POSTS_ADD_SAVING_SUCCESS', payload: response.data });
+    dispatch({ type: POSTS_MESSAGE_ADD, message: 'The post has been added.' });
+  } catch (error) {
+    dispatch({ type: 'POSTS_ADD_SAVING_FAILURE' });
+  }
+};
+
 export const authAndFetchPosts = () => async (dispatch) => {
   try {
     dispatch({ type: POSTS_AUTH_REQUEST });
@@ -106,50 +136,6 @@ export const fetchPosts = (publicKey) => async (dispatch) => {
     dispatch({ type: POSTS_LIST_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: POSTS_LIST_FAILURE, status: 500 });
-  }
-};
-
-export const createPost = (publicKey, values) => async (dispatch) => {
-  const newID = uuidv4();
-
-  dispatch({
-    type: POSTS_ADDING_REQUEST,
-    id: newID,
-    title: values.title,
-  });
-
-  try {
-    const response = await reduxblog.post(
-      '/posts',
-      {
-        id: newID,
-        title: values.title,
-        categories: values.categories,
-        content: values.content,
-      },
-      {
-        params: { key: publicKey },
-      }
-    );
-
-    dispatch({
-      type: POSTS_ADDING_SUCCESS,
-      id: response.data.id,
-      title: response.data.title,
-      payload: response.data,
-    });
-
-    dispatch({
-      type: POSTS_MESSAGE_ADD,
-      message: 'The post has been added.',
-    });
-  } catch (error) {
-    dispatch({
-      type: POSTS_ADDING_FAILURE,
-      id: newID,
-      title: values.title,
-      status: 500,
-    });
   }
 };
 
@@ -226,4 +212,8 @@ export const sortByDate = (sortType) => ({
 
 export const listStateReset = () => ({
   type: 'POSTS_LIST_STATE_RESET',
+});
+
+export const addStateReset = () => ({
+  type: 'POSTS_ADD_STATE_RESET',
 });
