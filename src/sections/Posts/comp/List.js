@@ -3,7 +3,7 @@ import PostList from './PostList';
 import ListControl from './ListControl';
 
 const List = () => (
-  <div className='content-wrap'>
+  <div>
     <h2>Post list</h2>
 
     <ListControl />

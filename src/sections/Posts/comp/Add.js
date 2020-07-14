@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { initAuthNew, createPost, addStateReset } from '../actions/posts';
+import { createPost, resetAddStatus } from '../actions/posts';
 import AddForm from './AddForm';
-import AuthError from './AuthError';
-import AuthSpinner from './AuthSpinner';
 import SavingSpinner from './SavingSpinner';
 import SavingError from './SavingError';
 
 class Add extends Component {
-  componentDidMount() {
-    if (!this.props.authData.publicKey) this.props.initAuthNew('ADD');
-  }
-
   componentWillUnmount() {
-    if (this.props.addState !== 'default') this.props.addStateReset();
+    if (this.props.status !== 'default') this.props.resetAddStatus();
   }
 
   addPost = (newValues) => {
@@ -22,13 +16,7 @@ class Add extends Component {
   };
 
   renderContent() {
-    switch (this.props.addState) {
-      case 'auth':
-        return <AuthSpinner />;
-
-      case 'deny':
-        return <AuthError />;
-
+    switch (this.props.status) {
       case 'saving':
         return <SavingSpinner />;
 
@@ -38,7 +26,6 @@ class Add extends Component {
       case 'failure':
         return <SavingError />;
 
-      case 'allow':
       case 'default':
       default:
         return <AddForm onSubmit={this.addPost} />;
@@ -47,7 +34,7 @@ class Add extends Component {
 
   render() {
     return (
-      <div className='content-wrap'>
+      <div>
         <h2>New post</h2>
 
         {this.renderContent()}
@@ -57,12 +44,8 @@ class Add extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  addState: state.postsAddStateNew,
-  authData: state.postsAuthNew,
+  status: state.postsAdding,
+  authData: state.postsAuth,
 });
 
-export default connect(mapStateToProps, {
-  initAuthNew,
-  createPost,
-  addStateReset,
-})(Add);
+export default connect(mapStateToProps, { createPost, resetAddStatus })(Add);

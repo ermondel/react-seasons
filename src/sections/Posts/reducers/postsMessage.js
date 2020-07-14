@@ -1,11 +1,11 @@
-import { POSTS_MESSAGE_ADD, POSTS_MESSAGE_REMOVE } from '../../../types';
+import { POSTS_ADD_MESSAGE, POSTS_REMOVE_MESSAGE } from '../../../types';
 
 export default (state = '', action) => {
   switch (action.type) {
-    case POSTS_MESSAGE_ADD:
+    case POSTS_ADD_MESSAGE:
       return action.message;
 
-    case POSTS_MESSAGE_REMOVE:
+    case POSTS_REMOVE_MESSAGE:
       return '';
 
     default:

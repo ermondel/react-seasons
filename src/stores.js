@@ -17,17 +17,12 @@ import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer
 import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
 import postsRemoving from './sections/Posts/reducers/postsRemoving';
 import postsList from './sections/Posts/reducers/postsList';
-import postsAdding from './sections/Posts/reducers/postsAdding';
 import postsMessage from './sections/Posts/reducers/postsMessage';
-import postsReading from './sections/Posts/reducers/postsReading';
 import postsSearch from './sections/Posts/reducers/postsSearch';
 import postsAuth from './sections/Posts/reducers/postsAuth';
 import postsSort from './sections/Posts/reducers/postsSort';
-import postsListNew from './sections/Posts/reducers/postsListNew';
-import postsListStateNew from './sections/Posts/reducers/postsListStateNew';
-import postsAuthNew from './sections/Posts/reducers/postsAuthNew';
-import postsViewStateNew from './sections/Posts/reducers/postsViewStateNew';
-import postsAddStateNew from './sections/Posts/reducers/postsAddStateNew';
+import postsStatus from './sections/Posts/reducers/postsStatus';
+import postsAdding from './sections/Posts/reducers/postsAdding';
 
 export default combineReducers({
   modalWindow: modalWindow,
@@ -47,16 +42,11 @@ export default combineReducers({
   forecastMountMap: forecastMountMapReducer,
   postsRemoving: postsRemoving,
   postsList: postsList,
-  postsAdding: postsAdding,
   postsMessage: postsMessage,
-  postsReading: postsReading,
   postsSearch: postsSearch,
   postsAuth: postsAuth,
   postsSort: postsSort,
-  postsListNew: postsListNew,
-  postsListStateNew: postsListStateNew,
-  postsAuthNew: postsAuthNew,
-  postsViewStateNew: postsViewStateNew,
-  postsAddStateNew: postsAddStateNew,
+  postsStatus: postsStatus,
+  postsAdding: postsAdding,
   form: formReducer,
 });
