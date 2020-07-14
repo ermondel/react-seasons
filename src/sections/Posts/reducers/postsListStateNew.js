@@ -18,6 +18,9 @@ export default (state = 'default', action) => {
     case 'POSTS_LIST_DATA_FAILURE':
       return 'failure';
 
+    case 'POSTS_LIST_STATE_RESET':
+      return 'default';
+
     default:
       return state;
   }

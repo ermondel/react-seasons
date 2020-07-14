@@ -5,6 +5,7 @@ import {
   authAndFetchPostsNew,
   removePostAsk,
   initAuth,
+  listStateReset,
 } from '../actions/posts';
 import { modalOpen } from '../../../util/ModalWindow/comp/ModalWindow';
 import ListItem from './ListItem';
@@ -15,6 +16,12 @@ import AuthError from './AuthError';
 import AuthSuccess from './AuthSuccess';
 
 class PostList extends Component {
+  componentWillUnmount() {
+    if (this.props.listState !== 'default') {
+      this.props.listStateReset();
+    }
+  }
+
   componentDidMount() {
     const { postList, authData, fetchPostsNew, authAndFetchPostsNew } = this.props;
 
@@ -103,4 +110,5 @@ export default connect(mapStateToProps, {
   removePostAsk,
   modalOpen,
   initAuth,
+  listStateReset,
 })(PostList);

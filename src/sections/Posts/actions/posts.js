@@ -32,6 +32,7 @@ export const authAndFetchPostsNew = (aim) => async (dispatch) => {
     });
 
     dispatch({ type: `POSTS_${aim}_AUTH_SUCCESS`, payload: authResponse.data.opt });
+
     dispatch({ type: `POSTS_${aim}_DATA_REQUEST` });
 
     const postsResponse = await reduxblog.get('/posts', {
@@ -209,6 +210,10 @@ export const readPostReset = () => ({
   type: POSTS_READING_RESET,
 });
 
+export const viewStateReset = () => ({
+  type: 'POSTS_VIEW_STATE_RESET',
+});
+
 export const searchPosts = (query) => ({
   type: POSTS_SEARCH_REQUEST,
   query,
@@ -217,4 +222,8 @@ export const searchPosts = (query) => ({
 export const sortByDate = (sortType) => ({
   type: POSTS_SORT_BY_DATE,
   sortType,
+});
+
+export const listStateReset = () => ({
+  type: 'POSTS_LIST_STATE_RESET',
 });

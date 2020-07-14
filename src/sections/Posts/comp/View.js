@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {
   removePostAsk,
-  readPostReset,
-  fetchPosts,
-  authAndFetchPosts,
+  viewStateReset,
+  fetchPostsNew,
+  authAndFetchPostsNew,
 } from '../actions/posts';
 import { modalOpen } from '../../../util/ModalWindow/comp/ModalWindow';
 import LoadingSpinner from './LoadingSpinner';
@@ -17,27 +17,31 @@ import PostItem from './PostItem';
 
 class View extends Component {
   componentWillUnmount() {
-    if (this.props.read.mode !== 'default') {
-      this.props.readPostReset();
+    if (this.props.viewState !== 'default') {
+      this.props.viewStateReset();
     }
   }
 
   componentDidMount() {
-    if (!this.props.list.length) {
-      if (this.props.auth.publicKey) {
-        this.props.fetchPosts(this.props.auth.publicKey);
+    const { postList, authData, fetchPostsNew, authAndFetchPostsNew } = this.props;
+
+    if (!postList.length) {
+      if (authData.publicKey) {
+        fetchPostsNew(authData.publicKey, 'VIEW');
       } else {
-        this.props.authAndFetchPosts();
+        authAndFetchPostsNew('VIEW');
       }
     }
   }
 
   renderPost() {
+    const { match, postList, removePostAsk, modalOpen } = this.props;
+
     let post;
 
-    if (this.props.list.length) {
-      post = this.props.list.find((el) => {
-        return String(el.id) === this.props.match.params.id;
+    if (postList.length) {
+      post = postList.find((el) => {
+        return String(el.id) === match.params.id;
       });
     }
 
@@ -45,8 +49,8 @@ class View extends Component {
       <PostItem
         post={post}
         onRemoveClick={() => {
-          this.props.removePostAsk(post.id, post.title);
-          this.props.modalOpen();
+          removePostAsk(post.id, post.title);
+          modalOpen();
         }}
       />
     ) : (
@@ -54,29 +58,22 @@ class View extends Component {
     );
   }
 
-  render() {
-    let content;
-
-    switch (this.props.read.mode) {
+  renderContent() {
+    switch (this.props.viewState) {
       case 'auth':
-        content = <AuthSpinner />;
-        break;
+        return <AuthSpinner />;
 
       case 'allow':
-        content = <AuthSuccess />;
-        break;
+        return <AuthSuccess />;
 
       case 'deny':
-        content = <AuthError />;
-        break;
+        return <AuthError />;
 
       case 'loading':
-        content = <LoadingSpinner />;
-        break;
+        return <LoadingSpinner />;
 
       case 'failure':
-        content = <LoadingError />;
-        break;
+        return <LoadingError />;
 
       case 'deleted':
         return <Redirect to='/posts' />;
@@ -84,27 +81,29 @@ class View extends Component {
       case 'success':
       case 'default':
       default:
-        content = this.renderPost();
+        return this.renderPost();
     }
+  }
 
+  render() {
     return (
       <div className='content'>
-        <div className='content-wrap'>{content}</div>
+        <div className='content-wrap'>{this.renderContent()}</div>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  list: state.postsList.list,
-  read: state.postsReading,
-  auth: state.postsAuth,
+  postList: state.postsListNew,
+  viewState: state.postsViewStateNew,
+  authData: state.postsAuthNew,
 });
 
 export default connect(mapStateToProps, {
   removePostAsk,
   modalOpen,
-  readPostReset,
-  fetchPosts,
-  authAndFetchPosts,
+  viewStateReset,
+  fetchPostsNew,
+  authAndFetchPostsNew,
 })(View);
