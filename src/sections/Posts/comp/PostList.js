@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removePostAsk as removePost } from '../actions/posts';
-import { modalOpen } from '../../../util/ModalWindow/comp/ModalWindow';
+import { removePostConfirm } from '../actions/posts';
 import ListItem from './ListItem';
 
 const filterList = (posts, searchQuery) => {
@@ -12,7 +11,7 @@ const filterList = (posts, searchQuery) => {
   });
 };
 
-const PostList = ({ postsList, searchQuery, sortType, removePost, modalOpen }) => {
+const PostList = ({ postsList, searchQuery, sortType, removePostConfirm }) => {
   let posts = searchQuery ? filterList(postsList, searchQuery) : postsList;
 
   if (sortType === 'old') {
@@ -27,10 +26,7 @@ const PostList = ({ postsList, searchQuery, sortType, removePost, modalOpen }) =
         <ListItem
           key={post.id}
           post={post}
-          onRemoveClick={() => {
-            removePost(post.id, post.title);
-            modalOpen();
-          }}
+          onRemoveClick={() => removePostConfirm(post)}
         />
       ))}
     </div>
@@ -43,4 +39,4 @@ const mapStateToProps = (state) => ({
   sortType: state.postsSort,
 });
 
-export default connect(mapStateToProps, { removePost, modalOpen })(PostList);
+export default connect(mapStateToProps, { removePostConfirm })(PostList);

@@ -1,4 +1,8 @@
-import { POSTS_LIST_SUCCESS, POSTS_ADDING_SUCCESS } from '../../../types';
+import {
+  POSTS_LIST_SUCCESS,
+  POSTS_ADDING_SUCCESS,
+  POSTS_REMOVE_SUCCESS,
+} from '../../../types';
 
 export default (state = [], action) => {
   switch (action.type) {
@@ -7,6 +11,9 @@ export default (state = [], action) => {
 
     case POSTS_ADDING_SUCCESS:
       return [action.payload, ...state];
+
+    case POSTS_REMOVE_SUCCESS:
+      return state.filter((post) => post.id !== action.post.id);
 
     default:
       return state;

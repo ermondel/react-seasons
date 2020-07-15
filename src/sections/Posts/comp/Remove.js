@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removePost, removePostReset } from '../actions/posts';
+import { removePost, resetRemoveStatus } from '../actions/posts';
 import { ErrorRemote, SpinnerBig } from '../../../util/UtilImg/comp/UtilImg';
 import { ModalWindow, modalClose } from '../../../util/ModalWindow/comp/ModalWindow';
 
 class RemovePostWindow extends Component {
   renderConfirmation() {
-    const { removePost, removing, auth } = this.props;
-
     return (
       <div className='remove-post'>
-        <p className='remove-post__title'>{this.props.removing.title}</p>
+        <p className='remove-post__title'>{this.props.removing.post.title}</p>
         <p className='remove-post__question'>
           Are you sure you want to remove the post?
         </p>
         <div className='remove-post__actions'>
-          <button
-            className='remove-post__btn-remove'
-            onClick={() => {
-              removePost(auth.publicKey, removing.id, removing.title);
-            }}
-          >
+          <button className='remove-post__btn-remove' onClick={this.onRemove}>
             Remove
           </button>
         </div>
@@ -28,9 +21,10 @@ class RemovePostWindow extends Component {
     );
   }
 
-  renderSpinner() {
+  renderRemoveSpinner() {
     return (
       <div className='remove-post'>
+        <p className='remove-post__title'>{this.props.removing.post.title}</p>
         <div className='remove-post__spinner-img'>
           <SpinnerBig />
         </div>
@@ -43,9 +37,19 @@ class RemovePostWindow extends Component {
     );
   }
 
-  renderError() {
+  renderRemoveSuccess() {
     return (
       <div className='remove-post'>
+        <p className='remove-post__title'>{this.props.removing.post.title}</p>
+        <p className='remove-post__success'>Post successfully deleted</p>
+      </div>
+    );
+  }
+
+  renderRemoveError() {
+    return (
+      <div className='remove-post'>
+        <p className='remove-post__title'>{this.props.removing.post.title}</p>
         <div className='remove-post__error-img'>
           <ErrorRemote />
         </div>
@@ -67,45 +71,41 @@ class RemovePostWindow extends Component {
     );
   }
 
-  renderSuccessful() {
-    return (
-      <div className='remove-post'>
-        <p className='remove-post__title'>{this.props.removing.title}</p>
-        <p className='remove-post__success'>Post successfully deleted</p>
-      </div>
-    );
-  }
+  onRemove = () => {
+    this.props.removePost(this.props.authData.publicKey, this.props.removing.post);
+  };
 
   onClose = () => {
     this.props.modalClose();
-    this.props.removePostReset();
+    this.props.resetRemoveStatus();
   };
 
   renderContent() {
-    switch (this.props.removing.mode) {
-      case 'ask':
+    switch (this.props.removing.status) {
+      case 'confirm':
         return this.renderConfirmation();
 
-      case 'loading':
-        return this.renderSpinner();
+      case 'removing':
+        return this.renderRemoveSpinner();
 
       case 'success':
-        return this.renderSuccessful();
+        return this.renderRemoveSuccess();
 
       case 'failure':
-        return this.renderError();
+        return this.renderRemoveError();
 
+      case 'default':
       default:
         return null;
     }
   }
 
   render() {
-    const { visible, auth } = this.props;
+    const { visible, authData } = this.props;
 
     return (
       <ModalWindow visible={visible} onWindowClose={this.onClose} styleType='common'>
-        {auth.publicKey ? this.renderContent() : this.renderAuthError()}
+        {authData.publicKey ? this.renderContent() : this.renderAuthError()}
       </ModalWindow>
     );
   }
@@ -114,11 +114,11 @@ class RemovePostWindow extends Component {
 const mapStateToProps = (state) => ({
   visible: state.modalWindow,
   removing: state.postsRemoving,
-  auth: state.postsAuth,
+  authData: state.postsAuth,
 });
 
 export default connect(mapStateToProps, {
   modalClose,
   removePost,
-  removePostReset,
+  resetRemoveStatus,
 })(RemovePostWindow);

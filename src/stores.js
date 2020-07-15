@@ -23,6 +23,7 @@ import postsAuth from './sections/Posts/reducers/postsAuth';
 import postsSort from './sections/Posts/reducers/postsSort';
 import postsStatus from './sections/Posts/reducers/postsStatus';
 import postsAdding from './sections/Posts/reducers/postsAdding';
+import postsView from './sections/Posts/reducers/postsView';
 
 export default combineReducers({
   modalWindow: modalWindow,
@@ -48,5 +49,6 @@ export default combineReducers({
   postsSort: postsSort,
   postsStatus: postsStatus,
   postsAdding: postsAdding,
+  postsView: postsView,
   form: formReducer,
 });

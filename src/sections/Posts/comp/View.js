@@ -1,31 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removePostAsk } from '../actions/posts';
-import { modalOpen } from '../../../util/ModalWindow/comp/ModalWindow';
+import { Redirect } from 'react-router-dom';
+import { removePostConfirm, resetViewStatus } from '../actions/posts';
 import PostItem from './PostItem';
 
-const View = ({ match, postsList, removePostAsk, modalOpen }) => {
-  let post;
-
-  if (postsList.length) {
-    post = postsList.find((el) => String(el.id) === match.params.id);
+class View extends Component {
+  componentWillUnmount() {
+    if (this.props.status !== 'default') this.props.resetViewStatus();
   }
 
-  if (!post) return <h2>Post not found</h2>;
+  searchPost() {
+    const { match, postsList } = this.props;
 
-  return (
-    <PostItem
-      post={post}
-      onRemoveClick={() => {
-        removePostAsk(post.id, post.title);
-        modalOpen();
-      }}
-    />
-  );
-};
+    if (postsList.length) {
+      return postsList.find((el) => String(el.id) === match.params.id);
+    }
+  }
+
+  render() {
+    if (this.props.status === 'deleted') return <Redirect to='/posts' />;
+
+    const post = this.searchPost();
+
+    return post ? (
+      <PostItem
+        post={post}
+        onRemoveClick={() => this.props.removePostConfirm(post)}
+      />
+    ) : (
+      <h2>Post not found</h2>
+    );
+  }
+}
 
 const mapStateToProps = (state) => ({
+  status: state.postsView,
   postsList: state.postsList,
 });
 
-export default connect(mapStateToProps, { removePostAsk, modalOpen })(View);
+export default connect(mapStateToProps, {
+  removePostConfirm,
+  resetViewStatus,
+})(View);

@@ -11,16 +11,17 @@ import {
   POSTS_ADDING_SUCCESS,
   POSTS_ADDING_FAILURE,
   POSTS_ADDING_RESET,
-  POSTS_REMOVING_REQUEST,
-  POSTS_REMOVING_FAILURE,
-  POSTS_REMOVING_ASK,
-  POSTS_REMOVING_RESET,
-  POSTS_REMOVING_SUCCESS,
+  POSTS_REMOVE_CONFIRM,
+  POSTS_REMOVE_REQUEST,
+  POSTS_REMOVE_SUCCESS,
+  POSTS_REMOVE_FAILURE,
+  POSTS_REMOVE_DEFAULT,
   POSTS_SEARCH_REQUEST,
   POSTS_SORT_BY_DATE,
   POSTS_STATUS_RESET,
   POSTS_ADD_MESSAGE,
   POSTS_REMOVE_MESSAGE,
+  POSTS_VIEW_DEFAULT,
 } from '../../../types';
 
 export const fetchPosts = (publicKey) => async (dispatch) => {
@@ -89,32 +90,23 @@ export const createPost = (publicKey, newValues) => async (dispatch) => {
   }
 };
 
-export const removePost = (publicKey, id, title) => async (dispatch) => {
-  dispatch({ type: POSTS_REMOVING_REQUEST, id, title });
-
+export const removePost = (publicKey, post) => async (dispatch) => {
   try {
-    const response = await reduxblog.delete(`/posts/${id}`, {
+    dispatch({ type: POSTS_REMOVE_REQUEST, post });
+
+    const response = await reduxblog.delete(`/posts/${post.id}`, {
       params: { key: publicKey },
     });
 
-    dispatch({
-      type: POSTS_REMOVING_SUCCESS,
-      id: response.data.id,
-      title: response.data.title,
-    });
+    dispatch({ type: POSTS_REMOVE_SUCCESS, post: response.data });
   } catch (error) {
-    dispatch({ type: POSTS_REMOVING_FAILURE, id, title });
+    dispatch({ type: POSTS_REMOVE_FAILURE, post });
   }
 };
 
-export const removePostAsk = (id, title) => ({
-  type: POSTS_REMOVING_ASK,
-  id,
-  title,
-});
-
-export const removePostReset = () => ({
-  type: POSTS_REMOVING_RESET,
+export const removePostConfirm = (post) => ({
+  type: POSTS_REMOVE_CONFIRM,
+  post,
 });
 
 export const removeMessage = () => ({
@@ -137,4 +129,12 @@ export const resetStatus = () => ({
 
 export const resetAddStatus = () => ({
   type: POSTS_ADDING_RESET,
+});
+
+export const resetRemoveStatus = () => ({
+  type: POSTS_REMOVE_DEFAULT,
+});
+
+export const resetViewStatus = () => ({
+  type: POSTS_VIEW_DEFAULT,
 });
