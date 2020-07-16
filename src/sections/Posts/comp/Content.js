@@ -6,11 +6,13 @@ import List from './List';
 import Add from './Add';
 import View from './View';
 import Remove from './Remove';
-import AuthSpinner from './AuthSpinner';
-import AuthSuccess from './AuthSuccess';
-import AuthError from './AuthError';
-import LoadingSpinner from './LoadingSpinner';
-import LoadingError from './LoadingError';
+import {
+  AuthSpinner,
+  AuthSuccess,
+  AuthError,
+  LoadingSpinner,
+  LoadingError,
+} from './Service';
 
 class Content extends Component {
   componentDidMount() {

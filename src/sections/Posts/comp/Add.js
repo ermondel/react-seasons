@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { createPost, resetAddStatus } from '../actions/posts';
 import AddForm from './AddForm';
-import SavingSpinner from './SavingSpinner';
-import SavingError from './SavingError';
+import { SavingSpinner, SavingError } from './Service';
 
 class Add extends Component {
   componentWillUnmount() {
