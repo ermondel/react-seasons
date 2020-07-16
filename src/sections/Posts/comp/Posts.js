@@ -3,15 +3,20 @@ import Header from '../../../app/App/comp/Header';
 import Sidebar from './Sidebar';
 import Content from './Content';
 
-const Posts = (props) => (
-  <div className='app-main'>
-    <Header path={props.location.pathname} />
+const Posts = (props) => {
+  const pathParts = props.location ? props.location.pathname.split('/') : [];
+  const pathName = pathParts ? '/' + pathParts[1] : '';
 
-    <main className='main'>
-      <Sidebar />
-      <Content />
-    </main>
-  </div>
-);
+  return (
+    <div className='app-main'>
+      <Header path={pathName} />
+
+      <main className='main'>
+        <Sidebar />
+        <Content />
+      </main>
+    </div>
+  );
+};
 
 export default Posts;
