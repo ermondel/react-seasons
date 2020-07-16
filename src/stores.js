@@ -1,20 +1,20 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import modalWindow from './util/ModalWindow/reducers/modalWindow';
-import podcastReducer from './sections/Podcasts/reducers/podcastReducer';
-import blogPostsReducer from './sections/Blog/reducers/blogPostsReducer';
-import blogUserReducer from './sections/Blog/reducers/blogUserReducer';
-import blogErrorReducer from './sections/Blog/reducers/blogErrorReducer';
-import blogSpinnerReducer from './sections/Blog/reducers/blogSpinnerReducer';
-import bookActiveReducer from './sections/Books/reducers/bookActiveReducer';
-import booksViewReducer from './sections/Books/reducers/booksViewReducer';
-import bookSearchReducer from './sections/Books/reducers/bookSearchReducer';
-import forecastListReducer from './sections/Weather/reducers/forecastListReducer';
-import forecastSpinnerReducer from './sections/Weather/reducers/forecastSpinnerReducer';
-import forecastErrorReducer from './sections/Weather/reducers/forecastErrorReducer';
-import forecastViewReducer from './sections/Weather/reducers/forecastViewReducer';
-import forecastCityReducer from './sections/Weather/reducers/forecastCityReducer';
-import forecastMountMapReducer from './sections/Weather/reducers/forecastMountMapReducer';
+import podcast from './sections/Podcasts/reducers/podcast';
+import blogPosts from './sections/Blog/reducers/blogPosts';
+import blogUser from './sections/Blog/reducers/blogUser';
+import blogError from './sections/Blog/reducers/blogError';
+import blogSpinner from './sections/Blog/reducers/blogSpinner';
+import bookActive from './sections/Books/reducers/bookActive';
+import booksView from './sections/Books/reducers/booksView';
+import bookSearch from './sections/Books/reducers/bookSearch';
+import forecastList from './sections/Weather/reducers/forecastList';
+import forecastSpinner from './sections/Weather/reducers/forecastSpinner';
+import forecastError from './sections/Weather/reducers/forecastError';
+import forecastView from './sections/Weather/reducers/forecastView';
+import forecastCity from './sections/Weather/reducers/forecastCity';
+import forecastMountMap from './sections/Weather/reducers/forecastMountMap';
 import postsRemoving from './sections/Posts/reducers/postsRemoving';
 import postsList from './sections/Posts/reducers/postsList';
 import postsMessage from './sections/Posts/reducers/postsMessage';
@@ -26,29 +26,29 @@ import postsAdding from './sections/Posts/reducers/postsAdding';
 import postsView from './sections/Posts/reducers/postsView';
 
 export default combineReducers({
-  modalWindow: modalWindow,
-  podcast: podcastReducer,
-  blogPosts: blogPostsReducer,
-  blogUser: blogUserReducer,
-  blogError: blogErrorReducer,
-  blogSpinner: blogSpinnerReducer,
-  bookActive: bookActiveReducer,
-  booksView: booksViewReducer,
-  bookSearch: bookSearchReducer,
-  forecastList: forecastListReducer,
-  forecastSpinner: forecastSpinnerReducer,
-  forecastError: forecastErrorReducer,
-  forecastView: forecastViewReducer,
-  forecastCity: forecastCityReducer,
-  forecastMountMap: forecastMountMapReducer,
-  postsRemoving: postsRemoving,
-  postsList: postsList,
-  postsMessage: postsMessage,
-  postsSearch: postsSearch,
-  postsAuth: postsAuth,
-  postsSort: postsSort,
-  postsStatus: postsStatus,
-  postsAdding: postsAdding,
-  postsView: postsView,
+  modalWindow,
+  podcast,
+  blogPosts,
+  blogUser,
+  blogError,
+  blogSpinner,
+  bookActive,
+  booksView,
+  bookSearch,
+  forecastList,
+  forecastSpinner,
+  forecastError,
+  forecastView,
+  forecastCity,
+  forecastMountMap,
+  postsList,
+  postsView,
+  postsAdding,
+  postsRemoving,
+  postsStatus,
+  postsAuth,
+  postsMessage,
+  postsSearch,
+  postsSort,
   form: formReducer,
 });
