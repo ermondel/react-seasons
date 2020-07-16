@@ -2,23 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removePostConfirm } from '../actions/posts';
 import ListItem from './ListItem';
+import { filterObjListByQuery } from '../../../filters';
 
-const filterList = (posts, searchQuery) => {
-  searchQuery = searchQuery.toLowerCase();
-  return posts.filter((post) => {
-    const str = `${post.title} ${post.categories}`.toLowerCase();
-    return str.indexOf(searchQuery) >= 0;
-  });
-};
-
-const PostList = ({ postsList, searchQuery, sortType, removePostConfirm }) => {
-  let posts = searchQuery ? filterList(postsList, searchQuery) : postsList;
+const PostList = ({ postsList, sortType, searchQuery, removePostConfirm }) => {
+  let posts;
 
   if (sortType === 'old') {
-    posts = posts.map((val, i, arr) => arr[arr.length - i - 1]);
+    posts = postsList.map((val, i, arr) => arr[arr.length - i - 1]);
+  } else {
+    posts = [...postsList];
   }
 
-  if (!posts.length) return <p>No posts found</p>;
+  if (searchQuery) {
+    posts = filterObjListByQuery(posts, searchQuery, 'title, categories');
+  }
+
+  if (!posts.length) {
+    return <p>No posts found</p>;
+  }
 
   return (
     <div className='pst-list'>

@@ -5,19 +5,7 @@ import SearchForm from './SearchForm';
 import CommonList from './CommonList';
 import CoverGallery from './CoverGallery';
 import booksSource from '../sources/booksSource';
-
-const filterBooksByQuery = (query) => {
-  if (!query) {
-    return [...booksSource];
-  } else {
-    query = query.toLowerCase();
-  }
-
-  return booksSource.filter((book) => {
-    const str = `${book.title} ${book.author} ${book.year}`.toLowerCase();
-    return str.indexOf(query) >= 0;
-  });
-};
+import { filterObjListByQuery } from '../../../filters';
 
 const BookList = (props) => (
   <div className='content'>
@@ -47,7 +35,7 @@ const BookList = (props) => (
 const mapStateToProps = (state) => ({
   activeID: state.bookActive && state.bookActive.id,
   viewMode: state.booksView,
-  books: filterBooksByQuery(state.bookSearch),
+  books: filterObjListByQuery(booksSource, state.bookSearch, 'title, author, year'),
   query: state.bookSearch,
 });
 
