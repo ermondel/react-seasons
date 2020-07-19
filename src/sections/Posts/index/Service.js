@@ -1,5 +1,6 @@
 import React from 'react';
 import { ErrorRemote, SpinnerBig } from '../../../util/UtilImg/UtilImg';
+import { Link } from 'react-router-dom';
 
 export const RemoveSpinner = ({ title }) => (
   <div className='remove-post'>
@@ -93,8 +94,12 @@ export const SavingError = () => (
     <div>
       <p>Error saving</p>
       <p>The remote server is not responding</p>
-      <p>Perhaps it is overloaded with requests</p>
       <p>Please come back later</p>
+      <p>
+        <Link to={'/posts'} className='pst-list__link-back'>
+          Go back to the list
+        </Link>
+      </p>
     </div>
   </div>
 );

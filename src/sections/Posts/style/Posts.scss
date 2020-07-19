@@ -66,6 +66,22 @@
   }
 }
 
+.pst-list__link-back {
+  text-decoration: none;
+  color: $color-common;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $color-hover-extra;
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
 /* list ctrl */
 
 .list-ctrl {
@@ -135,7 +151,7 @@
   color: $color-base;
   text-transform: uppercase;
   font-size: 90%;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 .auth-error__message {
@@ -159,7 +175,7 @@
   color: $color-util;
   text-transform: uppercase;
   font-size: 90%;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 .posts-spinner__loading-message {
