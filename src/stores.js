@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import modalWindow from './util/ModalWindow/reducers/modalWindow';
+import modalWindowReducer from './util/ModalWindow/modalWindowReducer';
 import podcast from './sections/Podcasts/reducers/podcast';
 import blogPosts from './sections/Blog/reducers/blogPosts';
 import blogUser from './sections/Blog/reducers/blogUser';
@@ -26,7 +26,7 @@ import postsAdding from './sections/Posts/reducers/postsAdding';
 import postsView from './sections/Posts/reducers/postsView';
 
 export default combineReducers({
-  modalWindow,
+  modalWindow: modalWindowReducer,
   podcast,
   blogPosts,
   blogUser,

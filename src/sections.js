@@ -1,13 +1,13 @@
-import HomeSection from './sections/Home/comp/Home';
-import PositionSection from './sections/Position/comp/Position';
-import BlogSection from './sections/Blog/comp/Blog';
-import PostcardSection from './sections/Postcard/comp/Postcard';
-import PodcastsSection from './sections/Podcasts/comp/Podcasts';
-import BooksSection from './sections/Books/comp/Books';
-import BoardSection from './sections/Board/comp/Board';
-import WeatherSection from './sections/Weather/comp/Weather';
-import PostsSection from './sections/Posts/comp/Posts';
-import NoMatchSection from './sections/NoMatch/comp/NoMatch';
+import HomeSection from './sections/Home/index/Home';
+import PositionSection from './sections/Position/index/Position';
+import BlogSection from './sections/Blog/index/Blog';
+import PostcardSection from './sections/Postcard/index/Postcard';
+import PodcastsSection from './sections/Podcasts/index/Podcasts';
+import BooksSection from './sections/Books/index/Books';
+import BoardSection from './sections/Board/index/Board';
+import WeatherSection from './sections/Weather/index/Weather';
+import PostsSection from './sections/Posts/index/Posts';
+import NoMatchSection from './sections/NoMatch/index/NoMatch';
 
 export const Home = HomeSection;
 export const Position = PositionSection;
