@@ -12,12 +12,13 @@ class Message extends Component {
   render() {
     return this.props.message ? (
       <div className='list-ctrl__message'>
-        <span className='list-ctrl__message-text'>{this.props.message}</span>
+        <p className='list-ctrl__message-text'>{this.props.message}</p>
         <button
           className='list-ctrl__message-close'
           onClick={this.props.removeMessage}
+          title='Close message'
         >
-          Close
+          X
         </button>
       </div>
     ) : null;

@@ -83,8 +83,8 @@ export const createPost = (publicKey, newValues) => async (dispatch) => {
       }
     );
 
-    dispatch({ type: POSTS_ADD_MESSAGE, message: 'The post has been added.' });
     dispatch({ type: POSTS_ADDING_SUCCESS, payload: response.data });
+    dispatch({ type: POSTS_ADD_MESSAGE, message: 'The post has been added' });
   } catch (error) {
     dispatch({ type: POSTS_ADDING_FAILURE });
   }
