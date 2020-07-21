@@ -1,68 +1,43 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { forecastsDelete, citySelected } from '../actions/weather';
 import Sparkline from './Sparkline';
+import weatherData from '../util/weatherData';
 
-const WeatherItem = ({ forecast, view, btnMap, forecastsDelete, citySelected }) => {
+const WeatherItem = (props) => {
   const colors = {
     temp: { line: '#ADD8E6', bar: '#ADD8E6' },
     pres: { line: '#BDB76B', bar: '#BDB76B' },
     humd: { line: '#FFDAB9', bar: '#FFDAB9' },
   };
 
-  const temperatureList = [];
-  const pressureList = [];
-  const humidityList = [];
-
-  let temperatureSum = 0;
-  let pressureSum = 0;
-  let humiditySum = 0;
-
-  forecast.list.forEach((weather) => {
-    temperatureList.push(weather.main.temp);
-    pressureList.push(weather.main.pressure);
-    humidityList.push(weather.main.humidity);
-    temperatureSum += weather.main.temp;
-    pressureSum += weather.main.pressure;
-    humiditySum += weather.main.humidity;
-  });
-
-  const temperatureAverage = Math.round(temperatureSum / temperatureList.length);
-  const pressureAverage = Math.round(pressureSum / pressureList.length);
-  const humidityAverage = Math.round(humiditySum / humidityList.length);
-
-  const buttonMap = btnMap ? (
-    <button
-      className='forecast__btn-map'
-      onClick={() => citySelected(forecast.city)}
-    >
-      Show on the map
-    </button>
-  ) : null;
-
-  const buttonDelete = (
-    <button
-      className='forecast__btn-delete'
-      onClick={() => forecastsDelete(forecast.city.id)}
-    >
-      Remove from list
-    </button>
-  );
+  const [
+    temperatureList,
+    pressureList,
+    humidityList,
+    temperatureAverage,
+    pressureAverage,
+    humidityAverage,
+  ] = weatherData(props.forecast.list, props.timePeriod);
 
   return (
     <div className='forecast'>
       <div className='forecast__header'>
-        <h3 className='forecast__title'>{forecast.city.name}</h3>
+        <h3 className='forecast__title'>{props.forecast.city.name}</h3>
         <div className='forecast__btns'>
-          {buttonMap}
-          {buttonDelete}
+          {props.btnMap ? (
+            <button className='forecast__btn-map' onClick={props.onCitySelected}>
+              Show on the map
+            </button>
+          ) : null}
+          <button className='forecast__btn-delete' onClick={props.onForecastDelete}>
+            Remove from list
+          </button>
         </div>
       </div>
       <div className='forecast__body'>
         <Sparkline
           name='temperature'
           list={temperatureList}
-          view={view}
+          view={props.view}
           avg={temperatureAverage}
           units={'°C'}
           colorBar={colors.temp.bar}
@@ -74,7 +49,7 @@ const WeatherItem = ({ forecast, view, btnMap, forecastsDelete, citySelected }) 
         <Sparkline
           name='pressure'
           list={pressureList}
-          view={view}
+          view={props.view}
           avg={pressureAverage}
           units={'hPa'}
           colorBar={colors.pres.bar}
@@ -86,7 +61,7 @@ const WeatherItem = ({ forecast, view, btnMap, forecastsDelete, citySelected }) 
         <Sparkline
           name='humidity'
           list={humidityList}
-          view={view}
+          view={props.view}
           avg={humidityAverage}
           units={'%'}
           colorBar={colors.humd.bar}
@@ -99,4 +74,4 @@ const WeatherItem = ({ forecast, view, btnMap, forecastsDelete, citySelected }) 
   );
 };
 
-export default connect(undefined, { forecastsDelete, citySelected })(WeatherItem);
+export default WeatherItem;

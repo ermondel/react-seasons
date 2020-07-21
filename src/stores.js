@@ -15,6 +15,7 @@ import forecastError from './sections/Weather/reducers/forecastError';
 import forecastView from './sections/Weather/reducers/forecastView';
 import forecastCity from './sections/Weather/reducers/forecastCity';
 import forecastMountMap from './sections/Weather/reducers/forecastMountMap';
+import forecastTimePeriod from './sections/Weather/reducers/forecastTimePeriod';
 import postsRemoving from './sections/Posts/reducers/postsRemoving';
 import postsList from './sections/Posts/reducers/postsList';
 import postsMessage from './sections/Posts/reducers/postsMessage';
@@ -41,6 +42,7 @@ export default combineReducers({
   forecastView,
   forecastCity,
   forecastMountMap,
+  forecastTimePeriod,
   postsList,
   postsView,
   postsAdding,
