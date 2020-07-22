@@ -9,6 +9,7 @@ import {
   WEATHER_CITY_SELECTED,
   WEATHER_MOUNT_MAP_SUCCESS,
   WEATHER_MOUNT_MAP_FAILURE,
+  WEATHER_TIME_PERIOD_CHANGED,
 } from '../../../types';
 
 export const forecastsFetch = (city) => async (dispatch) => {
@@ -78,3 +79,8 @@ export const mountMap = () => async (dispatch) => {
     dispatch({ type: WEATHER_MOUNT_MAP_FAILURE });
   }
 };
+
+export const changeTimePeriod = (timePeriod = 'day') => ({
+  type: WEATHER_TIME_PERIOD_CHANGED,
+  timePeriod,
+});

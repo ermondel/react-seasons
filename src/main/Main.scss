@@ -108,10 +108,48 @@ h2::first-letter {
   cursor: default;
 }
 
+/* control btns line */
+
+.control-btns_line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-line,
+.btn-line_active {
+  border: none;
+  margin: 0 0 10px 0;
+  padding: 6px 5px;
+  background-color: transparent;
+  color: $color-extra;
+  font-size: 13px;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  flex-grow: 1;
+}
+
+.btn-line_active {
+  color: $color-hover-common;
+  cursor: default;
+}
+
+.btn-line {
+  &:hover,
+  &:focus {
+    color: $color-hover-common;
+    border-bottom: 1px solid $color-hover-common;
+    outline: none;
+  }
+}
+
 .btn-common::-moz-focus-inner,
 .btn-common_active::-moz-focus-inner,
 .btn-color::-moz-focus-inner,
-.btn-color_active::-moz-focus-inner {
+.btn-color_active::-moz-focus-inner,
+.btn-line::-moz-focus-inner,
+.btn-line_active::-moz-focus-inner {
   border: 0;
 }
 
