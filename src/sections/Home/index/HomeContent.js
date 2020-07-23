@@ -64,7 +64,12 @@ const HomeContent = () => (
 
           <article className='info-article'>
             <h4 className='info-article__title'>Weather</h4>
-            <p className='info-article__body'>5-day weather charts for the city.</p>
+            <p className='info-article__body'>
+              5-day weather charts for the city - charts of temperature, pressure and
+              humidity plus average values. You can choose the time of day and type
+              of chart. The search results are displayed as a table. You can remove
+              the city or view it on the map.
+            </p>
           </article>
 
           <article className='info-article'>
