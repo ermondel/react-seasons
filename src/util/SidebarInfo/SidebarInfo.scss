@@ -1,7 +1,8 @@
 .sidebar-info {
   position: fixed;
   left: 110px;
-  font-size: small;
+  font-size: 12px;
+  line-height: 1;
   color: $color-grey;
   margin-bottom: 50px;
 }
@@ -34,5 +35,5 @@
 }
 
 .sidebar-info__item {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }

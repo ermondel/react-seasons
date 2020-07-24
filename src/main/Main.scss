@@ -4,6 +4,7 @@ body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+  line-height: 1.2;
   background-color: $color-base;
   color: $color-extra;
 }
@@ -73,6 +74,7 @@ h2::first-letter {
   cursor: pointer;
   font-size: 13px;
   outline: none;
+  font-family: inherit;
 }
 
 .btn-common {
@@ -128,6 +130,7 @@ h2::first-letter {
   cursor: pointer;
   outline: none;
   flex-grow: 1;
+  font-family: inherit;
 }
 
 .btn-line_active {

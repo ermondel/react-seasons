@@ -64,6 +64,7 @@
   cursor: pointer;
   color: $color-common;
   background-color: $color-main;
+  font-family: inherit;
 
   &:hover,
   &:focus {
@@ -81,6 +82,8 @@
   cursor: default;
   color: $color-common;
   background-color: $color-base;
+  outline: none;
+  font-family: inherit;
 }
 
 .btn-about::-moz-focus-inner,
@@ -177,10 +180,12 @@
   border-radius: 3px;
   border: 1px solid transparent;
   color: $color-sidebar-bg;
+  font-family: inherit;
 }
 
 .search-form_input::placeholder {
   color: $color-copy;
+  opacity: 1;
 }
 
 .search-form_input:focus {

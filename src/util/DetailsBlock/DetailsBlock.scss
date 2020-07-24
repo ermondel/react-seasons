@@ -3,7 +3,8 @@
   color: $color-detail;
   background-color: $color-base;
   border-radius: 6px;
-  font-size: 90%;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .details__title {
@@ -16,12 +17,10 @@
 
 .details__item {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0 0 12px 0;
+  padding: 0 0 3px 0;
   overflow: hidden;
-  padding-bottom: 3px;
   border-bottom: 1px dotted $color-minor;
-  margin-bottom: 12px;
 
   &:hover {
     border-color: $color-hover-extra;
@@ -49,6 +48,7 @@
   font-size: 13px;
   float: left;
   background-color: $color-detail-btn-main;
+  font-family: inherit;
 
   &:hover {
     background-color: $color-hover-common;

@@ -57,6 +57,7 @@
   font-size: 13px;
   color: $color-base;
   background-color: transparent;
+  font-family: inherit;
 
   &:hover,
   &:focus {
@@ -113,9 +114,11 @@
   font-size: 14px;
   box-sizing: border-box;
   width: 100%;
+  font-family: inherit;
 
   &::placeholder {
     color: $color-copy;
+    opacity: 1;
   }
 
   &:focus {
@@ -136,6 +139,7 @@
   background-color: $color-base;
   text-decoration: none;
   font-size: 14px;
+  font-family: inherit;
 
   &:hover,
   &:focus {
@@ -244,6 +248,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 600px;
+  font-family: inherit;
 
   &::placeholder {
     color: $color-extra;
@@ -269,6 +274,8 @@
   width: 100%;
   max-width: 600px;
   height: 140px;
+  font-family: inherit;
+  display: block;
 
   &::placeholder {
     color: $color-extra;
@@ -283,6 +290,7 @@
 
 .add-form__element-label {
   margin-right: 7px;
+  display: block;
 }
 
 .add-form__counter {
@@ -322,6 +330,7 @@
   background-color: $color-base;
   border: 1px solid transparent;
   font-size: 14px;
+  font-family: inherit;
 }
 
 .add-form__submit {
@@ -410,6 +419,7 @@
   border-radius: 4px;
   background-color: transparent;
   cursor: pointer;
+  font-family: inherit;
 
   &:hover,
   &:focus {

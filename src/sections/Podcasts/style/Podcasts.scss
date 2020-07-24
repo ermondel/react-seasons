@@ -58,6 +58,7 @@
   font-size: 13px;
   color: $color-common;
   background-color: $color-main;
+  font-family: inherit;
 
   &:hover,
   &:focus {
@@ -75,6 +76,8 @@
   font-size: 13px;
   color: $color-common;
   background-color: $color-base;
+  outline: none;
+  font-family: inherit;
 }
 
 .btn-select::-moz-focus-inner,

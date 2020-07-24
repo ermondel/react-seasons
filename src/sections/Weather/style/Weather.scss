@@ -16,10 +16,12 @@
   border-bottom-left-radius: 3px;
   border: 1px solid transparent;
   color: $color-sidebar-bg;
+  font-family: inherit;
 }
 
 .forecast__query-input::placeholder {
   color: $color-copy;
+  opacity: 1;
 }
 
 .forecast__query-input:focus {
@@ -39,6 +41,7 @@
   border-bottom-right-radius: 3px;
   cursor: pointer;
   color: $color-extra;
+  font-family: inherit;
 }
 
 .forecast__btn-submit:hover,
@@ -93,6 +96,7 @@
   font-size: 13px;
   padding: 5px 10px;
   border-top: 1px solid $color-main;
+  font-family: inherit;
 
   &::-moz-focus-inner {
     border: 0;

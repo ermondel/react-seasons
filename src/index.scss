@@ -14,8 +14,8 @@ $color-detail-btn-main: #4169e1;
 $color-list: #b89881;
 $color-grey: #696969;
 
-@import './main//Main.scss';
-@import './util//NavItem/NavItem.scss';
+@import './main/Main.scss';
+@import './util/NavItem/NavItem.scss';
 @import './util/SidebarInfo/SidebarInfo.scss';
 @import './util/DetailsBlock/DetailsBlock.scss';
 @import './util/ModalWindow/ModalWindow.scss';
