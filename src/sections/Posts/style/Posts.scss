@@ -35,7 +35,6 @@
 
   &:hover,
   &:focus {
-    outline: none;
     text-decoration: underline;
     color: $color-hover-common;
   }
@@ -49,21 +48,15 @@
 }
 
 .pst-list__btn-remove {
-  margin: 0;
-  border: none;
-  cursor: pointer;
   padding: 10px 12px;
   border-radius: 4px;
-  font-size: 13px;
   color: $color-base;
   background-color: transparent;
-  font-family: inherit;
 
   &:hover,
   &:focus {
     color: $color-common;
     background-color: black;
-    outline: none;
   }
 }
 
@@ -75,7 +68,6 @@
   &:focus {
     text-decoration: underline;
     color: $color-hover-extra;
-    outline: none;
   }
 
   &::-moz-focus-inner {
@@ -105,7 +97,6 @@
 }
 
 .list-ctrl__search-input {
-  margin: 0;
   padding: 9px 12px;
   background-color: $color-main;
   border-radius: 4px;
@@ -114,15 +105,12 @@
   font-size: 14px;
   box-sizing: border-box;
   width: 100%;
-  font-family: inherit;
 
   &::placeholder {
     color: $color-copy;
-    opacity: 1;
   }
 
   &:focus {
-    outline: none;
     background-color: $color-extra;
   }
 }
@@ -139,12 +127,10 @@
   background-color: $color-base;
   text-decoration: none;
   font-size: 14px;
-  font-family: inherit;
 
   &:hover,
   &:focus {
     background-color: $color-hover-common;
-    outline: none;
   }
 }
 
@@ -194,36 +180,35 @@
 
 .list-ctrl__message {
   margin: 0 0 20px 15px;
-  border: 1px solid $color-main;
-  border-radius: 4px;
   font-size: 14px;
   color: $color-util;
   display: flex;
-  align-items: center;
 }
 
 .list-ctrl__message-text {
   margin: 0;
   padding: 9px 12px;
+  border-top: 1px solid $color-main;
+  border-left: 1px solid $color-main;
+  border-bottom: 1px solid $color-main;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .list-ctrl__message-close {
-  margin: 0;
   padding: 9px 12px;
-  border: none;
-  border-left: 1px solid $color-main;
+  border: 1px solid $color-main;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   background-color: transparent;
   font-size: 14px;
   color: $color-list;
-  cursor: pointer;
 
   &:hover,
   &:focus {
     background-color: $color-list;
     color: white;
-    outline: none;
+    border-color: $color-list;
   }
 }
 
@@ -238,7 +223,6 @@
 }
 
 .add-form__input {
-  margin: 0;
   padding: 9px 12px;
   background-color: $color-main;
   border-radius: 3px;
@@ -248,21 +232,17 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 600px;
-  font-family: inherit;
 
   &::placeholder {
     color: $color-extra;
-    opacity: 1;
   }
 
   &:focus {
-    outline: none;
     background-color: $color-extra;
   }
 }
 
 .add-form__textarea {
-  margin: 0;
   padding: 9px 12px;
   background-color: $color-main;
   border-radius: 3px;
@@ -274,16 +254,13 @@
   width: 100%;
   max-width: 600px;
   height: 140px;
-  font-family: inherit;
   display: block;
 
   &::placeholder {
     color: $color-extra;
-    opacity: 1;
   }
 
   &:focus {
-    outline: none;
     background-color: $color-extra;
   }
 }
@@ -322,7 +299,6 @@
 
 .add-form__submit,
 .add-form__cancel {
-  margin: 0;
   margin-bottom: 15px;
   padding: 10px 20px;
   border-radius: 4px;
@@ -330,17 +306,14 @@
   background-color: $color-base;
   border: 1px solid transparent;
   font-size: 14px;
-  font-family: inherit;
 }
 
 .add-form__submit {
   margin-right: 15px;
-  cursor: pointer;
 
   &:hover,
   &:focus {
     background-color: $color-hover-common;
-    outline: none;
   }
 
   &:disabled {
@@ -357,7 +330,6 @@
   &:hover,
   &:focus {
     background-color: $color-hover-extra;
-    outline: none;
   }
 }
 
@@ -405,27 +377,20 @@
   &:focus {
     background-color: $color-hover-extra;
     color: $color-common;
-    outline: none;
   }
 }
 
 .view-post__btn-remove {
-  margin: 0;
-  padding: 0;
-  border: none;
   color: $color-base;
   font-size: 14px;
   padding: 10px 14px;
   border-radius: 4px;
   background-color: transparent;
-  cursor: pointer;
-  font-family: inherit;
 
   &:hover,
   &:focus {
     background-color: $color-base;
     color: $color-common;
-    outline: none;
   }
 }
 
@@ -455,12 +420,10 @@
   color: $color-common;
   font-size: 14px;
   border-radius: 4px;
-  cursor: pointer;
 
   &:hover,
   &:focus {
     background-color: $color-detail-btn-main;
-    outline: none;
   }
 }
 

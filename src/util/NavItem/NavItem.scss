@@ -14,7 +14,6 @@
 .main-nav__item:focus {
   color: $color-extra;
   background-color: $color-hover-common;
-  outline: none;
 }
 
 .main-nav__item_active,
@@ -23,5 +22,4 @@
   color: $color-extra;
   background-color: $color-sidebar-bg;
   cursor: default;
-  outline: none;
 }

@@ -5,9 +5,6 @@
 }
 
 .forecast__query-input {
-  margin: 0;
-  padding: 0;
-  border: none;
   width: 35%;
   padding: 9px 12px;
   font-size: 14px;
@@ -16,43 +13,30 @@
   border-bottom-left-radius: 3px;
   border: 1px solid transparent;
   color: $color-sidebar-bg;
-  font-family: inherit;
 }
 
 .forecast__query-input::placeholder {
   color: $color-copy;
-  opacity: 1;
 }
 
 .forecast__query-input:focus {
-  outline: none;
   background-color: $color-extra;
 }
 
 .forecast__btn-submit {
-  margin: 0;
-  padding: 0;
-  border: 0;
   font-size: 14px;
   padding: 9px 12px;
   background-color: $color-main;
   border: 1px solid transparent;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  cursor: pointer;
   color: $color-extra;
-  font-family: inherit;
 }
 
 .forecast__btn-submit:hover,
 .forecast__btn-submit:focus {
   background-color: $color-hover-common;
   color: $color-common;
-  outline: none;
-}
-
-.forecast__btn-submit::-moz-focus-inner {
-  border: 0;
 }
 
 .forecast__btn-submit:disabled,
@@ -87,34 +71,22 @@
 
 .forecast__btn-map,
 .forecast__btn-delete {
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
   background-color: transparent;
   color: $color-list;
-  font-size: 13px;
   padding: 5px 10px;
   border-top: 1px solid $color-main;
-  font-family: inherit;
-
-  &::-moz-focus-inner {
-    border: 0;
-  }
 }
 
 .forecast__btn-map:hover,
 .forecast__btn-map:focus {
   background-color: $color-hover-common;
   color: $color-common;
-  outline: none;
 }
 
 .forecast__btn-delete:hover,
 .forecast__btn-delete:focus {
   background-color: tomato;
   color: $color-common;
-  outline: none;
 }
 
 .forecast__body {
@@ -167,10 +139,6 @@
 }
 
 .forecast-error__btn-close {
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
   background-color: transparent;
   color: $color-base;
   font-size: 14px;
@@ -182,11 +150,6 @@
 .forecast-error__btn-close:focus {
   background-color: $color-base;
   color: $color-common;
-  outline: none;
-}
-
-.forecast-error__btn-close::-moz-focus-inner {
-  border: 0;
 }
 
 .forecast-error__body {

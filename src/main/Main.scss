@@ -4,7 +4,7 @@ body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 19px;
   background-color: $color-base;
   color: $color-extra;
 }
@@ -20,14 +20,33 @@ h2 {
   font-weight: normal;
 }
 
-.btn {
+button,
+input,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
 }
 
 a {
   color: $color-common;
+  outline: none;
 }
 
 h2 {
@@ -40,6 +59,14 @@ h2 {
 
 h2::first-letter {
   text-transform: uppercase;
+}
+
+/* util */
+
+.btn {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .l {
@@ -65,16 +92,10 @@ h2::first-letter {
 .btn-color,
 .btn-common_active,
 .btn-color_active {
-  border: none;
-  margin: 0;
   padding: 20px 0px;
   width: 50%;
   min-width: 100px;
   text-transform: uppercase;
-  cursor: pointer;
-  font-size: 13px;
-  outline: none;
-  font-family: inherit;
 }
 
 .btn-common {
@@ -120,17 +141,12 @@ h2::first-letter {
 
 .btn-line,
 .btn-line_active {
-  border: none;
   margin: 0 0 10px 0;
   padding: 6px 5px;
   background-color: transparent;
   color: $color-extra;
-  font-size: 13px;
   border-bottom: 1px solid transparent;
-  cursor: pointer;
-  outline: none;
   flex-grow: 1;
-  font-family: inherit;
 }
 
 .btn-line_active {
@@ -143,17 +159,7 @@ h2::first-letter {
   &:focus {
     color: $color-hover-common;
     border-bottom: 1px solid $color-hover-common;
-    outline: none;
   }
-}
-
-.btn-common::-moz-focus-inner,
-.btn-common_active::-moz-focus-inner,
-.btn-color::-moz-focus-inner,
-.btn-color_active::-moz-focus-inner,
-.btn-line::-moz-focus-inner,
-.btn-line_active::-moz-focus-inner {
-  border: 0;
 }
 
 /* app */

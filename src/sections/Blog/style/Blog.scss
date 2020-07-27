@@ -45,10 +45,7 @@
 }
 
 .post__author_btn {
-  margin: 0;
-  padding: 2px 1px;
-  border: none;
-  cursor: pointer;
+  padding: 1px;
   font-size: 12px;
   color: inherit;
   background-color: $color-main;
@@ -58,28 +55,16 @@
   &:focus {
     color: $color-hover-extra;
     border-bottom: 1px dashed $color-hover-extra;
-    outline: none;
   }
 }
 
 .post__author_btn_active {
-  margin: 0;
-  padding: 2px 1px;
-  border: none;
+  padding: 1px;
   cursor: default;
   font-size: 12px;
   color: $color-base;
   background-color: $color-main;
   border-bottom: 1px dashed $color-base;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.post__author_btn::-moz-focus-inner,
-.post__author_btn_active::-moz-focus-inner {
-  border: 0;
 }
 
 /* error */

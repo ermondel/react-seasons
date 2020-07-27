@@ -39,16 +39,11 @@
 }
 
 .details__btn_main {
-  margin: 0;
-  border: none;
   padding: 10px 20px;
   border-radius: 4px;
-  color: $color-detail;
-  cursor: pointer;
-  font-size: 13px;
-  float: left;
   background-color: $color-detail-btn-main;
-  font-family: inherit;
+  color: $color-detail;
+  float: left;
 
   &:hover {
     background-color: $color-hover-common;

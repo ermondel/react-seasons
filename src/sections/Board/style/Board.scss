@@ -23,14 +23,10 @@
 
 .resources-btn,
 .resources-btn_active {
-  margin: 0;
   padding: 15px 20px;
-  border: none;
-  cursor: pointer;
   background-color: transparent;
   color: $color-common;
   font-size: 14px;
-  outline: none;
 }
 
 .resources-btn:first-child,
@@ -57,12 +53,6 @@
 .resources-btn:hover,
 .resources-btn:focus {
   background-color: $color-hover-common;
-  outline: none;
-}
-
-.resources-btn::-moz-focus-inner,
-.resources-btn_active::-moz-focus-inner {
-  border: 0;
 }
 
 /* todos-list */
