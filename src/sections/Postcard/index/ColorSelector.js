@@ -10,8 +10,8 @@ const ColorSelector = () => (
           <button
             className={
               el.color === context.color
-                ? `btn-color_active bg_${el.color}`
-                : `btn-color bg_${el.color}`
+                ? `sidebar__btn-color--active bg_${el.color}`
+                : `sidebar__btn-color bg_${el.color}`
             }
             onClick={() => context.onColorChange(el.color)}
             disabled={el.color === context.color}

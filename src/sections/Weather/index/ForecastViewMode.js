@@ -6,14 +6,18 @@ const ForecastViewMode = ({ view, forecastsViewMode }) => (
   <div className='control'>
     <div className='control_btns'>
       <button
-        className={view === 'line' ? 'btn-common_active' : 'btn-common'}
+        className={
+          view === 'line' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
+        }
         disabled={view === 'line'}
         onClick={() => forecastsViewMode('line')}
       >
         Line
       </button>
       <button
-        className={view === 'bars' ? 'btn-common_active' : 'btn-common'}
+        className={
+          view === 'bars' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
+        }
         disabled={view === 'bars'}
         onClick={() => forecastsViewMode('bars')}
       >

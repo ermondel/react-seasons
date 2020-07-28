@@ -9,9 +9,9 @@ const PodcastListItem = ({ podcast, onClickHandler, isActive }) => (
     </div>
     <div className='podcast-list__btns'>
       <button
-        className={`podcast-list__btn ${
-          isActive ? ' btn-select_active' : ' btn-select'
-        }`}
+        className={
+          isActive ? 'podcast-list__btn-select--active' : 'podcast-list__btn-select'
+        }
         onClick={onClickHandler}
         disabled={isActive}
       >

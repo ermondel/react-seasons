@@ -117,7 +117,7 @@ class AddForm extends Component {
         <Link to='/posts' className='add-form__cancel'>
           Cancel and return to the list
         </Link>
-        <button disabled={!this.props.valid} className='add-form__submit'>
+        <button disabled={!this.props.valid} className='add-form__btn-submit'>
           Save
         </button>
       </div>

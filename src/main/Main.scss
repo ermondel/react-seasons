@@ -1,4 +1,6 @@
-/* base */
+/**
+ * Base
+ */
 
 body {
   margin: 0px;
@@ -61,7 +63,9 @@ h2::first-letter {
   text-transform: uppercase;
 }
 
-/* util */
+/**
+ * Util
+ */
 
 .btn {
   margin: 0;
@@ -81,24 +85,32 @@ h2::first-letter {
   height: 2000px;
 }
 
-/* control btns */
+/**
+ * Sidebar buttons
+ */
 
 .control_btns {
   width: 100%;
   margin-bottom: 35px;
 }
 
-.btn-common,
-.btn-color,
-.btn-common_active,
-.btn-color_active {
+.control-btns_line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sidebar__btn-common,
+.sidebar__btn-color,
+.sidebar__btn-common--active,
+.sidebar__btn-color--active {
   padding: 20px 0px;
   width: 50%;
   min-width: 100px;
   text-transform: uppercase;
 }
 
-.btn-common {
+.sidebar__btn-common {
   color: $color-extra;
   background-color: $color-base;
 
@@ -107,15 +119,15 @@ h2::first-letter {
     color: $color-extra;
     background-color: $color-hover-common;
   }
+
+  &--active {
+    color: $color-extra;
+    background-color: $color-minor;
+    cursor: default;
+  }
 }
 
-.btn-common_active {
-  color: $color-extra;
-  background-color: $color-minor;
-  cursor: default;
-}
-
-.btn-color {
+.sidebar__btn-color {
   color: $color-extra;
   border: 1px solid transparent;
 
@@ -123,24 +135,16 @@ h2::first-letter {
   &:focus {
     border-color: $color-extra;
   }
+
+  &--active {
+    border: 1px solid $color-extra;
+    color: $color-extra;
+    cursor: default;
+  }
 }
 
-.btn-color_active {
-  border: 1px solid $color-extra;
-  color: $color-extra;
-  cursor: default;
-}
-
-/* control btns line */
-
-.control-btns_line {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.btn-line,
-.btn-line_active {
+.sidebar__btn-line,
+.sidebar__btn-line--active {
   margin: 0 0 10px 0;
   padding: 6px 5px;
   background-color: transparent;
@@ -149,12 +153,12 @@ h2::first-letter {
   flex-grow: 1;
 }
 
-.btn-line_active {
+.sidebar__btn-line--active {
   color: $color-hover-common;
   cursor: default;
 }
 
-.btn-line {
+.sidebar__btn-line {
   &:hover,
   &:focus {
     color: $color-hover-common;
@@ -162,7 +166,9 @@ h2::first-letter {
   }
 }
 
-/* app */
+/**
+ * App
+ */
 
 .app-main {
   display: flex;
@@ -185,30 +191,30 @@ h2::first-letter {
   min-height: 100vh;
   background-color: $color-sidebar-bg;
   position: relative;
-}
 
-.sidebar::before {
-  content: '';
-  position: absolute;
-  right: 5px;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  z-index: 2;
-  background-color: $color-sidebar-bg;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    z-index: 2;
+    background-color: $color-sidebar-bg;
+  }
 
-.sidebar::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  z-index: 1;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
 }
 
 .sidebar-wrap {
@@ -232,7 +238,9 @@ h2::first-letter {
   z-index: 99;
 }
 
-/* copyright */
+/**
+ * Copyright
+ */
 
 .copyright {
   margin: 0;
@@ -240,13 +248,13 @@ h2::first-letter {
   font-size: 70%;
   text-align: right;
   color: $color-copy;
-}
 
-.copyright a {
-  color: inherit;
-  text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -9,7 +9,7 @@ const CoversItem = ({ book, isActive, onItemSelect }) => (
     />
     <button
       className={
-        isActive ? 'covers-item_btn-about_active' : 'covers-item_btn-about'
+        isActive ? 'covers-item__btn-about--active' : 'covers-item__btn-about'
       }
       onKeyPress={(event) => {
         if (event.key === 'Enter') {

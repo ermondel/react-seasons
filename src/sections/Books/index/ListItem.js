@@ -7,9 +7,9 @@ const ListItem = ({ book, isActive, onItemSelect }) => (
     <p className='book-list__year'>{book.year}</p>
     <div className='book-list__btns'>
       <button
-        className={`book-list__btn ${
-          isActive ? ' btn-about_active' : 'btn-about'
-        }`}
+        className={
+          isActive ? ' book-list__btn-about--active' : 'book-list__btn-about'
+        }
         onClick={onItemSelect}
         disabled={isActive}
       >

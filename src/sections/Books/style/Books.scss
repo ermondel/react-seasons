@@ -1,4 +1,6 @@
-/* book-list */
+/**
+ * Book list 
+ */
 
 .book-list {
   max-width: 1000px;
@@ -55,7 +57,7 @@
   text-align: right;
 }
 
-.btn-about {
+.book-list__btn-about {
   padding: 8px;
   border-radius: 2px;
   color: $color-common;
@@ -65,17 +67,19 @@
   &:focus {
     background-color: $color-hover-common;
   }
+
+  &--active {
+    padding: 8px;
+    border-radius: 2px;
+    color: $color-common;
+    background-color: $color-base;
+    cursor: default;
+  }
 }
 
-.btn-about_active {
-  padding: 8px;
-  border-radius: 2px;
-  cursor: default;
-  color: $color-common;
-  background-color: $color-base;
-}
-
-/* covers */
+/**
+ * Covers
+ */
 
 .covers {
   display: flex;
@@ -100,8 +104,8 @@
   height: auto;
 }
 
-.covers-item_btn-about,
-.covers-item_btn-about_active {
+.covers-item__btn-about,
+.covers-item__btn-about--active {
   display: block;
   width: 100%;
   position: absolute;
@@ -109,16 +113,17 @@
   bottom: 0;
   text-align: center;
   opacity: 0;
+  cursor: default;
 }
 
-.covers-item_btn-about:hover,
-.covers-item_btn-about:focus,
-.covers-item_btn-about_active {
+.covers-item__btn-about:hover,
+.covers-item__btn-about:focus,
+.covers-item__btn-about--active {
   background-color: $color-base;
   opacity: 0.6;
 }
 
-.covers-item_btn-about span {
+.covers-item__btn-about span {
   padding: 15px 20px;
   font-size: 12px;
   text-transform: uppercase;
@@ -129,12 +134,12 @@
   background-color: transparent;
 }
 
-.covers-item_btn-about span:hover {
+.covers-item__btn-about span:hover {
   background-color: $color-common;
   color: $color-base;
 }
 
-.covers-item_btn-about_active span {
+.covers-item__btn-about--active span {
   padding: 15px 20px;
   font-size: 12px;
   text-transform: uppercase;
@@ -144,7 +149,9 @@
   border: 1px solid $color-common-bg;
 }
 
-/* search form */
+/**
+ * Search form
+ */
 
 .search-form_input {
   width: 35%;
@@ -155,12 +162,12 @@
   border-radius: 3px;
   border: 1px solid transparent;
   color: $color-sidebar-bg;
-}
 
-.search-form_input::placeholder {
-  color: $color-copy;
-}
+  &::placeholder {
+    color: $color-copy;
+  }
 
-.search-form_input:focus {
-  background-color: $color-extra;
+  &:focus {
+    background-color: $color-extra;
+  }
 }

@@ -9,8 +9,8 @@ const PostItem = ({ post, user, onItemClick }) => (
         <button
           className={
             user && user.id === post.userId
-              ? 'post__author_btn_active'
-              : 'post__author_btn'
+              ? 'post__btn-author--active'
+              : 'post__btn-author'
           }
           onClick={onItemClick}
           title={

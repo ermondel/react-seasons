@@ -38,20 +38,21 @@
   overflow: hidden;
 }
 
-.details__btn_main {
+.details__btn-main {
   padding: 10px 20px;
   border-radius: 4px;
   background-color: $color-detail-btn-main;
   color: $color-detail;
   float: left;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $color-hover-common;
     color: $color-extra;
   }
 }
 
-.details__btn_link {
+.details__btn-link {
   display: block;
   text-decoration: none;
   padding: 10px 0px;
@@ -59,7 +60,9 @@
   cursor: pointer;
   float: right;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
+    color: $color-hover-common;
   }
 }

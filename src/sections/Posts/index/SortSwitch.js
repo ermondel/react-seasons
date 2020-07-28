@@ -6,14 +6,18 @@ const SortSwitch = ({ type, sortByDate }) => (
   <div className='control'>
     <div className='control_btns'>
       <button
-        className={type === 'new' ? 'btn-common_active' : 'btn-common'}
+        className={
+          type === 'new' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
+        }
         disabled={type === 'new'}
         onClick={() => sortByDate('new')}
       >
         new
       </button>
       <button
-        className={type === 'old' ? 'btn-common_active' : 'btn-common'}
+        className={
+          type === 'old' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
+        }
         disabled={type === 'old'}
         onClick={() => sortByDate('old')}
       >

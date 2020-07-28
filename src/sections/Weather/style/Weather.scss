@@ -1,4 +1,6 @@
-/* form */
+/**
+ * Form
+ */
 
 .forecast_search-form {
   margin-bottom: 50px;
@@ -31,22 +33,24 @@
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   color: $color-extra;
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover-common;
+    color: $color-common;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    cursor: default;
+    color: $color-copy;
+    background-color: $color-main;
+  }
 }
 
-.forecast__btn-submit:hover,
-.forecast__btn-submit:focus {
-  background-color: $color-hover-common;
-  color: $color-common;
-}
-
-.forecast__btn-submit:disabled,
-.forecast__btn-submit:disabled:hover {
-  cursor: default;
-  color: $color-copy;
-  background-color: $color-main;
-}
-
-/* list */
+/**
+ * List
+ */
 
 .forecast {
   margin-bottom: 45px;
@@ -115,7 +119,9 @@
   color: $color-extra;
 }
 
-/* error */
+/**
+ * Error
+ */
 
 .forecast-error {
   margin-bottom: 50px;
@@ -164,7 +170,9 @@
   width: 50px;
 }
 
-/* map */
+/**
+ * Map
+ */
 
 .mount-map-spinner,
 .mount-map-error {

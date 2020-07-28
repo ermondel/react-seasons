@@ -7,8 +7,7 @@ const DetailsBlock = (props) => {
     if (prop !== 'title' && prop !== 'btns') {
       content.push(
         <p className='details__item' key={prop}>
-          <span className='l'>{prop}</span>{' '}
-          <span className='r'>{props[prop]}</span>
+          <span className='l'>{prop}</span> <span className='r'>{props[prop]}</span>
         </p>
       );
     }
@@ -16,10 +15,10 @@ const DetailsBlock = (props) => {
 
   let buttons = props.btns ? (
     <p className='details__btns'>
-      <button className='details__btn_main' title='disabled!'>
+      <button className='details__btn-main' title='disabled!'>
         Play
       </button>
-      <a href='/' className='details__btn_link' title='disabled!'>
+      <a href='/' className='details__btn-link' title='disabled!'>
         download
       </a>
     </p>

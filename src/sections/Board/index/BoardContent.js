@@ -15,7 +15,9 @@ const BoardContent = () => {
 
   const buttonComments = (
     <button
-      className={resource === 'comments' ? 'resources-btn_active' : 'resources-btn'}
+      className={
+        resource === 'comments' ? 'board__btn-tab--active' : 'board__btn-tab'
+      }
       disabled={resource === 'comments'}
       onClick={() => setResource('comments')}
     >
@@ -25,7 +27,7 @@ const BoardContent = () => {
 
   const buttonTodos = (
     <button
-      className={resource === 'todos' ? 'resources-btn_active' : 'resources-btn'}
+      className={resource === 'todos' ? 'board__btn-tab--active' : 'board__btn-tab'}
       disabled={resource === 'todos'}
       onClick={() => setResource('todos')}
     >
@@ -60,7 +62,7 @@ const BoardContent = () => {
       <div className='content-wrap'>
         <h2>Board</h2>
 
-        <div className='resources-btns'>
+        <div className='board__tabs'>
           {buttonComments}
           {buttonTodos}
         </div>

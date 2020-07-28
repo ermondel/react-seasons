@@ -45,11 +45,8 @@
   float: left;
 }
 
-.podcast-list__btn {
+.podcast-list__btn-select {
   width: 100px;
-}
-
-.btn-select {
   padding: 16px 0;
   border-radius: 4px;
   color: $color-common;
@@ -59,12 +56,22 @@
   &:focus {
     background-color: $color-hover-common;
   }
+
+  &--active {
+    width: 100px;
+    padding: 16px 0;
+    border-radius: 4px;
+    color: $color-common;
+    background-color: $color-base;
+    cursor: default;
+  }
 }
 
-.btn-select_active {
-  cursor: default;
-  padding: 16px 0;
-  border-radius: 4px;
-  color: $color-common;
-  background-color: $color-base;
-}
+// .podcast-list__btn-select--active {
+//   width: 100px;
+//   padding: 16px 0;
+//   border-radius: 4px;
+//   color: $color-common;
+//   background-color: $color-base;
+//   cursor: default;
+// }

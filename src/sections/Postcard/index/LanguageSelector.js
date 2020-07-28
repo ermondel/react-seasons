@@ -10,8 +10,8 @@ const LanguageSelector = () => (
           <button
             className={
               btn.language === context.language
-                ? 'btn-common_active'
-                : 'btn-common'
+                ? 'sidebar__btn-common--active'
+                : 'sidebar__btn-common'
             }
             onClick={() => context.onLanguageChange(btn.language)}
             disabled={btn.language === context.language}

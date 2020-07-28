@@ -1,4 +1,6 @@
-/* user list */
+/**
+ * User list 
+ */
 
 .user-list__title {
   margin: 0 0 20px 0;
@@ -13,34 +15,33 @@
   margin-bottom: 4px;
 }
 
-/* resource buttons */
+/**
+ * Tab buttons 
+ */
 
-.resources-btns {
+.board__tabs {
   border-bottom: 1px solid $color-main;
   padding: 0 15px;
   margin-bottom: 35px;
 }
 
-.resources-btn,
-.resources-btn_active {
+.board__btn-tab,
+.board__btn-tab--active {
   padding: 15px 20px;
   background-color: transparent;
   color: $color-common;
   font-size: 14px;
+
+  &:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 8px;
+  }
 }
 
-.resources-btn:first-child,
-.resources-btn_active:first-child {
-  border-top-left-radius: 8px;
-}
-
-.resources-btn:last-child,
-.resources-btn_active:last-child {
-  border-top-right-radius: 8px;
-}
-
-.resources-btn_active {
-  cursor: default;
+.board__btn-tab--active {
   border-top: 1px solid $color-main;
   border-right: 1px solid $color-main;
   border-left: 1px solid $color-main;
@@ -48,16 +49,21 @@
   position: relative;
   bottom: -1px;
   color: $color-list;
+  cursor: default;
 }
 
-.resources-btn:hover,
-.resources-btn:focus {
-  background-color: $color-hover-common;
+.board__btn-tab {
+  &:hover,
+  &:focus {
+    background-color: $color-hover-common;
+  }
 }
 
-/* todos-list */
+/**
+ * Todo list
+ */
 
-.todos-list {
+.todo-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -68,29 +74,29 @@
   margin-bottom: 2%;
   position: relative;
   background-color: $color-main;
-}
 
-.todo::before {
-  content: '';
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-  width: 30px;
-  height: 30px;
-  background-color: $color-main;
-  transform: rotate(45deg);
-  z-index: 2;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 30px;
+    height: 30px;
+    background-color: $color-main;
+    transform: rotate(45deg);
+    z-index: 2;
+  }
 
-.todo::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 20px;
-  height: 20px;
-  background-color: $color-common-bg;
-  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $color-common-bg;
+    z-index: 1;
+  }
 }
 
 .todo__title {
@@ -102,7 +108,9 @@
   color: $color-base;
 }
 
-/* spinner */
+/**
+ * Spinner
+ */
 
 .board-spinner-main {
   text-align: center;
@@ -117,7 +125,9 @@
   margin-top: 20%;
 }
 
-/* error */
+/**
+ * Error
+ */
 
 .board-error-main {
   text-align: center;

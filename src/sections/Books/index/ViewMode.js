@@ -6,7 +6,11 @@ const ViewMode = (props) => (
   <div className='control'>
     <div className='control_btns'>
       <button
-        className={props.view === 'list' ? 'btn-common_active' : 'btn-common'}
+        className={
+          props.view === 'list'
+            ? 'sidebar__btn-common--active'
+            : 'sidebar__btn-common'
+        }
         disabled={props.view === 'list'}
         onClick={() => props.changeBooksView('list')}
       >
@@ -14,7 +18,9 @@ const ViewMode = (props) => (
       </button>
       <button
         className={
-          props.view === 'gallery' ? 'btn-common_active' : 'btn-common'
+          props.view === 'gallery'
+            ? 'sidebar__btn-common--active'
+            : 'sidebar__btn-common'
         }
         disabled={props.view === 'gallery'}
         onClick={() => props.changeBooksView('gallery')}

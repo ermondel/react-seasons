@@ -1,4 +1,6 @@
-/* list */
+/**
+ * List
+ */
 
 .pst-list {
   width: 80%;
@@ -75,7 +77,9 @@
   }
 }
 
-/* list ctrl */
+/**
+ * List control
+ */
 
 .list-ctrl {
   display: flex;
@@ -84,7 +88,9 @@
   margin-bottom: 15px;
 }
 
-/* search form */
+/**
+ * Search form
+ */
 
 .list-ctrl__search {
   box-sizing: border-box;
@@ -115,8 +121,6 @@
   }
 }
 
-/* add new post */
-
 .list-ctrl__add {
   display: block;
   padding: 9px 12px;
@@ -134,7 +138,9 @@
   }
 }
 
-/* error */
+/**
+ * Error
+ */
 
 .posts-error {
   text-align: center;
@@ -158,7 +164,9 @@
   line-height: 35px;
 }
 
-/* spinner */
+/**
+ * Spinner
+ */
 
 .posts-spinner {
   text-align: center;
@@ -176,7 +184,9 @@
   color: $color-hover-extra;
 }
 
-/* message */
+/**
+ * Message
+ */
 
 .list-ctrl__message {
   margin: 0 0 20px 15px;
@@ -212,7 +222,9 @@
   }
 }
 
-/* add form */
+/**
+ * Add form
+ */
 
 .add-form__field {
   margin-bottom: 20px;
@@ -297,7 +309,7 @@
   flex-wrap: wrap;
 }
 
-.add-form__submit,
+.add-form__btn-submit,
 .add-form__cancel {
   margin-bottom: 15px;
   padding: 10px 20px;
@@ -308,7 +320,7 @@
   font-size: 14px;
 }
 
-.add-form__submit {
+.add-form__btn-submit {
   margin-right: 15px;
 
   &:hover,
@@ -333,7 +345,9 @@
   }
 }
 
-/* view post */
+/**
+ * View
+ */
 
 .view-post {
   color: $color-extra;
@@ -394,7 +408,9 @@
   }
 }
 
-/* remove post */
+/**
+ * Remove
+ */
 
 .remove-post {
   width: 400px;
