@@ -10,7 +10,7 @@ import { filterObjListByQuery } from '../../../filters';
 const BookList = (props) => (
   <div className='content'>
     <div className='content-wrap'>
-      <h2>Books</h2>
+      <h2 className='section-title'>Books</h2>
 
       <SearchForm query={props.query} onSearch={props.bookSearch} />
 

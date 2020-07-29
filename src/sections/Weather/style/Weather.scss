@@ -10,15 +10,15 @@
   width: 35%;
   padding: 9px 12px;
   font-size: 14px;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border: 1px solid transparent;
-  color: $color-sidebar-bg;
+  color: $color-base-ext;
 }
 
 .forecast__query-input::placeholder {
-  color: $color-copy;
+  color: $color-hue-1;
 }
 
 .forecast__query-input:focus {
@@ -28,7 +28,7 @@
 .forecast__btn-submit {
   font-size: 14px;
   padding: 9px 12px;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border: 1px solid transparent;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -36,15 +36,15 @@
 
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
     color: $color-common;
   }
 
   &:disabled,
   &:disabled:hover {
     cursor: default;
-    color: $color-copy;
-    background-color: $color-main;
+    color: $color-hue-1;
+    background-color: $color-hue-2;
   }
 }
 
@@ -76,14 +76,14 @@
 .forecast__btn-map,
 .forecast__btn-delete {
   background-color: transparent;
-  color: $color-list;
+  color: $color-hue-3;
   padding: 5px 10px;
-  border-top: 1px solid $color-main;
+  border-top: 1px solid $color-hue-2;
 }
 
 .forecast__btn-map:hover,
 .forecast__btn-map:focus {
-  background-color: $color-hover-common;
+  background-color: $color-hover-0;
   color: $color-common;
 }
 
@@ -162,7 +162,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color-list;
+  color: $color-hue-3;
   min-height: 60px;
 }
 
@@ -177,7 +177,7 @@
 .mount-map-spinner,
 .mount-map-error {
   text-align: center;
-  color: $color-grey;
+  color: $color-minor-ext;
   text-transform: uppercase;
   font-size: 90%;
   margin-top: 20%;

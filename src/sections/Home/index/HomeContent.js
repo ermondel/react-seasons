@@ -3,7 +3,7 @@ import React from 'react';
 const HomeContent = () => (
   <div className='content'>
     <div className='content-wrap'>
-      <h2>React Platform</h2>
+      <h2 className='section-title'>React Platform</h2>
 
       <section className='info-section'>
         <div className='info-section__header'>

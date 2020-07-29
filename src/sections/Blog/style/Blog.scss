@@ -12,7 +12,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  background-color: $color-main;
+  background-color: $color-hue-2;
 }
 
 .post__title {
@@ -26,7 +26,7 @@
   padding: 10px;
   border-radius: 6px;
   flex-grow: 2;
-  background-color: $color-common-bg;
+  background-color: $color-hue-0;
 }
 
 .post__title::first-letter,
@@ -48,13 +48,13 @@
   padding: 1px;
   font-size: 12px;
   color: inherit;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-bottom: 1px dashed transparent;
 
   &:hover,
   &:focus {
-    color: $color-hover-extra;
-    border-bottom: 1px dashed $color-hover-extra;
+    color: $color-hover-1;
+    border-bottom: 1px dashed $color-hover-1;
   }
 }
 
@@ -63,7 +63,7 @@
   cursor: default;
   font-size: 12px;
   color: $color-base;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-bottom: 1px dashed $color-base;
 }
 

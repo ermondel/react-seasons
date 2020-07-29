@@ -11,7 +11,7 @@
 }
 
 .user-list__item {
-  color: $color-grey;
+  color: $color-minor-ext;
   margin-bottom: 4px;
 }
 
@@ -20,7 +20,7 @@
  */
 
 .board__tabs {
-  border-bottom: 1px solid $color-main;
+  border-bottom: 1px solid $color-hue-2;
   padding: 0 15px;
   margin-bottom: 35px;
 }
@@ -42,20 +42,20 @@
 }
 
 .board__btn-tab--active {
-  border-top: 1px solid $color-main;
-  border-right: 1px solid $color-main;
-  border-left: 1px solid $color-main;
-  background-color: $color-common-bg;
+  border-top: 1px solid $color-hue-2;
+  border-right: 1px solid $color-hue-2;
+  border-left: 1px solid $color-hue-2;
+  background-color: $color-hue-0;
   position: relative;
   bottom: -1px;
-  color: $color-list;
+  color: $color-hue-3;
   cursor: default;
 }
 
 .board__btn-tab {
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
   }
 }
 
@@ -73,7 +73,7 @@
   margin-right: 2%;
   margin-bottom: 2%;
   position: relative;
-  background-color: $color-main;
+  background-color: $color-hue-2;
 
   &::before {
     content: '';
@@ -82,7 +82,7 @@
     bottom: 6px;
     width: 30px;
     height: 30px;
-    background-color: $color-main;
+    background-color: $color-hue-2;
     transform: rotate(45deg);
     z-index: 2;
   }
@@ -94,7 +94,7 @@
     bottom: 0;
     width: 20px;
     height: 20px;
-    background-color: $color-common-bg;
+    background-color: $color-hue-0;
     z-index: 1;
   }
 }

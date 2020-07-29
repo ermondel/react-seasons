@@ -11,7 +11,7 @@ const NoMatch = () => (
       </div>
       <div className='content'>
         <div className='content-wrap'>
-          <h2>Page not found</h2>
+          <h2 className='section-title'>Page not found</h2>
           <h3>404</h3>
         </div>
       </div>

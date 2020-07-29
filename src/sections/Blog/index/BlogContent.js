@@ -6,7 +6,7 @@ import PostList from './PostList';
 const BlogContent = () => (
   <div className='content'>
     <div className='content-wrap'>
-      <h2>Blog posts</h2>
+      <h2 className='section-title'>Blog posts</h2>
 
       <BlogSpinner />
       <BlogError />

@@ -60,7 +60,7 @@ const BoardContent = () => {
   return (
     <div className='content'>
       <div className='content-wrap'>
-        <h2>Board</h2>
+        <h2 className='section-title'>Board</h2>
 
         <div className='board__tabs'>
           {buttonComments}

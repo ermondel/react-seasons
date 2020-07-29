@@ -34,7 +34,7 @@
 }
 
 .modal--common .modal__content {
-  background-color: $color-common-bg;
+  background-color: $color-hue-0;
 }
 
 .modal__btns {
@@ -89,7 +89,7 @@
 }
 
 .modal--common .modal__close {
-  background-color: $color-common-bg;
+  background-color: $color-hue-0;
 }
 
 .modal__btn-close {
@@ -102,7 +102,7 @@
   z-index: 3;
 
   &:focus {
-    background-color: $color-detail-btn-main;
+    background-color: $color-aux;
     opacity: 0.5;
   }
 }

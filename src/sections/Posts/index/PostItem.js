@@ -8,7 +8,7 @@ const PostItem = ({ post, onRemoveClick }) => {
       <p className='view-post__categories'>{post.categories}</p>
       <p className='view-post__content'>{post.content}</p>
       <div className='view-post__actions'>
-        <Link to={'/posts'} className='view-post__link-back'>
+        <Link to={'/posts'} className='view-post__dlink-back'>
           Go back to the list
         </Link>
         <button onClick={onRemoveClick} className='view-post__btn-remove'>

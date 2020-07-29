@@ -9,7 +9,7 @@
 .pst-list__item {
   display: flex;
   padding: 20px 0 20px 0;
-  border-bottom: 1px solid $color-main;
+  border-bottom: 1px solid $color-hue-2;
 }
 
 .pst-list__item:last-child {
@@ -38,7 +38,7 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: $color-hover-common;
+    color: $color-hover-0;
   }
 }
 
@@ -46,7 +46,7 @@
   margin: 0;
   padding: 0;
   font-size: 85%;
-  color: $color-list;
+  color: $color-hue-3;
 }
 
 .pst-list__btn-remove {
@@ -69,7 +69,7 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: $color-hover-extra;
+    color: $color-hover-1;
   }
 
   &::-moz-focus-inner {
@@ -84,7 +84,6 @@
 .list-ctrl {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   margin-bottom: 15px;
 }
 
@@ -94,26 +93,26 @@
 
 .list-ctrl__search {
   box-sizing: border-box;
-  margin-right: 15px;
-  margin-bottom: 20px;
+  margin: 0 15px 20px 0;
   padding-right: 15px;
   width: 40%;
   min-width: 250px;
-  border-right: 1px solid $color-main;
+  border-right: 1px solid $color-hue-2;
 }
 
 .list-ctrl__search-input {
-  padding: 9px 12px;
-  background-color: $color-main;
-  border-radius: 4px;
-  color: $color-sidebar-bg;
-  border: 1px solid transparent;
-  font-size: 14px;
   box-sizing: border-box;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: $color-base-ext;
+  background-color: $color-hue-2;
+  font-size: 14px;
+  line-height: 16px;
   width: 100%;
 
   &::placeholder {
-    color: $color-copy;
+    color: $color-hue-1;
   }
 
   &:focus {
@@ -121,20 +120,20 @@
   }
 }
 
-.list-ctrl__add {
+.list-ctrl__dlink-add {
   display: block;
   padding: 9px 12px;
   border: 1px solid transparent;
-  margin-bottom: 20px;
   border-radius: 4px;
   color: $color-extra;
   background-color: $color-base;
-  text-decoration: none;
   font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
 
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
   }
 }
 
@@ -177,11 +176,11 @@
 }
 
 .posts-spinner__loading-message {
-  color: $color-hover-common;
+  color: $color-hover-0;
 }
 
 .posts-spinner__auth-message {
-  color: $color-hover-extra;
+  color: $color-hover-1;
 }
 
 /**
@@ -190,35 +189,37 @@
 
 .list-ctrl__message {
   margin: 0 0 20px 15px;
-  font-size: 14px;
   color: $color-util;
+  font-size: 14px;
+  line-height: 16px;
   display: flex;
 }
 
 .list-ctrl__message-text {
   margin: 0;
   padding: 9px 12px;
-  border-top: 1px solid $color-main;
-  border-left: 1px solid $color-main;
-  border-bottom: 1px solid $color-main;
+  border-top: 1px solid $color-hue-2;
+  border-left: 1px solid $color-hue-2;
+  border-bottom: 1px solid $color-hue-2;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
 .list-ctrl__message-close {
   padding: 9px 12px;
-  border: 1px solid $color-main;
+  border: 1px solid $color-hue-2;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  color: $color-hue-3;
   background-color: transparent;
   font-size: 14px;
-  color: $color-list;
+  line-height: 16px;
 
   &:hover,
   &:focus {
-    background-color: $color-list;
+    background-color: $color-hue-3;
     color: white;
-    border-color: $color-list;
+    border-color: $color-hue-3;
   }
 }
 
@@ -236,9 +237,9 @@
 
 .add-form__input {
   padding: 9px 12px;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-radius: 3px;
-  color: $color-sidebar-bg;
+  color: $color-base-ext;
   border: 1px solid transparent;
   font-size: 14px;
   box-sizing: border-box;
@@ -256,9 +257,9 @@
 
 .add-form__textarea {
   padding: 9px 12px;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-radius: 3px;
-  color: $color-sidebar-bg;
+  color: $color-base-ext;
   border: 1px solid transparent;
   font-size: 14px;
   font-family: Arial;
@@ -295,11 +296,11 @@
 }
 
 .add-form__input--error {
-  border-color: $color-list;
+  border-color: $color-hue-3;
 }
 
 .add-form__textarea--error {
-  border-color: $color-list;
+  border-color: $color-hue-3;
 }
 
 .add-form__actions {
@@ -310,7 +311,7 @@
 }
 
 .add-form__btn-submit,
-.add-form__cancel {
+.add-form__dlink-back {
   margin-bottom: 15px;
   padding: 10px 20px;
   border-radius: 4px;
@@ -325,23 +326,23 @@
 
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
   }
 
   &:disabled {
-    color: $color-copy;
-    border-color: $color-copy;
-    background-color: $color-common-bg;
+    color: $color-hue-1;
+    border-color: $color-hue-1;
+    background-color: $color-hue-0;
     cursor: default;
   }
 }
 
-.add-form__cancel {
+.add-form__dlink-back {
   text-decoration: none;
 
   &:hover,
   &:focus {
-    background-color: $color-hover-extra;
+    background-color: $color-hover-1;
   }
 }
 
@@ -365,7 +366,7 @@
   margin: 0 0 30px 0;
   padding: 0;
   font-size: 85%;
-  color: $color-list;
+  color: $color-hue-3;
 }
 
 .view-post__content {
@@ -379,7 +380,7 @@
   align-items: center;
 }
 
-.view-post__link-back {
+.view-post__dlink-back {
   color: $color-base;
   text-decoration: none;
   font-size: 14px;
@@ -389,7 +390,7 @@
 
   &:hover,
   &:focus {
-    background-color: $color-hover-extra;
+    background-color: $color-hover-1;
     color: $color-common;
   }
 }
@@ -419,7 +420,7 @@
 .remove-post__title {
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
-  border-bottom: 1px solid $color-main;
+  border-bottom: 1px solid $color-hue-2;
 }
 
 .remove-post__question {
@@ -439,7 +440,7 @@
 
   &:hover,
   &:focus {
-    background-color: $color-detail-btn-main;
+    background-color: $color-aux;
   }
 }
 

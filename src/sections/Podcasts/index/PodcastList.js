@@ -7,7 +7,7 @@ import podcasts from '../sources/podcastsSource';
 const PodcastList = (props) => (
   <div className='content'>
     <div className='content-wrap'>
-      <h2>Podcasts</h2>
+      <h2 className='section-title'>Podcasts</h2>
 
       <div className='podcast-list'>
         {podcasts.map((podcast) => (

@@ -51,18 +51,6 @@ a {
   outline: none;
 }
 
-h2 {
-  color: $color-main;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 35px;
-  font-size: 300%;
-}
-
-h2::first-letter {
-  text-transform: uppercase;
-}
-
 /**
  * Util
  */
@@ -117,7 +105,7 @@ h2::first-letter {
   &:hover,
   &:focus {
     color: $color-extra;
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
   }
 
   &--active {
@@ -154,15 +142,15 @@ h2::first-letter {
 }
 
 .sidebar__btn-line--active {
-  color: $color-hover-common;
+  color: $color-hover-0;
   cursor: default;
 }
 
 .sidebar__btn-line {
   &:hover,
   &:focus {
-    color: $color-hover-common;
-    border-bottom: 1px solid $color-hover-common;
+    color: $color-hover-0;
+    border-bottom: 1px solid $color-hover-0;
   }
 }
 
@@ -183,13 +171,13 @@ h2::first-letter {
 .main {
   width: 100%;
   display: flex;
-  background-color: $color-common-bg;
+  background-color: $color-hue-0;
 }
 
 .sidebar {
   width: 30%;
   min-height: 100vh;
-  background-color: $color-sidebar-bg;
+  background-color: $color-base-ext;
   position: relative;
 
   &::before {
@@ -200,7 +188,7 @@ h2::first-letter {
     bottom: 0;
     width: 5px;
     z-index: 2;
-    background-color: $color-sidebar-bg;
+    background-color: $color-base-ext;
   }
 
   &::after {
@@ -238,6 +226,17 @@ h2::first-letter {
   z-index: 99;
 }
 
+.section-title {
+  padding: 0;
+  margin: 40px 0 47px 0;
+  color: $color-hue-2;
+  font-size: 300%;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
 /**
  * Copyright
  */
@@ -247,7 +246,7 @@ h2::first-letter {
   padding: 5px 20px;
   font-size: 70%;
   text-align: right;
-  color: $color-copy;
+  color: $color-hue-1;
 
   a {
     color: inherit;

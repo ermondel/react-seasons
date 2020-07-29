@@ -7,7 +7,7 @@ import CityLocation from './CityLocation';
 const WeatherForecast = () => (
   <div className='content'>
     <div className='content-wrap'>
-      <h2>Weather</h2>
+      <h2 className='section-title'>Weather</h2>
 
       <WeatherSearchForm />
       <ForecastError />

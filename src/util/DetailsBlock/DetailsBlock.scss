@@ -23,7 +23,7 @@
   border-bottom: 1px dotted $color-minor;
 
   &:hover {
-    border-color: $color-hover-extra;
+    border-color: $color-hover-1;
   }
 
   & .l::first-letter {
@@ -41,13 +41,13 @@
 .details__btn-main {
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: $color-detail-btn-main;
+  background-color: $color-aux;
   color: $color-detail;
   float: left;
 
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
     color: $color-extra;
   }
 }
@@ -63,6 +63,6 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: $color-hover-common;
+    color: $color-hover-0;
   }
 }

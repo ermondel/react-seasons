@@ -10,7 +10,7 @@
 .foreign {
   font-size: 12px;
   line-height: 1;
-  color: $color-grey;
+  color: $color-minor-ext;
   margin: auto 20px 20px 20px;
 }
 
@@ -32,7 +32,7 @@
 
 .info-section {
   margin-bottom: 5px;
-  color: $color-sidebar-bg;
+  color: $color-base-ext;
   font-size: 15px;
   max-width: 900px;
 }
@@ -46,9 +46,9 @@
 }
 
 .info-section__header {
-  border-left: 1px solid $color-copy;
-  border-bottom: 1px solid $color-copy;
-  border-top: 1px solid $color-copy;
+  border-left: 1px solid $color-hue-1;
+  border-bottom: 1px solid $color-hue-1;
+  border-top: 1px solid $color-hue-1;
   text-align: right;
   padding: 40px 0 40px 5px;
 }
@@ -62,7 +62,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  border-right: 1px solid $color-copy;
+  border-right: 1px solid $color-hue-1;
   padding-top: 10px;
 }
 

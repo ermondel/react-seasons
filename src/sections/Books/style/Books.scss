@@ -13,7 +13,7 @@
   margin-bottom: 2px;
 
   &:hover {
-    background-color: $color-copy;
+    background-color: $color-hue-1;
     border-radius: 3px;
   }
 }
@@ -24,7 +24,7 @@
   padding: 3px 0;
   margin-bottom: 2px;
 
-  background-color: $color-copy;
+  background-color: $color-hue-1;
   border-radius: 3px;
 }
 
@@ -61,11 +61,11 @@
   padding: 8px;
   border-radius: 2px;
   color: $color-common;
-  background-color: $color-main;
+  background-color: $color-hue-2;
 
   &:hover,
   &:focus {
-    background-color: $color-hover-common;
+    background-color: $color-hover-0;
   }
 
   &--active {
@@ -145,8 +145,8 @@
   text-transform: uppercase;
   border-radius: 4px;
   cursor: default;
-  color: $color-common-bg;
-  border: 1px solid $color-common-bg;
+  color: $color-hue-0;
+  border: 1px solid $color-hue-0;
 }
 
 /**
@@ -158,13 +158,13 @@
   margin: 0 0 35px 0;
   padding: 9px 12px;
   font-size: 14px;
-  background-color: $color-main;
+  background-color: $color-hue-2;
   border-radius: 3px;
   border: 1px solid transparent;
-  color: $color-sidebar-bg;
+  color: $color-base-ext;
 
   &::placeholder {
-    color: $color-copy;
+    color: $color-hue-1;
   }
 
   &:focus {

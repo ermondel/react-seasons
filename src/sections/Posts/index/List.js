@@ -4,7 +4,7 @@ import ListControl from './ListControl';
 
 const List = () => (
   <div>
-    <h2>Post list</h2>
+    <h2 className='section-title'>Post list</h2>
 
     <ListControl />
     <PostList />

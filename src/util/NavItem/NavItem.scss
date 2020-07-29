@@ -13,13 +13,13 @@
 .main-nav__item:hover,
 .main-nav__item:focus {
   color: $color-extra;
-  background-color: $color-hover-common;
+  background-color: $color-hover-0;
 }
 
 .main-nav__item_active,
 .main-nav__item_active:hover,
 .main-nav__item_active:focus {
   color: $color-extra;
-  background-color: $color-sidebar-bg;
+  background-color: $color-base-ext;
   cursor: default;
 }

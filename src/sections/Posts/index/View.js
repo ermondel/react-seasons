@@ -21,7 +21,7 @@ class View extends Component {
   renderNotFound() {
     return (
       <div>
-        <h2>Post not found</h2>
+        <h2 className='section-title'>Post not found</h2>
 
         <Link to={'/posts'} className='pst-list__link-back'>
           Go back to the list
