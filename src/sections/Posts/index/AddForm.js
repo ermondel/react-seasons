@@ -38,19 +38,17 @@ class AddForm extends Component {
 
   renderError = ({ dirty, touched, error }) => {
     if ((dirty && error) || (touched && error)) {
-      return <p className='add-form__error'>{error}</p>;
+      return <div className='add-form__error'>{error}</div>;
     } else {
       return null;
     }
   };
 
-  renderCounter = ({ name, value }) => {
-    return value ? (
-      <span className='add-form__counter'>
-        {value.length}/{AddForm.maxLength[name]}
-      </span>
-    ) : null;
-  };
+  renderCounter = ({ name, value }) => (
+    <div className='add-form__counter'>
+      {value.length}/{AddForm.maxLength[name]}
+    </div>
+  );
 
   renderInputClass = ({ touched, error }) => {
     const className = 'add-form__input';
@@ -64,50 +62,50 @@ class AddForm extends Component {
 
   renderInput = ({ input, meta, placeholder }) => {
     return (
-      <label className='add-form__element-label'>
-        <input
-          {...input}
-          autoComplete='off'
-          placeholder={placeholder}
-          className={this.renderInputClass(meta)}
-        />
-      </label>
+      <input
+        {...input}
+        autoComplete='off'
+        placeholder={placeholder}
+        className={this.renderInputClass(meta)}
+      />
     );
   };
 
   renderTextarea = ({ input, meta, placeholder }) => {
     return (
-      <label className='add-form__element-label'>
-        <textarea
-          {...input}
-          placeholder={placeholder}
-          className={this.renderTextareaClass(meta)}
-        ></textarea>
-      </label>
+      <textarea
+        {...input}
+        placeholder={placeholder}
+        className={this.renderTextareaClass(meta)}
+      ></textarea>
     );
   };
 
   renderInputField = (props) => {
     return (
-      <div className='add-form__field'>
-        <div className='add-form__element'>
-          {this.renderInput(props)}
-          {this.renderCounter(props.input)}
+      <label className='add-form__label'>
+        <div className='add-form__field'>
+          <div className='add-form__element'>{this.renderInput(props)}</div>
+          <div className='add-form__info'>
+            {this.renderError(props.meta)}
+            {this.renderCounter(props.input)}
+          </div>
         </div>
-        {this.renderError(props.meta)}
-      </div>
+      </label>
     );
   };
 
   renderTextareaField = (props) => {
     return (
-      <div className='add-form__field'>
-        <div className='add-form__element'>
-          {this.renderTextarea(props)}
-          {this.renderCounter(props.input)}
+      <label className='add-form__label'>
+        <div className='add-form__field'>
+          <div className='add-form__element'>{this.renderTextarea(props)}</div>
+          <div className='add-form__info'>
+            {this.renderError(props.meta)}
+            {this.renderCounter(props.input)}
+          </div>
         </div>
-        {this.renderError(props.meta)}
-      </div>
+      </label>
     );
   };
 

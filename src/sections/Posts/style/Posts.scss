@@ -227,72 +227,80 @@
  * Add form
  */
 
+.add-form {
+  max-width: 600px;
+}
+
+.add-form__label {
+  display: block;
+}
+
 .add-form__field {
-  margin-bottom: 20px;
+  display: block;
+  margin-bottom: 15px;
+  background-color: $color-hue-2;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 12px;
 }
 
 .add-form__element {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.add-form__info {
+  padding: 4px 0 0 0;
+  font-size: 13px;
+  display: flex;
 }
 
 .add-form__input {
-  padding: 9px 12px;
-  background-color: $color-hue-2;
-  border-radius: 3px;
-  color: $color-base-ext;
-  border: 1px solid transparent;
-  font-size: 14px;
+  display: block;
   box-sizing: border-box;
   width: 100%;
-  max-width: 600px;
+  padding: 5px;
+  color: $color-base-ext;
+  background-color: $color-hue-2;
+  font-size: 14px;
+  border-radius: 2px;
 
   &::placeholder {
-    color: $color-extra;
+    color: $color-common;
   }
 
   &:focus {
-    background-color: $color-extra;
+    background-color: $color-common;
   }
 }
 
 .add-form__textarea {
-  padding: 9px 12px;
-  background-color: $color-hue-2;
-  border-radius: 3px;
-  color: $color-base-ext;
-  border: 1px solid transparent;
-  font-size: 14px;
-  font-family: Arial;
+  display: block;
   box-sizing: border-box;
   width: 100%;
-  max-width: 600px;
+  padding: 5px;
+  color: $color-base-ext;
+  background-color: $color-hue-2;
+  font-size: 14px;
   height: 140px;
-  display: block;
+  border-radius: 2px;
 
   &::placeholder {
-    color: $color-extra;
+    color: $color-common;
   }
 
   &:focus {
-    background-color: $color-extra;
+    background-color: $color-common;
   }
 }
 
-.add-form__element-label {
-  margin-right: 7px;
-  display: block;
-}
-
 .add-form__counter {
+  margin-left: auto;
   color: $color-util;
-  font-size: small;
 }
 
 .add-form__error {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  color: $color-base;
+  color: $color-hover-1;
+  font-size: 110%;
 }
 
 .add-form__input--error {
@@ -308,6 +316,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 20px;
 }
 
 .add-form__btn-submit,
@@ -322,8 +331,6 @@
 }
 
 .add-form__btn-submit {
-  margin-right: 15px;
-
   &:hover,
   &:focus {
     background-color: $color-hover-0;
