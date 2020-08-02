@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import isChrome from './isChrome';
+import { isChrome } from '../../../browser';
 
 export default () => {
   const [coords, setCoords] = useState(null);
