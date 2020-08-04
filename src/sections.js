@@ -7,6 +7,7 @@ import BooksSection from './sections/Books/index/Books';
 import BoardSection from './sections/Board/index/Board';
 import WeatherSection from './sections/Weather/index/Weather';
 import PostsSection from './sections/Posts/index/Posts';
+import WidgetsSection from './sections/Widgets/index/Widgets';
 import NoMatchSection from './sections/NoMatch/index/NoMatch';
 
 export const Home = HomeSection;
@@ -18,4 +19,5 @@ export const Books = BooksSection;
 export const Board = BoardSection;
 export const Weather = WeatherSection;
 export const Posts = PostsSection;
+export const Widgets = WidgetsSection;
 export const NoMatch = NoMatchSection;
