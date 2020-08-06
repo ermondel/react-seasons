@@ -1,8 +1,8 @@
 import React from 'react';
-import { Switch, Route, Redirect, Link, useLocation } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from '../../../main/Header';
 import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
-import { includesPath } from '../../../lib/path';
+import NavItemLi from '../../../util/NavItem/NavItemLi';
 import Accordion from './Accordion';
 import List from './List';
 import Dropdown from './Dropdown';
@@ -12,7 +12,6 @@ import NotFound from './NotFound';
 const Widgets = (props) => {
   const pathParts = props.location ? props.location.pathname.split('/') : [];
   const pathName = pathParts ? '/' + pathParts[1] : '';
-  const pathname = useLocation().pathname;
 
   return (
     <div className='app-main'>
@@ -29,39 +28,23 @@ const Widgets = (props) => {
           <div className='content-wrap'>
             <h2 className='section-title'>Widgets</h2>
 
-            <div className='widgets-nav'>
-              {includesPath('/widgets/accordion', pathname) ? (
-                <span className='widgets-nav__item--active'>Accordion</span>
-              ) : (
-                <Link to='/widgets/accordion' className='widgets-nav__item'>
-                  Accordion
-                </Link>
-              )}
+            <ul className='widgets-nav'>
+              <NavItemLi to='/widgets/accordion' block='widgets-nav'>
+                Accordion
+              </NavItemLi>
 
-              {includesPath('/widgets/list', pathname) ? (
-                <span className='widgets-nav__item--active'>List</span>
-              ) : (
-                <Link to='/widgets/list' className='widgets-nav__item'>
-                  List
-                </Link>
-              )}
+              <NavItemLi to='/widgets/list' block='widgets-nav'>
+                List
+              </NavItemLi>
 
-              {includesPath('/widgets/dropdown', pathname) ? (
-                <span className='widgets-nav__item--active'>Dropdown</span>
-              ) : (
-                <Link to='/widgets/dropdown' className='widgets-nav__item'>
-                  Dropdown
-                </Link>
-              )}
+              <NavItemLi to='/widgets/dropdown' block='widgets-nav'>
+                Dropdown
+              </NavItemLi>
 
-              {includesPath('/widgets/translate', pathname) ? (
-                <span className='widgets-nav__item--active'>Translate</span>
-              ) : (
-                <Link to='/widgets/translate' className='widgets-nav__item'>
-                  Translate
-                </Link>
-              )}
-            </div>
+              <NavItemLi to='/widgets/translate' block='widgets-nav'>
+                Translate
+              </NavItemLi>
+            </ul>
 
             <Switch>
               <Redirect exact from='/widgets' to='/widgets/accordion' />
