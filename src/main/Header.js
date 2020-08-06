@@ -1,43 +1,52 @@
 import React from 'react';
-import NavItem from '../util/NavItem/NavItem';
+import NavItemLi from '../util/NavItem/NavItemLi';
 import { isChrome } from '../browser';
 
 const Header = (props) => (
   <header className='header'>
     <nav className='main-nav'>
       <ul className='main-nav__list'>
-        <li>
-          <NavItem val={'Home'} from={props.path} to={'/'} />
-        </li>
-        <li>
-          <NavItem val={'Blog'} from={props.path} to={'/blog'} />
-        </li>
-        <li>
-          <NavItem val={'Postcard'} from={props.path} to={'/postcard'} />
-        </li>
-        <li>
-          <NavItem val={'Podcasts'} from={props.path} to={'/podcasts'} />
-        </li>
-        <li>
-          <NavItem val={'Books'} from={props.path} to={'/books'} />
-        </li>
-        <li>
-          <NavItem val={'Board'} from={props.path} to={'/board'} />
-        </li>
+        <NavItemLi to='/' block='main-nav'>
+          Home
+        </NavItemLi>
+
+        <NavItemLi to='/blog' block='main-nav'>
+          Blog
+        </NavItemLi>
+
+        <NavItemLi to='/postcard' block='main-nav'>
+          Postcard
+        </NavItemLi>
+
+        <NavItemLi to='/podcasts' block='main-nav'>
+          Podcasts
+        </NavItemLi>
+
+        <NavItemLi to='/books' block='main-nav'>
+          Books
+        </NavItemLi>
+
+        <NavItemLi to='/board' block='main-nav'>
+          Board
+        </NavItemLi>
+
         {isChrome && (
-          <li>
-            <NavItem val={'Position'} from={props.path} to={'/position'} />
-          </li>
+          <NavItemLi to='/position' block='main-nav'>
+            Position
+          </NavItemLi>
         )}
-        <li>
-          <NavItem val={'Weather'} from={props.path} to={'/weather'} />
-        </li>
-        <li>
-          <NavItem val={'Posts'} from={props.path} to={'/posts'} />
-        </li>
-        <li>
-          <NavItem val={'Widgets'} from={props.path} to={'/widgets'} />
-        </li>
+
+        <NavItemLi to='/weather' block='main-nav'>
+          Weather
+        </NavItemLi>
+
+        <NavItemLi to='/posts' block='main-nav'>
+          Posts
+        </NavItemLi>
+
+        <NavItemLi to='/widgets' block='main-nav'>
+          Widgets
+        </NavItemLi>
       </ul>
     </nav>
   </header>

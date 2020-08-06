@@ -3,7 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { includesPath } from '../../lib/path';
 
 const NavItemLi = ({ children, to, block }) => {
-  if (includesPath(to, useLocation().pathname)) {
+  const pathname = useLocation().pathname;
+  const toHome = to === '/' && pathname !== '/';
+
+  if (!toHome && includesPath(to, pathname)) {
     return (
       <li className={block + '__item'}>
         <span className={block + '__link--active'}>{children}</span>
