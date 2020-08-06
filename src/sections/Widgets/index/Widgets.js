@@ -6,7 +6,6 @@ import Content from './Content';
 const Widgets = (props) => {
   const pathParts = props.location ? props.location.pathname.split('/') : [];
   const pathName = pathParts ? '/' + pathParts[1] : '';
-  const pathWidget = pathParts ? '/' + pathParts[2] : '';
 
   return (
     <div className='app-main'>
@@ -14,7 +13,7 @@ const Widgets = (props) => {
 
       <main className='main'>
         <Sidebar />
-        <Content path={pathWidget} />
+        <Content />
       </main>
     </div>
   );
