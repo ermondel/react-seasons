@@ -4,7 +4,7 @@ import Header from '../../../main/Header';
 import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
 import NavItemLi from '../../../util/NavItem/NavItemLi';
 import Accordion from './Accordion';
-import List from './List';
+import Wikipedia from './Wikipedia';
 import Dropdown from './Dropdown';
 import Translate from './Translate';
 import NotFound from './NotFound';
@@ -33,8 +33,8 @@ const Widgets = (props) => {
                 Accordion
               </NavItemLi>
 
-              <NavItemLi to='/widgets/list' block='widgets-nav'>
-                List
+              <NavItemLi to='/widgets/wikipedia' block='widgets-nav'>
+                Wikipedia
               </NavItemLi>
 
               <NavItemLi to='/widgets/dropdown' block='widgets-nav'>
@@ -49,7 +49,7 @@ const Widgets = (props) => {
             <Switch>
               <Redirect exact from='/widgets' to='/widgets/accordion' />
               <Route path='/widgets/accordion' component={Accordion} />
-              <Route path='/widgets/list' component={List} />
+              <Route path='/widgets/wikipedia' component={Wikipedia} />
               <Route path='/widgets/dropdown' component={Dropdown} />
               <Route path='/widgets/translate' component={Translate} />
               <Route path='/widgets/*' component={NotFound} />
