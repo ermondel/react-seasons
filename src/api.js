@@ -11,3 +11,7 @@ export const nodeapiserver = axios.create({
 export const reduxblog = axios.create({
   baseURL: 'https://reduxblog.herokuapp.com/api',
 });
+
+export const wikipedia = axios.create({
+  baseURL: 'http://localhost:5000',
+});

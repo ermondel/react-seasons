@@ -1,24 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { wikipedia } from '../../../api';
+import { SpinnerBig, ErrorRemote } from '../../../util/UtilImg/UtilImg';
+import WikipediaItem from './WikipediaItem';
 
 const Wiki = () => {
   const [term, setTerm] = useState('');
   const [results, setResults] = useState([]);
+  const [status, setStatus] = useState('default');
 
   useEffect(() => {
     const search = async () => {
-      const response = await axios.get('http://localhost:5000/data.json');
-      setResults(response.data.query.search);
+      try {
+        const response = await wikipedia.get('data.json');
+
+        setResults(response.data.query.search);
+        setStatus('default');
+      } catch (error) {
+        setStatus('error');
+      }
     };
 
     const timeoutID = setTimeout(() => {
-      if (term) search();
+      if (term) {
+        search();
+        setStatus('loading');
+      }
     }, 1000);
 
-    return () => {
-      clearTimeout(timeoutID);
-    };
+    return () => clearTimeout(timeoutID);
   }, [term]);
+
+  const renderContent = () => {
+    switch (status) {
+      case 'loading':
+        return (
+          <div>
+            <SpinnerBig />
+          </div>
+        );
+
+      case 'error':
+        return (
+          <div>
+            <ErrorRemote />
+          </div>
+        );
+
+      default:
+        return results.map((page) => {
+          return <WikipediaItem page={page} key={page.pageid} />;
+        });
+    }
+  };
 
   return (
     <div>
@@ -30,26 +63,7 @@ const Wiki = () => {
         />
       </div>
 
-      <div>
-        {results.map((page) => (
-          <div key={page.pageid}>
-            <h4>
-              <a
-                href={`https://en.wikipedia.org?curid=${page.pageid}`}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                {page.title}
-              </a>
-            </h4>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: page.snippet.replace(/(<([^>]+)>)/gi, ''),
-              }}
-            ></p>
-          </div>
-        ))}
-      </div>
+      <div>{renderContent()}</div>
     </div>
   );
 };
