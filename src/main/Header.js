@@ -2,7 +2,7 @@ import React from 'react';
 import NavItemLi from '../util/NavItem/NavItemLi';
 import { isChrome } from '../browser';
 
-const Header = (props) => (
+const Header = () => (
   <header className='header'>
     <nav className='main-nav'>
       <ul className='main-nav__list'>

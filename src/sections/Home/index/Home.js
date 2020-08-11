@@ -3,9 +3,9 @@ import Header from '../../../main/Header';
 import HomeSidebar from './HomeSidebar';
 import HomeContent from './HomeContent';
 
-const Home = (props) => (
+const Home = () => (
   <div className='app-main'>
-    <Header path={props.location.pathname} />
+    <Header />
 
     <main className='main'>
       <HomeSidebar />

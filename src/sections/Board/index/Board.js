@@ -3,9 +3,9 @@ import Header from '../../../main/Header';
 import BoardSidebar from './BoardSidebar';
 import BoardContent from './BoardContent';
 
-const Board = (props) => (
+const Board = () => (
   <div className='app-main'>
-    <Header path={props.location.pathname} />
+    <Header />
 
     <main className='main'>
       <BoardSidebar />

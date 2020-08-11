@@ -3,9 +3,9 @@ import Header from '../../../main/Header';
 import BooksSidebar from './BooksSidebar';
 import BookList from './BookList';
 
-const Books = (props) => (
+const Books = () => (
   <div className='app-main'>
-    <Header path={props.location.pathname} />
+    <Header />
 
     <main className='main'>
       <BooksSidebar />

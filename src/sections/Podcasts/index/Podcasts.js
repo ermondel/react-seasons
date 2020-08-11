@@ -3,9 +3,9 @@ import Header from '../../../main/Header';
 import PodcastDetails from './PodcastDetails';
 import PodcastList from './PodcastList';
 
-const Podcasts = (props) => (
+const Podcasts = () => (
   <div className='app-main'>
-    <Header path={props.location.pathname} />
+    <Header />
 
     <main className='main'>
       <PodcastDetails />

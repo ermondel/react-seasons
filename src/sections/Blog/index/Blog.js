@@ -3,9 +3,9 @@ import Header from '../../../main/Header';
 import BlogSidebar from './BlogSidebar';
 import BlogContent from './BlogContent';
 
-const Blog = (props) => (
+const Blog = () => (
   <div className='app-main'>
-    <Header path={props.location.pathname} />
+    <Header />
 
     <main className='main'>
       <BlogSidebar />
