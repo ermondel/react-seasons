@@ -13,5 +13,5 @@ export const reduxblog = axios.create({
 });
 
 export const wikipedia = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://en.wikipedia.org',
 });

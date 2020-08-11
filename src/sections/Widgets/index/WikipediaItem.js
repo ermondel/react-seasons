@@ -1,22 +1,23 @@
 import React from 'react';
+import { stripHTMLTags } from '../../../lib/strip';
 
 const WikipediaItem = ({ page }) => (
-  <div>
-    <h4>
+  <article className='wiki-article'>
+    <h3 className='wiki-article__title'>
       <a
-        href={`https://en.wikipedia.org?curid=${page.pageid}`}
+        href={'https://en.wikipedia.org?curid=' + page.pageid}
         target='_blank'
         rel='noopener noreferrer'
+        className='wiki-article__link'
       >
         {page.title}
       </a>
-    </h4>
+    </h3>
     <p
-      dangerouslySetInnerHTML={{
-        __html: page.snippet.replace(/(<([^>]+)>)/gi, ''),
-      }}
+      dangerouslySetInnerHTML={{ __html: stripHTMLTags(page.snippet) + ' ...' }}
+      className='wiki-article__content'
     ></p>
-  </div>
+  </article>
 );
 
 export default WikipediaItem;

@@ -11,7 +11,15 @@ const Wiki = () => {
   useEffect(() => {
     const search = async () => {
       try {
-        const response = await wikipedia.get('data.json');
+        const response = await wikipedia.get('/w/api.php', {
+          params: {
+            action: 'query',
+            list: 'search',
+            origin: '*',
+            format: 'json',
+            srsearch: term,
+          },
+        });
 
         setResults(response.data.query.search);
         setStatus('default');
@@ -34,15 +42,20 @@ const Wiki = () => {
     switch (status) {
       case 'loading':
         return (
-          <div>
+          <div className='wiki-spinner'>
             <SpinnerBig />
           </div>
         );
 
       case 'error':
         return (
-          <div>
+          <div className='wiki-error'>
             <ErrorRemote />
+            <div>
+              <p>The remote server is not responding</p>
+              <p>Perhaps it is overloaded with requests</p>
+              <p>Please come back later</p>
+            </div>
           </div>
         );
 
@@ -55,15 +68,24 @@ const Wiki = () => {
 
   return (
     <div>
-      <div>
+      <form
+        className='wiki-search'
+        onSubmit={(event) => {
+          event.preventDefault();
+          setTerm(event.target.elements.search.value);
+        }}
+      >
         <input
           type='text'
           value={term}
           onChange={(event) => setTerm(event.target.value)}
+          className='wiki-search__input'
+          placeholder='Search Wikipedia'
+          name='search'
         />
-      </div>
+      </form>
 
-      <div>{renderContent()}</div>
+      <div className='wiki-articles'>{renderContent()}</div>
     </div>
   );
 };
