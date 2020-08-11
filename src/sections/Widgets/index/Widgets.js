@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from '../../../main/Header';
-import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
-import NavItemLi from '../../../util/NavItem/NavItemLi';
+import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
+import NavItemLi from '../../../special/NavItem/NavItemLi';
 import Accordion from './Accordion';
 import Wikipedia from './Wikipedia';
 import Dropdown from './Dropdown';

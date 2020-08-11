@@ -4,7 +4,7 @@ import {
   POSTS_REMOVE_SUCCESS,
   POSTS_REMOVE_FAILURE,
   POSTS_REMOVE_DEFAULT,
-} from '../../../types';
+} from '../../../lib/types';
 
 const defaultState = { status: 'default', post: null };
 

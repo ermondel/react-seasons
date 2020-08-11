@@ -2,7 +2,7 @@ import {
   BLOG_POSTS_FETCH_REQUEST,
   BLOG_POSTS_FETCH_SUCCESS,
   BLOG_POSTS_FETCH_FAILURE,
-} from '../../../types';
+} from '../../../lib/types';
 
 export default (state = false, action) => {
   switch (action.type) {

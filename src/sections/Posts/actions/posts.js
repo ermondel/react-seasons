@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { reduxblog, nodeapiserver } from '../../../api';
+import { reduxblog, nodeapiserver } from '../../../lib/api';
 import {
   POSTS_AUTH_REQUEST,
   POSTS_AUTH_SUCCESS,
@@ -22,7 +22,7 @@ import {
   POSTS_ADD_MESSAGE,
   POSTS_REMOVE_MESSAGE,
   POSTS_VIEW_DEFAULT,
-} from '../../../types';
+} from '../../../lib/types';
 
 export const fetchPosts = (publicKey) => async (dispatch) => {
   try {

@@ -2,7 +2,7 @@ import {
   POSTS_LIST_SUCCESS,
   POSTS_ADDING_SUCCESS,
   POSTS_REMOVE_SUCCESS,
-} from '../../../types';
+} from '../../../lib/types';
 
 export default (state = [], action) => {
   switch (action.type) {

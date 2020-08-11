@@ -15,9 +15,9 @@ $color-minor: #808080;
 $color-minor-ext: #696969;
 
 @import './main/Main.scss';
-@import './util/SidebarInfo/SidebarInfo.scss';
-@import './util/DetailsBlock/DetailsBlock.scss';
-@import './util/ModalWindow/ModalWindow.scss';
+@import './special/SidebarInfo/SidebarInfo.scss';
+@import './special/DetailsBlock/DetailsBlock.scss';
+@import './special/ModalWindow/ModalWindow.scss';
 @import './sections/Home/style/Home.scss';
 @import './sections/Podcasts/style/Podcasts.scss';
 @import './sections/Blog/style/Blog.scss';

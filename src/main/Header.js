@@ -1,6 +1,6 @@
 import React from 'react';
-import NavItemLi from '../util/NavItem/NavItemLi';
-import { isChrome } from '../browser';
+import NavItemLi from '../special/NavItem/NavItemLi';
+import { isChrome } from '../lib/browser';
 
 const Header = () => (
   <header className='header'>

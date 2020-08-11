@@ -1,7 +1,7 @@
 import {
   WEATHER_FORECASTS_FETCH_SUCCESS,
   WEATHER_FORECASTS_DELETE,
-} from '../../../types';
+} from '../../../lib/types';
 
 // existing forecast will be overwritten
 // a new or changed forecast is always at the top of the list

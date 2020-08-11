@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { jsonplaceholder } from '../../../api';
+import { jsonplaceholder } from '../../../lib/api';
 
 const useResources = (resource) => {
   const [state, setState] = useState({ data: [], spinner: true, error: false });

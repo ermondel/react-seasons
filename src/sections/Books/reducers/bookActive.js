@@ -1,4 +1,4 @@
-import { BOOKS_ITEM_SELECTED } from '../../../types';
+import { BOOKS_ITEM_SELECTED } from '../../../lib/types';
 
 export default (state = null, action) => {
   if (action.type === BOOKS_ITEM_SELECTED) {

@@ -1,7 +1,7 @@
 import {
   WEATHER_MOUNT_MAP_SUCCESS,
   WEATHER_MOUNT_MAP_FAILURE,
-} from '../../../types';
+} from '../../../lib/types';
 
 const defaultState = {
   loading: true,

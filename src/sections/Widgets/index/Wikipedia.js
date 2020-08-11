@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { wikipedia } from '../../../api';
-import { SpinnerBig, ErrorRemote } from '../../../util/UtilImg/UtilImg';
+import { wikipedia } from '../../../lib/api';
+import { SpinnerBig, ErrorRemote } from '../../../special/UtilImg/UtilImg';
 import WikipediaItem from './WikipediaItem';
 
 const Wiki = () => {

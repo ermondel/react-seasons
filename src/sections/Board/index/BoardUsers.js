@@ -1,7 +1,7 @@
 import React from 'react';
 import useResources from '../resources/useResources';
 import UserList from './UserList';
-import { ErrorRemote, SpinnerSmall } from '../../../util/UtilImg/UtilImg';
+import { ErrorRemote, SpinnerSmall } from '../../../special/UtilImg/UtilImg';
 
 const BoardUsers = () => {
   const state = useResources('users');

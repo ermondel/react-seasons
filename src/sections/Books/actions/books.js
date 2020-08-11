@@ -2,7 +2,7 @@ import {
   BOOKS_ITEM_SELECTED,
   BOOKS_VIEW_CHANGED,
   BOOKS_SEARCH_REQUEST,
-} from '../../../types';
+} from '../../../lib/types';
 
 export const selectBook = (book) => ({
   type: BOOKS_ITEM_SELECTED,

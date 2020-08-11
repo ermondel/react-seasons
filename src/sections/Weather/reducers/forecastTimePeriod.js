@@ -1,4 +1,4 @@
-import { WEATHER_TIME_PERIOD_CHANGED } from '../../../types';
+import { WEATHER_TIME_PERIOD_CHANGED } from '../../../lib/types';
 
 export default (state = 'day', action) => {
   if (action.type === WEATHER_TIME_PERIOD_CHANGED) {

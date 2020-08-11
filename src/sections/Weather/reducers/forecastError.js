@@ -2,7 +2,7 @@ import {
   WEATHER_FORECASTS_FETCH_FAILURE,
   WEATHER_FORECASTS_FETCH_REQUEST,
   WEATHER_FORECASTS_ERROR_HIDE,
-} from '../../../types';
+} from '../../../lib/types';
 
 export default (state = null, action) => {
   switch (action.type) {

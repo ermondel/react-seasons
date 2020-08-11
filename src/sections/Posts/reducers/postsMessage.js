@@ -1,4 +1,4 @@
-import { POSTS_ADD_MESSAGE, POSTS_REMOVE_MESSAGE } from '../../../types';
+import { POSTS_ADD_MESSAGE, POSTS_REMOVE_MESSAGE } from '../../../lib/types';
 
 export default (state = '', action) => {
   switch (action.type) {

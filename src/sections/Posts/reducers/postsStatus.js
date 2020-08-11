@@ -6,7 +6,7 @@ import {
   POSTS_LIST_SUCCESS,
   POSTS_LIST_FAILURE,
   POSTS_STATUS_RESET,
-} from '../../../types';
+} from '../../../lib/types';
 
 export default (state = 'default', action) => {
   switch (action.type) {

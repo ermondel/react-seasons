@@ -3,7 +3,7 @@ import {
   POSTS_ADDING_SUCCESS,
   POSTS_ADDING_FAILURE,
   POSTS_ADDING_RESET,
-} from '../../../types';
+} from '../../../lib/types';
 
 export default (state = 'default', action) => {
   switch (action.type) {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { SpinnerBig } from '../../../util/UtilImg/UtilImg';
+import { SpinnerBig } from '../../../special/UtilImg/UtilImg';
 import imgCompass from '../assets/compass.png';
-import { isChrome } from '../../../browser';
+import { isChrome } from '../../../lib/browser';
 
 const renderRequest = () => (
   <div className='accept-card'>

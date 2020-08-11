@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
+import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 import SortSwitch from './SortSwitch';
 
 const Sidebar = () => (

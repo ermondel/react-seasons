@@ -1,10 +1,10 @@
-import { jsonplaceholder } from '../../../api';
+import { jsonplaceholder } from '../../../lib/api';
 import {
   BLOG_POSTS_FETCH_REQUEST,
   BLOG_POSTS_FETCH_SUCCESS,
   BLOG_POSTS_FETCH_FAILURE,
   BLOG_USER_SELECTED,
-} from '../../../types';
+} from '../../../lib/types';
 
 export const fetchBlogPosts = () => async (dispatch) => {
   dispatch({ type: BLOG_POSTS_FETCH_REQUEST });

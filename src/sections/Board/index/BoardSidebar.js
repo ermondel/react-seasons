@@ -1,6 +1,6 @@
 import React from 'react';
 import BoardUsers from './BoardUsers';
-import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
+import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const BoardSidebar = () => (
   <div className='sidebar'>

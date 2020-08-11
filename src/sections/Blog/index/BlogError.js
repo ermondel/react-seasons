@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ErrorRemote } from '../../../util/UtilImg/UtilImg';
+import { ErrorRemote } from '../../../special/UtilImg/UtilImg';
 
 const BlogError = ({ error }) => {
   return error ? (

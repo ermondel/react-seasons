@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { mountMap } from '../actions/weather';
-import { ErrorRemote, SpinnerSmall } from '../../../util/UtilImg/UtilImg';
+import { ErrorRemote, SpinnerSmall } from '../../../special/UtilImg/UtilImg';
 
 class MountMap extends Component {
   componentDidMount() {

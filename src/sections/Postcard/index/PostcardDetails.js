@@ -1,7 +1,7 @@
 import React from 'react';
 import LanguageSelector from './LanguageSelector';
 import ColorSelector from './ColorSelector';
-import SidebarInfo from '../../../util/SidebarInfo/SidebarInfo';
+import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const PostcardDetails = () => (
   <div className='sidebar'>

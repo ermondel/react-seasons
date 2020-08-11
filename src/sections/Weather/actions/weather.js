@@ -1,4 +1,4 @@
-import { nodeapiserver } from '../../../api';
+import { nodeapiserver } from '../../../lib/api';
 import {
   WEATHER_FORECASTS_FETCH_REQUEST,
   WEATHER_FORECASTS_FETCH_SUCCESS,
@@ -10,7 +10,7 @@ import {
   WEATHER_MOUNT_MAP_SUCCESS,
   WEATHER_MOUNT_MAP_FAILURE,
   WEATHER_TIME_PERIOD_CHANGED,
-} from '../../../types';
+} from '../../../lib/types';
 
 export const forecastsFetch = (city) => async (dispatch) => {
   dispatch({

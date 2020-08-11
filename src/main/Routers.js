@@ -13,7 +13,7 @@ import {
   Posts,
   Widgets,
   NoMatch,
-} from '../sections';
+} from '../lib/sections';
 
 const Routers = () => (
   <HashRouter>

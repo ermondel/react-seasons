@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { SpinnerBig } from '../../../util/UtilImg/UtilImg';
+import { SpinnerBig } from '../../../special/UtilImg/UtilImg';
 
 const BlogSpinner = ({ active }) => {
   return active ? (
