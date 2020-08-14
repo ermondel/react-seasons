@@ -234,3 +234,17 @@
   text-transform: uppercase;
   font-size: 90%;
 }
+
+/**
+ * Dropdown menu
+ */
+
+.dropdown-menu__label {
+  color: $color-base;
+}
+
+.dropdown-menu__option {
+  color: $color-hue-3;
+  border: 1px solid $color-hue-2;
+  cursor: pointer;
+}
