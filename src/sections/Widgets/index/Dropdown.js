@@ -11,6 +11,8 @@ const Dropdown = () => {
         options={list}
         selected={selected}
         onSelectedChange={setSelected}
+        withSearch={true}
+        defaultValue={'ex5'}
       />
     </div>
   );
