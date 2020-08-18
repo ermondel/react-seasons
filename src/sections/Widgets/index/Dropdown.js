@@ -10,7 +10,7 @@ const Dropdown = () => {
       <DropdownMenu
         options={list}
         selected={selected}
-        onSelectedChange={setSelected}
+        onSelect={setSelected}
         withSearch={true}
         defaultValue={'ex5'}
       />
