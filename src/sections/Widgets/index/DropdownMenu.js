@@ -43,7 +43,15 @@ const DropdownMenu = (props) => {
     return () => document.body.removeEventListener('click', onBodyClick);
   }, []);
 
-  const { options, selected, onSelect, withSearch, defaultValue } = props;
+  const {
+    label,
+    options,
+    selected,
+    onSelect,
+    withSearch,
+    defaultValue,
+    description,
+  } = props;
 
   let activeOption;
 
@@ -61,7 +69,7 @@ const DropdownMenu = (props) => {
 
   return (
     <div className='dropdown-menu' ref={ref}>
-      <div className='dropdown-menu__label'>Select option</div>
+      <div className='dropdown-menu__label'>{label || 'Select option'}</div>
       <div className='dropdown-menu__element'>
         {activeOption ? (
           <button className='dropdown-menu__btn' onClick={() => setOpen(!open)}>
@@ -97,6 +105,9 @@ const DropdownMenu = (props) => {
           </div>
         )}
       </div>
+      {description && (
+        <div className='dropdown-menu__description'>{description}</div>
+      )}
     </div>
   );
 };

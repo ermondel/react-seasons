@@ -242,16 +242,23 @@
 .dropdown-menu {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .dropdown-menu__label {
-  color: $color-hue-3;
+  color: $color-common;
   margin-right: 10px;
+  width: 125px;
 }
 
 .dropdown-menu__element {
   position: relative;
-  width: 180px;
+  width: 220px;
+  margin-right: 10px;
+}
+
+.dropdown-menu__description {
+  color: $color-hue-3;
 }
 
 .dropdown-menu__btn {
@@ -344,4 +351,57 @@
 
 .dropdown-menu__option--active {
   color: $color-extra;
+}
+
+.dropdown-menus {
+  margin-bottom: 55px;
+}
+
+/**
+ * Smartphone
+ */
+
+.smartphone {
+  color: $color-extra;
+  font-size: 14px;
+}
+
+.smartphone__body {
+  width: 250px;
+  height: 420px;
+  border: 1px solid $color-hue-2;
+  border-radius: 10px;
+}
+
+.smartphone__brand {
+  width: 90%;
+  margin: 7px auto;
+  text-align: center;
+}
+
+.smartphone__screen {
+  width: 85%;
+  height: 340px;
+  margin: 0 auto;
+  border: 1px solid $color-hue-2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.smartphone__os {
+  margin: auto;
+}
+
+.smartphone__resolution {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.smartphone__button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $color-hue-2;
+  border-radius: 50%;
+  margin: 10px auto;
 }
