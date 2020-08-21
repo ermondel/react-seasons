@@ -16,14 +16,19 @@ const Dropdown = () => {
           selected={os}
           onSelect={setOS}
           label='Select OS'
+          innerLabel={true}
+          outerLabel={false}
+          // defaultValue='windows-phone'
         />
 
         <DropdownMenu
           options={resolutionList}
           selected={resolution}
           onSelect={setResolution}
-          defaultValue={'1280x720'}
           label='Select resolution'
+          innerLabel={true}
+          outerLabel={false}
+          // defaultValue='1280x720'
         />
 
         <DropdownMenu
@@ -32,13 +37,16 @@ const Dropdown = () => {
           onSelect={setBrand}
           withSearch={true}
           label='Select brand'
+          innerLabel={true}
+          outerLabel={false}
+          // defaultValue='meizu'
         />
       </div>
 
       <Smartphone
-        os={os && os.label}
-        brand={brand && brand.label}
-        resolution={resolution && resolution.label}
+        os={os && os.value ? os.label : null}
+        brand={brand && brand.value ? brand.label : null}
+        resolution={resolution && resolution.value ? resolution.label : null}
       />
     </div>
   );
