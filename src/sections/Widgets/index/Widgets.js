@@ -16,7 +16,7 @@ const Widgets = () => (
     <main className='main'>
       <div className='sidebar'>
         <div className='sidebar-wrap'>
-          <SidebarInfo list='React' />
+          <SidebarInfo list='React, React Hooks, Axios, Wikipedia API, Cloud Translation API' />
         </div>
       </div>
 
