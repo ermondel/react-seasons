@@ -1,9 +1,33 @@
 import React, { useState } from 'react';
 import Translator from './Translator';
+import DropdownMenu from './DropdownMenu';
+
+const languageList = [
+  {
+    label: 'Dutch',
+    value: 'nl',
+  },
+  {
+    label: 'Spanish',
+    value: 'es',
+  },
+  {
+    label: 'French',
+    value: 'fr',
+  },
+  {
+    label: 'Ukrainian',
+    value: 'uk',
+  },
+  {
+    label: 'Russian',
+    value: 'ru',
+  },
+];
 
 const Translate = () => {
   const [word, setWord] = useState('');
-  const [language, setLanguage] = useState('nl');
+  const [language, setLanguage] = useState(null);
 
   const MAX_WORD_LENGTH = 30;
 
@@ -13,30 +37,40 @@ const Translate = () => {
 
   return (
     <div>
-      <div>
-        <input
-          type='text'
-          value={word}
-          onChange={onWordChange}
-          placeholder='word in english'
+      <div className='translate-query'>
+        <div className='translate-query__input-wrapper'>
+          <input
+            type='text'
+            value={word}
+            onChange={onWordChange}
+            placeholder='word in english'
+            className='translate-query__input'
+          />
+        </div>
+        <div className='translate-query__counter-wrapper'>
+          <div className='translate-query__counter'>
+            {word.length} / {MAX_WORD_LENGTH}
+          </div>
+        </div>
+      </div>
+
+      <div className='translate-languages'>
+        <DropdownMenu
+          options={languageList}
+          selected={language}
+          onSelect={setLanguage}
+          label='Select language'
+          innerLabel={true}
+          outerLabel={false}
         />
-        <span>
-          {word.length} / {MAX_WORD_LENGTH}
-        </span>
       </div>
 
-      <div>
-        <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-          <option value='nl'>Dutch</option>
-          <option value='es'>Spanish</option>
-          <option value='fr'>French</option>
-          <option value='uk'>Ukrainian</option>
-          <option value='ru'>Russian</option>
-        </select>
-      </div>
-
-      <div>
-        <Translator word={word} language={language} source='en' />
+      <div className='translate-translator'>
+        <Translator
+          word={word}
+          language={language ? language.value : ''}
+          source='en'
+        />
       </div>
     </div>
   );

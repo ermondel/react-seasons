@@ -1,20 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import { nodeapiserver } from '../../../lib/api';
+import { SpinnerBig, ErrorRemote } from '../../../special/UtilImg/UtilImg';
 
-const LoadingData = () => <p>loading data...</p>;
-const ErrorMessage = () => <p>server error!</p>;
-const TranslationResult = (props) => (props.value ? <p>{props.value}</p> : null);
+const LoadingData = () => (
+  <div className='translate-spinner'>
+    <SpinnerBig />
+  </div>
+);
+
+const ErrorMessage = () => (
+  <div className='translate-error'>
+    <ErrorRemote />
+    <div>
+      The remote server is not responding
+      <br />
+      Perhaps it is overloaded with requests
+      <br />
+      Please come back later
+    </div>
+  </div>
+);
+
+const TranslationResult = (props) => {
+  return props.value ? <div className='translate-result'>{props.value}</div> : null;
+};
 
 const Translator = ({ word, language, source }) => {
   const [result, setResult] = useState('');
   const [status, setStatus] = useState('default');
+  const [query, setQuery] = useState(word);
+
+  useEffect(() => {
+    let timeoutID = null;
+
+    if (word) {
+      timeoutID = setTimeout(() => setQuery(word), 1000);
+    } else {
+      setResult('');
+      setQuery('');
+    }
+
+    return () => clearTimeout(timeoutID);
+  }, [word]);
 
   useEffect(() => {
     const getResult = async () => {
       try {
         const response = await nodeapiserver.get('/request/googletranslate', {
           params: {
-            q: word,
+            q: query,
             source: source,
             target: language,
             format: 'text',
@@ -28,15 +62,11 @@ const Translator = ({ word, language, source }) => {
       }
     };
 
-    const timeoutID = setTimeout(() => {
-      if (word && language) {
-        getResult();
-        setStatus('loading');
-      }
-    }, 1000);
-
-    return () => clearTimeout(timeoutID);
-  }, [word, language, source]);
+    if (query && language && source) {
+      getResult();
+      setStatus('loading');
+    }
+  }, [query, language, source]);
 
   return (
     <div>
