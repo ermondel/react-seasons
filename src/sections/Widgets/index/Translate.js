@@ -23,6 +23,22 @@ const languageList = [
     label: 'Russian',
     value: 'ru',
   },
+  {
+    label: 'German',
+    value: 'de',
+  },
+  {
+    label: 'Greek',
+    value: 'el',
+  },
+  {
+    label: 'Italian',
+    value: 'it',
+  },
+  {
+    label: 'Polish',
+    value: 'pl',
+  },
 ];
 
 const Translate = () => {
@@ -43,7 +59,7 @@ const Translate = () => {
             type='text'
             value={word}
             onChange={onWordChange}
-            placeholder='word in english'
+            placeholder='Word in English'
             className='translate-query__input'
           />
         </div>
@@ -62,6 +78,7 @@ const Translate = () => {
           label='Select language'
           innerLabel={true}
           outerLabel={false}
+          withSearch={true}
         />
       </div>
 

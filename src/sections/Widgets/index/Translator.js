@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { nodeapiserver } from '../../../lib/api';
-import { SpinnerBig, ErrorRemote } from '../../../special/UtilImg/UtilImg';
+import { ErrorRemote } from '../../../special/UtilImg/UtilImg';
 
-const LoadingData = () => (
-  <div className='translate-spinner'>
-    <SpinnerBig />
-  </div>
-);
+const LoadingData = () => <div className='translator-loading'>Translating...</div>;
 
 const ErrorMessage = () => (
-  <div className='translate-error'>
+  <div className='translator-error'>
     <ErrorRemote />
     <div>
       The remote server is not responding
@@ -21,9 +17,9 @@ const ErrorMessage = () => (
   </div>
 );
 
-const TranslationResult = (props) => {
-  return props.value ? <div className='translate-result'>{props.value}</div> : null;
-};
+const TranslationResult = (props) => (
+  <div className='translator__result'>{props.value || '\u00A0'}</div>
+);
 
 const Translator = ({ word, language, source }) => {
   const [result, setResult] = useState('');
@@ -69,7 +65,7 @@ const Translator = ({ word, language, source }) => {
   }, [query, language, source]);
 
   return (
-    <div>
+    <div className='translator'>
       {status === 'loading' && <LoadingData />}
       {status === 'error' && <ErrorMessage />}
       {status === 'default' && <TranslationResult value={result} />}
