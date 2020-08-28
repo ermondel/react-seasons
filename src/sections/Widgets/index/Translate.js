@@ -41,54 +41,56 @@ const languageList = [
   },
 ];
 
+const WordInput = ({ word, maxLength, setWord }) => {
+  const options = {
+    type: 'text',
+    value: word,
+    placeholder: 'Word in English',
+    className: 'translate-word__input',
+  };
+
+  const onWordChange = (event) => {
+    if (event.target.value.length <= maxLength) setWord(event.target.value);
+  };
+
+  return (
+    <div className='translate-word'>
+      <div className='translate-word__input-wrapper'>
+        <input {...options} onChange={onWordChange} />
+      </div>
+
+      <div className='translate-word__counter-wrapper'>
+        <div className='translate-word__counter'>
+          {word.length} / {maxLength}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Translate = () => {
   const [word, setWord] = useState('');
   const [language, setLanguage] = useState(null);
 
-  const MAX_WORD_LENGTH = 30;
-
-  const onWordChange = (event) => {
-    if (event.target.value.length <= MAX_WORD_LENGTH) setWord(event.target.value);
-  };
-
   return (
-    <div>
-      <div className='translate-query'>
-        <div className='translate-query__input-wrapper'>
-          <input
-            type='text'
-            value={word}
-            onChange={onWordChange}
-            placeholder='Word in English'
-            className='translate-query__input'
-          />
-        </div>
-        <div className='translate-query__counter-wrapper'>
-          <div className='translate-query__counter'>
-            {word.length} / {MAX_WORD_LENGTH}
-          </div>
-        </div>
-      </div>
+    <div className='translation-widget'>
+      <WordInput word={word} maxLength={30} setWord={setWord} />
 
-      <div className='translate-languages'>
-        <DropdownMenu
-          options={languageList}
-          selected={language}
-          onSelect={setLanguage}
-          label='Select language'
-          innerLabel={true}
-          outerLabel={false}
-          withSearch={true}
-        />
-      </div>
+      <DropdownMenu
+        options={languageList}
+        selected={language}
+        onSelect={setLanguage}
+        label='Select language'
+        innerLabel={true}
+        outerLabel={false}
+        withSearch={true}
+      />
 
-      <div className='translate-translator'>
-        <Translator
-          word={word}
-          language={language ? language.value : ''}
-          source='en'
-        />
-      </div>
+      <Translator
+        word={word}
+        language={language ? language.value : ''}
+        source='en'
+      />
     </div>
   );
 };
