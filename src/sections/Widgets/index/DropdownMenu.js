@@ -1,65 +1,82 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { includes } from '../../../lib/str';
 
-const SearchForm = ({ enabled, query, onQueryChange }) => {
-  return enabled ? (
+const SearchForm = (props) => {
+  return (
     <div className='dropdown-menu__search'>
       <input
         type='text'
         className='dropdown-menu__search-input'
         placeholder='search...'
-        onChange={onQueryChange}
-        value={query}
+        onChange={props.onQueryChange}
+        value={props.query}
         tabIndex={0}
       />
     </div>
-  ) : null;
+  );
 };
 
-const MenuItem = ({ item, query, activeValue, onItemClick }) => {
-  if (query && !includes(item.label, query)) return null;
+const MenuItem = (props) => {
+  if (props.query && !includes(props.item.label, props.query)) return null;
 
-  const isActive = activeValue === item.value;
+  const isActive = props.activeValue === props.item.value;
 
   return (
     <li
       className={'dropdown-menu__option' + (isActive ? '--active' : '')}
-      onClick={onItemClick}
-      onKeyPress={onItemClick}
+      onClick={props.onItemClick}
+      onKeyPress={props.onItemClick}
       tabIndex={0}
     >
-      {item.label}
+      {props.item.label}
     </li>
   );
 };
 
-const MenuHeader = ({ value, onHeaderClick }) => {
-  return value ? (
-    <button className='dropdown-menu__btn' onClick={onHeaderClick}>
-      {value}
+const MenuHeader = (props) => {
+  return props.value ? (
+    <button className='dropdown-menu__btn' onClick={props.onHeaderClick}>
+      {props.value}
     </button>
   ) : (
     <button className='dropdown-menu__btn'>[EMPTY]</button>
   );
 };
 
-const OuterMenuLabel = ({ label, enabled }) => {
-  return enabled ? (
-    <div className='dropdown-menu__outer-label'>{label || 'Select option'}</div>
+const OuterMenuLabel = (props) => {
+  return props.enabled ? (
+    <div className='dropdown-menu__outer-label'>
+      {props.label || 'Select option'}
+    </div>
   ) : null;
 };
 
-const InnerMenuLabel = ({ label, enabled, activeValue, onLabelClick }) => {
-  const isActive = activeValue === null;
+const MenuTitle = (props) => {
+  const active = props.isActive ? '--active' : '';
 
-  return enabled ? (
-    <div
-      className={'dropdown-menu__inner-label' + (isActive ? '--active' : '')}
-      onClick={onLabelClick}
-    >
-      {label || 'Select option'}
-    </div>
-  ) : null;
+  if (props.clickable) {
+    return (
+      <div
+        className={'dropdown-menu__title-dynamic' + active}
+        onClick={props.onMenuTitleClick}
+      >
+        <span>{props.value || 'Select option'}</span>
+      </div>
+    );
+  } else {
+    return (
+      <div className={'dropdown-menu__title-static' + active}>
+        <span>{props.value || 'Select option'}</span>
+        <button
+          className='dropdown-menu__btn-close'
+          title='close'
+          onClick={props.onCloseClick}
+        >
+          <span>close</span>
+        </button>
+      </div>
+    );
+  }
 };
 
 const MenuDescription = ({ value }) => {
@@ -92,7 +109,7 @@ const DropdownMenu = (props) => {
         props.options[0]
       );
     }
-    if (props.innerLabel) return defaultOption;
+    if (props.hasTitle) return defaultOption;
     return props.options[0];
   };
 
@@ -107,22 +124,29 @@ const DropdownMenu = (props) => {
 
         {open && (
           <div className='dropdown-menu__container'>
-            <InnerMenuLabel
-              label={props.label}
-              enabled={props.innerLabel}
-              activeValue={activeOption.value}
-              onLabelClick={() => {
-                setOpen(false);
-                setSearch('');
-                props.onSelect(defaultOption);
-              }}
-            />
+            {props.hasTitle && (
+              <MenuTitle
+                value={props.label}
+                isActive={activeOption.value === null}
+                clickable={props.clickableTitle}
+                onMenuTitleClick={() => {
+                  setOpen(false);
+                  setSearch('');
+                  props.onSelect(defaultOption);
+                }}
+                onCloseClick={() => {
+                  setOpen(false);
+                  setSearch('');
+                }}
+              />
+            )}
 
-            <SearchForm
-              enabled={props.withSearch}
-              query={search}
-              onQueryChange={(e) => setSearch(e.target.value)}
-            />
+            {props.withSearch && (
+              <SearchForm
+                query={search}
+                onQueryChange={(e) => setSearch(e.target.value)}
+              />
+            )}
 
             <ul className='dropdown-menu__options'>
               {props.options.map((option) => (

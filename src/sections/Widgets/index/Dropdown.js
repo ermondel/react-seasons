@@ -12,33 +12,36 @@ const Dropdown = () => {
     <div>
       <div className='dropdown-menus'>
         <DropdownMenu
+          label='Select OS'
           options={osList}
           selected={os}
           onSelect={setOS}
-          label='Select OS'
-          innerLabel={true}
           outerLabel={false}
+          hasTitle={true}
+          clickableTitle={false}
           // defaultValue='windows-phone'
         />
 
         <DropdownMenu
+          label='Select resolution'
           options={resolutionList}
           selected={resolution}
           onSelect={setResolution}
-          label='Select resolution'
-          innerLabel={true}
           outerLabel={false}
+          hasTitle={true}
+          clickableTitle={false}
           // defaultValue='1280x720'
         />
 
         <DropdownMenu
+          label='Select brand'
           options={brandList}
           selected={brand}
           onSelect={setBrand}
           withSearch={true}
-          label='Select brand'
-          innerLabel={true}
           outerLabel={false}
+          hasTitle={true}
+          clickableTitle={false}
           // defaultValue='meizu'
         />
       </div>

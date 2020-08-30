@@ -77,13 +77,14 @@ const Translate = () => {
       <WordInput word={word} maxLength={30} setWord={setWord} />
 
       <DropdownMenu
+        label='Select language'
         options={languageList}
         selected={language}
         onSelect={setLanguage}
-        label='Select language'
-        innerLabel={true}
-        outerLabel={false}
         withSearch={true}
+        outerLabel={false}
+        hasTitle={true}
+        clickableTitle={false}
       />
 
       <Translator
