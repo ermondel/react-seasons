@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { wikipedia } from '../../../lib/api';
 import { SpinnerBig, ErrorRemote } from '../../../special/UtilImg/UtilImg';
-import WikipediaItem from './WikipediaItem';
+import WikiArticle from './WikiArticle';
+
+const LoadingData = () => (
+  <div className='wiki-spinner'>
+    <SpinnerBig />
+  </div>
+);
+
+const ErrorMessage = () => (
+  <div className='wiki-error'>
+    <ErrorRemote />
+    <div>
+      <p>The remote server is not responding</p>
+      <p>Perhaps it is overloaded with requests</p>
+      <p>Please come back later</p>
+    </div>
+  </div>
+);
+
+const WikiArticles = ({ list }) => {
+  return list.map((page) => <WikiArticle page={page} key={page.pageid} />);
+};
 
 const Wiki = () => {
   const [term, setTerm] = useState('');
-  const [results, setResults] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [status, setStatus] = useState('default');
 
   useEffect(() => {
@@ -21,7 +42,7 @@ const Wiki = () => {
           },
         });
 
-        setResults(response.data.query.search);
+        setArticles(response.data.query.search);
         setStatus('default');
       } catch (error) {
         setStatus('error');
@@ -38,43 +59,9 @@ const Wiki = () => {
     return () => clearTimeout(timeoutID);
   }, [term]);
 
-  const renderContent = () => {
-    switch (status) {
-      case 'loading':
-        return (
-          <div className='wiki-spinner'>
-            <SpinnerBig />
-          </div>
-        );
-
-      case 'error':
-        return (
-          <div className='wiki-error'>
-            <ErrorRemote />
-            <div>
-              <p>The remote server is not responding</p>
-              <p>Perhaps it is overloaded with requests</p>
-              <p>Please come back later</p>
-            </div>
-          </div>
-        );
-
-      default:
-        return results.map((page) => {
-          return <WikipediaItem page={page} key={page.pageid} />;
-        });
-    }
-  };
-
   return (
-    <div>
-      <form
-        className='wiki-search'
-        onSubmit={(event) => {
-          event.preventDefault();
-          setTerm(event.target.elements.search.value);
-        }}
-      >
+    <div className='wiki-widget'>
+      <div className='wiki-search'>
         <input
           type='text'
           value={term}
@@ -83,9 +70,13 @@ const Wiki = () => {
           placeholder='Search Wikipedia'
           name='search'
         />
-      </form>
+      </div>
 
-      <div className='wiki-articles'>{renderContent()}</div>
+      <div className='wiki-articles'>
+        {status === 'loading' && <LoadingData />}
+        {status === 'error' && <ErrorMessage />}
+        {status === 'default' && <WikiArticles list={articles} />}
+      </div>
     </div>
   );
 };

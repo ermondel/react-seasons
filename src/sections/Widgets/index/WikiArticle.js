@@ -1,7 +1,7 @@
 import React from 'react';
 import { stripHTMLTags } from '../../../lib/strip';
 
-const WikipediaItem = ({ page }) => (
+const WikiArticle = ({ page }) => (
   <article className='wiki-article'>
     <h3 className='wiki-article__title'>
       <a
@@ -20,4 +20,4 @@ const WikipediaItem = ({ page }) => (
   </article>
 );
 
-export default WikipediaItem;
+export default WikiArticle;
