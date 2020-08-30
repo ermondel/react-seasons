@@ -79,6 +79,14 @@ const HomeContent = () => (
               service - Redux Blog Post API.
             </p>
           </article>
+
+          <article className='info-article'>
+            <h4 className='info-article__title'>Widgets</h4>
+            <p className='info-article__body'>
+              Four widgets: accordion, wikipedia search, dropdown menu (with search),
+              word translation into other languages.
+            </p>
+          </article>
         </div>
       </section>
     </div>
