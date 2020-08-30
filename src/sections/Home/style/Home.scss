@@ -38,7 +38,7 @@
 }
 
 .info-section__title {
-  margin: 0 0 18px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   font-size: 1rem;
   font-weight: normal;
@@ -50,7 +50,7 @@
   border-bottom: 1px solid $color-hue-1;
   border-top: 1px solid $color-hue-1;
   text-align: right;
-  padding: 40px 0 40px 5px;
+  padding: 25px 0 25px 5px;
 }
 
 .info-section__body {
@@ -59,25 +59,23 @@
 }
 
 .info-articles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
   border-right: 1px solid $color-hue-1;
-  padding-top: 10px;
+  padding: 50px 0 5px 0;
 }
 
 .info-article {
   box-sizing: border-box;
-  padding: 30px 35px 30px 0;
-  width: 50%;
+  margin: 0 35px 35px 0;
+  display: flex;
 }
 
 .info-article__title {
-  margin: 0 0 18px 0;
+  margin: 0;
   padding: 0;
   font-size: 1rem;
   font-weight: normal;
-  color: white;
+  color: $color-extra;
+  min-width: 100px;
 }
 
 .info-article__body {
