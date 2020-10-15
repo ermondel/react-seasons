@@ -3,7 +3,7 @@ import React from 'react';
 const CoversItem = ({ book, isActive, onItemSelect }) => (
   <div className='covers-item'>
     <img
-      src={`${process.env.PUBLIC_URL}/images/covers/${book.cover}`}
+      src={book.image}
       alt='cover'
       className='covers-item_img'
     />
