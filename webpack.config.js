@@ -18,7 +18,74 @@ const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const isBuild = process.env.NODE_MODE === 'build';
 
-/** 
+/**
+ * Rules
+ */
+
+const css = {
+  test: /\.css$/,
+  use: [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: { hmr: isDev, reload: true },
+    },
+    'css-loader',
+  ],
+};
+
+const scss = {
+  test: /\.s[ac]ss$/,
+  use: [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: { hmr: isDev, reload: true },
+    },
+    'css-loader',
+    'sass-loader',
+  ],
+};
+
+const images = {
+  test: /\.(png|jpg|svg|gif)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: { name: '[name].[ext]', outputPath: 'assets/images/' },
+    },
+  ],
+};
+
+const fonts = {
+  test: /\.(ttf|woff|woff2|eot)$/,
+  use: ['file-loader'],
+};
+
+const js = () => {
+  const use = [
+    {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-react'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      },
+    },
+  ];
+
+  if (isDev) use.push('eslint-loader');
+
+  return {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use,
+  };
+};
+
+const html = {
+  test: /\.html$/,
+  use: ['html-loader'],
+};
+
+/**
  * Config
  */
 module.exports = {
@@ -37,13 +104,10 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
     },
-    minimizer: [
-      new OptimizeCssAssetsWebpackPlugin(),
-      new TerserWebpackPlugin(),
-    ],
-    minimize: isProd
+    minimizer: [new OptimizeCssAssetsWebpackPlugin(), new TerserWebpackPlugin()],
+    minimize: isProd,
   },
   devServer: {
     port: 3000,
@@ -54,8 +118,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/template.ejs',
       filename: 'index.html',
-      minify: { 
-        collapseWhitespace: isProd 
+      minify: {
+        collapseWhitespace: isProd,
       },
       favicon: './src/assets/images/favicon.ico',
       templateParameters: {
@@ -65,71 +129,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: isDev ? '[name].css' : '[name].[hash].css',
-    })
+    }),
   ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              reload: true,
-            },
-          },
-          'css-loader'
-        ],
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              reload: true,
-            },
-          },
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(png|jpg|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images/',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader'],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: ['@babel/plugin-proposal-class-properties'],
-            }
-          },
-          'eslint-loader'
-        ],
-      },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-    ]
-  }
+    rules: [css, scss, images, fonts, js(), html],
+  },
 };
