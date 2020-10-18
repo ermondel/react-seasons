@@ -10,18 +10,20 @@ My personal idea of a platform for completed ReactJS course tasks.
 
 [Demo](https://ermondel.github.io/react-platform)
 
-### Technologies
+[![React Platform](https://github.com/ermondel/wiki/blob/master/screens/react-platform-app.jpg)](https://ermondel.github.io/react-platform)
 
-- React
-- Redux
-- Redux Thunk
-- React Hooks
-- React Context
-- React Portals
-- React Sparklines
-- Axios
-- OpenWeatherMap API
-- Google Maps API
-- JSONPlaceholder API
-- Geolocation API
-- Redux Blog Post API
+| Technologies        |
+| ------------------- |
+| React               |
+| Redux               |
+| Redux Thunk         |
+| React Hooks         |
+| React Context       |
+| React Portals       |
+| React Sparklines    |
+| Axios               |
+| OpenWeatherMap API  |
+| Google Maps API     |
+| JSONPlaceholder API |
+| Geolocation API     |
+| Redux Blog Post API |
