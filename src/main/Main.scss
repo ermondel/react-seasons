@@ -224,6 +224,22 @@ a {
   right: 0;
   bottom: 0;
   z-index: 99;
+
+  padding: 5px 10px;
+
+  font-size: 70%;
+  color: $color-hue-1;
+}
+
+.footer__link {
+  color: $color-hue-1;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $color-common;
+  }
 }
 
 .section-title {
@@ -277,25 +293,4 @@ a {
   color: $color-extra;
   background-color: $color-base-ext;
   cursor: default;
-}
-
-/**
- * Copyright
- */
-
-.copyright {
-  margin: 0;
-  padding: 5px 20px;
-  font-size: 70%;
-  text-align: right;
-  color: $color-hue-1;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
