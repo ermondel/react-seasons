@@ -100,6 +100,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@sections': path.resolve(__dirname, 'src/sections'),
+      '@special': path.resolve(__dirname, 'src/special'),
     },
   },
   optimization: {

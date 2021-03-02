@@ -1,0 +1,37 @@
+.main-nav {
+  position: fixed;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main-nav__item {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.main-nav__link,
+.main-nav__link--active {
+  display: block;
+  padding: 18px 12px;
+  text-decoration: none;
+  color: $color-minor;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus {
+  color: $color-extra;
+  background-color: $color-hover-0;
+}
+
+.main-nav__link--active,
+.main-nav__link--active:hover,
+.main-nav__link--active:focus {
+  color: $color-extra;
+  background-color: $color-base-ext;
+  cursor: default;
+}

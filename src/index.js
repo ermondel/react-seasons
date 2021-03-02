@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import App from './main/App';
 import stores from './lib/stores';
-import './index.scss';
+import './style/index.scss';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(stores, composeEnhancers(applyMiddleware(thunk)));
@@ -13,6 +13,6 @@ const store = createStore(stores, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   <Provider store={store}>
     <App />
-</Provider>,
+  </Provider>,
   document.getElementById('root')
 );
