@@ -4,10 +4,8 @@ import SortSwitch from './SortSwitch';
 
 const Sidebar = () => (
   <div className='sidebar'>
-    <div className='sidebar-wrap'>
-      <SortSwitch />
-      <SidebarInfo list='React, Redux, Axios, Redux Thunk, React Portals, Redux Blog Post API' />
-    </div>
+    <SortSwitch />
+    <SidebarInfo list='React, Redux, Axios, Redux Thunk, React Portals, Redux Blog Post API' />
   </div>
 );
 

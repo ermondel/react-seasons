@@ -8,28 +8,26 @@ import booksSource from '../sources/booksSource';
 import { filterObjListByQuery } from '../../../lib/filters';
 
 const BookList = (props) => (
-  <div className='content'>
-    <div className='content-wrap'>
-      <h2 className='section-title'>Books</h2>
+  <main className='main'>
+    <h2 className='main__title'>Books</h2>
 
-      <SearchForm query={props.query} onSearch={props.bookSearch} />
+    <SearchForm query={props.query} onSearch={props.bookSearch} />
 
-      {props.viewMode === 'list' && (
-        <CommonList
-          books={props.books}
-          activeID={props.activeID}
-          onBookSelect={props.selectBook}
-        />
-      )}
-      {props.viewMode === 'gallery' && (
-        <CoverGallery
-          books={props.books}
-          activeID={props.activeID}
-          onBookSelect={props.selectBook}
-        />
-      )}
-    </div>
-  </div>
+    {props.viewMode === 'list' && (
+      <CommonList
+        books={props.books}
+        activeID={props.activeID}
+        onBookSelect={props.selectBook}
+      />
+    )}
+    {props.viewMode === 'gallery' && (
+      <CoverGallery
+        books={props.books}
+        activeID={props.activeID}
+        onBookSelect={props.selectBook}
+      />
+    )}
+  </main>
 );
 
 const mapStateToProps = (state) => ({

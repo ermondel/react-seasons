@@ -2,16 +2,20 @@ import React from 'react';
 import Header from '../../../main/Header';
 import BooksSidebar from './BooksSidebar';
 import BookList from './BookList';
+import Footer from '../../../main/Footer';
 
 const Books = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
+  <React.Fragment>
+    <div className='side-container'>
+      <Header />
       <BooksSidebar />
+    </div>
+
+    <div className='content-container'>
       <BookList />
-    </main>
-  </div>
+      <Footer />
+    </div>
+  </React.Fragment>
 );
 
 export default Books;

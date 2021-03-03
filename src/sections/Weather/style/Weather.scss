@@ -1,6 +1,4 @@
-/**
- * Form
- */
+// Form
 
 .forecast_search-form {
   margin-bottom: 50px;
@@ -15,14 +13,14 @@
   border-bottom-left-radius: 3px;
   border: 1px solid transparent;
   color: $color-base-ext;
-}
 
-.forecast__query-input::placeholder {
-  color: $color-hue-1;
-}
+  &:focus {
+    background-color: $color-extra;
+  }
 
-.forecast__query-input:focus {
-  background-color: $color-extra;
+  &::placeholder {
+    color: $color-hue-1;
+  }
 }
 
 .forecast__btn-submit {
@@ -48,9 +46,7 @@
   }
 }
 
-/**
- * List
- */
+// List
 
 .forecast {
   margin-bottom: 45px;
@@ -119,9 +115,7 @@
   color: $color-extra;
 }
 
-/**
- * Error
- */
+// Error
 
 .forecast-error {
   margin-bottom: 50px;
@@ -170,9 +164,7 @@
   width: 50px;
 }
 
-/**
- * Map
- */
+// Map
 
 .mount-map-spinner,
 .mount-map-error {

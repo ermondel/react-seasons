@@ -4,10 +4,8 @@ import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const BoardSidebar = () => (
   <div className='sidebar'>
-    <div className='sidebar-wrap'>
-      <BoardUsers />
-      <SidebarInfo list='React, React Hooks, Axios, JSONPlaceholder API' />
-    </div>
+    <BoardUsers />
+    <SidebarInfo list='React, React Hooks, Axios, JSONPlaceholder API' />
   </div>
 );
 

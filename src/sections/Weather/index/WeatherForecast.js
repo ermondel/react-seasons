@@ -5,16 +5,14 @@ import WeatherList from './WeatherList';
 import CityLocation from './CityLocation';
 
 const WeatherForecast = () => (
-  <div className='content'>
-    <div className='content-wrap'>
-      <h2 className='section-title'>Weather</h2>
+  <main className='main'>
+    <h2 className='main__title'>Weather</h2>
 
-      <WeatherSearchForm />
-      <ForecastError />
-      <WeatherList />
-      <CityLocation />
-    </div>
-  </div>
+    <WeatherSearchForm />
+    <ForecastError />
+    <WeatherList />
+    <CityLocation />
+  </main>
 );
 
 export default WeatherForecast;

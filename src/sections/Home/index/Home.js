@@ -2,16 +2,20 @@ import React from 'react';
 import Header from '../../../main/Header';
 import HomeSidebar from './HomeSidebar';
 import HomeContent from './HomeContent';
+import Footer from '../../../main/Footer';
 
 const Home = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
+  <React.Fragment>
+    <div className='side-container'>
+      <Header />
       <HomeSidebar />
+    </div>
+
+    <div className='content-container'>
       <HomeContent />
-    </main>
-  </div>
+      <Footer />
+    </div>
+  </React.Fragment>
 );
 
 export default Home;

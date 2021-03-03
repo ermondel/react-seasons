@@ -2,16 +2,20 @@ import React from 'react';
 import Header from '../../../main/Header';
 import BlogSidebar from './BlogSidebar';
 import BlogContent from './BlogContent';
+import Footer from '../../../main/Footer';
 
 const Blog = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
+  <React.Fragment>
+    <div className='side-container'>
+      <Header />
       <BlogSidebar />
+    </div>
+
+    <div className='content-container'>
       <BlogContent />
-    </main>
-  </div>
+      <Footer />
+    </div>
+  </React.Fragment>
 );
 
 export default Blog;

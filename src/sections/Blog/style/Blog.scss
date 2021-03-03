@@ -1,4 +1,4 @@
-/* post-list */
+// post list
 
 .post-list {
   display: flex;
@@ -10,14 +10,18 @@
   margin-right: 2%;
   margin-bottom: 2%;
   border-radius: 8px;
+
   display: flex;
   flex-direction: column;
+
+  color: $color-extra;
   background-color: $color-hue-2;
 }
 
 .post__title {
   margin: 5px;
   padding: 10px;
+
   font-weight: normal;
 }
 

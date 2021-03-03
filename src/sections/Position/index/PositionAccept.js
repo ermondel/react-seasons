@@ -32,34 +32,18 @@ const renderWarning = () => (
 
 const PositionAccept = ({ wait, error }) => {
   if (!isChrome) {
-    return (
-      <div className='content'>
-        <div className='content-wrap'>{renderWarning()}</div>
-      </div>
-    );
+    return <main className='main'>{renderWarning()}</main>;
   }
 
   if (wait && !error) {
-    return (
-      <div className='content'>
-        <div className='content-wrap'>{renderRequest()}</div>
-      </div>
-    );
+    return <main className='main'>{renderRequest()}</main>;
   }
 
   if (!wait && error) {
-    return (
-      <div className='content'>
-        <div className='content-wrap'>{renderError(error)}</div>
-      </div>
-    );
+    return <main className='main'>{renderError(error)}</main>;
   }
 
-  return (
-    <div className='content'>
-      <div className='content-wrap'>{renderCompass()}</div>
-    </div>
-  );
+  return <main className='main'>{renderCompass()}</main>;
 };
 
 export default PositionAccept;

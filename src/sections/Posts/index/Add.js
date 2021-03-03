@@ -34,7 +34,7 @@ class Add extends Component {
   render() {
     return (
       <div>
-        <h2 className='section-title'>New post</h2>
+        <h2 className='main__title'>New post</h2>
 
         {this.renderContent()}
       </div>

@@ -3,19 +3,23 @@ import Header from '../../../main/Header';
 import useLocation from '../resources/useLocation';
 import PositionDetails from './PositionDetails';
 import PositionAccept from './PositionAccept';
+import Footer from '../../../main/Footer';
 
 const Position = () => {
   const [coords, errorMessage] = useLocation();
 
   return (
-    <div className='app-main'>
-      <Header />
-
-      <main className='main'>
+    <React.Fragment>
+      <div className='side-container'>
+        <Header />
         <PositionDetails geo={coords} />
+      </div>
+
+      <div className='content-container'>
         <PositionAccept wait={!errorMessage && !coords} error={errorMessage} />
-      </main>
-    </div>
+        <Footer />
+      </div>
+    </React.Fragment>
   );
 };
 

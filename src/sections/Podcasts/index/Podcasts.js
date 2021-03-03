@@ -2,16 +2,20 @@ import React from 'react';
 import Header from '../../../main/Header';
 import PodcastDetails from './PodcastDetails';
 import PodcastList from './PodcastList';
+import Footer from '../../../main/Footer';
 
 const Podcasts = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
+  <React.Fragment>
+    <div className='side-container'>
+      <Header />
       <PodcastDetails />
+    </div>
+
+    <div className='content-container'>
       <PodcastList />
-    </main>
-  </div>
+      <Footer />
+    </div>
+  </React.Fragment>
 );
 
 export default Podcasts;

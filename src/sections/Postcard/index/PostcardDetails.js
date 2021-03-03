@@ -5,13 +5,11 @@ import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const PostcardDetails = () => (
   <div className='sidebar'>
-    <div className='sidebar-wrap'>
-      <div className='control'>
-        <LanguageSelector />
-        <ColorSelector />
-      </div>
-      <SidebarInfo list='React, React Context' />
+    <div className='control'>
+      <LanguageSelector />
+      <ColorSelector />
     </div>
+    <SidebarInfo list='React, React Context' />
   </div>
 );
 

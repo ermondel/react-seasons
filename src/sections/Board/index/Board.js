@@ -2,16 +2,20 @@ import React from 'react';
 import Header from '../../../main/Header';
 import BoardSidebar from './BoardSidebar';
 import BoardContent from './BoardContent';
+import Footer from '../../../main/Footer';
 
 const Board = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
+  <React.Fragment>
+    <div className='side-container'>
+      <Header />
       <BoardSidebar />
+    </div>
+
+    <div className='content-container'>
       <BoardContent />
-    </main>
-  </div>
+      <Footer />
+    </div>
+  </React.Fragment>
 );
 
 export default Board;

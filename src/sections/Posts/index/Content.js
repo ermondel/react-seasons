@@ -60,12 +60,10 @@ class Content extends Component {
 
   render() {
     return (
-      <div className='content'>
-        <div className='content-wrap'>
-          {this.renderContent()}
-          <Remove />
-        </div>
-      </div>
+      <main className='main'>
+        {this.renderContent()}
+        <Remove />
+      </main>
     );
   }
 }

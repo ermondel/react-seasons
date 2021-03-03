@@ -6,12 +6,10 @@ import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const WeatherSidebar = () => (
   <div className='sidebar'>
-    <div className='sidebar-wrap'>
-      <ForecastViewMode />
-      <TimePeriod />
-      <SidebarInfo list='React, Redux, Axios, Redux Thunk, React Portals, React Sparklines, OpenWeatherMap API, Google Maps API' />
-      <MountMap />
-    </div>
+    <ForecastViewMode />
+    <TimePeriod />
+    <SidebarInfo list='React, Redux, Axios, Redux Thunk, React Portals, React Sparklines, OpenWeatherMap API, Google Maps API' />
+    <MountMap />
   </div>
 );
 

@@ -1,6 +1,8 @@
-/**
- * User list 
- */
+// User list
+
+.board-users {
+  margin: 20px;
+}
 
 .user-list__title {
   margin: 0 0 20px 0;
@@ -15,9 +17,7 @@
   margin-bottom: 4px;
 }
 
-/**
- * Tab buttons 
- */
+// Tab buttons
 
 .board__tabs {
   border-bottom: 1px solid $color-hue-2;
@@ -59,9 +59,7 @@
   }
 }
 
-/**
- * Todo list
- */
+// Todo list
 
 .todo-list {
   display: flex;
@@ -108,9 +106,7 @@
   color: $color-base;
 }
 
-/**
- * Spinner
- */
+// Spinner
 
 .board-spinner-main {
   text-align: center;
@@ -125,9 +121,7 @@
   margin-top: 20%;
 }
 
-/**
- * Error
- */
+// Error
 
 .board-error-main {
   text-align: center;

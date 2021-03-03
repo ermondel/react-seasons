@@ -58,21 +58,19 @@ const BoardContent = () => {
   );
 
   return (
-    <div className='content'>
-      <div className='content-wrap'>
-        <h2 className='section-title'>Board</h2>
+    <main className='main'>
+      <h2 className='main__title'>Board</h2>
 
-        <div className='board__tabs'>
-          {buttonComments}
-          {buttonTodos}
-        </div>
-
-        {showSpinner && blockSpinner}
-        {showError && blockError}
-        {showComments && <CommentList list={state.data} />}
-        {showTodos && <TodoList list={state.data} />}
+      <div className='board__tabs'>
+        {buttonComments}
+        {buttonTodos}
       </div>
-    </div>
+
+      {showSpinner && blockSpinner}
+      {showError && blockError}
+      {showComments && <CommentList list={state.data} />}
+      {showTodos && <TodoList list={state.data} />}
+    </main>
   );
 };
 

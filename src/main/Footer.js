@@ -13,8 +13,8 @@ const Footer = () => {
     rel: 'noreferrer',
     href: 'https://github.com/ermondel',
     title: 'All rights reserved | created by Serhii (ermondel)',
-    className: 'footer__link'
-  }
+    className: 'footer__link',
+  };
 
   return (
     <footer className='footer'>

@@ -4,20 +4,24 @@ import { LanguageContext } from '../contexts/LanguageContext';
 import { ColorContext } from '../contexts/ColorContext';
 import PostcardDetails from './PostcardDetails';
 import PostcardScene from './PostcardScene';
+import Footer from '../../../main/Footer';
 
 const Postcard = () => (
-  <div className='app-main'>
-    <Header />
-
-    <main className='main'>
-      <ColorContext>
-        <LanguageContext>
+  <React.Fragment>
+    <ColorContext>
+      <LanguageContext>
+        <div className='side-container'>
+          <Header />
           <PostcardDetails />
+        </div>
+
+        <div className='content-container'>
           <PostcardScene />
-        </LanguageContext>
-      </ColorContext>
-    </main>
-  </div>
+          <Footer />
+        </div>
+      </LanguageContext>
+    </ColorContext>
+  </React.Fragment>
 );
 
 export default Postcard;

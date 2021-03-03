@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Footer from './Footer';
 import {
   Home,
   Position,
@@ -30,7 +29,6 @@ const Routers = () => (
       <Route path='/widgets' component={Widgets} />
       <Route path='*' component={NoMatch} />
     </Switch>
-    <Footer />
   </HashRouter>
 );
 

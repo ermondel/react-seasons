@@ -4,15 +4,13 @@ import BlogError from './BlogError';
 import PostList from './PostList';
 
 const BlogContent = () => (
-  <div className='content'>
-    <div className='content-wrap'>
-      <h2 className='section-title'>Blog posts</h2>
+  <main className='main'>
+    <h2 className='main__title'>Blog posts</h2>
 
-      <BlogSpinner />
-      <BlogError />
-      <PostList />
-    </div>
-  </div>
+    <BlogSpinner />
+    <BlogError />
+    <PostList />
+  </main>
 );
 
 export default BlogContent;

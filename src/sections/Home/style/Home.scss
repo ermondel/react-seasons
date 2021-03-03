@@ -1,34 +1,4 @@
-/* sidebar */
-
-.sidebar--home {
-  display: flex;
-  flex-direction: column;
-}
-
-/* foreign */
-
-.foreign {
-  font-size: 12px;
-  line-height: 1;
-  color: $color-minor-ext;
-  margin: auto 20px 20px 20px;
-}
-
-.foreign__title {
-  color: $color-base;
-  font-weight: normal;
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $color-base;
-  margin-bottom: 25px;
-}
-
-.foreign__list li {
-  margin-bottom: 4px;
-}
-
-/* information section */
+// information
 
 .info-section {
   margin-bottom: 5px;

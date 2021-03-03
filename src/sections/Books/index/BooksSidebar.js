@@ -5,11 +5,9 @@ import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
 
 const BooksSidebar = () => (
   <div className='sidebar'>
-    <div className='sidebar-wrap'>
-      <ViewMode />
-      <BookDetails />
-      <SidebarInfo list='React, Redux' />
-    </div>
+    <ViewMode />
+    <BookDetails />
+    <SidebarInfo list='React, Redux' />
   </div>
 );
 
