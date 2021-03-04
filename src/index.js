@@ -4,7 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import stores from './lib/stores';
+import stores from '@redux/stores';
 import HomeSection from '@sections/Home/index/Home';
 import PositionSection from '@sections/Position/index/Position';
 import BlogSection from '@sections/Blog/index/Blog';

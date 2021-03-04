@@ -4,7 +4,7 @@ import {
   BLOG_POSTS_FETCH_SUCCESS,
   BLOG_POSTS_FETCH_FAILURE,
   BLOG_USER_SELECTED,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export const fetchBlogPosts = () => async (dispatch) => {
   dispatch({ type: BLOG_POSTS_FETCH_REQUEST });

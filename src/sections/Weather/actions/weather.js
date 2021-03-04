@@ -10,7 +10,7 @@ import {
   WEATHER_MOUNT_MAP_SUCCESS,
   WEATHER_MOUNT_MAP_FAILURE,
   WEATHER_TIME_PERIOD_CHANGED,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export const forecastsFetch = (city) => async (dispatch) => {
   dispatch({

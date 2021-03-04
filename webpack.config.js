@@ -107,6 +107,7 @@ module.exports = {
       '@lib': path.resolve(__dirname, 'src/lib'),
       '@sidebar': path.resolve(__dirname, 'src/sidebar'),
       '@modal': path.resolve(__dirname, 'src/modal'),
+      '@redux': path.resolve(__dirname, 'src/redux'),
     },
   },
   optimization: {

@@ -2,7 +2,7 @@ import {
   POSTS_LIST_SUCCESS,
   POSTS_ADDING_SUCCESS,
   POSTS_REMOVE_SUCCESS,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export default (state = [], action) => {
   switch (action.type) {

@@ -3,7 +3,7 @@ import {
   MODAL_CLOSE,
   POSTS_REMOVE_CONFIRM,
   WEATHER_CITY_SELECTED,
-} from '../lib/types';
+} from '@redux/types';
 
 export default (state = false, action) => {
   switch (action.type) {

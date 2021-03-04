@@ -2,7 +2,7 @@ import {
   BOOKS_ITEM_SELECTED,
   BOOKS_VIEW_CHANGED,
   BOOKS_SEARCH_REQUEST,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export const selectBook = (book) => ({
   type: BOOKS_ITEM_SELECTED,

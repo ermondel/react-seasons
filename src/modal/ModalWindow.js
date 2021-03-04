@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MODAL_CLOSE, MODAL_OPEN } from '../lib/types';
+import { MODAL_CLOSE, MODAL_OPEN } from '@redux/types';
 
 export const modalOpen = () => ({ type: MODAL_OPEN });
 

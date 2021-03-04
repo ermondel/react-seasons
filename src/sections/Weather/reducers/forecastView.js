@@ -1,4 +1,4 @@
-import { WEATHER_FORECASTS_VIEW_CHANGED } from '../../../lib/types';
+import { WEATHER_FORECASTS_VIEW_CHANGED } from '@redux/types';
 
 export default (state = 'line', action) => {
   if (action.type === WEATHER_FORECASTS_VIEW_CHANGED) {

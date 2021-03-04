@@ -1,4 +1,4 @@
-import { POSTS_REMOVE_SUCCESS, POSTS_VIEW_DEFAULT } from '../../../lib/types';
+import { POSTS_REMOVE_SUCCESS, POSTS_VIEW_DEFAULT } from '@redux/types';
 
 export default (state = 'default', action) => {
   switch (action.type) {

@@ -1,4 +1,4 @@
-import { BLOG_POSTS_FETCH_SUCCESS } from '../../../lib/types';
+import { BLOG_POSTS_FETCH_SUCCESS } from '@redux/types';
 
 export default (state = [], action) => {
   if (action.type === BLOG_POSTS_FETCH_SUCCESS) {

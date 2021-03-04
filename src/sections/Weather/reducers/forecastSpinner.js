@@ -2,7 +2,7 @@ import {
   WEATHER_FORECASTS_FETCH_REQUEST,
   WEATHER_FORECASTS_FETCH_SUCCESS,
   WEATHER_FORECASTS_FETCH_FAILURE,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export default (state = null, action) => {
   switch (action.type) {

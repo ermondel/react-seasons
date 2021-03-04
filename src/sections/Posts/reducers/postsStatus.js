@@ -6,7 +6,7 @@ import {
   POSTS_LIST_SUCCESS,
   POSTS_LIST_FAILURE,
   POSTS_STATUS_RESET,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export default (state = 'default', action) => {
   switch (action.type) {

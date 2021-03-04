@@ -1,4 +1,4 @@
-import { WEATHER_TIME_PERIOD_CHANGED } from '../../../lib/types';
+import { WEATHER_TIME_PERIOD_CHANGED } from '@redux/types';
 
 export default (state = 'day', action) => {
   if (action.type === WEATHER_TIME_PERIOD_CHANGED) {

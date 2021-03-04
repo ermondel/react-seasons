@@ -22,7 +22,7 @@ import {
   POSTS_ADD_MESSAGE,
   POSTS_REMOVE_MESSAGE,
   POSTS_VIEW_DEFAULT,
-} from '../../../lib/types';
+} from '@redux/types';
 
 export const fetchPosts = (publicKey) => async (dispatch) => {
   try {

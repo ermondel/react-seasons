@@ -1,7 +1,4 @@
-import {
-  WEATHER_MOUNT_MAP_SUCCESS,
-  WEATHER_MOUNT_MAP_FAILURE,
-} from '../../../lib/types';
+import { WEATHER_MOUNT_MAP_SUCCESS, WEATHER_MOUNT_MAP_FAILURE } from '@redux/types';
 
 const defaultState = {
   loading: true,
