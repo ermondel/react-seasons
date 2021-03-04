@@ -1,25 +1,31 @@
-.details {
+.infoblock {
   margin: 20px;
   padding: 10px;
+
   color: $color-detail;
   background-color: $color-base;
   border-radius: 6px;
+
   font-size: 14px;
   line-height: 1;
 }
 
-.details__title {
+.infoblock__title {
   margin: 0;
   padding: 0;
-  font-weight: normal;
+
   margin-bottom: 25px;
   height: 70px;
+
+  font-weight: normal;
 }
 
-.details__item {
+.infoblock__item {
   width: 100%;
+
   margin: 0 0 12px 0;
   padding: 0 0 3px 0;
+
   overflow: hidden;
   border-bottom: 1px dotted $color-minor;
 
@@ -32,18 +38,21 @@
   }
 }
 
-.details__btns {
+.infoblock__btns {
   margin: 25px 0 0 0;
   padding: 0;
+
   width: 100%;
   overflow: hidden;
 }
 
-.details__btn-main {
+.infoblock__btn-main {
   padding: 10px 20px;
   border-radius: 4px;
+
   background-color: $color-aux;
   color: $color-detail;
+
   float: left;
 
   &:hover,
@@ -53,11 +62,13 @@
   }
 }
 
-.details__btn-link {
+.infoblock__btn-link {
   display: block;
-  text-decoration: none;
   padding: 10px 0px;
+
+  text-decoration: none;
   color: $color-minor;
+
   cursor: pointer;
   float: right;
 

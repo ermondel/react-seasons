@@ -1,11 +1,11 @@
 import React from 'react';
 import BoardUsers from './BoardUsers';
-import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
+import TechBlock from '@sidebar/TechBlock';
 
 const BoardSidebar = () => (
   <div className='sidebar'>
     <BoardUsers />
-    <SidebarInfo list='React, React Hooks, Axios, JSONPlaceholder API' />
+    <TechBlock list='React, React Hooks, Axios, JSONPlaceholder API' />
   </div>
 );
 

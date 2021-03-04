@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
-import DetailsBlock from '../../../special/DetailsBlock/DetailsBlock';
+import TechBlock from '@sidebar/TechBlock';
+import InfoBlock from '@sidebar/InfoBlock';
 
 const PodcastDetails = ({ podcast }) => (
   <div className='sidebar'>
     {podcast ? (
-      <DetailsBlock
+      <InfoBlock
         title={podcast.title}
         duration={podcast.duration}
         author={podcast.author}
         btns={true}
       />
     ) : null}
-    <SidebarInfo list='React, Redux' />
+    <TechBlock list='React, Redux' />
   </div>
 );
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
+import TechBlock from '@sidebar/TechBlock';
 import SortSwitch from './SortSwitch';
 
 const Sidebar = () => (
   <div className='sidebar'>
     <SortSwitch />
-    <SidebarInfo list='React, Redux, Axios, Redux Thunk, React Portals, Redux Blog Post API' />
+    <TechBlock list='React, Redux, Axios, Redux Thunk, React Portals, Redux Blog Post API' />
   </div>
 );
 

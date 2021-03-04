@@ -1,5 +1,5 @@
 import React from 'react';
-import SourcesBlock from '../../../special/SourcesBlock/SourcesBlock';
+import SourcesBlock from '@sidebar/SourcesBlock';
 
 const HomeSidebar = () => (
   <div className='sidebar'>

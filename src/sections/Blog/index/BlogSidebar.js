@@ -1,11 +1,11 @@
 import React from 'react';
 import UserDetails from './UserDetails';
-import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
+import TechBlock from '@sidebar/TechBlock';
 
 const BlogSidebar = () => (
   <div className='sidebar'>
     <UserDetails />
-    <SidebarInfo list='React, Redux, Redux Thunk, Axios, JSONPlaceholder API' />
+    <TechBlock list='React, Redux, Redux Thunk, Axios, JSONPlaceholder API' />
   </div>
 );
 

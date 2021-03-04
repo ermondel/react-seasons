@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DetailsBlock from '../../../special/DetailsBlock/DetailsBlock';
+import InfoBlock from '@sidebar/InfoBlock';
 
 const UserDetails = ({ user }) => {
   return user ? (
-    <DetailsBlock
+    <InfoBlock
       title={user.name}
       email={user.email}
       username={user.username}

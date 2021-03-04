@@ -106,6 +106,7 @@ module.exports = {
       '@subcomponents': path.resolve(__dirname, 'src/subcomponents'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@lib': path.resolve(__dirname, 'src/lib'),
+      '@sidebar': path.resolve(__dirname, 'src/sidebar'),
     },
   },
   optimization: {

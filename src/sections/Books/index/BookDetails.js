@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DetailsBlock from '../../../special/DetailsBlock/DetailsBlock';
+import InfoBlock from '@sidebar/InfoBlock';
 
 const BookDetails = ({ book }) => {
   return book ? (
-    <DetailsBlock
+    <InfoBlock
       title={book.title}
       author={book.author}
       year={book.year}

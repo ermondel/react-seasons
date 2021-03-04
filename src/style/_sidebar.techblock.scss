@@ -1,21 +1,23 @@
-.sidebar-info {
+.techblock {
   position: fixed;
   left: 110px;
+
+  margin-bottom: 50px;
+
+  color: $color-minor-ext;
   font-size: 12px;
   line-height: 1;
-  color: $color-minor-ext;
-  margin-bottom: 50px;
 }
 
-.sidebar-info--top {
+.techblock--top {
   top: 0;
 }
 
-.sidebar-info--bottom {
+.techblock--bottom {
   bottom: 0;
 }
 
-.sidebar-info a {
+.techblock a {
   color: inherit;
   text-decoration: none;
 
@@ -24,16 +26,18 @@
   }
 }
 
-.sidebar-info__title {
+.techblock__title {
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+
   color: $color-base;
-  font-weight: normal;
+  border-bottom: 1px solid $color-base;
+
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $color-base;
-  margin-bottom: 25px;
+  font-weight: normal;
 }
 
-.sidebar-info__item {
+.techblock__item {
   margin-bottom: 4px;
 }

@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import NavItem from '@subcomponents/NavItem';
-import SidebarInfo from '../../../special/SidebarInfo/SidebarInfo';
+import TechBlock from '@sidebar/TechBlock';
 import Accordion from './Accordion';
 import Wikipedia from './Wikipedia';
 import Dropdown from './Dropdown';
@@ -15,7 +15,7 @@ const Widgets = () => (
     <div className='side-container'>
       <MainNavigation />
       <div className='sidebar'>
-        <SidebarInfo list='React, React Hooks, Axios, Wikipedia API, Cloud Translation API' />
+        <TechBlock list='React, React Hooks, Axios, Wikipedia API, Cloud Translation API' />
       </div>
     </div>
 
