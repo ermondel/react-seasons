@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import useLocation from '../resources/useLocation';
 import PositionDetails from './PositionDetails';
 import PositionAccept from './PositionAccept';
-import Footer from '../../../main/Footer';
 
 const Position = () => {
   const [coords, errorMessage] = useLocation();
@@ -11,7 +11,7 @@ const Position = () => {
   return (
     <React.Fragment>
       <div className='side-container'>
-        <Header />
+        <MainNavigation />
         <PositionDetails geo={coords} />
       </div>
 

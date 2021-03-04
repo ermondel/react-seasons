@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import PodcastDetails from './PodcastDetails';
 import PodcastList from './PodcastList';
-import Footer from '../../../main/Footer';
 
 const Podcasts = () => (
   <React.Fragment>
     <div className='side-container'>
-      <Header />
+      <MainNavigation />
       <PodcastDetails />
     </div>
 

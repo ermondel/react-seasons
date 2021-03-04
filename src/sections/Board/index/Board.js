@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import BoardSidebar from './BoardSidebar';
 import BoardContent from './BoardContent';
-import Footer from '../../../main/Footer';
 
 const Board = () => (
   <React.Fragment>
     <div className='side-container'>
-      <Header />
+      <MainNavigation />
       <BoardSidebar />
     </div>
 

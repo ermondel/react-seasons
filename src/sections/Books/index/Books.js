@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import BooksSidebar from './BooksSidebar';
 import BookList from './BookList';
-import Footer from '../../../main/Footer';
 
 const Books = () => (
   <React.Fragment>
     <div className='side-container'>
-      <Header />
+      <MainNavigation />
       <BooksSidebar />
     </div>
 

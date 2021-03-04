@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
 
 const NoMatch = () => (
   <div className='app-main'>
-    <Header />
+    <MainNavigation />
 
     <main className='main'>
       <div className='sidebar'>

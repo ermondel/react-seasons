@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import WeatherSidebar from './WeatherSidebar';
 import WeatherForecast from './WeatherForecast';
-import Footer from '../../../main/Footer';
 
 const Weather = () => (
   <React.Fragment>
     <div className='side-container'>
-      <Header />
+      <MainNavigation />
       <WeatherSidebar />
     </div>
 

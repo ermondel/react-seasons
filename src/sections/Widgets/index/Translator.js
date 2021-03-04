@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { nodeapiserver } from '../../../lib/api';
-import { ErrorRemote } from '../../../special/UtilImg/UtilImg';
+import { ErrorRemote } from '@subcomponents/UtilImages';
 
 const LoadingData = () => <div className='translator-loading'>Translating...</div>;
 

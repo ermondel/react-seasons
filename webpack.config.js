@@ -88,6 +88,7 @@ const html = {
 /**
  * Config
  */
+
 module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: {
@@ -102,6 +103,9 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
       '@sections': path.resolve(__dirname, 'src/sections'),
       '@special': path.resolve(__dirname, 'src/special'),
+      '@subcomponents': path.resolve(__dirname, 'src/subcomponents'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@lib': path.resolve(__dirname, 'src/lib'),
     },
   },
   optimization: {

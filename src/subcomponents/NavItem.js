@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { includesPath } from '../../lib/path';
+import { includesPath } from '@lib/path';
 
-const NavItemLi = ({ children, to, block }) => {
+const NavItem = ({ children, to, block }) => {
   const pathname = useLocation().pathname;
   const toHome = to === '/' && pathname !== '/';
 
@@ -23,4 +23,4 @@ const NavItemLi = ({ children, to, block }) => {
   );
 };
 
-export default NavItemLi;
+export default NavItem;

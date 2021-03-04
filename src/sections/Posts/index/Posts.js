@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import Sidebar from './Sidebar';
 import Content from './Content';
-import Footer from '../../../main/Footer';
 
 const Posts = () => (
   <React.Fragment>
     <div className='side-container'>
-      <Header />
+      <MainNavigation />
       <Sidebar />
     </div>
 

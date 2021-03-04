@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CommentList from './CommentList';
 import TodoList from './TodoList';
 import useResources from '../resources/useResources';
-import { ErrorRemote, SpinnerBig } from '../../../special/UtilImg/UtilImg';
+import { ErrorRemote, SpinnerBig } from '@subcomponents/UtilImages';
 
 const BoardContent = () => {
   const [resource, setResource] = useState('comments');

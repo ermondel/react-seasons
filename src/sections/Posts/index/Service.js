@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorRemote, SpinnerBig } from '../../../special/UtilImg/UtilImg';
+import { ErrorRemote, SpinnerBig } from '@subcomponents/UtilImages';
 import { Link } from 'react-router-dom';
 
 export const RemoveSpinner = ({ title }) => (

@@ -1,17 +1,17 @@
 import React from 'react';
-import Header from '../../../main/Header';
+import MainNavigation from '@subcomponents/MainNavigation';
+import Footer from '@subcomponents/Footer';
 import { LanguageContext } from '../contexts/LanguageContext';
 import { ColorContext } from '../contexts/ColorContext';
 import PostcardDetails from './PostcardDetails';
 import PostcardScene from './PostcardScene';
-import Footer from '../../../main/Footer';
 
 const Postcard = () => (
   <React.Fragment>
     <ColorContext>
       <LanguageContext>
         <div className='side-container'>
-          <Header />
+          <MainNavigation />
           <PostcardDetails />
         </div>
 

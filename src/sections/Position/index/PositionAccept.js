@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpinnerBig } from '../../../special/UtilImg/UtilImg';
+import { SpinnerBig } from '@subcomponents/UtilImages';
 import imgCompass from '../assets/compass.png';
 import { isChrome } from '../../../lib/browser';
 

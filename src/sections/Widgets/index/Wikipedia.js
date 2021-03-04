@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { wikipedia } from '../../../lib/api';
-import { SpinnerBig, ErrorRemote } from '../../../special/UtilImg/UtilImg';
+import { SpinnerBig, ErrorRemote } from '@subcomponents/UtilImages';
 import WikiArticle from './WikiArticle';
 
 const LoadingData = () => (
