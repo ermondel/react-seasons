@@ -1,0 +1,11 @@
+.main__title {
+  padding: 0;
+  margin: 20px 0 47px 0;
+
+  color: $color-hue-2;
+  font-size: 300%;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

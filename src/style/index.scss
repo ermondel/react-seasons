@@ -2,10 +2,14 @@
 @import './app.base';
 @import './app.layout';
 @import './app.nav';
+@import './app.sidebar';
+@import './app.main';
+@import './app.footer';
 @import './sidebar.btns';
 @import '@special/SidebarInfo/SidebarInfo.scss';
 @import '@special/DetailsBlock/DetailsBlock.scss';
 @import '@special/ModalWindow/ModalWindow.scss';
+@import '@special/SourcesBlock/SourcesBlock.scss';
 @import '@sections/Home/style/Home.scss';
 @import '@sections/Podcasts/style/Podcasts.scss';
 @import '@sections/Blog/style/Blog.scss';
