@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import { ModalWindow, modalClose } from '../../../special/ModalWindow/ModalWindow';
+import { ModalWindow, modalClose } from '@modal/ModalWindow';
 
 const CityLocation = ({ visible, city, modalClose }) => {
   const mapEl = useRef(null);

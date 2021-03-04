@@ -102,11 +102,11 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@sections': path.resolve(__dirname, 'src/sections'),
-      '@special': path.resolve(__dirname, 'src/special'),
       '@subcomponents': path.resolve(__dirname, 'src/subcomponents'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@lib': path.resolve(__dirname, 'src/lib'),
       '@sidebar': path.resolve(__dirname, 'src/sidebar'),
+      '@modal': path.resolve(__dirname, 'src/modal'),
     },
   },
   optimization: {

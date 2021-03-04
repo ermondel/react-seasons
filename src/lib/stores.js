@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import modalWindowReducer from '../special/ModalWindow/modalWindowReducer';
+import modalWindowReducer from '@modal/modalWindowReducer';
 import podcast from '../sections/Podcasts/reducers/podcast';
 import blogPosts from '../sections/Blog/reducers/blogPosts';
 import blogUser from '../sections/Blog/reducers/blogUser';

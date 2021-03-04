@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removePost, resetRemoveStatus } from '../actions/posts';
-import { ModalWindow, modalClose } from '../../../special/ModalWindow/ModalWindow';
+import { ModalWindow, modalClose } from '@modal/ModalWindow';
 import { RemoveSpinner, RemoveSuccess, RemoveError, AuthError } from './Service';
 
 class RemovePostWindow extends Component {
