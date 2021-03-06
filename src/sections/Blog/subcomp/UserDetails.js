@@ -6,13 +6,15 @@ const UserDetails = ({ user }) => {
   return user ? (
     <InfoBlock
       title={user.name}
-      email={user.email}
-      username={user.username}
-      phone={user.phone}
-      website={user.website}
-      company={user.company.name}
-      city={user.address.city}
-      zipcode={user.address.zipcode}
+      data={{
+        email: user.email,
+        username: user.username,
+        phone: user.phone,
+        website: user.website,
+        company: user.company.name,
+        city: user.address.city,
+        zipcode: user.address.zipcode,
+      }}
     />
   ) : null;
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import UserDetails from '../subcomp/UserDetails';
 import TechBlock from '@sidebar/TechBlock';
+import UserDetails from '../subcomp/UserDetails';
 
 const BlogSidebar = () => (
   <div className='sidebar'>

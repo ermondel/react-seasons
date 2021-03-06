@@ -6,11 +6,13 @@ const BookDetails = ({ book }) => {
   return book ? (
     <InfoBlock
       title={book.title}
-      author={book.author}
-      year={book.year}
-      genre={book.genre}
-      publisher={book.publisher}
-      pages={book.pages}
+      data={{
+        author: book.author,
+        year: book.year,
+        genre: book.genre,
+        publisher: book.publisher,
+        pages: book.pages,
+      }}
     />
   ) : null;
 };

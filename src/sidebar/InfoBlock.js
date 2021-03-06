@@ -1,35 +1,18 @@
 import React from 'react';
 
-const InfoBlock = (props) => {
+const InfoBlock = ({ title, data, buttons = null }) => {
   let content = [];
-  let buttons = null;
-
-  // content
-  for (let prop in props) {
-    if (prop !== 'title' && prop !== 'btns') {
-      content.push(
-        <p className='infoblock__item' key={prop}>
-          <span className='l'>{prop}</span> <span className='r'>{props[prop]}</span>
-        </p>
-      );
-    }
+  for (let key in data) {
+    content.push(
+      <p className='infoblock__item' key={key}>
+        <span className='l'>{key}</span> <span className='r'>{data[key]}</span>
+      </p>
+    );
   }
-
-  // buttons
-  buttons = props.btns && (
-    <p className='infoblock__btns'>
-      <button className='infoblock__btn-main' title='disabled!'>
-        Play
-      </button>
-      <a href='/' className='infoblock__btn-link' title='disabled!'>
-        download
-      </a>
-    </p>
-  );
 
   return (
     <div className='infoblock'>
-      <h3 className='infoblock__title'>{props.title}</h3>
+      <h3 className='infoblock__title'>{title}</h3>
       {content}
       {buttons}
     </div>
