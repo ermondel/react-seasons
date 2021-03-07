@@ -1,44 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LanguageContext from '../contexts/LanguageContext';
 import ColorContext from '../contexts/ColorContext';
 import postcardImg from '../assets/postcard-img.jpg';
 
-class PostcardContent extends Component {
-  i18n_Hello = {
-    english: 'Hello',
-    dutch: 'Hallo',
-    spanish: 'Hola',
-    french: 'Salut',
-    ukrainian: 'Привiт',
-    russian: 'Привет',
-  };
+const i18n_Hello = {
+  english: 'Hello',
+  dutch: 'Hallo',
+  spanish: 'Hola',
+  french: 'Salut',
+  ukrainian: 'Привiт',
+  russian: 'Привет',
+};
 
-  renderScene(color) {
-    return (
+const PostcardContent = () => {
+  return (
+    <main className='main'>
       <div className='postcard__scene'>
         <div className='postcard__panel-left'>
           <img src={postcardImg} alt='Island' />
         </div>
-        <div className={`postcard__panel-right bg_${color}`}>
-          <h3 className='postcard__text'>
-            <LanguageContext.Consumer>
-              {({ language }) => this.i18n_Hello[language]}
-            </LanguageContext.Consumer>
-          </h3>
-        </div>
-      </div>
-    );
-  }
 
-  render() {
-    return (
-      <main className='main'>
         <ColorContext.Consumer>
-          {({ color }) => this.renderScene(color)}
+          {({ color }) => (
+            <div className={`postcard__panel-right bg_${color}`}>
+              <h3 className='postcard__text'>
+                <LanguageContext.Consumer>
+                  {({ language }) => i18n_Hello[language]}
+                </LanguageContext.Consumer>
+              </h3>
+            </div>
+          )}
         </ColorContext.Consumer>
-      </main>
-    );
-  }
-}
+      </div>
+    </main>
+  );
+};
 
 export default PostcardContent;
