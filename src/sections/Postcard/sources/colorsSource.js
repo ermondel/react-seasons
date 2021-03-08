@@ -1,26 +1,26 @@
 export default [
   {
     id: 1,
-    color: 'blue',
+    color: 'skyblue',
   },
   {
     id: 2,
-    color: 'red',
+    color: 'salmon',
   },
   {
     id: 3,
-    color: 'green',
-  },
-  {
-    id: 4,
     color: 'orange',
   },
   {
-    id: 5,
+    id: 4,
     color: 'violet',
   },
   {
+    id: 5,
+    color: 'darkgreen',
+  },
+  {
     id: 6,
-    color: 'purple',
+    color: 'darkorchid',
   },
 ];

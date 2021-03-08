@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const DEF_COLOR = 'blue';
+const DEF_COLOR = 'skyblue';
 const Context = React.createContext(DEF_COLOR);
 
 export class ColorContext extends Component {
@@ -13,9 +13,7 @@ export class ColorContext extends Component {
   render() {
     const value = { ...this.state, onColorChange: this.onColorChange };
 
-    return (
-      <Context.Provider value={value}>{this.props.children}</Context.Provider>
-    );
+    return <Context.Provider value={value}>{this.props.children}</Context.Provider>;
   }
 }
 
