@@ -5,10 +5,8 @@ import TechBlock from '@sidebar/TechBlock';
 
 const PostcardSidebar = () => (
   <div className='sidebar'>
-    <div className='control'>
-      <LanguageSelector />
-      <ColorSelector />
-    </div>
+    <LanguageSelector />
+    <ColorSelector />
     <TechBlock list='React, React Context' />
   </div>
 );

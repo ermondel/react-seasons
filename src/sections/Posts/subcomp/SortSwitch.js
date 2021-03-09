@@ -1,34 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { sortByDate } from '../actions/posts';
+import BtnsBlock from '@sidebar/BtnsBlock';
+import BtnsBlockItem from '@buttons/BtnsBlockItem';
 
 const SortSwitch = ({ type, sortByDate }) => (
-  <div className='control'>
-    <div className='control_btns'>
-      <button
-        className={
-          type === 'new' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
-        }
-        disabled={type === 'new'}
-        onClick={() => sortByDate('new')}
-      >
-        new
-      </button>
-      <button
-        className={
-          type === 'old' ? 'sidebar__btn-common--active' : 'sidebar__btn-common'
-        }
-        disabled={type === 'old'}
-        onClick={() => sortByDate('old')}
-      >
-        old
-      </button>
-    </div>
-  </div>
+  <BtnsBlock>
+    <BtnsBlockItem
+      value={'new'}
+      disabled={type === 'new'}
+      onClick={() => sortByDate('new')}
+    />
+    <BtnsBlockItem
+      value={'old'}
+      disabled={type === 'old'}
+      onClick={() => sortByDate('old')}
+    />
+  </BtnsBlock>
 );
 
-const mapStateToProps = (state) => ({
-  type: state.postsSort,
-});
+const mapStateToProps = (state) => ({ type: state.postsSort });
 
 export default connect(mapStateToProps, { sortByDate })(SortSwitch);

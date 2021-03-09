@@ -1,0 +1,35 @@
+.btnsblock {
+  margin: 20px 20px 35px 20px;
+}
+
+.btnsblock__item-common {
+  width: 50%;
+  min-width: 100px;
+
+  padding: 20px 0px;
+  text-transform: uppercase;
+
+  color: $color-extra;
+  background-color: $color-base;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-extra;
+    background-color: $color-hover-0;
+  }
+}
+
+.btnsblock__item-active {
+  width: 50%;
+  min-width: 100px;
+
+  padding: 20px 0px;
+  text-transform: uppercase;
+
+  color: $color-extra;
+  background-color: $color-minor;
+
+  cursor: default;
+}

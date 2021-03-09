@@ -1,38 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeBooksView } from '../actions/books';
+import BtnsBlock from '@sidebar/BtnsBlock';
+import BtnsBlockItem from '@buttons/BtnsBlockItem';
 
-const ViewMode = (props) => (
-  <div className='control'>
-    <div className='control_btns'>
-      <button
-        className={
-          props.view === 'list'
-            ? 'sidebar__btn-common--active'
-            : 'sidebar__btn-common'
-        }
-        disabled={props.view === 'list'}
-        onClick={() => props.changeBooksView('list')}
-      >
-        List
-      </button>
-      <button
-        className={
-          props.view === 'gallery'
-            ? 'sidebar__btn-common--active'
-            : 'sidebar__btn-common'
-        }
-        disabled={props.view === 'gallery'}
-        onClick={() => props.changeBooksView('gallery')}
-      >
-        Gallery
-      </button>
-    </div>
-  </div>
+const ViewMode = ({ view, changeBooksView }) => (
+  <BtnsBlock>
+    <BtnsBlockItem
+      value={'List'}
+      disabled={view === 'list'}
+      onClick={() => changeBooksView('list')}
+    />
+    <BtnsBlockItem
+      value={'Gallery'}
+      disabled={view === 'gallery'}
+      onClick={() => changeBooksView('gallery')}
+    />
+  </BtnsBlock>
 );
 
-const mapStateToProps = (state) => ({
-  view: state.booksView,
-});
+const mapStateToProps = (state) => ({ view: state.booksView });
 
 export default connect(mapStateToProps, { changeBooksView })(ViewMode);

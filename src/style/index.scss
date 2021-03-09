@@ -6,10 +6,12 @@
 @import './app.main';
 @import './app.footer';
 @import './app.modal';
-@import './sidebar.btns';
 @import './sidebar.infoblock';
 @import './sidebar.techblock';
 @import './sidebar.sourcesblock';
+@import './sidebar.btnsblock';
+@import './sidebar.btnscolorblock';
+@import './sidebar.btnsinlineblock';
 @import '@sections/Home/style/Home.scss';
 @import '@sections/Podcasts/style/Podcasts.scss';
 @import '@sections/Blog/style/Blog.scss';

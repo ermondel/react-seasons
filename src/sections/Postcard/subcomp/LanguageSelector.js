@@ -1,28 +1,24 @@
 import React from 'react';
 import LanguageContext from '../contexts/LanguageContext';
 import languagesSource from '../sources/languagesSource';
+import BtnsBlock from '@sidebar/BtnsBlock';
+import BtnsBlockItem from '@buttons/BtnsBlockItem';
 
 const LanguageSelector = () => (
-  <div className='control_btns'>
+  <BtnsBlock>
     <LanguageContext.Consumer>
       {(context) =>
         languagesSource.map((btn) => (
-          <button
-            className={
-              btn.language === context.language
-                ? 'sidebar__btn-common--active'
-                : 'sidebar__btn-common'
-            }
-            onClick={() => context.onLanguageChange(btn.language)}
+          <BtnsBlockItem
+            value={btn.language}
             disabled={btn.language === context.language}
+            onClick={() => context.onLanguageChange(btn.language)}
             key={btn.id}
-          >
-            {btn.language}
-          </button>
+          />
         ))
       }
     </LanguageContext.Consumer>
-  </div>
+  </BtnsBlock>
 );
 
 export default LanguageSelector;

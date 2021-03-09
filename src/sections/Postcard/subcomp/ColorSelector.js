@@ -1,28 +1,25 @@
 import React from 'react';
 import ColorContext from '../contexts/ColorContext';
 import colorsSource from '../sources/colorsSource';
+import BtnsColorBlock from '@sidebar/BtnsColorBlock';
+import BtnsColorBlockItem from '@buttons/BtnsColorBlockItem';
 
 const ColorSelector = () => (
-  <div className='control_btns'>
+  <BtnsColorBlock>
     <ColorContext.Consumer>
       {(context) =>
         colorsSource.map((el) => (
-          <button
-            className={
-              el.color === context.color
-                ? `sidebar__btn-color--active bg_${el.color}`
-                : `sidebar__btn-color bg_${el.color}`
-            }
-            onClick={() => context.onColorChange(el.color)}
+          <BtnsColorBlockItem
+            value={el.color}
             disabled={el.color === context.color}
+            onClick={() => context.onColorChange(el.color)}
+            color={el.color}
             key={el.id}
-          >
-            {el.color}
-          </button>
+          />
         ))
       }
     </ColorContext.Consumer>
-  </div>
+  </BtnsColorBlock>
 );
 
 export default ColorSelector;
