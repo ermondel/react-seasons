@@ -1,6 +1,6 @@
 {
   "name": "react-platform",
-  "version": "1.95.29",
+  "version": "1.96.29",
   "private": true,
   "homepage": "https://ermondel.github.io/react-platform",
   "description": "Platform for completed tasks",
@@ -27,6 +27,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.4.1",
     "cross-env": "^7.0.3",
     "css-loader": "^4.3.0",
     "eslint": "^6.8.0",

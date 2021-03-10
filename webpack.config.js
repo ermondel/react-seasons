@@ -9,6 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 /**
  * Env
@@ -17,6 +18,37 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const isBuild = process.env.NODE_MODE === 'build';
+
+/**
+ * Paths
+ */
+
+const favicon = path.resolve(__dirname, 'src/assets/icons/favicon.ico');
+
+/**
+ * CopyPlugin patterns
+ */
+
+const appleIconPattern = {
+  from: path.resolve(__dirname, 'src/assets/icons/logo192.png'),
+  to: path.resolve(__dirname, 'dist/logo192.png'),
+};
+
+/**
+ * Aliases
+ */
+
+const aliases = {
+  '@': path.resolve(__dirname, 'src'),
+  '@assets': path.resolve(__dirname, 'src/assets'),
+  '@buttons': path.resolve(__dirname, 'src/buttons'),
+  '@lib': path.resolve(__dirname, 'src/lib'),
+  '@modal': path.resolve(__dirname, 'src/modal'),
+  '@redux': path.resolve(__dirname, 'src/redux'),
+  '@sections': path.resolve(__dirname, 'src/sections'),
+  '@sidebar': path.resolve(__dirname, 'src/sidebar'),
+  '@subcomponents': path.resolve(__dirname, 'src/subcomponents'),
+};
 
 /**
  * Rules
@@ -98,19 +130,7 @@ module.exports = {
     filename: isDev ? '[name].js' : '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@sections': path.resolve(__dirname, 'src/sections'),
-      '@subcomponents': path.resolve(__dirname, 'src/subcomponents'),
-      '@images': path.resolve(__dirname, 'src/assets/images'),
-      '@lib': path.resolve(__dirname, 'src/lib'),
-      '@sidebar': path.resolve(__dirname, 'src/sidebar'),
-      '@modal': path.resolve(__dirname, 'src/modal'),
-      '@redux': path.resolve(__dirname, 'src/redux'),
-      '@buttons': path.resolve(__dirname, 'src/buttons'),
-    },
-  },
+  resolve: { alias: aliases },
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -127,17 +147,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/template.ejs',
       filename: 'index.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
-      favicon: './src/assets/images/favicon.ico',
-      templateParameters: {
-        analytics: isBuild,
-      },
+      minify: { collapseWhitespace: isProd },
+      favicon: favicon,
+      templateParameters: { analytics: isBuild },
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: isDev ? '[name].css' : '[name].[hash].css',
+    }),
+    new CopyPlugin({
+      patterns: [appleIconPattern],
     }),
   ],
   module: {
