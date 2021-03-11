@@ -1,9 +1,14 @@
-import { BOOKS_ITEM_SELECTED } from '@redux/types';
+import { BOOKS_ITEM_SELECTED, BOOKS_ITEM_CLOSE } from '@redux/types';
 
 export default (state = null, action) => {
-  if (action.type === BOOKS_ITEM_SELECTED) {
-    return action.payload;
-  }
+  switch (action.type) {
+    case BOOKS_ITEM_SELECTED:
+      return action.payload;
 
-  return state;
+    case BOOKS_ITEM_CLOSE:
+      return null;
+
+    default:
+      return state;
+  }
 };

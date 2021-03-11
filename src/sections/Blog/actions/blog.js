@@ -4,6 +4,7 @@ import {
   BLOG_POSTS_FETCH_SUCCESS,
   BLOG_POSTS_FETCH_FAILURE,
   BLOG_USER_SELECTED,
+  BLOG_USER_CLOSE,
 } from '@redux/types';
 
 export const fetchBlogPosts = () => async (dispatch) => {
@@ -29,4 +30,8 @@ export const fetchBlogPosts = () => async (dispatch) => {
 export const selectBlogUser = (user) => ({
   type: BLOG_USER_SELECTED,
   user,
+});
+
+export const closeBlogUser = () => ({
+  type: BLOG_USER_CLOSE,
 });

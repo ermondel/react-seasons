@@ -1,9 +1,14 @@
-import { BLOG_USER_SELECTED } from '@redux/types';
+import { BLOG_USER_SELECTED, BLOG_USER_CLOSE } from '@redux/types';
 
 export default (state = null, action) => {
-  if (action.type === BLOG_USER_SELECTED) {
-    return action.user;
-  }
+  switch (action.type) {
+    case BLOG_USER_SELECTED:
+      return action.user;
 
-  return state;
+    case BLOG_USER_CLOSE:
+      return null;
+
+    default:
+      return state;
+  }
 };

@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import InfoBlock from '@sidebar/InfoBlock';
+import { closeBook } from '../actions/books';
 
-const BookDetails = ({ book }) => {
+const BookDetails = ({ book, closeBook }) => {
   return book ? (
     <InfoBlock
       title={book.title}
@@ -13,12 +14,12 @@ const BookDetails = ({ book }) => {
         publisher: book.publisher,
         pages: book.pages,
       }}
+      showControlBtns={true}
+      onClose={closeBook}
     />
   ) : null;
 };
 
-const mapStateToProps = (state) => ({
-  book: state.bookActive,
-});
+const mapStateToProps = (state) => ({ book: state.bookActive });
 
-export default connect(mapStateToProps)(BookDetails);
+export default connect(mapStateToProps, { closeBook })(BookDetails);

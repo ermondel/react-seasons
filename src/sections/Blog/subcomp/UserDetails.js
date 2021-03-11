@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import InfoBlock from '@sidebar/InfoBlock';
+import { closeBlogUser } from '../actions/blog';
 
-const UserDetails = ({ user }) => {
+const UserDetails = ({ user, closeBlogUser }) => {
   return user ? (
     <InfoBlock
       title={user.name}
@@ -15,12 +16,12 @@ const UserDetails = ({ user }) => {
         city: user.address.city,
         zipcode: user.address.zipcode,
       }}
+      showControlBtns={true}
+      onClose={closeBlogUser}
     />
   ) : null;
 };
 
-const mapStateToProps = (state) => ({
-  user: state.blogUser,
-});
+const mapStateToProps = (state) => ({ user: state.blogUser });
 
-export default connect(mapStateToProps)(UserDetails);
+export default connect(mapStateToProps, { closeBlogUser })(UserDetails);

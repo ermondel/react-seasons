@@ -20,6 +20,10 @@
   font-weight: normal;
 }
 
+.infoblock__items {
+  margin-bottom: 20px;
+}
+
 .infoblock__item {
   width: 100%;
 
@@ -76,5 +80,26 @@
   &:focus {
     text-decoration: underline;
     color: $color-hover-0;
+  }
+}
+
+.infoblock__control {
+  width: 100%;
+  overflow: hidden;
+
+  margin-bottom: 3px;
+}
+
+.infoblock__btn-close {
+  color: $color-detail;
+  background-color: $color-base;
+  border-bottom: 1px dotted transparent;
+
+  float: right;
+
+  &:hover,
+  &:focus {
+    color: $color-hover-0;
+    border-color: $color-hover-0;
   }
 }
