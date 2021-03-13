@@ -1,11 +1,12 @@
 import React from 'react';
+import Fragment from '@subcomponents/Fragment';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import HomeSidebar from './HomeSidebar';
 import HomeContent from './HomeContent';
 
 const Home = () => (
-  <React.Fragment>
+  <Fragment>
     <div className='side-container'>
       <MainNavigation />
       <HomeSidebar />
@@ -15,7 +16,7 @@ const Home = () => (
       <HomeContent />
       <Footer />
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Home;

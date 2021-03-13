@@ -1,11 +1,12 @@
 import React from 'react';
+import Fragment from '@subcomponents/Fragment';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import NotFoundSidebar from './NotFoundSidebar';
 import NotFoundContent from './NotFoundContent';
 
 const NotFound = () => (
-  <React.Fragment>
+  <Fragment documentTitle='404'>
     <div className='side-container'>
       <MainNavigation />
       <NotFoundSidebar />
@@ -15,7 +16,7 @@ const NotFound = () => (
       <NotFoundContent />
       <Footer />
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default NotFound;

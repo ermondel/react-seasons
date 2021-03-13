@@ -1,11 +1,12 @@
 import React from 'react';
+import Fragment from '@subcomponents/Fragment';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import PostsSidebar from './PostsSidebar';
 import PostsContent from './PostsContent';
 
 const Posts = () => (
-  <React.Fragment>
+  <Fragment documentTitle='Posts'>
     <div className='side-container'>
       <MainNavigation />
       <PostsSidebar />
@@ -15,7 +16,7 @@ const Posts = () => (
       <PostsContent />
       <Footer />
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Posts;

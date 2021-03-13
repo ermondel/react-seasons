@@ -1,4 +1,5 @@
 import React from 'react';
+import Fragment from '@subcomponents/Fragment';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import { LanguageContext } from '../contexts/LanguageContext';
@@ -7,7 +8,7 @@ import PostcardSidebar from './PostcardSidebar';
 import PostcardContent from './PostcardContent';
 
 const Postcard = () => (
-  <React.Fragment>
+  <Fragment documentTitle='Postcard'>
     <ColorContext>
       <LanguageContext>
         <div className='side-container'>
@@ -21,7 +22,7 @@ const Postcard = () => (
         </div>
       </LanguageContext>
     </ColorContext>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Postcard;

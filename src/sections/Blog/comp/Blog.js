@@ -1,11 +1,12 @@
 import React from 'react';
+import Fragment from '@subcomponents/Fragment';
 import MainNavigation from '@subcomponents/MainNavigation';
 import Footer from '@subcomponents/Footer';
 import BlogSidebar from './BlogSidebar';
 import BlogContent from './BlogContent';
 
 const Blog = () => (
-  <React.Fragment>
+  <Fragment documentTitle='Blog'>
     <div className='side-container'>
       <MainNavigation />
       <BlogSidebar />
@@ -15,7 +16,7 @@ const Blog = () => (
       <BlogContent />
       <Footer />
     </div>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Blog;
